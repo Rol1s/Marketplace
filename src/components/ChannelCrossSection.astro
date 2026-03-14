@@ -1,0 +1,107 @@
+---
+interface Props {
+  h: number;
+  b: number;
+  s: number;
+  t: number;
+}
+
+const { h, b, s, t } = Astro.props;
+
+const svgW = 300;
+const svgH = 280;
+const pad = 50;
+
+const maxDim = Math.max(h, b);
+const scale = (svgH - pad * 2) / maxDim;
+
+const drawH = h * scale;
+const drawB = b * scale;
+const drawS = s * scale;
+const drawT = t * scale;
+
+const cx = svgW / 2 - 10;
+const cy = svgH / 2;
+
+const left = cx - drawB / 2;
+const top = cy - drawH / 2;
+---
+
+<div class="flex flex-col items-center">
+  <svg
+    viewBox={`0 0 ${svgW} ${svgH}`}
+    class="w-full max-w-[300px]"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <marker id="ch-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+      </marker>
+    </defs>
+
+    <!-- Profile shape: U-channel -->
+    <path
+      d={`
+        M ${left} ${top}
+        h ${drawB}
+        v ${drawT}
+        h ${-(drawB - drawS)}
+        v ${drawH - 2 * drawT}
+        h ${drawB - drawS}
+        v ${drawT}
+        h ${-drawB}
+        Z
+      `}
+      fill="#c8ced6"
+      stroke="#1e3a5f"
+      stroke-width="1.2"
+    />
+
+    <!-- Dimension: h (height, left side) -->
+    <line x1={left - 20} y1={top} x2={left - 20} y2={top + drawH}
+      stroke="#1e3a5f" stroke-width="0.8" marker-start="url(#ch-arr)" marker-end="url(#ch-arr)"/>
+    <line x1={left - 4} y1={top} x2={left - 24} y2={top} stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1={left - 4} y1={top + drawH} x2={left - 24} y2={top + drawH} stroke="#1e3a5f" stroke-width="0.5"/>
+    <text
+      x={left - 25}
+      y={cy + 4}
+      text-anchor="middle"
+      fill="#1e3a5f"
+      font-size="12"
+      font-weight="600"
+      transform={`rotate(-90, ${left - 25}, ${cy})`}
+    >{h}</text>
+
+    <!-- Dimension: b (width, bottom) -->
+    <line x1={left} y1={top + drawH + 18} x2={left + drawB} y2={top + drawH + 18}
+      stroke="#1e3a5f" stroke-width="0.8" marker-start="url(#ch-arr)" marker-end="url(#ch-arr)"/>
+    <line x1={left} y1={top + drawH + 4} x2={left} y2={top + drawH + 22} stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1={left + drawB} y1={top + drawH + 4} x2={left + drawB} y2={top + drawH + 22} stroke="#1e3a5f" stroke-width="0.5"/>
+    <text x={cx} y={top + drawH + 32} text-anchor="middle" fill="#1e3a5f" font-size="12" font-weight="600">{b}</text>
+
+    <!-- Dimension: t (flange, top right) -->
+    {drawT > 4 && (
+      <>
+        <line x1={left + drawB + 10} y1={top} x2={left + drawB + 10} y2={top + drawT}
+          stroke="#64748b" stroke-width="0.7" marker-start="url(#ch-arr)" marker-end="url(#ch-arr)"/>
+        <line x1={left + drawB + 2} y1={top} x2={left + drawB + 14} y2={top} stroke="#64748b" stroke-width="0.4"/>
+        <line x1={left + drawB + 2} y1={top + drawT} x2={left + drawB + 14} y2={top + drawT} stroke="#64748b" stroke-width="0.4"/>
+        <text x={left + drawB + 18} y={top + drawT / 2 + 4} text-anchor="start" fill="#64748b" font-size="10">{t}</text>
+      </>
+    )}
+
+    <!-- Dimension: s (web, mid) -->
+    {drawS > 3 && (
+      <>
+        <line x1={left} y1={cy - 12} x2={left + drawS} y2={cy - 12}
+          stroke="#64748b" stroke-width="0.7"/>
+        <text x={left + drawS / 2} y={cy - 16} text-anchor="middle" fill="#64748b" font-size="10">{s}</text>
+      </>
+    )}
+
+    <!-- Label -->
+    <text x={svgW / 2} y={svgH - 4} text-anchor="middle" fill="#64748b" font-size="10">
+      Швеллер {h}, ГОСТ 8240-97
+    </text>
+  </svg>
+</div>

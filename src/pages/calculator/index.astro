@@ -1,0 +1,84 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Calculator from '@components/Calculator';
+import { SITE } from '@/config/site';
+
+const title = `Калькулятор веса металлопроката — трубы, листы, профиль | ${SITE.name}`;
+const description = 'Онлайн-калькулятор массы металлопроката. Расчёт веса труб, листов, швеллеров, двутавров, уголков по размерам. Точные формулы по ГОСТ.';
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Калькулятор', href: '/calculator/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Калькулятор веса металлопроката
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Рассчитайте массу трубы, листа или профиля по размерам.
+      Формулы соответствуют ГОСТ. Плотность стали — 7850 кг/м³.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-xl font-bold text-primary mb-4">Трубы</h2>
+        <Calculator client:visible type="pipe" />
+        <p class="text-xs text-text-muted mt-2">
+          Формула: M = π × (D − s) × s × ρ × L / 10⁶
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-primary mb-4">Листы</h2>
+        <Calculator client:visible type="sheet" />
+        <p class="text-xs text-text-muted mt-2">
+          Формула: M = t × W × L × ρ / 10⁹
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <h2 class="text-xl font-bold text-primary mb-4">Профильный прокат (швеллер, двутавр, уголок)</h2>
+      <div class="max-w-lg">
+        <Calculator client:visible type="profile" />
+        <p class="text-xs text-text-muted mt-2">
+          Масса = масса 1 м × длина × количество
+        </p>
+      </div>
+    </div>
+
+    <section class="mt-12">
+      <h2 class="text-xl font-bold text-primary mb-4">Калькуляторы по типам</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <a href="/gost/truby/" class="p-4 border border-border rounded-lg hover:border-primary transition-colors">
+          <div class="font-bold text-primary">Трубы</div>
+          <div class="text-xs text-text-muted">ГОСТ 10704-91</div>
+        </a>
+        <a href="/gost/shvellery/" class="p-4 border border-border rounded-lg hover:border-primary transition-colors">
+          <div class="font-bold text-primary">Швеллеры</div>
+          <div class="text-xs text-text-muted">ГОСТ 8240-97</div>
+        </a>
+        <a href="/gost/dvutavry/" class="p-4 border border-border rounded-lg hover:border-primary transition-colors">
+          <div class="font-bold text-primary">Двутавры</div>
+          <div class="text-xs text-text-muted">ГОСТ 35087-2024</div>
+        </a>
+        <a href="/gost/listy/" class="p-4 border border-border rounded-lg hover:border-primary transition-colors">
+          <div class="font-bold text-primary">Листы</div>
+          <div class="text-xs text-text-muted">ГОСТ 19903-2015</div>
+        </a>
+        <a href="/gost/ugolki/" class="p-4 border border-border rounded-lg hover:border-primary transition-colors">
+          <div class="font-bold text-primary">Уголки</div>
+          <div class="text-xs text-text-muted">ГОСТ 8509/8510</div>
+        </a>
+        <a href="/gost/shpunt/" class="p-4 border border-border rounded-lg hover:border-primary transition-colors">
+          <div class="font-bold text-primary">Шпунт</div>
+          <div class="text-xs text-text-muted">Ларсена</div>
+        </a>
+      </div>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,52 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getSheets } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const sheets = getSheets();
+const thicknesses = [...new Set(sheets.map((s) => s.thickness))].sort((a, b) => a - b);
+const title = `Листы стальные ГОСТ 19903-2015 — сортамент, вес | ${SITE.name}`;
+const description = `Сортамент стальных горячекатаных листов по ГОСТ 19903-2015. Толщины от ${thicknesses[0]} до ${thicknesses[thicknesses.length - 1]} мм. Таблица размеров и массы.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник ГОСТ', href: '/gost/' },
+      { label: 'Листы', href: '/gost/listy/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Листы стальные горячекатаные — ГОСТ 19903-2015
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Сортамент горячекатаных стальных листов по ГОСТ 19903-2015.
+      {sheets.length} типоразмеров, толщина от {thicknesses[0]} до {thicknesses[thicknesses.length - 1]} мм.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
+      {sheets.map((s) => {
+        const weightKg = (s.thickness * s.width * s.length * 7.85) / 1_000_000;
+        return (
+          <a
+            href={`/gost/listy/${s.slug}/`}
+            class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+          >
+            <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">
+              {s.thickness} мм
+            </div>
+            <div class="text-xs text-text-muted mt-1">
+              {s.width}×{s.length} мм
+            </div>
+            <div class="text-xs text-text-muted">
+              {weightKg.toFixed(1)} кг
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</Base>

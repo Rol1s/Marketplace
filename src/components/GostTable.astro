@@ -1,0 +1,74 @@
+---
+interface Column {
+  key: string;
+  label: string;
+  unit?: string;
+  align?: 'left' | 'right' | 'center';
+}
+
+interface Props {
+  columns: Column[];
+  rows: Record<string, unknown>[];
+  highlightKey?: string;
+  highlightValue?: unknown;
+  caption?: string;
+}
+
+const { columns, rows, highlightKey, highlightValue, caption } = Astro.props;
+
+function formatValue(val: unknown): string {
+  if (val === null || val === undefined) return '—';
+  if (typeof val === 'number') {
+    return val % 1 === 0 ? val.toString() : val.toFixed(val < 10 ? 2 : 1);
+  }
+  return String(val);
+}
+---
+
+<div class="overflow-x-auto rounded-lg border border-border">
+  <table class="w-full text-sm">
+    {caption && (
+      <caption class="px-4 py-2 text-left text-xs text-text-muted bg-surface-dark">{caption}</caption>
+    )}
+    <thead>
+      <tr class="bg-primary text-white">
+        {columns.map((col) => (
+          <th
+            class:list={[
+              'px-3 py-2.5 font-semibold whitespace-nowrap',
+              col.align === 'right' ? 'text-right' : col.align === 'center' ? 'text-center' : 'text-left',
+            ]}
+          >
+            {col.label}
+            {col.unit && <span class="font-normal text-white/70 ml-1">({col.unit})</span>}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row, i) => {
+        const isHighlighted = highlightKey && row[highlightKey] === highlightValue;
+        return (
+          <tr
+            class:list={[
+              'border-t border-border transition-colors',
+              isHighlighted ? 'bg-accent/5 font-medium' : i % 2 === 0 ? 'bg-white' : 'bg-surface',
+              'hover:bg-surface-dark',
+            ]}
+          >
+            {columns.map((col) => (
+              <td
+                class:list={[
+                  'px-3 py-2 whitespace-nowrap',
+                  col.align === 'right' ? 'text-right tabular-nums' : col.align === 'center' ? 'text-center' : 'text-left',
+                ]}
+              >
+                {formatValue(row[col.key])}
+              </td>
+            ))}
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>

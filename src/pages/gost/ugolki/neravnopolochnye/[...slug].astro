@@ -1,0 +1,78 @@
+---
+import Gost from '@layouts/Gost.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import AngleCrossSection from '@components/AngleCrossSection.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getAnglesUnequal } from '@lib/data';
+import { angleUnequalMeta } from '@lib/seo';
+import { relatedAngles } from '@lib/links';
+
+export function getStaticPaths() {
+  return getAnglesUnequal().map((a) => ({
+    params: { slug: a.slug },
+    props: { angle: a },
+  }));
+}
+
+const { angle } = Astro.props;
+const all = getAnglesUnequal();
+const meta = angleUnequalMeta(angle.size, angle.massPerMeterKg);
+const related = relatedAngles(all, angle.slug, '/gost/ugolki/neravnopolochnye/');
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Уголок неравнополочный ${angle.size} — ГОСТ 8510-86`}
+  breadcrumbs={[
+    { label: 'Справочник ГОСТ', href: '/gost/' },
+    { label: 'Уголки', href: '/gost/ugolki/' },
+    { label: 'Неравнополочные', href: '/gost/ugolki/neravnopolochnye/' },
+    { label: angle.size, href: `/gost/ugolki/neravnopolochnye/${angle.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <AngleCrossSection a={angle.aMm} b={angle.bMm} t={angle.thicknessMm} isEqual={false} />
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{angle.aMm}x{angle.bMm}</div>
+          <div class="text-xs text-text-muted mt-1">Полки, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{angle.thicknessMm}</div>
+          <div class="text-xs text-text-muted mt-1">Толщина, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{angle.crossSectionAreaMm2}</div>
+          <div class="text-xs text-text-muted mt-1">Площадь, мм²</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-accent">{angle.massPerMeterKg}</div>
+          <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы по длине</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Уголок ${angle.size}`}
+      weightPerUnit={angle.massPerMeterKg}
+      mode="length"
+      unitLabel="кг/м"
+      defaultLength={6}
+    />
+  </section>
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на уголок {angle.size}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие размеры" items={related} />
+</Gost>

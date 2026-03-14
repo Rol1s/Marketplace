@@ -1,0 +1,2431 @@
+[
+  {
+    "slug": "as-500-11.0",
+    "type": "AS 500-11.0",
+    "displayName": "AS 500-11.0",
+    "weightPerMeterTons": 0.0702,
+    "areaPerMeterM2": 0.501
+  },
+  {
+    "slug": "as-500-12.0",
+    "type": "AS 500-12.0",
+    "displayName": "AS 500-12.0",
+    "weightPerMeterTons": 0.0743,
+    "areaPerMeterM2": 0.499
+  },
+  {
+    "slug": "as-500-12.5",
+    "type": "AS 500-12.5",
+    "displayName": "AS 500-12.5",
+    "weightPerMeterTons": 0.0763,
+    "areaPerMeterM2": 0.499
+  },
+  {
+    "slug": "as-500-12.7",
+    "type": "AS 500-12.7",
+    "displayName": "AS 500-12.7",
+    "weightPerMeterTons": 0.0771,
+    "areaPerMeterM2": 0.501
+  },
+  {
+    "slug": "as-500-13.0",
+    "type": "AS 500-13.0",
+    "displayName": "AS 500-13.0",
+    "weightPerMeterTons": 0.079,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "as-500-9.5",
+    "type": "AS 500-9.5",
+    "displayName": "AS 500-9.5",
+    "weightPerMeterTons": 0.0638,
+    "areaPerMeterM2": 0.498
+  },
+  {
+    "slug": "au-14",
+    "type": "AU 14",
+    "displayName": "AU 14",
+    "weightPerMeterTons": 0.0779,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "au-16",
+    "type": "AU 16",
+    "displayName": "AU 16",
+    "weightPerMeterTons": 0.0863,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "au-18",
+    "type": "AU 18",
+    "displayName": "AU 18",
+    "weightPerMeterTons": 0.0885,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "au-20",
+    "type": "AU 20",
+    "displayName": "AU 20",
+    "weightPerMeterTons": 0.0969,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "au-21",
+    "type": "AU 21",
+    "displayName": "AU 21",
+    "weightPerMeterTons": 0.0997,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "au-23",
+    "type": "AU 23",
+    "displayName": "AU 23",
+    "weightPerMeterTons": 0.1021,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "au-25",
+    "type": "AU 25",
+    "displayName": "AU 25",
+    "weightPerMeterTons": 0.1104,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "az-12",
+    "type": "AZ 12",
+    "displayName": "AZ 12",
+    "weightPerMeterTons": 0.0661,
+    "areaPerMeterM2": 0.668
+  },
+  {
+    "slug": "az-12-700",
+    "type": "AZ 12-700",
+    "displayName": "AZ 12-700",
+    "weightPerMeterTons": 0.072,
+    "areaPerMeterM2": 0.673
+  },
+  {
+    "slug": "az-12-770",
+    "type": "AZ 12-770",
+    "displayName": "AZ 12-770",
+    "weightPerMeterTons": 0.0726,
+    "areaPerMeterM2": 0.772
+  },
+  {
+    "slug": "az-13",
+    "type": "AZ 13",
+    "displayName": "AZ 13",
+    "weightPerMeterTons": 0.0661,
+    "areaPerMeterM2": 0.668
+  },
+  {
+    "slug": "az-13-700",
+    "type": "AZ 13-700",
+    "displayName": "AZ 13-700",
+    "weightPerMeterTons": 0.074,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-13-700-1010",
+    "type": "AZ 13-700 10/10",
+    "displayName": "AZ 13-700 10/10",
+    "weightPerMeterTons": 0.0772,
+    "areaPerMeterM2": 0.701
+  },
+  {
+    "slug": "az-13-770",
+    "type": "AZ 13-770",
+    "displayName": "AZ 13-770",
+    "weightPerMeterTons": 0.0761,
+    "areaPerMeterM2": 0.769
+  },
+  {
+    "slug": "az-14",
+    "type": "AZ 14",
+    "displayName": "AZ 14",
+    "weightPerMeterTons": 0.0783,
+    "areaPerMeterM2": 0.669
+  },
+  {
+    "slug": "az-14-700",
+    "type": "AZ 14-700",
+    "displayName": "AZ 14-700",
+    "weightPerMeterTons": 0.0803,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-14-770",
+    "type": "AZ 14-770",
+    "displayName": "AZ 14-770",
+    "weightPerMeterTons": 0.0795,
+    "areaPerMeterM2": 0.772
+  },
+  {
+    "slug": "az-14-770-1010",
+    "type": "AZ 14-770 10/10",
+    "displayName": "AZ 14-770 10/10",
+    "weightPerMeterTons": 0.0829,
+    "areaPerMeterM2": 0.768
+  },
+  {
+    "slug": "az-17",
+    "type": "AZ 17",
+    "displayName": "AZ 17",
+    "weightPerMeterTons": 0.0684,
+    "areaPerMeterM2": 0.628
+  },
+  {
+    "slug": "az-17-700",
+    "type": "AZ 17-700",
+    "displayName": "AZ 17-700",
+    "weightPerMeterTons": 0.0731,
+    "areaPerMeterM2": 0.703
+  },
+  {
+    "slug": "az-18",
+    "type": "AZ 18",
+    "displayName": "AZ 18",
+    "weightPerMeterTons": 0.0744,
+    "areaPerMeterM2": 0.631
+  },
+  {
+    "slug": "az-18-1010",
+    "type": "AZ 18 10/10",
+    "displayName": "AZ 18 10/10",
+    "weightPerMeterTons": 0.0778,
+    "areaPerMeterM2": 0.633
+  },
+  {
+    "slug": "az-18-630",
+    "type": "AZ 18-630",
+    "displayName": "AZ 18-630",
+    "weightPerMeterTons": 0.0744,
+    "areaPerMeterM2": 0.631
+  },
+  {
+    "slug": "az-18-630d",
+    "type": "AZ 18-630D",
+    "displayName": "AZ 18-630D",
+    "weightPerMeterTons": 0.1488,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "az-18-700",
+    "type": "AZ 18-700",
+    "displayName": "AZ 18-700",
+    "weightPerMeterTons": 0.0765,
+    "areaPerMeterM2": 0.702
+  },
+  {
+    "slug": "az-18-800",
+    "type": "AZ 18-800",
+    "displayName": "AZ 18-800",
+    "weightPerMeterTons": 0.0807,
+    "areaPerMeterM2": 0.8
+  },
+  {
+    "slug": "az-19",
+    "type": "AZ 19",
+    "displayName": "AZ 19",
+    "weightPerMeterTons": 0.081,
+    "areaPerMeterM2": 0.628
+  },
+  {
+    "slug": "az-19-700",
+    "type": "AZ 19-700",
+    "displayName": "AZ 19-700",
+    "weightPerMeterTons": 0.08,
+    "areaPerMeterM2": 0.702
+  },
+  {
+    "slug": "az-20-700",
+    "type": "AZ 20-700",
+    "displayName": "AZ 20-700",
+    "weightPerMeterTons": 0.0835,
+    "areaPerMeterM2": 0.702
+  },
+  {
+    "slug": "az-20-800",
+    "type": "AZ 20-800",
+    "displayName": "AZ 20-800",
+    "weightPerMeterTons": 0.0886,
+    "areaPerMeterM2": 0.8
+  },
+  {
+    "slug": "az-22-800",
+    "type": "AZ 22-800",
+    "displayName": "AZ 22-800",
+    "weightPerMeterTons": 0.0964,
+    "areaPerMeterM2": 0.8
+  },
+  {
+    "slug": "az-23-800",
+    "type": "AZ 23-800",
+    "displayName": "AZ 23-800",
+    "weightPerMeterTons": 0.0946,
+    "areaPerMeterM2": 0.8
+  },
+  {
+    "slug": "az-24-700",
+    "type": "AZ 24-700",
+    "displayName": "AZ 24-700",
+    "weightPerMeterTons": 0.0957,
+    "areaPerMeterM2": 0.704
+  },
+  {
+    "slug": "az-24-700n",
+    "type": "AZ 24-700N",
+    "displayName": "AZ 24-700N",
+    "weightPerMeterTons": 0.0897,
+    "areaPerMeterM2": 0.701
+  },
+  {
+    "slug": "az-25",
+    "type": "AZ 25",
+    "displayName": "AZ 25",
+    "weightPerMeterTons": 0.0915,
+    "areaPerMeterM2": 0.631
+  },
+  {
+    "slug": "az-25-800",
+    "type": "AZ 25-800",
+    "displayName": "AZ 25-800",
+    "weightPerMeterTons": 0.1026,
+    "areaPerMeterM2": 0.8
+  },
+  {
+    "slug": "az-26",
+    "type": "AZ 26",
+    "displayName": "AZ 26",
+    "weightPerMeterTons": 0.0978,
+    "areaPerMeterM2": 0.631
+  },
+  {
+    "slug": "az-26-700",
+    "type": "AZ 26-700",
+    "displayName": "AZ 26-700",
+    "weightPerMeterTons": 0.1029,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-26-700n",
+    "type": "AZ 26-700N",
+    "displayName": "AZ 26-700N",
+    "weightPerMeterTons": 0.0969,
+    "areaPerMeterM2": 0.702
+  },
+  {
+    "slug": "az-27-800",
+    "type": "AZ 27-800",
+    "displayName": "AZ 27-800",
+    "weightPerMeterTons": 0.1105,
+    "areaPerMeterM2": 0.8
+  },
+  {
+    "slug": "az-28",
+    "type": "AZ 28",
+    "displayName": "AZ 28",
+    "weightPerMeterTons": 0.1044,
+    "areaPerMeterM2": 0.629
+  },
+  {
+    "slug": "az-28-700",
+    "type": "AZ 28-700",
+    "displayName": "AZ 28-700",
+    "weightPerMeterTons": 0.11,
+    "areaPerMeterM2": 0.701
+  },
+  {
+    "slug": "az-28-700n",
+    "type": "AZ 28-700N",
+    "displayName": "AZ 28-700N",
+    "weightPerMeterTons": 0.1041,
+    "areaPerMeterM2": 0.699
+  },
+  {
+    "slug": "az-28-750",
+    "type": "AZ 28-750",
+    "displayName": "AZ 28-750",
+    "weightPerMeterTons": 0.1008,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "az-30-750",
+    "type": "AZ 30-750",
+    "displayName": "AZ 30-750",
+    "weightPerMeterTons": 0.1088,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "az-32-750",
+    "type": "AZ 32-750",
+    "displayName": "AZ 32-750",
+    "weightPerMeterTons": 0.1167,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "az-34",
+    "type": "AZ 34",
+    "displayName": "AZ 34",
+    "weightPerMeterTons": 0.1155,
+    "areaPerMeterM2": 0.631
+  },
+  {
+    "slug": "az-36",
+    "type": "AZ 36",
+    "displayName": "AZ 36",
+    "weightPerMeterTons": 0.1222,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "az-36-630",
+    "type": "AZ 36-630",
+    "displayName": "AZ 36-630",
+    "weightPerMeterTons": 0.122,
+    "areaPerMeterM2": 0.629
+  },
+  {
+    "slug": "az-36-700",
+    "type": "AZ 36-700",
+    "displayName": "AZ 36-700",
+    "weightPerMeterTons": 0.1185,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-36-700n",
+    "type": "AZ 36-700N",
+    "displayName": "AZ 36-700N",
+    "weightPerMeterTons": 0.1186,
+    "areaPerMeterM2": 0.702
+  },
+  {
+    "slug": "az-38",
+    "type": "AZ 38",
+    "displayName": "AZ 38",
+    "weightPerMeterTons": 0.1291,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "az-38-700",
+    "type": "AZ 38-700",
+    "displayName": "AZ 38-700",
+    "weightPerMeterTons": 0.1262,
+    "areaPerMeterM2": 0.701
+  },
+  {
+    "slug": "az-38-700n",
+    "type": "AZ 38-700N",
+    "displayName": "AZ 38-700N",
+    "weightPerMeterTons": 0.1264,
+    "areaPerMeterM2": 0.698
+  },
+  {
+    "slug": "az-40-700",
+    "type": "AZ 40-700",
+    "displayName": "AZ 40-700",
+    "weightPerMeterTons": 0.1338,
+    "areaPerMeterM2": 0.701
+  },
+  {
+    "slug": "az-40-700n",
+    "type": "AZ 40-700N",
+    "displayName": "AZ 40-700N",
+    "weightPerMeterTons": 0.1342,
+    "areaPerMeterM2": 0.699
+  },
+  {
+    "slug": "az-42-700n",
+    "type": "AZ 42-700N",
+    "displayName": "AZ 42-700N",
+    "weightPerMeterTons": 0.1421,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-44-700n",
+    "type": "AZ 44-700N",
+    "displayName": "AZ 44-700N",
+    "weightPerMeterTons": 0.1499,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-46",
+    "type": "AZ 46",
+    "displayName": "AZ 46",
+    "weightPerMeterTons": 0.1326,
+    "areaPerMeterM2": 0.579
+  },
+  {
+    "slug": "az-46-700n",
+    "type": "AZ 46-700N",
+    "displayName": "AZ 46-700N",
+    "weightPerMeterTons": 0.1577,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-48",
+    "type": "AZ 48",
+    "displayName": "AZ 48",
+    "weightPerMeterTons": 0.1396,
+    "areaPerMeterM2": 0.579
+  },
+  {
+    "slug": "az-48-700",
+    "type": "AZ 48-700",
+    "displayName": "AZ 48-700",
+    "weightPerMeterTons": 0.1585,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-50",
+    "type": "AZ 50",
+    "displayName": "AZ 50",
+    "weightPerMeterTons": 0.1467,
+    "areaPerMeterM2": 0.58
+  },
+  {
+    "slug": "az-50-700",
+    "type": "AZ 50-700",
+    "displayName": "AZ 50-700",
+    "weightPerMeterTons": 0.1663,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "az-52-700",
+    "type": "AZ 52-700",
+    "displayName": "AZ 52-700",
+    "weightPerMeterTons": 0.1741,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "eco-618",
+    "type": "ECO 618",
+    "displayName": "ECO 618",
+    "weightPerMeterTons": 0.0764,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "eco-622t",
+    "type": "ECO 622T",
+    "displayName": "ECO 622T",
+    "weightPerMeterTons": 0.0869,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "eco-632",
+    "type": "ECO 632",
+    "displayName": "ECO 632",
+    "weightPerMeterTons": 0.114,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "esz-17",
+    "type": "ESZ 17",
+    "displayName": "ESZ 17",
+    "weightPerMeterTons": 0.06981,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "esz-18",
+    "type": "ESZ 18",
+    "displayName": "ESZ 18",
+    "weightPerMeterTons": 0.076,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "esz-18-630",
+    "type": "ESZ 18-630",
+    "displayName": "ESZ 18-630",
+    "weightPerMeterTons": 0.076,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "esz-19",
+    "type": "ESZ 19",
+    "displayName": "ESZ 19",
+    "weightPerMeterTons": 0.0822,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "esz-19-630",
+    "type": "ESZ 19-630",
+    "displayName": "ESZ 19-630",
+    "weightPerMeterTons": 0.0822,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "esz-20",
+    "type": "ESZ 20",
+    "displayName": "ESZ 20",
+    "weightPerMeterTons": 0.0854,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "esz-20-630",
+    "type": "ESZ 20-630",
+    "displayName": "ESZ 20-630",
+    "weightPerMeterTons": 0.0854,
+    "areaPerMeterM2": 0.63
+  },
+  {
+    "slug": "esz-20-700",
+    "type": "ESZ 20-700",
+    "displayName": "ESZ 20-700",
+    "weightPerMeterTons": 0.0876,
+    "areaPerMeterM2": 0.728
+  },
+  {
+    "slug": "esz-24-700",
+    "type": "ESZ 24-700",
+    "displayName": "ESZ 24-700",
+    "weightPerMeterTons": 0.0895,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "esz-26-700",
+    "type": "ESZ 26-700",
+    "displayName": "ESZ 26-700",
+    "weightPerMeterTons": 0.0967,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "esz-28-700",
+    "type": "ESZ 28-700",
+    "displayName": "ESZ 28-700",
+    "weightPerMeterTons": 0.1039,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "ez-17-700",
+    "type": "EZ 17-700",
+    "displayName": "EZ 17-700",
+    "weightPerMeterTons": 0.074,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "ez-18-700",
+    "type": "EZ 18-700",
+    "displayName": "EZ 18-700",
+    "weightPerMeterTons": 0.0774,
+    "areaPerMeterM2": 0.671
+  },
+  {
+    "slug": "ez-19-700",
+    "type": "EZ 19-700",
+    "displayName": "EZ 19-700",
+    "weightPerMeterTons": 0.0808,
+    "areaPerMeterM2": 0.645
+  },
+  {
+    "slug": "ez-20-700",
+    "type": "EZ 20-700",
+    "displayName": "EZ 20-700",
+    "weightPerMeterTons": 0.0875,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "ez-36-700",
+    "type": "EZ 36-700",
+    "displayName": "EZ 36-700",
+    "weightPerMeterTons": 0.1162,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "ez-38-700",
+    "type": "EZ 38-700",
+    "displayName": "EZ 38-700",
+    "weightPerMeterTons": 0.1242,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "ez-40-700",
+    "type": "EZ 40-700",
+    "displayName": "EZ 40-700",
+    "weightPerMeterTons": 0.1322,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "gu-13n",
+    "type": "GU 13N",
+    "displayName": "GU 13N",
+    "weightPerMeterTons": 0.0599,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-14n",
+    "type": "GU 14N",
+    "displayName": "GU 14N",
+    "weightPerMeterTons": 0.0643,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-15n",
+    "type": "GU 15N",
+    "displayName": "GU 15N",
+    "weightPerMeterTons": 0.0687,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-16n",
+    "type": "GU 16N",
+    "displayName": "GU 16N",
+    "weightPerMeterTons": 0.0726,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-18n",
+    "type": "GU 18N",
+    "displayName": "GU 18N",
+    "weightPerMeterTons": 0.0769,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-20n",
+    "type": "GU 20N",
+    "displayName": "GU 20N",
+    "weightPerMeterTons": 0.0811,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-21n",
+    "type": "GU 21N",
+    "displayName": "GU 21N",
+    "weightPerMeterTons": 0.0819,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-22n",
+    "type": "GU 22N",
+    "displayName": "GU 22N",
+    "weightPerMeterTons": 0.0861,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-23n",
+    "type": "GU 23N",
+    "displayName": "GU 23N",
+    "weightPerMeterTons": 0.0904,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-27n",
+    "type": "GU 27N",
+    "displayName": "GU 27N",
+    "weightPerMeterTons": 0.0974,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-28n",
+    "type": "GU 28N",
+    "displayName": "GU 28N",
+    "weightPerMeterTons": 0.1018,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-30n",
+    "type": "GU 30N",
+    "displayName": "GU 30N",
+    "weightPerMeterTons": 0.1062,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-31n",
+    "type": "GU 31N",
+    "displayName": "GU 31N",
+    "weightPerMeterTons": 0.1099,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-32n",
+    "type": "GU 32N",
+    "displayName": "GU 32N",
+    "weightPerMeterTons": 0.1141,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-33n",
+    "type": "GU 33N",
+    "displayName": "GU 33N",
+    "weightPerMeterTons": 0.1184,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-6n",
+    "type": "GU 6N",
+    "displayName": "GU 6N",
+    "weightPerMeterTons": 0.0419,
+    "areaPerMeterM2": 0.599
+  },
+  {
+    "slug": "gu-7n",
+    "type": "GU 7N",
+    "displayName": "GU 7N",
+    "weightPerMeterTons": 0.0441,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-7s",
+    "type": "GU 7S",
+    "displayName": "GU 7S",
+    "weightPerMeterTons": 0.0463,
+    "areaPerMeterM2": 0.601
+  },
+  {
+    "slug": "gu-8n",
+    "type": "GU 8N",
+    "displayName": "GU 8N",
+    "weightPerMeterTons": 0.0485,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "gu-8s",
+    "type": "GU 8S",
+    "displayName": "GU 8S",
+    "weightPerMeterTons": 0.0508,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "hoesch-1208",
+    "type": "HOESCH 1208",
+    "displayName": "HOESCH 1208",
+    "weightPerMeterTons": 0.0732,
+    "areaPerMeterM2": 0.771
+  },
+  {
+    "slug": "hoesch-1308",
+    "type": "HOESCH 1308",
+    "displayName": "HOESCH 1308",
+    "weightPerMeterTons": 0.0766,
+    "areaPerMeterM2": 0.77
+  },
+  {
+    "slug": "hoesch-1408",
+    "type": "HOESCH 1408",
+    "displayName": "HOESCH 1408",
+    "weightPerMeterTons": 0.0801,
+    "areaPerMeterM2": 0.77
+  },
+  {
+    "slug": "hoesch-1707",
+    "type": "HOESCH 1707",
+    "displayName": "HOESCH 1707",
+    "weightPerMeterTons": 0.0732,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-1807",
+    "type": "HOESCH 1807",
+    "displayName": "HOESCH 1807",
+    "weightPerMeterTons": 0.0767,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-1907",
+    "type": "HOESCH 1907",
+    "displayName": "HOESCH 1907",
+    "weightPerMeterTons": 0.0801,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-2007",
+    "type": "HOESCH 2007",
+    "displayName": "HOESCH 2007",
+    "weightPerMeterTons": 0.0836,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-2407",
+    "type": "HOESCH 2407",
+    "displayName": "HOESCH 2407",
+    "weightPerMeterTons": 0.0951,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-2607",
+    "type": "HOESCH 2607",
+    "displayName": "HOESCH 2607",
+    "weightPerMeterTons": 0.1025,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-2807",
+    "type": "HOESCH 2807",
+    "displayName": "HOESCH 2807",
+    "weightPerMeterTons": 0.1099,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-3607",
+    "type": "HOESCH 3607",
+    "displayName": "HOESCH 3607",
+    "weightPerMeterTons": 0.1181,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-3807",
+    "type": "HOESCH 3807",
+    "displayName": "HOESCH 3807",
+    "weightPerMeterTons": 0.1259,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-4007",
+    "type": "HOESCH 4007",
+    "displayName": "HOESCH 4007",
+    "weightPerMeterTons": 0.1337,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-4807",
+    "type": "HOESCH 4807",
+    "displayName": "HOESCH 4807",
+    "weightPerMeterTons": 0.1561,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-5007",
+    "type": "HOESCH 5007",
+    "displayName": "HOESCH 5007",
+    "weightPerMeterTons": 0.164,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "hoesch-5207",
+    "type": "HOESCH 5207",
+    "displayName": "HOESCH 5207",
+    "weightPerMeterTons": 0.1718,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "jfesp-2",
+    "type": "JFESP-2",
+    "displayName": "JFESP-2",
+    "weightPerMeterTons": 0.048,
+    "areaPerMeterM2": 0.4
+  },
+  {
+    "slug": "jfesp-2w",
+    "type": "JFESP-2W",
+    "displayName": "JFESP-2W",
+    "weightPerMeterTons": 0.0618,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "jfesp-3",
+    "type": "JFESP-3",
+    "displayName": "JFESP-3",
+    "weightPerMeterTons": 0.06,
+    "areaPerMeterM2": 0.4
+  },
+  {
+    "slug": "jfesp-3w",
+    "type": "JFESP-3W",
+    "displayName": "JFESP-3W",
+    "weightPerMeterTons": 0.0816,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "jfesp-4",
+    "type": "JFESP-4",
+    "displayName": "JFESP-4",
+    "weightPerMeterTons": 0.0761,
+    "areaPerMeterM2": 0.401
+  },
+  {
+    "slug": "jfesp-4w",
+    "type": "JFESP-4W",
+    "displayName": "JFESP-4W",
+    "weightPerMeterTons": 0.106,
+    "areaPerMeterM2": 0.599
+  },
+  {
+    "slug": "jfesp-5l",
+    "type": "JFESP-5L",
+    "displayName": "JFESP-5L",
+    "weightPerMeterTons": 0.105,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "jfesp-6l",
+    "type": "JFESP-6L",
+    "displayName": "JFESP-6L",
+    "weightPerMeterTons": 0.12,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "ju600",
+    "type": "JU600",
+    "displayName": "JU600",
+    "weightPerMeterTons": 0.0816,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "ju600-180",
+    "type": "JU600-180",
+    "displayName": "JU600-180",
+    "weightPerMeterTons": 0.0816,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-22",
+    "type": "Larssen 22",
+    "displayName": "Larssen 22",
+    "weightPerMeterTons": 0.0618,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "larssen-22-1010",
+    "type": "Larssen 22 10/10",
+    "displayName": "Larssen 22 10/10",
+    "weightPerMeterTons": 0.0649,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "larssen-23",
+    "type": "Larssen 23",
+    "displayName": "Larssen 23",
+    "weightPerMeterTons": 0.0775,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "larssen-24",
+    "type": "Larssen 24",
+    "displayName": "Larssen 24",
+    "weightPerMeterTons": 0.0875,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "larssen-2412",
+    "type": "Larssen 24/12",
+    "displayName": "Larssen 24/12",
+    "weightPerMeterTons": 0.0927,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "larssen-25",
+    "type": "Larssen 25",
+    "displayName": "Larssen 25",
+    "weightPerMeterTons": 0.103,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "larssen-43",
+    "type": "Larssen 43",
+    "displayName": "Larssen 43",
+    "weightPerMeterTons": 0.083,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "larssen-430",
+    "type": "Larssen 430",
+    "displayName": "Larssen 430",
+    "weightPerMeterTons": 0.083,
+    "areaPerMeterM2": 0.341
+  },
+  {
+    "slug": "larssen-600",
+    "type": "Larssen 600",
+    "displayName": "Larssen 600",
+    "weightPerMeterTons": 0.0564,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-600k",
+    "type": "Larssen 600K",
+    "displayName": "Larssen 600K",
+    "weightPerMeterTons": 0.0594,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-601",
+    "type": "Larssen 601",
+    "displayName": "Larssen 601",
+    "weightPerMeterTons": 0.0463,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-602",
+    "type": "Larssen 602",
+    "displayName": "Larssen 602",
+    "weightPerMeterTons": 0.0534,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-603",
+    "type": "Larssen 603",
+    "displayName": "Larssen 603",
+    "weightPerMeterTons": 0.0648,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-603-1010",
+    "type": "Larssen 603 10/10",
+    "displayName": "Larssen 603 10/10",
+    "weightPerMeterTons": 0.0696,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-603k",
+    "type": "Larssen 603K",
+    "displayName": "Larssen 603K",
+    "weightPerMeterTons": 0.0681,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-604",
+    "type": "Larssen 604",
+    "displayName": "Larssen 604",
+    "weightPerMeterTons": 0.0745,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-604n",
+    "type": "Larssen 604N",
+    "displayName": "Larssen 604N",
+    "weightPerMeterTons": 0.0738,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-605",
+    "type": "Larssen 605",
+    "displayName": "Larssen 605",
+    "weightPerMeterTons": 0.0835,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-605k",
+    "type": "Larssen 605K",
+    "displayName": "Larssen 605K",
+    "weightPerMeterTons": 0.0867,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-606",
+    "type": "Larssen 606",
+    "displayName": "Larssen 606",
+    "weightPerMeterTons": 0.0944,
+    "areaPerMeterM2": 0.601
+  },
+  {
+    "slug": "larssen-606k",
+    "type": "Larssen 606K",
+    "displayName": "Larssen 606K",
+    "weightPerMeterTons": 0.0975,
+    "areaPerMeterM2": 0.602
+  },
+  {
+    "slug": "larssen-606n",
+    "type": "Larssen 606N",
+    "displayName": "Larssen 606N",
+    "weightPerMeterTons": 0.0942,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-606nk",
+    "type": "Larssen 606NK",
+    "displayName": "Larssen 606NK",
+    "weightPerMeterTons": 0.0973,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-607",
+    "type": "Larssen 607",
+    "displayName": "Larssen 607",
+    "weightPerMeterTons": 0.1144,
+    "areaPerMeterM2": 0.599
+  },
+  {
+    "slug": "larssen-607k",
+    "type": "Larssen 607K",
+    "displayName": "Larssen 607K",
+    "weightPerMeterTons": 0.1152,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-607n",
+    "type": "Larssen 607N",
+    "displayName": "Larssen 607N",
+    "weightPerMeterTons": 0.114,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-618",
+    "type": "Larssen 618",
+    "displayName": "Larssen 618",
+    "weightPerMeterTons": 0.0764,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-618c",
+    "type": "Larssen 618C",
+    "displayName": "Larssen 618C",
+    "weightPerMeterTons": 0.0816,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-622",
+    "type": "Larssen 622",
+    "displayName": "Larssen 622",
+    "weightPerMeterTons": 0.0847,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-622t",
+    "type": "Larssen 622T",
+    "displayName": "Larssen 622T",
+    "weightPerMeterTons": 0.0869,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "larssen-703",
+    "type": "Larssen 703",
+    "displayName": "Larssen 703",
+    "weightPerMeterTons": 0.0675,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "larssen-703-1010",
+    "type": "Larssen 703 10/10",
+    "displayName": "Larssen 703 10/10",
+    "weightPerMeterTons": 0.0756,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "larssen-703k",
+    "type": "Larssen 703K",
+    "displayName": "Larssen 703K",
+    "weightPerMeterTons": 0.0721,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "larssen-704",
+    "type": "Larssen 704",
+    "displayName": "Larssen 704",
+    "weightPerMeterTons": 0.0805,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "larssen-716",
+    "type": "Larssen 716",
+    "displayName": "Larssen 716",
+    "weightPerMeterTons": 0.0799,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "larssen-720",
+    "type": "Larssen 720",
+    "displayName": "Larssen 720",
+    "weightPerMeterTons": 0.0964,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "larssen-755",
+    "type": "Larssen 755",
+    "displayName": "Larssen 755",
+    "weightPerMeterTons": 0.0956,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "ni-xz100",
+    "type": "NI-XZ100",
+    "displayName": "NI-XZ100",
+    "weightPerMeterTons": 0.0801,
+    "areaPerMeterM2": 0.635
+  },
+  {
+    "slug": "ni-xz105",
+    "type": "NI-XZ105",
+    "displayName": "NI-XZ105",
+    "weightPerMeterTons": 0.0841,
+    "areaPerMeterM2": 0.635
+  },
+  {
+    "slug": "ni-xz80",
+    "type": "NI-XZ80",
+    "displayName": "NI-XZ80",
+    "weightPerMeterTons": 0.0641,
+    "areaPerMeterM2": 0.635
+  },
+  {
+    "slug": "ni-xz85",
+    "type": "NI-XZ85",
+    "displayName": "NI-XZ85",
+    "weightPerMeterTons": 0.0681,
+    "areaPerMeterM2": 0.635
+  },
+  {
+    "slug": "ni-xz90",
+    "type": "NI-XZ90",
+    "displayName": "NI-XZ90",
+    "weightPerMeterTons": 0.0721,
+    "areaPerMeterM2": 0.634
+  },
+  {
+    "slug": "ni-xz95",
+    "type": "NI-XZ95",
+    "displayName": "NI-XZ95",
+    "weightPerMeterTons": 0.0761,
+    "areaPerMeterM2": 0.635
+  },
+  {
+    "slug": "pal-30-30",
+    "type": "PAL 30 30",
+    "displayName": "PAL 30 30",
+    "weightPerMeterTons": 0.0194,
+    "areaPerMeterM2": 0.66
+  },
+  {
+    "slug": "pal-30-40",
+    "type": "PAL 30 40",
+    "displayName": "PAL 30 40",
+    "weightPerMeterTons": 0.0258,
+    "areaPerMeterM2": 0.658
+  },
+  {
+    "slug": "pal-30-50",
+    "type": "PAL 30 50",
+    "displayName": "PAL 30 50",
+    "weightPerMeterTons": 0.0322,
+    "areaPerMeterM2": 0.66
+  },
+  {
+    "slug": "pal-31-30",
+    "type": "PAL 31 30",
+    "displayName": "PAL 31 30",
+    "weightPerMeterTons": 0.0235,
+    "areaPerMeterM2": 0.71
+  },
+  {
+    "slug": "pal-31-40",
+    "type": "PAL 31 40",
+    "displayName": "PAL 31 40",
+    "weightPerMeterTons": 0.0313,
+    "areaPerMeterM2": 0.711
+  },
+  {
+    "slug": "pal-31-50",
+    "type": "PAL 31 50",
+    "displayName": "PAL 31 50",
+    "weightPerMeterTons": 0.039,
+    "areaPerMeterM2": 0.71
+  },
+  {
+    "slug": "pal-32-60",
+    "type": "PAL 32 60",
+    "displayName": "PAL 32 60",
+    "weightPerMeterTons": 0.0462,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "pal-32-70",
+    "type": "PAL 32 70",
+    "displayName": "PAL 32 70",
+    "weightPerMeterTons": 0.0532,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "pal-32-80",
+    "type": "PAL 32 80",
+    "displayName": "PAL 32 80",
+    "weightPerMeterTons": 0.0616,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "pal-32-90",
+    "type": "PAL 32 90",
+    "displayName": "PAL 32 90",
+    "weightPerMeterTons": 0.07,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "pau-22-40",
+    "type": "PAU 22 40",
+    "displayName": "PAU 22 40",
+    "weightPerMeterTons": 0.039,
+    "areaPerMeterM2": 0.922
+  },
+  {
+    "slug": "pau-22-50",
+    "type": "PAU 22 50",
+    "displayName": "PAU 22 50",
+    "weightPerMeterTons": 0.0487,
+    "areaPerMeterM2": 0.922
+  },
+  {
+    "slug": "pau-22-60",
+    "type": "PAU 22 60",
+    "displayName": "PAU 22 60",
+    "weightPerMeterTons": 0.0583,
+    "areaPerMeterM2": 0.921
+  },
+  {
+    "slug": "pau-24-40",
+    "type": "PAU 24 40",
+    "displayName": "PAU 24 40",
+    "weightPerMeterTons": 0.039,
+    "areaPerMeterM2": 0.813
+  },
+  {
+    "slug": "pau-24-50",
+    "type": "PAU 24 50",
+    "displayName": "PAU 24 50",
+    "weightPerMeterTons": 0.0487,
+    "areaPerMeterM2": 0.813
+  },
+  {
+    "slug": "pau-24-60",
+    "type": "PAU 24 60",
+    "displayName": "PAU 24 60",
+    "weightPerMeterTons": 0.0583,
+    "areaPerMeterM2": 0.812
+  },
+  {
+    "slug": "pau-27-60",
+    "type": "PAU 27 60",
+    "displayName": "PAU 27 60",
+    "weightPerMeterTons": 0.0604,
+    "areaPerMeterM2": 0.804
+  },
+  {
+    "slug": "pau-27-70",
+    "type": "PAU 27 70",
+    "displayName": "PAU 27 70",
+    "weightPerMeterTons": 0.0704,
+    "areaPerMeterM2": 0.805
+  },
+  {
+    "slug": "pau-27-80",
+    "type": "PAU 27 80",
+    "displayName": "PAU 27 80",
+    "weightPerMeterTons": 0.0803,
+    "areaPerMeterM2": 0.805
+  },
+  {
+    "slug": "paz-43-50",
+    "type": "PAZ 43 50",
+    "displayName": "PAZ 43 50",
+    "weightPerMeterTons": 0.0382,
+    "areaPerMeterM2": 0.77
+  },
+  {
+    "slug": "paz-43-60",
+    "type": "PAZ 43 60",
+    "displayName": "PAZ 43 60",
+    "weightPerMeterTons": 0.0458,
+    "areaPerMeterM2": 0.771
+  },
+  {
+    "slug": "paz-43-70",
+    "type": "PAZ 43 70",
+    "displayName": "PAZ 43 70",
+    "weightPerMeterTons": 0.0533,
+    "areaPerMeterM2": 0.77
+  },
+  {
+    "slug": "paz-44-50",
+    "type": "PAZ 44 50",
+    "displayName": "PAZ 44 50",
+    "weightPerMeterTons": 0.0377,
+    "areaPerMeterM2": 0.725
+  },
+  {
+    "slug": "paz-44-60",
+    "type": "PAZ 44 60",
+    "displayName": "PAZ 44 60",
+    "weightPerMeterTons": 0.0451,
+    "areaPerMeterM2": 0.725
+  },
+  {
+    "slug": "paz-44-70",
+    "type": "PAZ 44 70",
+    "displayName": "PAZ 44 70",
+    "weightPerMeterTons": 0.0524,
+    "areaPerMeterM2": 0.725
+  },
+  {
+    "slug": "paz-45-50",
+    "type": "PAZ 45 50",
+    "displayName": "PAZ 45 50",
+    "weightPerMeterTons": 0.0377,
+    "areaPerMeterM2": 0.676
+  },
+  {
+    "slug": "paz-45-60",
+    "type": "PAZ 45 60",
+    "displayName": "PAZ 45 60",
+    "weightPerMeterTons": 0.0451,
+    "areaPerMeterM2": 0.676
+  },
+  {
+    "slug": "paz-45-70",
+    "type": "PAZ 45 70",
+    "displayName": "PAZ 45 70",
+    "weightPerMeterTons": 0.0524,
+    "areaPerMeterM2": 0.676
+  },
+  {
+    "slug": "paz-46-50",
+    "type": "PAZ 46 50",
+    "displayName": "PAZ 46 50",
+    "weightPerMeterTons": 0.0377,
+    "areaPerMeterM2": 0.621
+  },
+  {
+    "slug": "paz-46-60",
+    "type": "PAZ 46 60",
+    "displayName": "PAZ 46 60",
+    "weightPerMeterTons": 0.0451,
+    "areaPerMeterM2": 0.621
+  },
+  {
+    "slug": "paz-46-70",
+    "type": "PAZ 46 70",
+    "displayName": "PAZ 46 70",
+    "weightPerMeterTons": 0.0524,
+    "areaPerMeterM2": 0.621
+  },
+  {
+    "slug": "paz-53-60",
+    "type": "PAZ 53 60",
+    "displayName": "PAZ 53 60",
+    "weightPerMeterTons": 0.0543,
+    "areaPerMeterM2": 0.858
+  },
+  {
+    "slug": "paz-53-70",
+    "type": "PAZ 53 70",
+    "displayName": "PAZ 53 70",
+    "weightPerMeterTons": 0.0632,
+    "areaPerMeterM2": 0.858
+  },
+  {
+    "slug": "paz-53-80",
+    "type": "PAZ 53 80",
+    "displayName": "PAZ 53 80",
+    "weightPerMeterTons": 0.0721,
+    "areaPerMeterM2": 0.858
+  },
+  {
+    "slug": "paz-53-90",
+    "type": "PAZ 53 90",
+    "displayName": "PAZ 53 90",
+    "weightPerMeterTons": 0.081,
+    "areaPerMeterM2": 0.858
+  },
+  {
+    "slug": "paz-54-100",
+    "type": "PAZ 54 100",
+    "displayName": "PAZ 54 100",
+    "weightPerMeterTons": 0.0892,
+    "areaPerMeterM2": 0.809
+  },
+  {
+    "slug": "paz-54-60",
+    "type": "PAZ 54 60",
+    "displayName": "PAZ 54 60",
+    "weightPerMeterTons": 0.0539,
+    "areaPerMeterM2": 0.807
+  },
+  {
+    "slug": "paz-54-70",
+    "type": "PAZ 54 70",
+    "displayName": "PAZ 54 70",
+    "weightPerMeterTons": 0.0626,
+    "areaPerMeterM2": 0.807
+  },
+  {
+    "slug": "paz-54-80",
+    "type": "PAZ 54 80",
+    "displayName": "PAZ 54 80",
+    "weightPerMeterTons": 0.0714,
+    "areaPerMeterM2": 0.808
+  },
+  {
+    "slug": "paz-54-90",
+    "type": "PAZ 54 90",
+    "displayName": "PAZ 54 90",
+    "weightPerMeterTons": 0.0802,
+    "areaPerMeterM2": 0.808
+  },
+  {
+    "slug": "paz-55-100",
+    "type": "PAZ 55 100",
+    "displayName": "PAZ 55 100",
+    "weightPerMeterTons": 0.0892,
+    "areaPerMeterM2": 0.745
+  },
+  {
+    "slug": "paz-55-60",
+    "type": "PAZ 55 60",
+    "displayName": "PAZ 55 60",
+    "weightPerMeterTons": 0.0539,
+    "areaPerMeterM2": 0.743
+  },
+  {
+    "slug": "paz-55-70",
+    "type": "PAZ 55 70",
+    "displayName": "PAZ 55 70",
+    "weightPerMeterTons": 0.0626,
+    "areaPerMeterM2": 0.743
+  },
+  {
+    "slug": "paz-55-80",
+    "type": "PAZ 55 80",
+    "displayName": "PAZ 55 80",
+    "weightPerMeterTons": 0.0714,
+    "areaPerMeterM2": 0.744
+  },
+  {
+    "slug": "paz-55-90",
+    "type": "PAZ 55 90",
+    "displayName": "PAZ 55 90",
+    "weightPerMeterTons": 0.0802,
+    "areaPerMeterM2": 0.744
+  },
+  {
+    "slug": "paz-56-100",
+    "type": "PAZ 56 100",
+    "displayName": "PAZ 56 100",
+    "weightPerMeterTons": 0.0892,
+    "areaPerMeterM2": 0.673
+  },
+  {
+    "slug": "paz-56-60",
+    "type": "PAZ 56 60",
+    "displayName": "PAZ 56 60",
+    "weightPerMeterTons": 0.0539,
+    "areaPerMeterM2": 0.671
+  },
+  {
+    "slug": "paz-56-70",
+    "type": "PAZ 56 70",
+    "displayName": "PAZ 56 70",
+    "weightPerMeterTons": 0.0626,
+    "areaPerMeterM2": 0.671
+  },
+  {
+    "slug": "paz-56-80",
+    "type": "PAZ 56 80",
+    "displayName": "PAZ 56 80",
+    "weightPerMeterTons": 0.0714,
+    "areaPerMeterM2": 0.672
+  },
+  {
+    "slug": "paz-56-90",
+    "type": "PAZ 56 90",
+    "displayName": "PAZ 56 90",
+    "weightPerMeterTons": 0.0802,
+    "areaPerMeterM2": 0.672
+  },
+  {
+    "slug": "pu-12",
+    "type": "PU 12",
+    "displayName": "PU 12",
+    "weightPerMeterTons": 0.0661,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pu-12-1010",
+    "type": "PU 12 10/10",
+    "displayName": "PU 12 10/10",
+    "weightPerMeterTons": 0.0696,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pu-16",
+    "type": "PU 16",
+    "displayName": "PU 16",
+    "weightPerMeterTons": 0.0747,
+    "areaPerMeterM2": 0.602
+  },
+  {
+    "slug": "pu-18",
+    "type": "PU 18",
+    "displayName": "PU 18",
+    "weightPerMeterTons": 0.0769,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pu-20",
+    "type": "PU 20",
+    "displayName": "PU 20",
+    "weightPerMeterTons": 0.0843,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pu-22",
+    "type": "PU 22",
+    "displayName": "PU 22",
+    "weightPerMeterTons": 0.0861,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pu-25",
+    "type": "PU 25",
+    "displayName": "PU 25",
+    "weightPerMeterTons": 0.0936,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pu-28",
+    "type": "PU 28",
+    "displayName": "PU 28",
+    "weightPerMeterTons": 0.1018,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pu-32",
+    "type": "PU 32",
+    "displayName": "PU 32",
+    "weightPerMeterTons": 0.1141,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "pzc-13",
+    "type": "PZC 13",
+    "displayName": "PZC 13",
+    "weightPerMeterTons": 0.0751,
+    "areaPerMeterM2": 0.708
+  },
+  {
+    "slug": "pzc-14",
+    "type": "PZC 14",
+    "displayName": "PZC 14",
+    "weightPerMeterTons": 0.0818,
+    "areaPerMeterM2": 0.708
+  },
+  {
+    "slug": "pzc-18",
+    "type": "PZC 18",
+    "displayName": "PZC 18",
+    "weightPerMeterTons": 0.0751,
+    "areaPerMeterM2": 0.635
+  },
+  {
+    "slug": "pzc-19",
+    "type": "PZC 19",
+    "displayName": "PZC 19",
+    "weightPerMeterTons": 0.0818,
+    "areaPerMeterM2": 0.635
+  },
+  {
+    "slug": "pzc-25",
+    "type": "PZC 25",
+    "displayName": "PZC 25",
+    "weightPerMeterTons": 0.1033,
+    "areaPerMeterM2": 0.708
+  },
+  {
+    "slug": "pzc-26",
+    "type": "PZC 26",
+    "displayName": "PZC 26",
+    "weightPerMeterTons": 0.11,
+    "areaPerMeterM2": 0.708
+  },
+  {
+    "slug": "pzc-28",
+    "type": "PZC 28",
+    "displayName": "PZC 28",
+    "weightPerMeterTons": 0.1176,
+    "areaPerMeterM2": 0.708
+  },
+  {
+    "slug": "pzc-37",
+    "type": "PZC 37",
+    "displayName": "PZC 37",
+    "weightPerMeterTons": 0.1036,
+    "areaPerMeterM2": 0.572
+  },
+  {
+    "slug": "pzc-39",
+    "type": "PZC 39",
+    "displayName": "PZC 39",
+    "weightPerMeterTons": 0.1102,
+    "areaPerMeterM2": 0.572
+  },
+  {
+    "slug": "pzc-41",
+    "type": "PZC 41",
+    "displayName": "PZC 41",
+    "weightPerMeterTons": 0.1166,
+    "areaPerMeterM2": 0.571
+  },
+  {
+    "slug": "rc-8-600",
+    "type": "RC 8 600",
+    "displayName": "RC 8 600",
+    "weightPerMeterTons": 0.0409,
+    "areaPerMeterM2": 0.742
+  },
+  {
+    "slug": "rc-8-700",
+    "type": "RC 8 700",
+    "displayName": "RC 8 700",
+    "weightPerMeterTons": 0.0476,
+    "areaPerMeterM2": 0.741
+  },
+  {
+    "slug": "rc-8-800",
+    "type": "RC 8 800",
+    "displayName": "RC 8 800",
+    "weightPerMeterTons": 0.0542,
+    "areaPerMeterM2": 0.742
+  },
+  {
+    "slug": "spu-600",
+    "type": "SPU 600",
+    "displayName": "SPU 600",
+    "weightPerMeterTons": 0.0816,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "spu-600-180",
+    "type": "SPU 600-180",
+    "displayName": "SPU 600-180",
+    "weightPerMeterTons": 0.0816,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "spu-618",
+    "type": "SPU 618",
+    "displayName": "SPU 618",
+    "weightPerMeterTons": 0.0764,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "spu-618c",
+    "type": "SPU 618C",
+    "displayName": "SPU 618C",
+    "weightPerMeterTons": 0.0816,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "spu-622t",
+    "type": "SPU 622T",
+    "displayName": "SPU 622T",
+    "weightPerMeterTons": 0.0869,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "spu-i",
+    "type": "SPU I",
+    "displayName": "SPU I",
+    "weightPerMeterTons": 0.04521,
+    "areaPerMeterM2": 1.274
+  },
+  {
+    "slug": "spu-ii",
+    "type": "SPU II",
+    "displayName": "SPU II",
+    "weightPerMeterTons": 0.0612,
+    "areaPerMeterM2": 1.275
+  },
+  {
+    "slug": "spu-iii",
+    "type": "SPU III",
+    "displayName": "SPU III",
+    "weightPerMeterTons": 0.0764,
+    "areaPerMeterM2": 1.273
+  },
+  {
+    "slug": "spu-iiia",
+    "type": "SPU IIIA",
+    "displayName": "SPU IIIA",
+    "weightPerMeterTons": 0.0744,
+    "areaPerMeterM2": 1.274
+  },
+  {
+    "slug": "spu-iiiw",
+    "type": "SPU IIIW",
+    "displayName": "SPU IIIW",
+    "weightPerMeterTons": 0.104,
+    "areaPerMeterM2": 1.275
+  },
+  {
+    "slug": "spu-iiw",
+    "type": "SPU IIW",
+    "displayName": "SPU IIW",
+    "weightPerMeterTons": 0.0787,
+    "areaPerMeterM2": 1.273
+  },
+  {
+    "slug": "spu-iv",
+    "type": "SPU IV",
+    "displayName": "SPU IV",
+    "weightPerMeterTons": 0.097,
+    "areaPerMeterM2": 1.275
+  },
+  {
+    "slug": "spu-ivw",
+    "type": "SPU IVW",
+    "displayName": "SPU IVW",
+    "weightPerMeterTons": 0.1353,
+    "areaPerMeterM2": 1.276
+  },
+  {
+    "slug": "spu-vil",
+    "type": "SPU VIL",
+    "displayName": "SPU VIL",
+    "weightPerMeterTons": 0.153,
+    "areaPerMeterM2": 1.275
+  },
+  {
+    "slug": "spu-vl",
+    "type": "SPU VL",
+    "displayName": "SPU VL",
+    "weightPerMeterTons": 0.1338,
+    "areaPerMeterM2": 1.274
+  },
+  {
+    "slug": "spz-12-700",
+    "type": "SPZ 12-700",
+    "displayName": "SPZ 12-700",
+    "weightPerMeterTons": 0.0728,
+    "areaPerMeterM2": 0.77
+  },
+  {
+    "slug": "spz-13-770",
+    "type": "SPZ 13-770",
+    "displayName": "SPZ 13-770",
+    "weightPerMeterTons": 0.0762,
+    "areaPerMeterM2": 0.77
+  },
+  {
+    "slug": "spz-14-700",
+    "type": "SPZ 14-700",
+    "displayName": "SPZ 14-700",
+    "weightPerMeterTons": 0.0796,
+    "areaPerMeterM2": 0.77
+  },
+  {
+    "slug": "spz-17-700",
+    "type": "SPZ 17-700",
+    "displayName": "SPZ 17-700",
+    "weightPerMeterTons": 0.0733,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-18-700",
+    "type": "SPZ 18-700",
+    "displayName": "SPZ 18-700",
+    "weightPerMeterTons": 0.0767,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-19-700",
+    "type": "SPZ 19-700",
+    "displayName": "SPZ 19-700",
+    "weightPerMeterTons": 0.0802,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-20-700",
+    "type": "SPZ 20-700",
+    "displayName": "SPZ 20-700",
+    "weightPerMeterTons": 0.0837,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-24-700",
+    "type": "SPZ 24-700",
+    "displayName": "SPZ 24-700",
+    "weightPerMeterTons": 0.0958,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-26-700",
+    "type": "SPZ 26-700",
+    "displayName": "SPZ 26-700",
+    "weightPerMeterTons": 0.103,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-28-700",
+    "type": "SPZ 28-700",
+    "displayName": "SPZ 28-700",
+    "weightPerMeterTons": 0.1101,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-36-700",
+    "type": "SPZ 36-700",
+    "displayName": "SPZ 36-700",
+    "weightPerMeterTons": 0.1187,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-37-700",
+    "type": "SPZ 37-700",
+    "displayName": "SPZ 37-700",
+    "weightPerMeterTons": 0.1181,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-38-700",
+    "type": "SPZ 38-700",
+    "displayName": "SPZ 38-700",
+    "weightPerMeterTons": 0.1265,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-40-700",
+    "type": "SPZ 40-700",
+    "displayName": "SPZ 40-700",
+    "weightPerMeterTons": 0.1343,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-46-700",
+    "type": "SPZ 46-700",
+    "displayName": "SPZ 46-700",
+    "weightPerMeterTons": 0.1585,
+    "areaPerMeterM2": 0.703
+  },
+  {
+    "slug": "spz-48-700",
+    "type": "SPZ 48-700",
+    "displayName": "SPZ 48-700",
+    "weightPerMeterTons": 0.1593,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-50-700",
+    "type": "SPZ 50-700",
+    "displayName": "SPZ 50-700",
+    "weightPerMeterTons": 0.1667,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "spz-52-700",
+    "type": "SPZ 52-700",
+    "displayName": "SPZ 52-700",
+    "weightPerMeterTons": 0.1743,
+    "areaPerMeterM2": 0.7
+  },
+  {
+    "slug": "vl-503",
+    "type": "VL 503",
+    "displayName": "VL 503",
+    "weightPerMeterTons": 0.0587,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "vl-503k",
+    "type": "VL 503K",
+    "displayName": "VL 503K",
+    "weightPerMeterTons": 0.0614,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "vl-503z",
+    "type": "VL 503Z",
+    "displayName": "VL 503Z",
+    "weightPerMeterTons": 0.0653,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "vl-504",
+    "type": "VL 504",
+    "displayName": "VL 504",
+    "weightPerMeterTons": 0.0666,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "vl-504a",
+    "type": "VL 504A",
+    "displayName": "VL 504A",
+    "weightPerMeterTons": 0.0635,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "vl-504k",
+    "type": "VL 504K",
+    "displayName": "VL 504K",
+    "weightPerMeterTons": 0.0703,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "vl-507a",
+    "type": "VL 507A",
+    "displayName": "VL 507A",
+    "weightPerMeterTons": 0.0923,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "vl-601",
+    "type": "VL 601",
+    "displayName": "VL 601",
+    "weightPerMeterTons": 0.0463,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-601fp",
+    "type": "VL 601FP",
+    "displayName": "VL 601FP",
+    "weightPerMeterTons": 0.0474,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-601k",
+    "type": "VL 601K",
+    "displayName": "VL 601K",
+    "weightPerMeterTons": 0.0485,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-602",
+    "type": "VL 602",
+    "displayName": "VL 602",
+    "weightPerMeterTons": 0.0534,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-602a",
+    "type": "VL 602A",
+    "displayName": "VL 602A",
+    "weightPerMeterTons": 0.0513,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-602k",
+    "type": "VL 602K",
+    "displayName": "VL 602K",
+    "weightPerMeterTons": 0.0554,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-602l",
+    "type": "VL 602L",
+    "displayName": "VL 602L",
+    "weightPerMeterTons": 0.0513,
+    "areaPerMeterM2": 0.601
+  },
+  {
+    "slug": "vl-603",
+    "type": "VL 603",
+    "displayName": "VL 603",
+    "weightPerMeterTons": 0.0642,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-603a",
+    "type": "VL 603A",
+    "displayName": "VL 603A",
+    "weightPerMeterTons": 0.0615,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-603a",
+    "type": "VL 603A+",
+    "displayName": "VL 603A+",
+    "weightPerMeterTons": 0.0624,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-603k",
+    "type": "VL 603K",
+    "displayName": "VL 603K",
+    "weightPerMeterTons": 0.0678,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-603n",
+    "type": "VL 603N",
+    "displayName": "VL 603N",
+    "weightPerMeterTons": 0.0597,
+    "areaPerMeterM2": 0.599
+  },
+  {
+    "slug": "vl-603z",
+    "type": "VL 603Z",
+    "displayName": "VL 603Z",
+    "weightPerMeterTons": 0.0721,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-603z11",
+    "type": "VL 603Z11",
+    "displayName": "VL 603Z11",
+    "weightPerMeterTons": 0.0786,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-604",
+    "type": "VL 604",
+    "displayName": "VL 604",
+    "weightPerMeterTons": 0.0731,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-604a",
+    "type": "VL 604A",
+    "displayName": "VL 604A",
+    "weightPerMeterTons": 0.071,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-604d",
+    "type": "VL 604D",
+    "displayName": "VL 604D",
+    "weightPerMeterTons": 0.0747,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-604e",
+    "type": "VL 604E",
+    "displayName": "VL 604E",
+    "weightPerMeterTons": 0.0802,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-604k",
+    "type": "VL 604K",
+    "displayName": "VL 604K",
+    "weightPerMeterTons": 0.0752,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-604z",
+    "type": "VL 604Z",
+    "displayName": "VL 604Z",
+    "weightPerMeterTons": 0.0795,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-605",
+    "type": "VL 605",
+    "displayName": "VL 605",
+    "weightPerMeterTons": 0.0821,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-605a",
+    "type": "VL 605A",
+    "displayName": "VL 605A",
+    "weightPerMeterTons": 0.0765,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-605k",
+    "type": "VL 605K",
+    "displayName": "VL 605K",
+    "weightPerMeterTons": 0.0857,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-606",
+    "type": "VL 606",
+    "displayName": "VL 606",
+    "weightPerMeterTons": 0.0939,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-606a",
+    "type": "VL 606A",
+    "displayName": "VL 606A",
+    "weightPerMeterTons": 0.0854,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-606k",
+    "type": "VL 606K",
+    "displayName": "VL 606K",
+    "weightPerMeterTons": 0.0962,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-607",
+    "type": "VL 607",
+    "displayName": "VL 607",
+    "weightPerMeterTons": 0.1124,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-623",
+    "type": "VL 623",
+    "displayName": "VL 623",
+    "weightPerMeterTons": 0.0898,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-626",
+    "type": "VL 626",
+    "displayName": "VL 626",
+    "weightPerMeterTons": 0.0966,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "vl-628",
+    "type": "VL 628",
+    "displayName": "VL 628",
+    "weightPerMeterTons": 0.1023,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-16",
+    "type": "ZU 16",
+    "displayName": "ZU 16",
+    "weightPerMeterTons": 0.0863,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "zu-18",
+    "type": "ZU 18",
+    "displayName": "ZU 18",
+    "weightPerMeterTons": 0.0769,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-18a",
+    "type": "ZU 18A",
+    "displayName": "ZU 18A",
+    "weightPerMeterTons": 0.0726,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-18t",
+    "type": "ZU 18T",
+    "displayName": "ZU 18T",
+    "weightPerMeterTons": 0.0811,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-20",
+    "type": "ZU 20",
+    "displayName": "ZU 20",
+    "weightPerMeterTons": 0.0969,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "zu-22",
+    "type": "ZU 22",
+    "displayName": "ZU 22",
+    "weightPerMeterTons": 0.0861,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-22a",
+    "type": "ZU 22A",
+    "displayName": "ZU 22A",
+    "weightPerMeterTons": 0.0819,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-22t",
+    "type": "ZU 22T",
+    "displayName": "ZU 22T",
+    "weightPerMeterTons": 0.0904,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-25",
+    "type": "ZU 25",
+    "displayName": "ZU 25",
+    "weightPerMeterTons": 0.1104,
+    "areaPerMeterM2": 0.75
+  },
+  {
+    "slug": "zu-28",
+    "type": "ZU 28",
+    "displayName": "ZU 28",
+    "weightPerMeterTons": 0.1018,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-28a",
+    "type": "ZU 28A",
+    "displayName": "ZU 28A",
+    "weightPerMeterTons": 0.0974,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-28t",
+    "type": "ZU 28T",
+    "displayName": "ZU 28T",
+    "weightPerMeterTons": 0.1062,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-601",
+    "type": "ZU 601",
+    "displayName": "ZU 601",
+    "weightPerMeterTons": 0.0463,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-602",
+    "type": "ZU 602",
+    "displayName": "ZU 602",
+    "weightPerMeterTons": 0.0534,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-603",
+    "type": "ZU 603",
+    "displayName": "ZU 603",
+    "weightPerMeterTons": 0.0648,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-604",
+    "type": "ZU 604",
+    "displayName": "ZU 604",
+    "weightPerMeterTons": 0.0738,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-605",
+    "type": "ZU 605",
+    "displayName": "ZU 605",
+    "weightPerMeterTons": 0.0835,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-606",
+    "type": "ZU 606",
+    "displayName": "ZU 606",
+    "weightPerMeterTons": 0.0942,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "zu-607",
+    "type": "ZU 607",
+    "displayName": "ZU 607",
+    "weightPerMeterTons": 0.114,
+    "areaPerMeterM2": 0.6
+  },
+  {
+    "slug": "l4",
+    "type": "Л4",
+    "displayName": "Л4",
+    "weightPerMeterTons": 0.074,
+    "areaPerMeterM2": 0.389
+  },
+  {
+    "slug": "l5",
+    "type": "Л5",
+    "displayName": "Л5",
+    "weightPerMeterTons": 0.1,
+    "areaPerMeterM2": 0.42
+  },
+  {
+    "slug": "l5-um",
+    "type": "Л5-УМ",
+    "displayName": "Л5-УМ",
+    "weightPerMeterTons": 0.1139,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "l5d",
+    "type": "Л5Д",
+    "displayName": "Л5Д",
+    "weightPerMeterTons": 0.1046,
+    "areaPerMeterM2": 0.5
+  },
+  {
+    "slug": "l7",
+    "type": "Л7",
+    "displayName": "Л7",
+    "weightPerMeterTons": 0.1443,
+    "areaPerMeterM2": 0.427
+  }
+]

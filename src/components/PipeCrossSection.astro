@@ -1,0 +1,177 @@
+---
+interface Props {
+  diameter: number;
+  wallThickness: number;
+}
+
+const { diameter, wallThickness } = Astro.props;
+const innerDiameter = diameter - 2 * wallThickness;
+
+const svgW = 520;
+const svgH = 280;
+
+// Cross-section (right side)
+const csCx = 340;
+const csCy = 130;
+const csMaxR = 100;
+const csScale = csMaxR / (diameter / 2);
+const outerR = (diameter / 2) * csScale;
+const innerR = (innerDiameter / 2) * csScale;
+const wallPx = outerR - innerR;
+
+// 3D pipe (left side)
+const pipeX = 90;
+const pipeY = 130;
+const pipeLen = 160;
+const pipeRx = outerR * 0.45;
+const pipeRy = outerR * 0.9;
+const innerRx = innerR * 0.45;
+const innerRy = innerR * 0.9;
+
+// Dimension positions
+const dimY = csCy + outerR + 24;
+const wallDimX = csCx + outerR + 16;
+---
+
+<div class="flex flex-col items-center my-4">
+  <svg
+    viewBox={`0 0 ${svgW} ${svgH}`}
+    width="100%"
+    height="auto"
+    class="max-w-lg"
+    role="img"
+    aria-label={`Чертёж трубы ${diameter}×${wallThickness} мм`}
+    style="font-family: 'Arial', 'Helvetica Neue', sans-serif;"
+  >
+    <defs>
+      <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#b0b8c4" />
+        <stop offset="35%" stop-color="#8a929e" />
+        <stop offset="65%" stop-color="#6b7380" />
+        <stop offset="100%" stop-color="#8a929e" />
+      </linearGradient>
+      <linearGradient id="csGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#9ca3af" />
+        <stop offset="50%" stop-color="#7b8290" />
+        <stop offset="100%" stop-color="#9ca3af" />
+      </linearGradient>
+      <marker id="arrowL" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+        <path d="M6,0 L0,3 L6,6" fill="none" stroke="#1e3a5f" stroke-width="1" />
+      </marker>
+      <marker id="arrowR" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6" fill="none" stroke="#1e3a5f" stroke-width="1" />
+      </marker>
+      <marker id="arrowU" markerWidth="6" markerHeight="6" refX="3" refY="6" orient="auto">
+        <path d="M0,6 L3,0 L6,6" fill="none" stroke="#1e3a5f" stroke-width="1" />
+      </marker>
+      <marker id="arrowD" markerWidth="6" markerHeight="6" refX="3" refY="0" orient="auto">
+        <path d="M0,0 L3,6 L6,0" fill="none" stroke="#1e3a5f" stroke-width="1" />
+      </marker>
+    </defs>
+
+    <!-- ===== 3D PIPE VIEW (left) ===== -->
+    <!-- Body -->
+    <rect x={pipeX - pipeLen / 2} y={pipeY - pipeRy} width={pipeLen} height={pipeRy * 2}
+      fill="url(#pipeGrad)" stroke="none" />
+    <!-- Top edge line -->
+    <line x1={pipeX - pipeLen / 2} y1={pipeY - pipeRy} x2={pipeX + pipeLen / 2} y2={pipeY - pipeRy}
+      stroke="#5a6270" stroke-width="1.2" />
+    <!-- Bottom edge line -->
+    <line x1={pipeX - pipeLen / 2} y1={pipeY + pipeRy} x2={pipeX + pipeLen / 2} y2={pipeY + pipeRy}
+      stroke="#5a6270" stroke-width="1.2" />
+    <!-- Back ellipse (partially visible) -->
+    <ellipse cx={pipeX - pipeLen / 2} cy={pipeY} rx={pipeRx} ry={pipeRy}
+      fill="url(#pipeGrad)" stroke="#5a6270" stroke-width="1.2" />
+    <!-- Body overlay (cover back ellipse right half) -->
+    <rect x={pipeX - pipeLen / 2} y={pipeY - pipeRy} width={pipeLen} height={pipeRy * 2}
+      fill="url(#pipeGrad)" stroke="none" />
+    <line x1={pipeX - pipeLen / 2} y1={pipeY - pipeRy} x2={pipeX + pipeLen / 2} y2={pipeY - pipeRy}
+      stroke="#5a6270" stroke-width="1.2" />
+    <line x1={pipeX - pipeLen / 2} y1={pipeY + pipeRy} x2={pipeX + pipeLen / 2} y2={pipeY + pipeRy}
+      stroke="#5a6270" stroke-width="1.2" />
+    <!-- Front ellipse: outer ring -->
+    <ellipse cx={pipeX + pipeLen / 2} cy={pipeY} rx={pipeRx} ry={pipeRy}
+      fill="url(#csGrad)" stroke="#3a4555" stroke-width="1.5" />
+    <!-- Front ellipse: inner hole -->
+    <ellipse cx={pipeX + pipeLen / 2} cy={pipeY} rx={innerRx} ry={innerRy}
+      fill="#e8ecf0" stroke="#4a5565" stroke-width="1" />
+
+    <!-- ===== CROSS-SECTION VIEW (right) ===== -->
+    <!-- Metal ring -->
+    <circle cx={csCx} cy={csCy} r={outerR} fill="url(#csGrad)" stroke="#3a4555" stroke-width="1.8" />
+    <circle cx={csCx} cy={csCy} r={innerR} fill="white" stroke="#4a5565" stroke-width="1.2" />
+
+    <!-- Center crosshairs -->
+    <line x1={csCx - outerR - 8} y1={csCy} x2={csCx + outerR + 8} y2={csCy}
+      stroke="#3a4555" stroke-width="0.5" stroke-dasharray="8 3" />
+    <line x1={csCx} y1={csCy - outerR - 8} x2={csCx} y2={csCy + outerR + 8}
+      stroke="#3a4555" stroke-width="0.5" stroke-dasharray="8 3" />
+    <!-- Center mark -->
+    <line x1={csCx - 4} y1={csCy} x2={csCx + 4} y2={csCy} stroke="#3a4555" stroke-width="1" />
+    <line x1={csCx} y1={csCy - 4} x2={csCx} y2={csCy + 4} stroke="#3a4555" stroke-width="1" />
+
+    <!-- ===== DIAMETER DIMENSION (below) ===== -->
+    <!-- Extension lines -->
+    <line x1={csCx - outerR} y1={csCy + outerR + 4} x2={csCx - outerR} y2={dimY + 2}
+      stroke="#1e3a5f" stroke-width="0.6" />
+    <line x1={csCx + outerR} y1={csCy + outerR + 4} x2={csCx + outerR} y2={dimY + 2}
+      stroke="#1e3a5f" stroke-width="0.6" />
+    <!-- Dimension line with arrows -->
+    <line x1={csCx - outerR} y1={dimY} x2={csCx - 22} y2={dimY}
+      stroke="#1e3a5f" stroke-width="0.8"
+      marker-start="url(#arrowL)" />
+    <line x1={csCx + 22} y1={dimY} x2={csCx + outerR} y2={dimY}
+      stroke="#1e3a5f" stroke-width="0.8"
+      marker-end="url(#arrowR)" />
+    <!-- Dimension value -->
+    <text x={csCx} y={dimY + 4} text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">
+      {diameter}
+    </text>
+
+    <!-- ===== WALL THICKNESS DIMENSION (right side) ===== -->
+    {wallPx >= 4 ? (
+      <>
+        {/* Extension lines from wall edges at ~45deg top-right */}
+        <line x1={csCx + innerR * 0.707} y1={csCy - innerR * 0.707}
+              x2={wallDimX + 2} y2={csCy - outerR - 10}
+          stroke="#1e3a5f" stroke-width="0.6" />
+        <line x1={csCx + outerR * 0.707} y1={csCy - outerR * 0.707}
+              x2={wallDimX + wallPx * 1.5 + 2} y2={csCy - outerR - 10}
+          stroke="#1e3a5f" stroke-width="0.6" />
+        {/* Horizontal dimension line */}
+        <line x1={wallDimX} y1={csCy - outerR - 6}
+              x2={wallDimX + wallPx * 1.5} y2={csCy - outerR - 6}
+          stroke="#1e3a5f" stroke-width="0.8" />
+        {/* Serif ticks */}
+        <line x1={wallDimX} y1={csCy - outerR - 10}
+              x2={wallDimX} y2={csCy - outerR - 2}
+          stroke="#1e3a5f" stroke-width="0.8" />
+        <line x1={wallDimX + wallPx * 1.5} y1={csCy - outerR - 10}
+              x2={wallDimX + wallPx * 1.5} y2={csCy - outerR - 2}
+          stroke="#1e3a5f" stroke-width="0.8" />
+        {/* Value */}
+        <text x={wallDimX + wallPx * 0.75} y={csCy - outerR - 16}
+          text-anchor="middle" fill="#1e3a5f" font-size="12" font-weight="600">
+          {wallThickness}
+        </text>
+      </>
+    ) : (
+      <>
+        {/* For thin walls: leader line from wall area */}
+        <line x1={csCx + outerR * 0.85} y1={csCy - outerR * 0.52}
+              x2={wallDimX + 30} y2={csCy - outerR - 10}
+          stroke="#1e3a5f" stroke-width="0.6" />
+        <circle cx={csCx + outerR * 0.85} cy={csCy - outerR * 0.52} r="2" fill="#1e3a5f" />
+        <text x={wallDimX + 32} y={csCy - outerR - 14}
+          text-anchor="start" fill="#1e3a5f" font-size="12" font-weight="600">
+          s={wallThickness}
+        </text>
+      </>
+    )}
+
+    <!-- Label -->
+    <text x={svgW / 2} y={svgH - 6} text-anchor="middle" fill="#64748b" font-size="10">
+      ⌀{diameter}×{wallThickness}, ГОСТ 10704-91
+    </text>
+  </svg>
+</div>

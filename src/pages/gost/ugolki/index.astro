@@ -1,0 +1,46 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getAnglesEqual, getAnglesUnequal } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const equal = getAnglesEqual();
+const unequal = getAnglesUnequal();
+const title = `Уголки стальные — ГОСТ 8509-93, ГОСТ 8510-86 | ${SITE.name}`;
+const description = `Сортамент стальных уголков: ${equal.length} равнополочных по ГОСТ 8509-93 и ${unequal.length} неравнополочных по ГОСТ 8510-86. Таблицы размеров и массы.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник ГОСТ', href: '/gost/' },
+      { label: 'Уголки', href: '/gost/ugolki/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-6">
+      Уголки стальные горячекатаные
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a href="/gost/ugolki/ravnopolochnye/" class="group block p-6 rounded-xl border-2 border-border hover:border-primary transition-all">
+        <h2 class="text-xl font-bold text-primary group-hover:text-accent transition-colors mb-2">
+          Равнополочные
+        </h2>
+        <p class="text-sm text-text-muted mb-3">ГОСТ 8509-93 · {equal.length} типоразмеров</p>
+        <p class="text-sm text-text-muted">
+          Полки одинаковой ширины. Размеры от {equal[0].size} до {equal[equal.length - 1].size} мм.
+        </p>
+      </a>
+
+      <a href="/gost/ugolki/neravnopolochnye/" class="group block p-6 rounded-xl border-2 border-border hover:border-primary transition-all">
+        <h2 class="text-xl font-bold text-primary group-hover:text-accent transition-colors mb-2">
+          Неравнополочные
+        </h2>
+        <p class="text-sm text-text-muted mb-3">ГОСТ 8510-86 · {unequal.length} типоразмеров</p>
+        <p class="text-sm text-text-muted">
+          Полки разной ширины. Размеры от {unequal[0].size} до {unequal[unequal.length - 1].size} мм.
+        </p>
+      </a>
+    </div>
+  </div>
+</Base>

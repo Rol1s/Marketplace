@@ -1,0 +1,29 @@
+---
+import { SITE } from '@/config/site';
+
+interface Props {
+  type: 'TechArticle' | 'Product' | 'WebPage';
+  name: string;
+  description: string;
+  url: string;
+  additionalProperties?: Record<string, unknown>;
+}
+
+const { type, name, description, url, additionalProperties = {} } = Astro.props;
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': type,
+  name,
+  description,
+  url: `${SITE.url}${url}`,
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  ...additionalProperties,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

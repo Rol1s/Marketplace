@@ -1,0 +1,39 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getAnglesUnequal } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const angles = getAnglesUnequal();
+const title = `Уголок неравнополочный ГОСТ 8510-86 — сортамент, вес | ${SITE.name}`;
+const description = `Сортамент неравнополочных стальных уголков по ГОСТ 8510-86. ${angles.length} типоразмеров с таблицами массы и площади сечения.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник ГОСТ', href: '/gost/' },
+      { label: 'Уголки', href: '/gost/ugolki/' },
+      { label: 'Неравнополочные', href: '/gost/ugolki/neravnopolochnye/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Уголки неравнополочные — ГОСТ 8510-86
+    </h1>
+
+    <p class="text-text-muted mb-8">{angles.length} типоразмеров.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      {angles.map((a) => (
+        <a
+          href={`/gost/ugolki/neravnopolochnye/${a.slug}/`}
+          class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+        >
+          <div class="text-lg font-bold text-primary group-hover:text-accent">{a.size}</div>
+          <div class="text-xs text-text-muted mt-1">{a.massPerMeterKg} кг/м</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

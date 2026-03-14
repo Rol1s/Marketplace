@@ -1,0 +1,86 @@
+---
+interface Props {
+  a: number;
+  b: number;
+  t: number;
+  isEqual?: boolean;
+}
+
+const { a, b, t, isEqual = true } = Astro.props;
+
+const svgW = 280;
+const svgH = 280;
+const pad = 50;
+
+const maxDim = Math.max(a, b);
+const scale = (svgH - pad * 2) / maxDim;
+
+const drawA = a * scale;
+const drawB = b * scale;
+const drawT = t * scale;
+
+const ox = pad + 10;
+const oy = svgH - pad - 10;
+---
+
+<div class="flex flex-col items-center">
+  <svg
+    viewBox={`0 0 ${svgW} ${svgH}`}
+    class="w-full max-w-[280px]"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <marker id="ang-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+      </marker>
+    </defs>
+
+    <!-- L-shape -->
+    <path
+      d={`
+        M ${ox} ${oy}
+        v ${-drawA}
+        h ${drawT}
+        v ${drawA - drawT}
+        h ${drawB - drawT}
+        v ${drawT}
+        Z
+      `}
+      fill="#c8ced6"
+      stroke="#1e3a5f"
+      stroke-width="1.2"
+    />
+
+    <!-- Dimension: a (vertical leg, left side) -->
+    <line x1={ox - 18} y1={oy} x2={ox - 18} y2={oy - drawA}
+      stroke="#1e3a5f" stroke-width="0.8" marker-start="url(#ang-arr)" marker-end="url(#ang-arr)"/>
+    <line x1={ox - 3} y1={oy} x2={ox - 22} y2={oy} stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1={ox - 3} y1={oy - drawA} x2={ox - 22} y2={oy - drawA} stroke="#1e3a5f" stroke-width="0.5"/>
+    <text
+      x={ox - 23}
+      y={oy - drawA / 2 + 4}
+      text-anchor="middle"
+      fill="#1e3a5f"
+      font-size="12"
+      font-weight="600"
+      transform={`rotate(-90, ${ox - 23}, ${oy - drawA / 2})`}
+    >{a}</text>
+
+    <!-- Dimension: b (horizontal leg, bottom) -->
+    <line x1={ox} y1={oy + 18} x2={ox + drawB} y2={oy + 18}
+      stroke="#1e3a5f" stroke-width="0.8" marker-start="url(#ang-arr)" marker-end="url(#ang-arr)"/>
+    <line x1={ox} y1={oy + 4} x2={ox} y2={oy + 22} stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1={ox + drawB} y1={oy + 4} x2={ox + drawB} y2={oy + 22} stroke="#1e3a5f" stroke-width="0.5"/>
+    <text x={ox + drawB / 2} y={oy + 32} text-anchor="middle" fill="#1e3a5f" font-size="12" font-weight="600">{b}</text>
+
+    <!-- Dimension: t (thickness, top of horizontal leg) -->
+    <line x1={ox + drawB / 2} y1={oy - drawT - 2} x2={ox + drawB / 2} y2={oy + 2}
+      stroke="#64748b" stroke-width="0.5" stroke-dasharray="3 2"/>
+    <text x={ox + drawB / 2 + 8} y={oy - drawT / 2 + 2} text-anchor="start" fill="#64748b" font-size="10" font-weight="600">t={t}</text>
+
+    <!-- Label -->
+    <text x={svgW / 2} y={svgH - 4} text-anchor="middle" fill="#64748b" font-size="10">
+      {isEqual ? `\u0423\u0433\u043e\u043b\u043e\u043a ${a}\u00d7${t}` : `\u0423\u0433\u043e\u043b\u043e\u043a ${a}\u00d7${b}\u00d7${t}`}, {isEqual ? '\u0413\u041e\u0421\u0422 8509-93' : '\u0413\u041e\u0421\u0422 8510-86'}
+    </text>
+  </svg>
+</div>

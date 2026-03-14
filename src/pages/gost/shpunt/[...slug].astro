@@ -1,0 +1,99 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getSheetPiles } from '@lib/data';
+import { shpuntMeta } from '@lib/seo';
+import { relatedSheetPiles } from '@lib/links';
+
+export function getStaticPaths() {
+  return getSheetPiles().map((p) => ({
+    params: { slug: p.slug },
+    props: { pile: p },
+  }));
+}
+
+const { pile } = Astro.props;
+const all = getSheetPiles();
+const meta = shpuntMeta(pile.displayName, pile.weightPerMeterTons);
+const related = relatedSheetPiles(all, pile.slug);
+
+const weightKgPerM = pile.weightPerMeterTons * 1000;
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Шпунт Ларсена ${pile.displayName}`}
+  breadcrumbs={[
+    { label: 'Справочник ГОСТ', href: '/gost/' },
+    { label: 'Шпунт Ларсена', href: '/gost/shpunt/' },
+    { label: pile.displayName, href: `/gost/shpunt/${pile.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{weightKgPerM.toFixed(1)}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pile.weightPerMeterTons}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, т/м</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pile.areaPerMeterM2}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь стены, м²/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Тип профиля', value: pile.type },
+        { param: 'Масса 1 погонного метра', value: `${weightKgPerM.toFixed(1)} кг` },
+        { param: 'Масса 1 погонного метра', value: `${pile.weightPerMeterTons} т` },
+        { param: 'Площадь стены на 1 м', value: `${pile.areaPerMeterM2} м²` },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы по длине</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Шпунт ${pile.displayName}`}
+      weightPerUnit={weightKgPerM}
+      mode="length"
+      unitLabel="кг/м"
+      defaultLength={12}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Область применения</h2>
+    <p class="text-text-muted leading-relaxed">
+      Шпунт Ларсена {pile.displayName} используется для устройства шпунтовых ограждений
+      котлованов, укрепления берегов, строительства причалов и набережных,
+      а также в качестве временных и постоянных подпорных стен.
+      {weightKgPerM > 100 && ' Тяжёлый профиль — подходит для глубоких котлованов и высоких нагрузок.'}
+      {weightKgPerM <= 100 && weightKgPerM > 60 && ' Средний профиль — универсальное решение для большинства задач ограждения.'}
+      {weightKgPerM <= 60 && ' Лёгкий профиль — оптимален для неглубоких котлованов и временных ограждений.'}
+    </p>
+  </section>
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на шпунт {pile.displayName}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие типы шпунта" items={related} />
+</Gost>

@@ -1,0 +1,7898 @@
+[
+  {
+    "slug": "10x1",
+    "diameter": 10,
+    "wallThickness": 1,
+    "weightPerMeter": 0.222,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "10x1.2",
+    "diameter": 10,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "10.2x1",
+    "diameter": 10.2,
+    "wallThickness": 1,
+    "weightPerMeter": 0.227,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "10.2x1.2",
+    "diameter": 10.2,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.266,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "12x0.8",
+    "diameter": 12,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.221,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "12x0.9",
+    "diameter": 12,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.246,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "12x1",
+    "diameter": 12,
+    "wallThickness": 1,
+    "weightPerMeter": 0.271,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "12x1.2",
+    "diameter": 12,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.32,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "12x1.4",
+    "diameter": 12,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.366,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "12x1.5",
+    "diameter": 12,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.388,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "12x1.6",
+    "diameter": 12,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "13x1",
+    "diameter": 13,
+    "wallThickness": 1,
+    "weightPerMeter": 0.296,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "13x1.2",
+    "diameter": 13,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.349,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "13x1.4",
+    "diameter": 13,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.401,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "13x1.5",
+    "diameter": 13,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.425,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "13x1.6",
+    "diameter": 13,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "14x0.8",
+    "diameter": 14,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "14x0.9",
+    "diameter": 14,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.291,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "14x1",
+    "diameter": 14,
+    "wallThickness": 1,
+    "weightPerMeter": 0.321,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "14x1.2",
+    "diameter": 14,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.379,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "14x1.4",
+    "diameter": 14,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.435,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "14x1.5",
+    "diameter": 14,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.462,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "14x1.6",
+    "diameter": 14,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.489,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "15x1",
+    "diameter": 15,
+    "wallThickness": 1,
+    "weightPerMeter": 0.345,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "15x1.2",
+    "diameter": 15,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.408,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "15x1.4",
+    "diameter": 15,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "15x1.5",
+    "diameter": 15,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.499,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "15x1.6",
+    "diameter": 15,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.529,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x0.8",
+    "diameter": 16,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x0.9",
+    "diameter": 16,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.335,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x1",
+    "diameter": 16,
+    "wallThickness": 1,
+    "weightPerMeter": 0.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x1.2",
+    "diameter": 16,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.438,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x1.4",
+    "diameter": 16,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.504,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x1.5",
+    "diameter": 16,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.536,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x1.6",
+    "diameter": 16,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.568,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x1.8",
+    "diameter": 16,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.63,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "16x2",
+    "diameter": 16,
+    "wallThickness": 2,
+    "weightPerMeter": 0.69,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x0.8",
+    "diameter": 17,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.32,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x0.9",
+    "diameter": 17,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.357,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x1",
+    "diameter": 17,
+    "wallThickness": 1,
+    "weightPerMeter": 0.395,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x1.2",
+    "diameter": 17,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.468,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x1.4",
+    "diameter": 17,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.539,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x1.5",
+    "diameter": 17,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.573,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x1.6",
+    "diameter": 17,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.608,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "17x2",
+    "diameter": 17,
+    "wallThickness": 2,
+    "weightPerMeter": 0.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x0.8",
+    "diameter": 18,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.339,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x0.9",
+    "diameter": 18,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x1",
+    "diameter": 18,
+    "wallThickness": 1,
+    "weightPerMeter": 0.419,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x1.2",
+    "diameter": 18,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.497,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x1.4",
+    "diameter": 18,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.573,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x1.5",
+    "diameter": 18,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.61,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x1.6",
+    "diameter": 18,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.647,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x1.8",
+    "diameter": 18,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.719,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x2",
+    "diameter": 18,
+    "wallThickness": 2,
+    "weightPerMeter": 0.789,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "18x2.2",
+    "diameter": 18,
+    "wallThickness": 2.2,
+    "weightPerMeter": 0.857,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x0.8",
+    "diameter": 19,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.359,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x0.9",
+    "diameter": 19,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.402,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x1",
+    "diameter": 19,
+    "wallThickness": 1,
+    "weightPerMeter": 0.444,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x1.2",
+    "diameter": 19,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.527,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x1.4",
+    "diameter": 19,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.608,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x1.5",
+    "diameter": 19,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.647,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x1.6",
+    "diameter": 19,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.687,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x1.8",
+    "diameter": 19,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.764,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "19x2",
+    "diameter": 19,
+    "wallThickness": 2,
+    "weightPerMeter": 0.838,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x0.8",
+    "diameter": 20,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.379,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x0.9",
+    "diameter": 20,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.424,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x1",
+    "diameter": 20,
+    "wallThickness": 1,
+    "weightPerMeter": 0.469,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x1.2",
+    "diameter": 20,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.556,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x1.4",
+    "diameter": 20,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.642,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x1.5",
+    "diameter": 20,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.684,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x1.6",
+    "diameter": 20,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.726,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x1.8",
+    "diameter": 20,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.808,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x2",
+    "diameter": 20,
+    "wallThickness": 2,
+    "weightPerMeter": 0.888,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x2.2",
+    "diameter": 20,
+    "wallThickness": 2.2,
+    "weightPerMeter": 0.966,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x2.5",
+    "diameter": 20,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.08,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x2.8",
+    "diameter": 20,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.19,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x3",
+    "diameter": 20,
+    "wallThickness": 3,
+    "weightPerMeter": 1.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x3.2",
+    "diameter": 20,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "20x3.5",
+    "diameter": 20,
+    "wallThickness": 3.5,
+    "weightPerMeter": 1.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x0.8",
+    "diameter": 21.3,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.404,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x0.9",
+    "diameter": 21.3,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.453,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x1",
+    "diameter": 21.3,
+    "wallThickness": 1,
+    "weightPerMeter": 0.501,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x1.2",
+    "diameter": 21.3,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.595,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x1.4",
+    "diameter": 21.3,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.687,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x1.5",
+    "diameter": 21.3,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.732,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x1.6",
+    "diameter": 21.3,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.777,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x1.8",
+    "diameter": 21.3,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.866,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x2",
+    "diameter": 21.3,
+    "wallThickness": 2,
+    "weightPerMeter": 0.952,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x2.2",
+    "diameter": 21.3,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x2.5",
+    "diameter": 21.3,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x2.8",
+    "diameter": 21.3,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x3",
+    "diameter": 21.3,
+    "wallThickness": 3,
+    "weightPerMeter": 1.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x3.2",
+    "diameter": 21.3,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "21.3x3.5",
+    "diameter": 21.3,
+    "wallThickness": 3.5,
+    "weightPerMeter": 1.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x0.8",
+    "diameter": 22,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.418,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x0.9",
+    "diameter": 22,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.468,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x1",
+    "diameter": 22,
+    "wallThickness": 1,
+    "weightPerMeter": 0.518,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x1.2",
+    "diameter": 22,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.616,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x1.4",
+    "diameter": 22,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.711,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x1.5",
+    "diameter": 22,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.758,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x1.6",
+    "diameter": 22,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.805,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x1.8",
+    "diameter": 22,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.897,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x2",
+    "diameter": 22,
+    "wallThickness": 2,
+    "weightPerMeter": 0.986,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x2.2",
+    "diameter": 22,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x2.5",
+    "diameter": 22,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x2.8",
+    "diameter": 22,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x3",
+    "diameter": 22,
+    "wallThickness": 3,
+    "weightPerMeter": 1.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x3.2",
+    "diameter": 22,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "22x3.5",
+    "diameter": 22,
+    "wallThickness": 3.5,
+    "weightPerMeter": 1.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x1",
+    "diameter": 23,
+    "wallThickness": 1,
+    "weightPerMeter": 0.543,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x1.2",
+    "diameter": 23,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.645,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x1.4",
+    "diameter": 23,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.746,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x1.5",
+    "diameter": 23,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.795,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x1.6",
+    "diameter": 23,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.844,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x1.8",
+    "diameter": 23,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.941,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x2",
+    "diameter": 23,
+    "wallThickness": 2,
+    "weightPerMeter": 1.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x2.2",
+    "diameter": 23,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x2.5",
+    "diameter": 23,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x2.8",
+    "diameter": 23,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x3",
+    "diameter": 23,
+    "wallThickness": 3,
+    "weightPerMeter": 1.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x3.2",
+    "diameter": 23,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.56,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "23x3.5",
+    "diameter": 23,
+    "wallThickness": 3.5,
+    "weightPerMeter": 1.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x0.8",
+    "diameter": 24,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.458,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x0.9",
+    "diameter": 24,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.513,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x1",
+    "diameter": 24,
+    "wallThickness": 1,
+    "weightPerMeter": 0.567,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x1.2",
+    "diameter": 24,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.675,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x1.4",
+    "diameter": 24,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x1.5",
+    "diameter": 24,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.832,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x1.6",
+    "diameter": 24,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.884,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x1.8",
+    "diameter": 24,
+    "wallThickness": 1.8,
+    "weightPerMeter": 0.985,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x2",
+    "diameter": 24,
+    "wallThickness": 2,
+    "weightPerMeter": 1.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x2.2",
+    "diameter": 24,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x2.5",
+    "diameter": 24,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x2.8",
+    "diameter": 24,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.46,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x3",
+    "diameter": 24,
+    "wallThickness": 3,
+    "weightPerMeter": 1.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "24x3.2",
+    "diameter": 24,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x0.8",
+    "diameter": 25,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.477,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x0.9",
+    "diameter": 25,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.535,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x1",
+    "diameter": 25,
+    "wallThickness": 1,
+    "weightPerMeter": 0.592,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x1.2",
+    "diameter": 25,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.704,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x1.4",
+    "diameter": 25,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.815,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x1.5",
+    "diameter": 25,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.869,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x1.6",
+    "diameter": 25,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.923,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x1.8",
+    "diameter": 25,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x2",
+    "diameter": 25,
+    "wallThickness": 2,
+    "weightPerMeter": 1.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x2.2",
+    "diameter": 25,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x2.5",
+    "diameter": 25,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x2.8",
+    "diameter": 25,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x3",
+    "diameter": 25,
+    "wallThickness": 3,
+    "weightPerMeter": 1.63,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x3.2",
+    "diameter": 25,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "25x3.5",
+    "diameter": 25,
+    "wallThickness": 3.5,
+    "weightPerMeter": 1.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x1",
+    "diameter": 26,
+    "wallThickness": 1,
+    "weightPerMeter": 0.617,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x1.2",
+    "diameter": 26,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.734,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x1.4",
+    "diameter": 26,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.849,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x1.5",
+    "diameter": 26,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.906,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x1.6",
+    "diameter": 26,
+    "wallThickness": 1.6,
+    "weightPerMeter": 0.963,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x1.8",
+    "diameter": 26,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x2",
+    "diameter": 26,
+    "wallThickness": 2,
+    "weightPerMeter": 1.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x2.2",
+    "diameter": 26,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x2.5",
+    "diameter": 26,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x2.8",
+    "diameter": 26,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x3",
+    "diameter": 26,
+    "wallThickness": 3,
+    "weightPerMeter": 1.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x3.2",
+    "diameter": 26,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "26x3.5",
+    "diameter": 26,
+    "wallThickness": 3.5,
+    "weightPerMeter": 1.94,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x1",
+    "diameter": 27,
+    "wallThickness": 1,
+    "weightPerMeter": 0.641,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x1.2",
+    "diameter": 27,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.764,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x1.4",
+    "diameter": 27,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.884,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x1.5",
+    "diameter": 27,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.943,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x1.6",
+    "diameter": 27,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x1.8",
+    "diameter": 27,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x2",
+    "diameter": 27,
+    "wallThickness": 2,
+    "weightPerMeter": 1.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x2.2",
+    "diameter": 27,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x2.5",
+    "diameter": 27,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x2.8",
+    "diameter": 27,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x3",
+    "diameter": 27,
+    "wallThickness": 3,
+    "weightPerMeter": 1.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x3.2",
+    "diameter": 27,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "27x3.5",
+    "diameter": 27,
+    "wallThickness": 3.5,
+    "weightPerMeter": 2.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x0.8",
+    "diameter": 28,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.537,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x0.9",
+    "diameter": 28,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.601,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x1",
+    "diameter": 28,
+    "wallThickness": 1,
+    "weightPerMeter": 0.666,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x1.2",
+    "diameter": 28,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.793,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x1.4",
+    "diameter": 28,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.918,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x1.5",
+    "diameter": 28,
+    "wallThickness": 1.5,
+    "weightPerMeter": 0.98,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x1.6",
+    "diameter": 28,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x1.8",
+    "diameter": 28,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x2",
+    "diameter": 28,
+    "wallThickness": 2,
+    "weightPerMeter": 1.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x2.2",
+    "diameter": 28,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x2.5",
+    "diameter": 28,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.57,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x2.8",
+    "diameter": 28,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x3",
+    "diameter": 28,
+    "wallThickness": 3,
+    "weightPerMeter": 1.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x3.2",
+    "diameter": 28,
+    "wallThickness": 3.2,
+    "weightPerMeter": 1.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "28x3.5",
+    "diameter": 28,
+    "wallThickness": 3.5,
+    "weightPerMeter": 2.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x0.8",
+    "diameter": 30,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.576,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x0.9",
+    "diameter": 30,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.646,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x1",
+    "diameter": 30,
+    "wallThickness": 1,
+    "weightPerMeter": 0.715,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x1.2",
+    "diameter": 30,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.852,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x1.4",
+    "diameter": 30,
+    "wallThickness": 1.4,
+    "weightPerMeter": 0.987,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x1.5",
+    "diameter": 30,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.05,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x1.6",
+    "diameter": 30,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x1.8",
+    "diameter": 30,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x2",
+    "diameter": 30,
+    "wallThickness": 2,
+    "weightPerMeter": 1.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x2.2",
+    "diameter": 30,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x2.5",
+    "diameter": 30,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x2.8",
+    "diameter": 30,
+    "wallThickness": 2.8,
+    "weightPerMeter": 1.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x3",
+    "diameter": 30,
+    "wallThickness": 3,
+    "weightPerMeter": 2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x3.2",
+    "diameter": 30,
+    "wallThickness": 3.2,
+    "weightPerMeter": 2.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "30x3.5",
+    "diameter": 30,
+    "wallThickness": 3.5,
+    "weightPerMeter": 2.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x0.8",
+    "diameter": 32,
+    "wallThickness": 0.8,
+    "weightPerMeter": 0.616,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x0.9",
+    "diameter": 32,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.69,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x1",
+    "diameter": 32,
+    "wallThickness": 1,
+    "weightPerMeter": 0.765,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x1.2",
+    "diameter": 32,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.911,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x1.4",
+    "diameter": 32,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x1.5",
+    "diameter": 32,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x1.6",
+    "diameter": 32,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x1.8",
+    "diameter": 32,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.34,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x2",
+    "diameter": 32,
+    "wallThickness": 2,
+    "weightPerMeter": 1.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x2.2",
+    "diameter": 32,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.62,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x2.5",
+    "diameter": 32,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x2.8",
+    "diameter": 32,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x3",
+    "diameter": 32,
+    "wallThickness": 3,
+    "weightPerMeter": 2.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x3.2",
+    "diameter": 32,
+    "wallThickness": 3.2,
+    "weightPerMeter": 2.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "32x3.5",
+    "diameter": 32,
+    "wallThickness": 3.5,
+    "weightPerMeter": 2.46,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x1",
+    "diameter": 33,
+    "wallThickness": 1,
+    "weightPerMeter": 0.789,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x1.2",
+    "diameter": 33,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.941,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x1.4",
+    "diameter": 33,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x1.5",
+    "diameter": 33,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.17,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x1.6",
+    "diameter": 33,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x1.8",
+    "diameter": 33,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x2",
+    "diameter": 33,
+    "wallThickness": 2,
+    "weightPerMeter": 1.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x2.2",
+    "diameter": 33,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x2.5",
+    "diameter": 33,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x2.8",
+    "diameter": 33,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x3",
+    "diameter": 33,
+    "wallThickness": 3,
+    "weightPerMeter": 2.22,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x3.2",
+    "diameter": 33,
+    "wallThickness": 3.2,
+    "weightPerMeter": 2.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x3.5",
+    "diameter": 33,
+    "wallThickness": 3.5,
+    "weightPerMeter": 2.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33x3.8",
+    "diameter": 33,
+    "wallThickness": 3.8,
+    "weightPerMeter": 2.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x1",
+    "diameter": 33.7,
+    "wallThickness": 1,
+    "weightPerMeter": 0.806,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x1.2",
+    "diameter": 33.7,
+    "wallThickness": 1.2,
+    "weightPerMeter": 0.962,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x1.4",
+    "diameter": 33.7,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x1.5",
+    "diameter": 33.7,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.19,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x1.6",
+    "diameter": 33.7,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x1.8",
+    "diameter": 33.7,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x2",
+    "diameter": 33.7,
+    "wallThickness": 2,
+    "weightPerMeter": 1.56,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x2.2",
+    "diameter": 33.7,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x2.5",
+    "diameter": 33.7,
+    "wallThickness": 2.5,
+    "weightPerMeter": 1.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x2.8",
+    "diameter": 33.7,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x3",
+    "diameter": 33.7,
+    "wallThickness": 3,
+    "weightPerMeter": 2.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x4",
+    "diameter": 33.7,
+    "wallThickness": 4,
+    "weightPerMeter": 2.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "33.7x4.5",
+    "diameter": 33.7,
+    "wallThickness": 4.5,
+    "weightPerMeter": 3.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x0.9",
+    "diameter": 35,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.838,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x1",
+    "diameter": 35,
+    "wallThickness": 1,
+    "weightPerMeter": 0.929,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x1.2",
+    "diameter": 35,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x1.4",
+    "diameter": 35,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x1.5",
+    "diameter": 35,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x1.6",
+    "diameter": 35,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x1.8",
+    "diameter": 35,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.63,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x2",
+    "diameter": 35,
+    "wallThickness": 2,
+    "weightPerMeter": 1.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x2.2",
+    "diameter": 35,
+    "wallThickness": 2.2,
+    "weightPerMeter": 1.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x2.5",
+    "diameter": 35,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x2.8",
+    "diameter": 35,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x3",
+    "diameter": 35,
+    "wallThickness": 3,
+    "weightPerMeter": 2.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x3.2",
+    "diameter": 35,
+    "wallThickness": 3.2,
+    "weightPerMeter": 2.73,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x4",
+    "diameter": 35,
+    "wallThickness": 4,
+    "weightPerMeter": 3.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "35x4.5",
+    "diameter": 35,
+    "wallThickness": 4.5,
+    "weightPerMeter": 3.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x0.9",
+    "diameter": 36,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.863,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x1",
+    "diameter": 36,
+    "wallThickness": 1,
+    "weightPerMeter": 0.957,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x1.2",
+    "diameter": 36,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x1.4",
+    "diameter": 36,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.32,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x1.5",
+    "diameter": 36,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x1.6",
+    "diameter": 36,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x1.8",
+    "diameter": 36,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x2",
+    "diameter": 36,
+    "wallThickness": 2,
+    "weightPerMeter": 1.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x2.2",
+    "diameter": 36,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x2.5",
+    "diameter": 36,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x2.8",
+    "diameter": 36,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x3",
+    "diameter": 36,
+    "wallThickness": 3,
+    "weightPerMeter": 2.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x4",
+    "diameter": 36,
+    "wallThickness": 4,
+    "weightPerMeter": 3.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "36x4.5",
+    "diameter": 36,
+    "wallThickness": 4.5,
+    "weightPerMeter": 3.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x0.9",
+    "diameter": 38,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.912,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x1",
+    "diameter": 38,
+    "wallThickness": 1,
+    "weightPerMeter": 1.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x1.2",
+    "diameter": 38,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x1.4",
+    "diameter": 38,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x1.5",
+    "diameter": 38,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x1.6",
+    "diameter": 38,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x1.8",
+    "diameter": 38,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x2",
+    "diameter": 38,
+    "wallThickness": 2,
+    "weightPerMeter": 1.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x2.2",
+    "diameter": 38,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x2.5",
+    "diameter": 38,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x2.8",
+    "diameter": 38,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x3",
+    "diameter": 38,
+    "wallThickness": 3,
+    "weightPerMeter": 2.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x4",
+    "diameter": 38,
+    "wallThickness": 4,
+    "weightPerMeter": 3.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "38x4.5",
+    "diameter": 38,
+    "wallThickness": 4.5,
+    "weightPerMeter": 3.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x0.9",
+    "diameter": 40,
+    "wallThickness": 0.9,
+    "weightPerMeter": 0.962,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x1",
+    "diameter": 40,
+    "wallThickness": 1,
+    "weightPerMeter": 1.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x1.2",
+    "diameter": 40,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x1.4",
+    "diameter": 40,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x1.5",
+    "diameter": 40,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.57,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x1.6",
+    "diameter": 40,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x1.8",
+    "diameter": 40,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x2",
+    "diameter": 40,
+    "wallThickness": 2,
+    "weightPerMeter": 2.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x2.2",
+    "diameter": 40,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x2.5",
+    "diameter": 40,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x2.8",
+    "diameter": 40,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.81,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x3",
+    "diameter": 40,
+    "wallThickness": 3,
+    "weightPerMeter": 2.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x4",
+    "diameter": 40,
+    "wallThickness": 4,
+    "weightPerMeter": 3.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "40x4.5",
+    "diameter": 40,
+    "wallThickness": 4.5,
+    "weightPerMeter": 3.94,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x1",
+    "diameter": 42,
+    "wallThickness": 1,
+    "weightPerMeter": 1.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x1.2",
+    "diameter": 42,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x1.4",
+    "diameter": 42,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x1.5",
+    "diameter": 42,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x1.6",
+    "diameter": 42,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x1.8",
+    "diameter": 42,
+    "wallThickness": 1.8,
+    "weightPerMeter": 1.95,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x2",
+    "diameter": 42,
+    "wallThickness": 2,
+    "weightPerMeter": 2.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x2.2",
+    "diameter": 42,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x2.5",
+    "diameter": 42,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x2.8",
+    "diameter": 42,
+    "wallThickness": 2.8,
+    "weightPerMeter": 2.94,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x3",
+    "diameter": 42,
+    "wallThickness": 3,
+    "weightPerMeter": 3.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x4",
+    "diameter": 42,
+    "wallThickness": 4,
+    "weightPerMeter": 3.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "42x4.5",
+    "diameter": 42,
+    "wallThickness": 4.5,
+    "weightPerMeter": 4.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x1",
+    "diameter": 43,
+    "wallThickness": 1,
+    "weightPerMeter": 1.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x1.2",
+    "diameter": 43,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.36,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x1.4",
+    "diameter": 43,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x1.5",
+    "diameter": 43,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.69,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x1.6",
+    "diameter": 43,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x1.8",
+    "diameter": 43,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x2",
+    "diameter": 43,
+    "wallThickness": 2,
+    "weightPerMeter": 2.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x2.2",
+    "diameter": 43,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x2.5",
+    "diameter": 43,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.73,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x2.8",
+    "diameter": 43,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "43x3",
+    "diameter": 43,
+    "wallThickness": 3,
+    "weightPerMeter": 3.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x1",
+    "diameter": 44.5,
+    "wallThickness": 1,
+    "weightPerMeter": 1.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x1.2",
+    "diameter": 44.5,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x1.4",
+    "diameter": 44.5,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x1.5",
+    "diameter": 44.5,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x1.6",
+    "diameter": 44.5,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x1.8",
+    "diameter": 44.5,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.08,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x2",
+    "diameter": 44.5,
+    "wallThickness": 2,
+    "weightPerMeter": 2.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x2.2",
+    "diameter": 44.5,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x2.5",
+    "diameter": 44.5,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x2.8",
+    "diameter": 44.5,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x3",
+    "diameter": 44.5,
+    "wallThickness": 3,
+    "weightPerMeter": 3.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x4",
+    "diameter": 44.5,
+    "wallThickness": 4,
+    "weightPerMeter": 4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "44.5x4.5",
+    "diameter": 44.5,
+    "wallThickness": 4.5,
+    "weightPerMeter": 4.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x1",
+    "diameter": 45,
+    "wallThickness": 1,
+    "weightPerMeter": 1.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x1.2",
+    "diameter": 45,
+    "wallThickness": 1.2,
+    "weightPerMeter": 1.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x1.4",
+    "diameter": 45,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x1.5",
+    "diameter": 45,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x1.6",
+    "diameter": 45,
+    "wallThickness": 1.6,
+    "weightPerMeter": 1.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x1.8",
+    "diameter": 45,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x2",
+    "diameter": 45,
+    "wallThickness": 2,
+    "weightPerMeter": 2.32,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x2.2",
+    "diameter": 45,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x2.5",
+    "diameter": 45,
+    "wallThickness": 2.5,
+    "weightPerMeter": 2.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x2.8",
+    "diameter": 45,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x3",
+    "diameter": 45,
+    "wallThickness": 3,
+    "weightPerMeter": 3.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x4",
+    "diameter": 45,
+    "wallThickness": 4,
+    "weightPerMeter": 4.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "45x4.5",
+    "diameter": 45,
+    "wallThickness": 4.5,
+    "weightPerMeter": 4.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x1.4",
+    "diameter": 48,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x1.5",
+    "diameter": 48,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x1.6",
+    "diameter": 48,
+    "wallThickness": 1.6,
+    "weightPerMeter": 2.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x1.8",
+    "diameter": 48,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x2",
+    "diameter": 48,
+    "wallThickness": 2,
+    "weightPerMeter": 2.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x2.2",
+    "diameter": 48,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x2.5",
+    "diameter": 48,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x2.8",
+    "diameter": 48,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x3",
+    "diameter": 48,
+    "wallThickness": 3,
+    "weightPerMeter": 3.63,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x3.2",
+    "diameter": 48,
+    "wallThickness": 3.2,
+    "weightPerMeter": 3.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x4",
+    "diameter": 48,
+    "wallThickness": 4,
+    "weightPerMeter": 4.34,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48x4.5",
+    "diameter": 48,
+    "wallThickness": 4.5,
+    "weightPerMeter": 4.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x1.4",
+    "diameter": 48.3,
+    "wallThickness": 1.4,
+    "weightPerMeter": 1.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x1.5",
+    "diameter": 48.3,
+    "wallThickness": 1.5,
+    "weightPerMeter": 1.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x1.6",
+    "diameter": 48.3,
+    "wallThickness": 1.6,
+    "weightPerMeter": 2.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x1.8",
+    "diameter": 48.3,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x2",
+    "diameter": 48.3,
+    "wallThickness": 2,
+    "weightPerMeter": 2.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x2.2",
+    "diameter": 48.3,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x2.5",
+    "diameter": 48.3,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x2.8",
+    "diameter": 48.3,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x3",
+    "diameter": 48.3,
+    "wallThickness": 3,
+    "weightPerMeter": 3.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x3.2",
+    "diameter": 48.3,
+    "wallThickness": 3.2,
+    "weightPerMeter": 3.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x4",
+    "diameter": 48.3,
+    "wallThickness": 4,
+    "weightPerMeter": 4.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "48.3x4.5",
+    "diameter": 48.3,
+    "wallThickness": 4.5,
+    "weightPerMeter": 4.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x1.6",
+    "diameter": 51,
+    "wallThickness": 1.6,
+    "weightPerMeter": 2.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x1.8",
+    "diameter": 51,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x2",
+    "diameter": 51,
+    "wallThickness": 2,
+    "weightPerMeter": 2.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x2.2",
+    "diameter": 51,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x2.5",
+    "diameter": 51,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x2.8",
+    "diameter": 51,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x3",
+    "diameter": 51,
+    "wallThickness": 3,
+    "weightPerMeter": 3.89,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x3.2",
+    "diameter": 51,
+    "wallThickness": 3.2,
+    "weightPerMeter": 4.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x3.5",
+    "diameter": 51,
+    "wallThickness": 3.5,
+    "weightPerMeter": 4.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x4",
+    "diameter": 51,
+    "wallThickness": 4,
+    "weightPerMeter": 4.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "51x4.5",
+    "diameter": 51,
+    "wallThickness": 4.5,
+    "weightPerMeter": 5.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x1.8",
+    "diameter": 52,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x2",
+    "diameter": 52,
+    "wallThickness": 2,
+    "weightPerMeter": 2.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x2.2",
+    "diameter": 52,
+    "wallThickness": 2.2,
+    "weightPerMeter": 2.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x2.5",
+    "diameter": 52,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.34,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x2.8",
+    "diameter": 52,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x3",
+    "diameter": 52,
+    "wallThickness": 3,
+    "weightPerMeter": 3.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x4",
+    "diameter": 52,
+    "wallThickness": 4,
+    "weightPerMeter": 4.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "52x4.5",
+    "diameter": 52,
+    "wallThickness": 4.5,
+    "weightPerMeter": 5.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x1.8",
+    "diameter": 53,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x2",
+    "diameter": 53,
+    "wallThickness": 2,
+    "weightPerMeter": 2.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x2.2",
+    "diameter": 53,
+    "wallThickness": 2.2,
+    "weightPerMeter": 3.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x2.5",
+    "diameter": 53,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x2.8",
+    "diameter": 53,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x3",
+    "diameter": 53,
+    "wallThickness": 3,
+    "weightPerMeter": 4.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x3.2",
+    "diameter": 53,
+    "wallThickness": 3.2,
+    "weightPerMeter": 4.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x4",
+    "diameter": 53,
+    "wallThickness": 4,
+    "weightPerMeter": 4.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "53x4.5",
+    "diameter": 53,
+    "wallThickness": 4.5,
+    "weightPerMeter": 5.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x1.8",
+    "diameter": 54,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x2",
+    "diameter": 54,
+    "wallThickness": 2,
+    "weightPerMeter": 2.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x2.2",
+    "diameter": 54,
+    "wallThickness": 2.2,
+    "weightPerMeter": 3.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x2.5",
+    "diameter": 54,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.46,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x2.8",
+    "diameter": 54,
+    "wallThickness": 2.8,
+    "weightPerMeter": 3.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x3",
+    "diameter": 54,
+    "wallThickness": 3,
+    "weightPerMeter": 4.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x3.2",
+    "diameter": 54,
+    "wallThickness": 3.2,
+    "weightPerMeter": 4.36,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x4",
+    "diameter": 54,
+    "wallThickness": 4,
+    "weightPerMeter": 4.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "54x4.5",
+    "diameter": 54,
+    "wallThickness": 4.5,
+    "weightPerMeter": 5.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x1.8",
+    "diameter": 57,
+    "wallThickness": 1.8,
+    "weightPerMeter": 2.69,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x2",
+    "diameter": 57,
+    "wallThickness": 2,
+    "weightPerMeter": 2.97,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x2.2",
+    "diameter": 57,
+    "wallThickness": 2.2,
+    "weightPerMeter": 3.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x2.5",
+    "diameter": 57,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x2.8",
+    "diameter": 57,
+    "wallThickness": 2.8,
+    "weightPerMeter": 4.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x3",
+    "diameter": 57,
+    "wallThickness": 3,
+    "weightPerMeter": 4.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x3.2",
+    "diameter": 57,
+    "wallThickness": 3.2,
+    "weightPerMeter": 4.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x3.5",
+    "diameter": 57,
+    "wallThickness": 3.5,
+    "weightPerMeter": 5.05,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x4",
+    "diameter": 57,
+    "wallThickness": 4,
+    "weightPerMeter": 5.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "57x4.5",
+    "diameter": 57,
+    "wallThickness": 4.5,
+    "weightPerMeter": 5.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x2",
+    "diameter": 60,
+    "wallThickness": 2,
+    "weightPerMeter": 3.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x2.2",
+    "diameter": 60,
+    "wallThickness": 2.2,
+    "weightPerMeter": 3.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x2.5",
+    "diameter": 60,
+    "wallThickness": 2.5,
+    "weightPerMeter": 3.89,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x2.8",
+    "diameter": 60,
+    "wallThickness": 2.8,
+    "weightPerMeter": 4.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x3",
+    "diameter": 60,
+    "wallThickness": 3,
+    "weightPerMeter": 4.62,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x3.2",
+    "diameter": 60,
+    "wallThickness": 3.2,
+    "weightPerMeter": 4.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x3.5",
+    "diameter": 60,
+    "wallThickness": 3.5,
+    "weightPerMeter": 5.34,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x3.8",
+    "diameter": 60,
+    "wallThickness": 3.8,
+    "weightPerMeter": 5.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x4",
+    "diameter": 60,
+    "wallThickness": 4,
+    "weightPerMeter": 5.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "60x4.5",
+    "diameter": 60,
+    "wallThickness": 4.5,
+    "weightPerMeter": 6.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x2",
+    "diameter": 63.5,
+    "wallThickness": 2,
+    "weightPerMeter": 3.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x2.2",
+    "diameter": 63.5,
+    "wallThickness": 2.2,
+    "weightPerMeter": 3.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x2.5",
+    "diameter": 63.5,
+    "wallThickness": 2.5,
+    "weightPerMeter": 4.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x2.8",
+    "diameter": 63.5,
+    "wallThickness": 2.8,
+    "weightPerMeter": 4.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x3",
+    "diameter": 63.5,
+    "wallThickness": 3,
+    "weightPerMeter": 4.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x3.2",
+    "diameter": 63.5,
+    "wallThickness": 3.2,
+    "weightPerMeter": 5.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x3.5",
+    "diameter": 63.5,
+    "wallThickness": 3.5,
+    "weightPerMeter": 5.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x3.8",
+    "diameter": 63.5,
+    "wallThickness": 3.8,
+    "weightPerMeter": 6.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x4",
+    "diameter": 63.5,
+    "wallThickness": 4,
+    "weightPerMeter": 5.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "63.5x4.5",
+    "diameter": 63.5,
+    "wallThickness": 4.5,
+    "weightPerMeter": 6.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x2",
+    "diameter": 70,
+    "wallThickness": 2,
+    "weightPerMeter": 3.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x2.2",
+    "diameter": 70,
+    "wallThickness": 2.2,
+    "weightPerMeter": 4.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x2.5",
+    "diameter": 70,
+    "wallThickness": 2.5,
+    "weightPerMeter": 4.57,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x2.8",
+    "diameter": 70,
+    "wallThickness": 2.8,
+    "weightPerMeter": 5.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x3",
+    "diameter": 70,
+    "wallThickness": 3,
+    "weightPerMeter": 5.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x3.2",
+    "diameter": 70,
+    "wallThickness": 3.2,
+    "weightPerMeter": 5.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x3.5",
+    "diameter": 70,
+    "wallThickness": 3.5,
+    "weightPerMeter": 6.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x3.8",
+    "diameter": 70,
+    "wallThickness": 3.8,
+    "weightPerMeter": 6.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x4",
+    "diameter": 70,
+    "wallThickness": 4,
+    "weightPerMeter": 6.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "70x4.5",
+    "diameter": 70,
+    "wallThickness": 4.5,
+    "weightPerMeter": 7.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x2",
+    "diameter": 73,
+    "wallThickness": 2,
+    "weightPerMeter": 3.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x2.2",
+    "diameter": 73,
+    "wallThickness": 2.2,
+    "weightPerMeter": 4.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x2.5",
+    "diameter": 73,
+    "wallThickness": 2.5,
+    "weightPerMeter": 4.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x2.8",
+    "diameter": 73,
+    "wallThickness": 2.8,
+    "weightPerMeter": 5.31,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x3",
+    "diameter": 73,
+    "wallThickness": 3,
+    "weightPerMeter": 5.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x3.2",
+    "diameter": 73,
+    "wallThickness": 3.2,
+    "weightPerMeter": 6.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x3.5",
+    "diameter": 73,
+    "wallThickness": 3.5,
+    "weightPerMeter": 6.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x3.8",
+    "diameter": 73,
+    "wallThickness": 3.8,
+    "weightPerMeter": 7.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x4",
+    "diameter": 73,
+    "wallThickness": 4,
+    "weightPerMeter": 7.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x4.5",
+    "diameter": 73,
+    "wallThickness": 4.5,
+    "weightPerMeter": 7.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x5",
+    "diameter": 73,
+    "wallThickness": 5,
+    "weightPerMeter": 9.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x5.5",
+    "diameter": 73,
+    "wallThickness": 5.5,
+    "weightPerMeter": 9.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x6",
+    "diameter": 73,
+    "wallThickness": 6,
+    "weightPerMeter": 9.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x7",
+    "diameter": 73,
+    "wallThickness": 7,
+    "weightPerMeter": 11.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "73x8",
+    "diameter": 73,
+    "wallThickness": 8,
+    "weightPerMeter": 12.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x2",
+    "diameter": 76,
+    "wallThickness": 2,
+    "weightPerMeter": 4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x2.2",
+    "diameter": 76,
+    "wallThickness": 2.2,
+    "weightPerMeter": 4.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x2.5",
+    "diameter": 76,
+    "wallThickness": 2.5,
+    "weightPerMeter": 4.97,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x2.8",
+    "diameter": 76,
+    "wallThickness": 2.8,
+    "weightPerMeter": 5.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x3",
+    "diameter": 76,
+    "wallThickness": 3,
+    "weightPerMeter": 5.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x3.2",
+    "diameter": 76,
+    "wallThickness": 3.2,
+    "weightPerMeter": 6.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x3.5",
+    "diameter": 76,
+    "wallThickness": 3.5,
+    "weightPerMeter": 6.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x3.8",
+    "diameter": 76,
+    "wallThickness": 3.8,
+    "weightPerMeter": 7.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x4",
+    "diameter": 76,
+    "wallThickness": 4,
+    "weightPerMeter": 7.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x4.5",
+    "diameter": 76,
+    "wallThickness": 4.5,
+    "weightPerMeter": 8.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x5",
+    "diameter": 76,
+    "wallThickness": 5,
+    "weightPerMeter": 9.56,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x5.5",
+    "diameter": 76,
+    "wallThickness": 5.5,
+    "weightPerMeter": 10.36,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x6",
+    "diameter": 76,
+    "wallThickness": 6,
+    "weightPerMeter": 10.36,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x7",
+    "diameter": 76,
+    "wallThickness": 7,
+    "weightPerMeter": 11.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "76x8",
+    "diameter": 76,
+    "wallThickness": 8,
+    "weightPerMeter": 13.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "83x3.5",
+    "diameter": 83,
+    "wallThickness": 3.5,
+    "weightPerMeter": 7.57,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "83x4",
+    "diameter": 83,
+    "wallThickness": 4,
+    "weightPerMeter": 7.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "83x4.5",
+    "diameter": 83,
+    "wallThickness": 4.5,
+    "weightPerMeter": 8.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "83x5",
+    "diameter": 83,
+    "wallThickness": 5,
+    "weightPerMeter": 9.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "83x5.5",
+    "diameter": 83,
+    "wallThickness": 5.5,
+    "weightPerMeter": 10.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "83x6",
+    "diameter": 83,
+    "wallThickness": 6,
+    "weightPerMeter": 11.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "89x4",
+    "diameter": 89,
+    "wallThickness": 4,
+    "weightPerMeter": 8.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "89x4.5",
+    "diameter": 89,
+    "wallThickness": 4.5,
+    "weightPerMeter": 9.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "89x5",
+    "diameter": 89,
+    "wallThickness": 5,
+    "weightPerMeter": 10.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "89x5.5",
+    "diameter": 89,
+    "wallThickness": 5.5,
+    "weightPerMeter": 11.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "89x6",
+    "diameter": 89,
+    "wallThickness": 6,
+    "weightPerMeter": 12.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "89x7",
+    "diameter": 89,
+    "wallThickness": 7,
+    "weightPerMeter": 14.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "89x8",
+    "diameter": 89,
+    "wallThickness": 8,
+    "weightPerMeter": 15.98,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "95x2",
+    "diameter": 95,
+    "wallThickness": 2,
+    "weightPerMeter": 4.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "95x2.5",
+    "diameter": 95,
+    "wallThickness": 2.5,
+    "weightPerMeter": 5.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "95x3.5",
+    "diameter": 95,
+    "wallThickness": 3.5,
+    "weightPerMeter": 7.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "95x13",
+    "diameter": 95,
+    "wallThickness": 13,
+    "weightPerMeter": 13.17,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x2",
+    "diameter": 102,
+    "wallThickness": 2,
+    "weightPerMeter": 4.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x2.2",
+    "diameter": 102,
+    "wallThickness": 2.2,
+    "weightPerMeter": 5.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x2.5",
+    "diameter": 102,
+    "wallThickness": 2.5,
+    "weightPerMeter": 6.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x2.8",
+    "diameter": 102,
+    "wallThickness": 2.8,
+    "weightPerMeter": 6.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x3",
+    "diameter": 102,
+    "wallThickness": 3,
+    "weightPerMeter": 7.32,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x3.2",
+    "diameter": 102,
+    "wallThickness": 3.2,
+    "weightPerMeter": 7.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x3.5",
+    "diameter": 102,
+    "wallThickness": 3.5,
+    "weightPerMeter": 8.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x3.8",
+    "diameter": 102,
+    "wallThickness": 3.8,
+    "weightPerMeter": 9.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x4",
+    "diameter": 102,
+    "wallThickness": 4,
+    "weightPerMeter": 9.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x4.5",
+    "diameter": 102,
+    "wallThickness": 4.5,
+    "weightPerMeter": 10.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x5",
+    "diameter": 102,
+    "wallThickness": 5,
+    "weightPerMeter": 11.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x5.5",
+    "diameter": 102,
+    "wallThickness": 5.5,
+    "weightPerMeter": 13.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x6",
+    "diameter": 102,
+    "wallThickness": 6,
+    "weightPerMeter": 14.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x7",
+    "diameter": 102,
+    "wallThickness": 7,
+    "weightPerMeter": 16.4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x8",
+    "diameter": 102,
+    "wallThickness": 8,
+    "weightPerMeter": 18.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "102x9",
+    "diameter": 102,
+    "wallThickness": 9,
+    "weightPerMeter": 20.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x2",
+    "diameter": 108,
+    "wallThickness": 2,
+    "weightPerMeter": 5.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x2.2",
+    "diameter": 108,
+    "wallThickness": 2.2,
+    "weightPerMeter": 5.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x2.5",
+    "diameter": 108,
+    "wallThickness": 2.5,
+    "weightPerMeter": 6.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x2.8",
+    "diameter": 108,
+    "wallThickness": 2.8,
+    "weightPerMeter": 7.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x3",
+    "diameter": 108,
+    "wallThickness": 3,
+    "weightPerMeter": 7.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x3.2",
+    "diameter": 108,
+    "wallThickness": 3.2,
+    "weightPerMeter": 8.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x3.5",
+    "diameter": 108,
+    "wallThickness": 3.5,
+    "weightPerMeter": 9.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x3.8",
+    "diameter": 108,
+    "wallThickness": 3.8,
+    "weightPerMeter": 9.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x4",
+    "diameter": 108,
+    "wallThickness": 4,
+    "weightPerMeter": 10.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x4.5",
+    "diameter": 108,
+    "wallThickness": 4.5,
+    "weightPerMeter": 11.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x5",
+    "diameter": 108,
+    "wallThickness": 5,
+    "weightPerMeter": 12.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x5.5",
+    "diameter": 108,
+    "wallThickness": 5.5,
+    "weightPerMeter": 13.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x6",
+    "diameter": 108,
+    "wallThickness": 6,
+    "weightPerMeter": 15.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x7",
+    "diameter": 108,
+    "wallThickness": 7,
+    "weightPerMeter": 17.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x8",
+    "diameter": 108,
+    "wallThickness": 8,
+    "weightPerMeter": 19.73,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "108x9",
+    "diameter": 108,
+    "wallThickness": 9,
+    "weightPerMeter": 21.97,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x2",
+    "diameter": 114,
+    "wallThickness": 2,
+    "weightPerMeter": 5.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x2.2",
+    "diameter": 114,
+    "wallThickness": 2.2,
+    "weightPerMeter": 6.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x2.5",
+    "diameter": 114,
+    "wallThickness": 2.5,
+    "weightPerMeter": 6.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x2.8",
+    "diameter": 114,
+    "wallThickness": 2.8,
+    "weightPerMeter": 7.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x3",
+    "diameter": 114,
+    "wallThickness": 3,
+    "weightPerMeter": 8.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x3.2",
+    "diameter": 114,
+    "wallThickness": 3.2,
+    "weightPerMeter": 8.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x3.5",
+    "diameter": 114,
+    "wallThickness": 3.5,
+    "weightPerMeter": 9.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x3.8",
+    "diameter": 114,
+    "wallThickness": 3.8,
+    "weightPerMeter": 10.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x4",
+    "diameter": 114,
+    "wallThickness": 4,
+    "weightPerMeter": 10.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x4.5",
+    "diameter": 114,
+    "wallThickness": 4.5,
+    "weightPerMeter": 12.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x5",
+    "diameter": 114,
+    "wallThickness": 5,
+    "weightPerMeter": 13.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x5.5",
+    "diameter": 114,
+    "wallThickness": 5.5,
+    "weightPerMeter": 14.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x6",
+    "diameter": 114,
+    "wallThickness": 6,
+    "weightPerMeter": 15.98,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x7",
+    "diameter": 114,
+    "wallThickness": 7,
+    "weightPerMeter": 18.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x8",
+    "diameter": 114,
+    "wallThickness": 8,
+    "weightPerMeter": 20.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x9",
+    "diameter": 114,
+    "wallThickness": 9,
+    "weightPerMeter": 23.31,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "114x10",
+    "diameter": 114,
+    "wallThickness": 10,
+    "weightPerMeter": 25.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x2.5",
+    "diameter": 127,
+    "wallThickness": 2.5,
+    "weightPerMeter": 7.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x2.8",
+    "diameter": 127,
+    "wallThickness": 2.8,
+    "weightPerMeter": 8.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x3",
+    "diameter": 127,
+    "wallThickness": 3,
+    "weightPerMeter": 9.17,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x3.2",
+    "diameter": 127,
+    "wallThickness": 3.2,
+    "weightPerMeter": 9.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x3.5",
+    "diameter": 127,
+    "wallThickness": 3.5,
+    "weightPerMeter": 10.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x3.8",
+    "diameter": 127,
+    "wallThickness": 3.8,
+    "weightPerMeter": 11.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x4",
+    "diameter": 127,
+    "wallThickness": 4,
+    "weightPerMeter": 12.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x4.5",
+    "diameter": 127,
+    "wallThickness": 4.5,
+    "weightPerMeter": 13.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x5",
+    "diameter": 127,
+    "wallThickness": 5,
+    "weightPerMeter": 15.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x5.5",
+    "diameter": 127,
+    "wallThickness": 5.5,
+    "weightPerMeter": 16.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x6",
+    "diameter": 127,
+    "wallThickness": 6,
+    "weightPerMeter": 17.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x7",
+    "diameter": 127,
+    "wallThickness": 7,
+    "weightPerMeter": 20.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x8",
+    "diameter": 127,
+    "wallThickness": 8,
+    "weightPerMeter": 23.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x9",
+    "diameter": 127,
+    "wallThickness": 9,
+    "weightPerMeter": 26.19,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x10",
+    "diameter": 127,
+    "wallThickness": 10,
+    "weightPerMeter": 28.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "127x11",
+    "diameter": 127,
+    "wallThickness": 11,
+    "weightPerMeter": 34.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x2.5",
+    "diameter": 133,
+    "wallThickness": 2.5,
+    "weightPerMeter": 8.05,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x2.8",
+    "diameter": 133,
+    "wallThickness": 2.8,
+    "weightPerMeter": 8.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x3",
+    "diameter": 133,
+    "wallThickness": 3,
+    "weightPerMeter": 9.62,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x3.2",
+    "diameter": 133,
+    "wallThickness": 3.2,
+    "weightPerMeter": 10.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x3.5",
+    "diameter": 133,
+    "wallThickness": 3.5,
+    "weightPerMeter": 11.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x3.8",
+    "diameter": 133,
+    "wallThickness": 3.8,
+    "weightPerMeter": 12.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x4",
+    "diameter": 133,
+    "wallThickness": 4,
+    "weightPerMeter": 12.73,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x4.5",
+    "diameter": 133,
+    "wallThickness": 4.5,
+    "weightPerMeter": 14.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x5",
+    "diameter": 133,
+    "wallThickness": 5,
+    "weightPerMeter": 15.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x5.5",
+    "diameter": 133,
+    "wallThickness": 5.5,
+    "weightPerMeter": 17.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x6",
+    "diameter": 133,
+    "wallThickness": 6,
+    "weightPerMeter": 18.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x7",
+    "diameter": 133,
+    "wallThickness": 7,
+    "weightPerMeter": 21.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x8",
+    "diameter": 133,
+    "wallThickness": 8,
+    "weightPerMeter": 24.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x9",
+    "diameter": 133,
+    "wallThickness": 9,
+    "weightPerMeter": 27.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "133x10",
+    "diameter": 133,
+    "wallThickness": 10,
+    "weightPerMeter": 30.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x2.5",
+    "diameter": 140,
+    "wallThickness": 2.5,
+    "weightPerMeter": 8.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x2.8",
+    "diameter": 140,
+    "wallThickness": 2.8,
+    "weightPerMeter": 9.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x3",
+    "diameter": 140,
+    "wallThickness": 3,
+    "weightPerMeter": 10.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x3.2",
+    "diameter": 140,
+    "wallThickness": 3.2,
+    "weightPerMeter": 10.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x3.5",
+    "diameter": 140,
+    "wallThickness": 3.5,
+    "weightPerMeter": 11.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x3.8",
+    "diameter": 140,
+    "wallThickness": 3.8,
+    "weightPerMeter": 12.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x4",
+    "diameter": 140,
+    "wallThickness": 4,
+    "weightPerMeter": 13.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x4.5",
+    "diameter": 140,
+    "wallThickness": 4.5,
+    "weightPerMeter": 15.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x5",
+    "diameter": 140,
+    "wallThickness": 5,
+    "weightPerMeter": 16.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x5.5",
+    "diameter": 140,
+    "wallThickness": 5.5,
+    "weightPerMeter": 18.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x6",
+    "diameter": 140,
+    "wallThickness": 6,
+    "weightPerMeter": 19.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x6.5",
+    "diameter": 140,
+    "wallThickness": 6.5,
+    "weightPerMeter": 21.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x7",
+    "diameter": 140,
+    "wallThickness": 7,
+    "weightPerMeter": 22.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x8",
+    "diameter": 140,
+    "wallThickness": 8,
+    "weightPerMeter": 26.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x9",
+    "diameter": 140,
+    "wallThickness": 9,
+    "weightPerMeter": 29.08,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x10",
+    "diameter": 140,
+    "wallThickness": 10,
+    "weightPerMeter": 32.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x11",
+    "diameter": 140,
+    "wallThickness": 11,
+    "weightPerMeter": 34.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x12",
+    "diameter": 140,
+    "wallThickness": 12,
+    "weightPerMeter": 37.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x13",
+    "diameter": 140,
+    "wallThickness": 13,
+    "weightPerMeter": 40.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "140x14",
+    "diameter": 140,
+    "wallThickness": 14,
+    "weightPerMeter": 43.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x2.5",
+    "diameter": 146,
+    "wallThickness": 2.5,
+    "weightPerMeter": 8.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x2.8",
+    "diameter": 146,
+    "wallThickness": 2.8,
+    "weightPerMeter": 9.89,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x3",
+    "diameter": 146,
+    "wallThickness": 3,
+    "weightPerMeter": 10.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x3.2",
+    "diameter": 146,
+    "wallThickness": 3.2,
+    "weightPerMeter": 11.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x3.5",
+    "diameter": 146,
+    "wallThickness": 3.5,
+    "weightPerMeter": 12.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x3.8",
+    "diameter": 146,
+    "wallThickness": 3.8,
+    "weightPerMeter": 13.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x4",
+    "diameter": 146,
+    "wallThickness": 4,
+    "weightPerMeter": 14.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x4.5",
+    "diameter": 146,
+    "wallThickness": 4.5,
+    "weightPerMeter": 15.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x5",
+    "diameter": 146,
+    "wallThickness": 5,
+    "weightPerMeter": 17.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x5.5",
+    "diameter": 146,
+    "wallThickness": 5.5,
+    "weightPerMeter": 19.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x6",
+    "diameter": 146,
+    "wallThickness": 6,
+    "weightPerMeter": 20.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x7",
+    "diameter": 146,
+    "wallThickness": 7,
+    "weightPerMeter": 24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x8",
+    "diameter": 146,
+    "wallThickness": 8,
+    "weightPerMeter": 27.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x9",
+    "diameter": 146,
+    "wallThickness": 9,
+    "weightPerMeter": 30.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x10",
+    "diameter": 146,
+    "wallThickness": 10,
+    "weightPerMeter": 33.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x11",
+    "diameter": 146,
+    "wallThickness": 11,
+    "weightPerMeter": 36.62,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x12",
+    "diameter": 146,
+    "wallThickness": 12,
+    "weightPerMeter": 39.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x13",
+    "diameter": 146,
+    "wallThickness": 13,
+    "weightPerMeter": 42.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "146x14",
+    "diameter": 146,
+    "wallThickness": 14,
+    "weightPerMeter": 45.57,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x2.5",
+    "diameter": 152,
+    "wallThickness": 2.5,
+    "weightPerMeter": 9.22,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x2.8",
+    "diameter": 152,
+    "wallThickness": 2.8,
+    "weightPerMeter": 10.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x3",
+    "diameter": 152,
+    "wallThickness": 3,
+    "weightPerMeter": 11.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x3.2",
+    "diameter": 152,
+    "wallThickness": 3.2,
+    "weightPerMeter": 11.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x3.5",
+    "diameter": 152,
+    "wallThickness": 3.5,
+    "weightPerMeter": 12.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x3.8",
+    "diameter": 152,
+    "wallThickness": 3.8,
+    "weightPerMeter": 13.89,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x4",
+    "diameter": 152,
+    "wallThickness": 4,
+    "weightPerMeter": 14.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x4.5",
+    "diameter": 152,
+    "wallThickness": 4.5,
+    "weightPerMeter": 16.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x5",
+    "diameter": 152,
+    "wallThickness": 5,
+    "weightPerMeter": 18.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x5.5",
+    "diameter": 152,
+    "wallThickness": 5.5,
+    "weightPerMeter": 19.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x6",
+    "diameter": 152,
+    "wallThickness": 6,
+    "weightPerMeter": 21.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x7",
+    "diameter": 152,
+    "wallThickness": 7,
+    "weightPerMeter": 25.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x8",
+    "diameter": 152,
+    "wallThickness": 8,
+    "weightPerMeter": 28.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x9",
+    "diameter": 152,
+    "wallThickness": 9,
+    "weightPerMeter": 31.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x10",
+    "diameter": 152,
+    "wallThickness": 10,
+    "weightPerMeter": 35.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x11",
+    "diameter": 152,
+    "wallThickness": 11,
+    "weightPerMeter": 38.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x12",
+    "diameter": 152,
+    "wallThickness": 12,
+    "weightPerMeter": 41.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "152x13",
+    "diameter": 152,
+    "wallThickness": 13,
+    "weightPerMeter": 44.56,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x2.5",
+    "diameter": 159,
+    "wallThickness": 2.5,
+    "weightPerMeter": 9.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x2.8",
+    "diameter": 159,
+    "wallThickness": 2.8,
+    "weightPerMeter": 10.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x3",
+    "diameter": 159,
+    "wallThickness": 3,
+    "weightPerMeter": 11.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x3.2",
+    "diameter": 159,
+    "wallThickness": 3.2,
+    "weightPerMeter": 12.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x3.5",
+    "diameter": 159,
+    "wallThickness": 3.5,
+    "weightPerMeter": 13.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x3.8",
+    "diameter": 159,
+    "wallThickness": 3.8,
+    "weightPerMeter": 14.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x4",
+    "diameter": 159,
+    "wallThickness": 4,
+    "weightPerMeter": 15.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x4.5",
+    "diameter": 159,
+    "wallThickness": 4.5,
+    "weightPerMeter": 17.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x5",
+    "diameter": 159,
+    "wallThickness": 5,
+    "weightPerMeter": 18.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x5.5",
+    "diameter": 159,
+    "wallThickness": 5.5,
+    "weightPerMeter": 20.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x6",
+    "diameter": 159,
+    "wallThickness": 6,
+    "weightPerMeter": 22.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x6.5",
+    "diameter": 159,
+    "wallThickness": 6.5,
+    "weightPerMeter": 24.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x7",
+    "diameter": 159,
+    "wallThickness": 7,
+    "weightPerMeter": 26.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x8",
+    "diameter": 159,
+    "wallThickness": 8,
+    "weightPerMeter": 29.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x9",
+    "diameter": 159,
+    "wallThickness": 9,
+    "weightPerMeter": 33.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x10",
+    "diameter": 159,
+    "wallThickness": 10,
+    "weightPerMeter": 36.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x11",
+    "diameter": 159,
+    "wallThickness": 11,
+    "weightPerMeter": 40.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x12",
+    "diameter": 159,
+    "wallThickness": 12,
+    "weightPerMeter": 43.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x13",
+    "diameter": 159,
+    "wallThickness": 13,
+    "weightPerMeter": 46.81,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x14",
+    "diameter": 159,
+    "wallThickness": 14,
+    "weightPerMeter": 50.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x15",
+    "diameter": 159,
+    "wallThickness": 15,
+    "weightPerMeter": 53.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "159x16",
+    "diameter": 159,
+    "wallThickness": 16,
+    "weightPerMeter": 56.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x2.8",
+    "diameter": 168,
+    "wallThickness": 2.8,
+    "weightPerMeter": 11.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x3",
+    "diameter": 168,
+    "wallThickness": 3,
+    "weightPerMeter": 12.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x3.2",
+    "diameter": 168,
+    "wallThickness": 3.2,
+    "weightPerMeter": 13.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x3.5",
+    "diameter": 168,
+    "wallThickness": 3.5,
+    "weightPerMeter": 14.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x3.8",
+    "diameter": 168,
+    "wallThickness": 3.8,
+    "weightPerMeter": 15.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x4",
+    "diameter": 168,
+    "wallThickness": 4,
+    "weightPerMeter": 16.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x4.5",
+    "diameter": 168,
+    "wallThickness": 4.5,
+    "weightPerMeter": 18.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x5",
+    "diameter": 168,
+    "wallThickness": 5,
+    "weightPerMeter": 20.1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x5.5",
+    "diameter": 168,
+    "wallThickness": 5.5,
+    "weightPerMeter": 22.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x6",
+    "diameter": 168,
+    "wallThickness": 6,
+    "weightPerMeter": 23.97,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x6.5",
+    "diameter": 168,
+    "wallThickness": 6.5,
+    "weightPerMeter": 25.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x7",
+    "diameter": 168,
+    "wallThickness": 7,
+    "weightPerMeter": 27.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x8",
+    "diameter": 168,
+    "wallThickness": 8,
+    "weightPerMeter": 31.57,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x9",
+    "diameter": 168,
+    "wallThickness": 9,
+    "weightPerMeter": 35.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x10",
+    "diameter": 168,
+    "wallThickness": 10,
+    "weightPerMeter": 38.97,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x11",
+    "diameter": 168,
+    "wallThickness": 11,
+    "weightPerMeter": 42.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x12",
+    "diameter": 168,
+    "wallThickness": 12,
+    "weightPerMeter": 46.17,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x13",
+    "diameter": 168,
+    "wallThickness": 13,
+    "weightPerMeter": 49.69,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x14",
+    "diameter": 168,
+    "wallThickness": 14,
+    "weightPerMeter": 53.17,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x15",
+    "diameter": 168,
+    "wallThickness": 15,
+    "weightPerMeter": 56.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "168x16",
+    "diameter": 168,
+    "wallThickness": 16,
+    "weightPerMeter": 59.98,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x3",
+    "diameter": 177.8,
+    "wallThickness": 3,
+    "weightPerMeter": 12.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x3.2",
+    "diameter": 177.8,
+    "wallThickness": 3.2,
+    "weightPerMeter": 13.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x3.5",
+    "diameter": 177.8,
+    "wallThickness": 3.5,
+    "weightPerMeter": 15.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x3.8",
+    "diameter": 177.8,
+    "wallThickness": 3.8,
+    "weightPerMeter": 16.31,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x4",
+    "diameter": 177.8,
+    "wallThickness": 4,
+    "weightPerMeter": 17.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x4.5",
+    "diameter": 177.8,
+    "wallThickness": 4.5,
+    "weightPerMeter": 19.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x5",
+    "diameter": 177.8,
+    "wallThickness": 5,
+    "weightPerMeter": 21.31,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x5.5",
+    "diameter": 177.8,
+    "wallThickness": 5.5,
+    "weightPerMeter": 23.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x6",
+    "diameter": 177.8,
+    "wallThickness": 6,
+    "weightPerMeter": 25.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x6.5",
+    "diameter": 177.8,
+    "wallThickness": 6.5,
+    "weightPerMeter": 27.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x7",
+    "diameter": 177.8,
+    "wallThickness": 7,
+    "weightPerMeter": 29.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x8",
+    "diameter": 177.8,
+    "wallThickness": 8,
+    "weightPerMeter": 33.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "177.8x9",
+    "diameter": 177.8,
+    "wallThickness": 9,
+    "weightPerMeter": 37.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x2.5",
+    "diameter": 193.7,
+    "wallThickness": 2.5,
+    "weightPerMeter": 11.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x2.8",
+    "diameter": 193.7,
+    "wallThickness": 2.8,
+    "weightPerMeter": 13.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x3",
+    "diameter": 193.7,
+    "wallThickness": 3,
+    "weightPerMeter": 14.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x3.2",
+    "diameter": 193.7,
+    "wallThickness": 3.2,
+    "weightPerMeter": 15.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x3.5",
+    "diameter": 193.7,
+    "wallThickness": 3.5,
+    "weightPerMeter": 16.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x3.8",
+    "diameter": 193.7,
+    "wallThickness": 3.8,
+    "weightPerMeter": 17.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x4",
+    "diameter": 193.7,
+    "wallThickness": 4,
+    "weightPerMeter": 18.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x4.5",
+    "diameter": 193.7,
+    "wallThickness": 4.5,
+    "weightPerMeter": 21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x5",
+    "diameter": 193.7,
+    "wallThickness": 5,
+    "weightPerMeter": 23.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x5.5",
+    "diameter": 193.7,
+    "wallThickness": 5.5,
+    "weightPerMeter": 25.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x6",
+    "diameter": 193.7,
+    "wallThickness": 6,
+    "weightPerMeter": 27.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x6.5",
+    "diameter": 193.7,
+    "wallThickness": 6.5,
+    "weightPerMeter": 29.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x7",
+    "diameter": 193.7,
+    "wallThickness": 7,
+    "weightPerMeter": 32.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x8",
+    "diameter": 193.7,
+    "wallThickness": 8,
+    "weightPerMeter": 36.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x9",
+    "diameter": 193.7,
+    "wallThickness": 9,
+    "weightPerMeter": 40.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x10",
+    "diameter": 193.7,
+    "wallThickness": 10,
+    "weightPerMeter": 45.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x11",
+    "diameter": 193.7,
+    "wallThickness": 11,
+    "weightPerMeter": 49.56,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x12",
+    "diameter": 193.7,
+    "wallThickness": 12,
+    "weightPerMeter": 53.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x13",
+    "diameter": 193.7,
+    "wallThickness": 13,
+    "weightPerMeter": 57.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x14",
+    "diameter": 193.7,
+    "wallThickness": 14,
+    "weightPerMeter": 62.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x15",
+    "diameter": 193.7,
+    "wallThickness": 15,
+    "weightPerMeter": 66.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "193.7x16",
+    "diameter": 193.7,
+    "wallThickness": 16,
+    "weightPerMeter": 70.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x3",
+    "diameter": 219,
+    "wallThickness": 3,
+    "weightPerMeter": 15.98,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x3.2",
+    "diameter": 219,
+    "wallThickness": 3.2,
+    "weightPerMeter": 17.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x3.5",
+    "diameter": 219,
+    "wallThickness": 3.5,
+    "weightPerMeter": 18.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x3.8",
+    "diameter": 219,
+    "wallThickness": 3.8,
+    "weightPerMeter": 20.17,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x4",
+    "diameter": 219,
+    "wallThickness": 4,
+    "weightPerMeter": 21.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x4.5",
+    "diameter": 219,
+    "wallThickness": 4.5,
+    "weightPerMeter": 23.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x5",
+    "diameter": 219,
+    "wallThickness": 5,
+    "weightPerMeter": 26.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x5.5",
+    "diameter": 219,
+    "wallThickness": 5.5,
+    "weightPerMeter": 28.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x6",
+    "diameter": 219,
+    "wallThickness": 6,
+    "weightPerMeter": 31.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x6.5",
+    "diameter": 219,
+    "wallThickness": 6.5,
+    "weightPerMeter": 34.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x7",
+    "diameter": 219,
+    "wallThickness": 7,
+    "weightPerMeter": 36.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x8",
+    "diameter": 219,
+    "wallThickness": 8,
+    "weightPerMeter": 41.63,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x9",
+    "diameter": 219,
+    "wallThickness": 9,
+    "weightPerMeter": 46.61,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x10",
+    "diameter": 219,
+    "wallThickness": 10,
+    "weightPerMeter": 51.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x11",
+    "diameter": 219,
+    "wallThickness": 11,
+    "weightPerMeter": 56.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x12",
+    "diameter": 219,
+    "wallThickness": 12,
+    "weightPerMeter": 61.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x13",
+    "diameter": 219,
+    "wallThickness": 13,
+    "weightPerMeter": 66.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x14",
+    "diameter": 219,
+    "wallThickness": 14,
+    "weightPerMeter": 70.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x15",
+    "diameter": 219,
+    "wallThickness": 15,
+    "weightPerMeter": 75.46,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x16",
+    "diameter": 219,
+    "wallThickness": 16,
+    "weightPerMeter": 80.1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x17",
+    "diameter": 219,
+    "wallThickness": 17,
+    "weightPerMeter": 84.69,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x17.5",
+    "diameter": 219,
+    "wallThickness": 17.5,
+    "weightPerMeter": 86.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x18",
+    "diameter": 219,
+    "wallThickness": 18,
+    "weightPerMeter": 89.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x19",
+    "diameter": 219,
+    "wallThickness": 19,
+    "weightPerMeter": 93.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x20",
+    "diameter": 219,
+    "wallThickness": 20,
+    "weightPerMeter": 98.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x21",
+    "diameter": 219,
+    "wallThickness": 21,
+    "weightPerMeter": 102.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "219x22",
+    "diameter": 219,
+    "wallThickness": 22,
+    "weightPerMeter": 106.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x3.5",
+    "diameter": 244.5,
+    "wallThickness": 3.5,
+    "weightPerMeter": 20.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x4",
+    "diameter": 244.5,
+    "wallThickness": 4,
+    "weightPerMeter": 23.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x4.5",
+    "diameter": 244.5,
+    "wallThickness": 4.5,
+    "weightPerMeter": 26.63,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x5",
+    "diameter": 244.5,
+    "wallThickness": 5,
+    "weightPerMeter": 29.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x5.5",
+    "diameter": 244.5,
+    "wallThickness": 5.5,
+    "weightPerMeter": 32.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x6",
+    "diameter": 244.5,
+    "wallThickness": 6,
+    "weightPerMeter": 35.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x6.5",
+    "diameter": 244.5,
+    "wallThickness": 6.5,
+    "weightPerMeter": 38.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x7",
+    "diameter": 244.5,
+    "wallThickness": 7,
+    "weightPerMeter": 41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x8",
+    "diameter": 244.5,
+    "wallThickness": 8,
+    "weightPerMeter": 46.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x9",
+    "diameter": 244.5,
+    "wallThickness": 9,
+    "weightPerMeter": 52.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x10",
+    "diameter": 244.5,
+    "wallThickness": 10,
+    "weightPerMeter": 57.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x11",
+    "diameter": 244.5,
+    "wallThickness": 11,
+    "weightPerMeter": 63.34,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x12",
+    "diameter": 244.5,
+    "wallThickness": 12,
+    "weightPerMeter": 68.81,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x13",
+    "diameter": 244.5,
+    "wallThickness": 13,
+    "weightPerMeter": 74.22,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x14",
+    "diameter": 244.5,
+    "wallThickness": 14,
+    "weightPerMeter": 79.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x15",
+    "diameter": 244.5,
+    "wallThickness": 15,
+    "weightPerMeter": 84.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x16",
+    "diameter": 244.5,
+    "wallThickness": 16,
+    "weightPerMeter": 90.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x17",
+    "diameter": 244.5,
+    "wallThickness": 17,
+    "weightPerMeter": 95.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x18",
+    "diameter": 244.5,
+    "wallThickness": 18,
+    "weightPerMeter": 100.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x19",
+    "diameter": 244.5,
+    "wallThickness": 19,
+    "weightPerMeter": 105.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x20",
+    "diameter": 244.5,
+    "wallThickness": 20,
+    "weightPerMeter": 110.73,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x21",
+    "diameter": 244.5,
+    "wallThickness": 21,
+    "weightPerMeter": 115.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "244.5x22",
+    "diameter": 244.5,
+    "wallThickness": 22,
+    "weightPerMeter": 120.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x4.5",
+    "diameter": 273,
+    "wallThickness": 4.5,
+    "weightPerMeter": 29.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x5",
+    "diameter": 273,
+    "wallThickness": 5,
+    "weightPerMeter": 33.05,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x5.5",
+    "diameter": 273,
+    "wallThickness": 5.5,
+    "weightPerMeter": 36.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x6",
+    "diameter": 273,
+    "wallThickness": 6,
+    "weightPerMeter": 39.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x6.5",
+    "diameter": 273,
+    "wallThickness": 6.5,
+    "weightPerMeter": 42.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x7",
+    "diameter": 273,
+    "wallThickness": 7,
+    "weightPerMeter": 45.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x8",
+    "diameter": 273,
+    "wallThickness": 8,
+    "weightPerMeter": 52.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x9",
+    "diameter": 273,
+    "wallThickness": 9,
+    "weightPerMeter": 58.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x10",
+    "diameter": 273,
+    "wallThickness": 10,
+    "weightPerMeter": 64.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x11",
+    "diameter": 273,
+    "wallThickness": 11,
+    "weightPerMeter": 71.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x12",
+    "diameter": 273,
+    "wallThickness": 12,
+    "weightPerMeter": 77.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x13",
+    "diameter": 273,
+    "wallThickness": 13,
+    "weightPerMeter": 83.36,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x14",
+    "diameter": 273,
+    "wallThickness": 14,
+    "weightPerMeter": 89.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x15",
+    "diameter": 273,
+    "wallThickness": 15,
+    "weightPerMeter": 95.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x16",
+    "diameter": 273,
+    "wallThickness": 16,
+    "weightPerMeter": 101.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x17",
+    "diameter": 273,
+    "wallThickness": 17,
+    "weightPerMeter": 107.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x18",
+    "diameter": 273,
+    "wallThickness": 18,
+    "weightPerMeter": 113.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x19",
+    "diameter": 273,
+    "wallThickness": 19,
+    "weightPerMeter": 119.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x20",
+    "diameter": 273,
+    "wallThickness": 20,
+    "weightPerMeter": 124.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x21",
+    "diameter": 273,
+    "wallThickness": 21,
+    "weightPerMeter": 130.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "273x22",
+    "diameter": 273,
+    "wallThickness": 22,
+    "weightPerMeter": 136.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x5.5",
+    "diameter": 325,
+    "wallThickness": 5.5,
+    "weightPerMeter": 43.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x6",
+    "diameter": 325,
+    "wallThickness": 6,
+    "weightPerMeter": 47.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x6.5",
+    "diameter": 325,
+    "wallThickness": 6.5,
+    "weightPerMeter": 51.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x7",
+    "diameter": 325,
+    "wallThickness": 7,
+    "weightPerMeter": 54.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x8",
+    "diameter": 325,
+    "wallThickness": 8,
+    "weightPerMeter": 62.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x9",
+    "diameter": 325,
+    "wallThickness": 9,
+    "weightPerMeter": 70.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x10",
+    "diameter": 325,
+    "wallThickness": 10,
+    "weightPerMeter": 77.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x11",
+    "diameter": 325,
+    "wallThickness": 11,
+    "weightPerMeter": 85.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x12",
+    "diameter": 325,
+    "wallThickness": 12,
+    "weightPerMeter": 92.63,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x13",
+    "diameter": 325,
+    "wallThickness": 13,
+    "weightPerMeter": 100.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x14",
+    "diameter": 325,
+    "wallThickness": 14,
+    "weightPerMeter": 107.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x15",
+    "diameter": 325,
+    "wallThickness": 15,
+    "weightPerMeter": 114.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x16",
+    "diameter": 325,
+    "wallThickness": 16,
+    "weightPerMeter": 121.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x17",
+    "diameter": 325,
+    "wallThickness": 17,
+    "weightPerMeter": 129.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x18",
+    "diameter": 325,
+    "wallThickness": 18,
+    "weightPerMeter": 136.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x19",
+    "diameter": 325,
+    "wallThickness": 19,
+    "weightPerMeter": 143.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x20",
+    "diameter": 325,
+    "wallThickness": 20,
+    "weightPerMeter": 150.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x21",
+    "diameter": 325,
+    "wallThickness": 21,
+    "weightPerMeter": 157.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "325x22",
+    "diameter": 325,
+    "wallThickness": 22,
+    "weightPerMeter": 164.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x6",
+    "diameter": 355.6,
+    "wallThickness": 6,
+    "weightPerMeter": 51.73,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x6.5",
+    "diameter": 355.6,
+    "wallThickness": 6.5,
+    "weightPerMeter": 56.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x7",
+    "diameter": 355.6,
+    "wallThickness": 7,
+    "weightPerMeter": 60.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x8",
+    "diameter": 355.6,
+    "wallThickness": 8,
+    "weightPerMeter": 68.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x9",
+    "diameter": 355.6,
+    "wallThickness": 9,
+    "weightPerMeter": 76.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x10",
+    "diameter": 355.6,
+    "wallThickness": 10,
+    "weightPerMeter": 85.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x11",
+    "diameter": 355.6,
+    "wallThickness": 11,
+    "weightPerMeter": 93.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x12",
+    "diameter": 355.6,
+    "wallThickness": 12,
+    "weightPerMeter": 101.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x13",
+    "diameter": 355.6,
+    "wallThickness": 13,
+    "weightPerMeter": 109.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x14",
+    "diameter": 355.6,
+    "wallThickness": 14,
+    "weightPerMeter": 117.94,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x15",
+    "diameter": 355.6,
+    "wallThickness": 15,
+    "weightPerMeter": 126,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x16",
+    "diameter": 355.6,
+    "wallThickness": 16,
+    "weightPerMeter": 134,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x17",
+    "diameter": 355.6,
+    "wallThickness": 17,
+    "weightPerMeter": 141.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x18",
+    "diameter": 355.6,
+    "wallThickness": 18,
+    "weightPerMeter": 145.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x19",
+    "diameter": 355.6,
+    "wallThickness": 19,
+    "weightPerMeter": 149.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x20",
+    "diameter": 355.6,
+    "wallThickness": 20,
+    "weightPerMeter": 157.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x21",
+    "diameter": 355.6,
+    "wallThickness": 21,
+    "weightPerMeter": 165.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x22",
+    "diameter": 355.6,
+    "wallThickness": 22,
+    "weightPerMeter": 173.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "355.6x23",
+    "diameter": 355.6,
+    "wallThickness": 23,
+    "weightPerMeter": 181,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x6.5",
+    "diameter": 377,
+    "wallThickness": 6.5,
+    "weightPerMeter": 59.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x7",
+    "diameter": 377,
+    "wallThickness": 7,
+    "weightPerMeter": 63.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x8",
+    "diameter": 377,
+    "wallThickness": 8,
+    "weightPerMeter": 72.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x9",
+    "diameter": 377,
+    "wallThickness": 9,
+    "weightPerMeter": 81.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x10",
+    "diameter": 377,
+    "wallThickness": 10,
+    "weightPerMeter": 90.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x11",
+    "diameter": 377,
+    "wallThickness": 11,
+    "weightPerMeter": 99.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x12",
+    "diameter": 377,
+    "wallThickness": 12,
+    "weightPerMeter": 108.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x13",
+    "diameter": 377,
+    "wallThickness": 13,
+    "weightPerMeter": 116.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x14",
+    "diameter": 377,
+    "wallThickness": 14,
+    "weightPerMeter": 125.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x15",
+    "diameter": 377,
+    "wallThickness": 15,
+    "weightPerMeter": 133.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x16",
+    "diameter": 377,
+    "wallThickness": 16,
+    "weightPerMeter": 142.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x17",
+    "diameter": 377,
+    "wallThickness": 17,
+    "weightPerMeter": 150.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x18",
+    "diameter": 377,
+    "wallThickness": 18,
+    "weightPerMeter": 155.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x19",
+    "diameter": 377,
+    "wallThickness": 19,
+    "weightPerMeter": 159.36,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x20",
+    "diameter": 377,
+    "wallThickness": 20,
+    "weightPerMeter": 167.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x21",
+    "diameter": 377,
+    "wallThickness": 21,
+    "weightPerMeter": 176.08,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x22",
+    "diameter": 377,
+    "wallThickness": 22,
+    "weightPerMeter": 184.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "377x23",
+    "diameter": 377,
+    "wallThickness": 23,
+    "weightPerMeter": 192.61,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x7",
+    "diameter": 406.4,
+    "wallThickness": 7,
+    "weightPerMeter": 69.05,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x8",
+    "diameter": 406.4,
+    "wallThickness": 8,
+    "weightPerMeter": 78.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x9",
+    "diameter": 406.4,
+    "wallThickness": 9,
+    "weightPerMeter": 88.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x10",
+    "diameter": 406.4,
+    "wallThickness": 10,
+    "weightPerMeter": 97.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x11",
+    "diameter": 406.4,
+    "wallThickness": 11,
+    "weightPerMeter": 107.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x12",
+    "diameter": 406.4,
+    "wallThickness": 12,
+    "weightPerMeter": 116.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x13",
+    "diameter": 406.4,
+    "wallThickness": 13,
+    "weightPerMeter": 126.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x14",
+    "diameter": 406.4,
+    "wallThickness": 14,
+    "weightPerMeter": 135.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x15",
+    "diameter": 406.4,
+    "wallThickness": 15,
+    "weightPerMeter": 144.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x16",
+    "diameter": 406.4,
+    "wallThickness": 16,
+    "weightPerMeter": 154.05,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x17",
+    "diameter": 406.4,
+    "wallThickness": 17,
+    "weightPerMeter": 163.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x18",
+    "diameter": 406.4,
+    "wallThickness": 18,
+    "weightPerMeter": 167.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x19",
+    "diameter": 406.4,
+    "wallThickness": 19,
+    "weightPerMeter": 172.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x20",
+    "diameter": 406.4,
+    "wallThickness": 20,
+    "weightPerMeter": 181.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x21",
+    "diameter": 406.4,
+    "wallThickness": 21,
+    "weightPerMeter": 190.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x22",
+    "diameter": 406.4,
+    "wallThickness": 22,
+    "weightPerMeter": 199.6,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "406.4x23",
+    "diameter": 406.4,
+    "wallThickness": 23,
+    "weightPerMeter": 208.56,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x4.5",
+    "diameter": 426,
+    "wallThickness": 4.5,
+    "weightPerMeter": 46.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x5",
+    "diameter": 426,
+    "wallThickness": 5,
+    "weightPerMeter": 51.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x5.5",
+    "diameter": 426,
+    "wallThickness": 5.5,
+    "weightPerMeter": 57.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x6",
+    "diameter": 426,
+    "wallThickness": 6,
+    "weightPerMeter": 62.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x6.5",
+    "diameter": 426,
+    "wallThickness": 6.5,
+    "weightPerMeter": 67.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x7",
+    "diameter": 426,
+    "wallThickness": 7,
+    "weightPerMeter": 72.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x8",
+    "diameter": 426,
+    "wallThickness": 8,
+    "weightPerMeter": 82.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x9",
+    "diameter": 426,
+    "wallThickness": 9,
+    "weightPerMeter": 92.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x10",
+    "diameter": 426,
+    "wallThickness": 10,
+    "weightPerMeter": 102.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x11",
+    "diameter": 426,
+    "wallThickness": 11,
+    "weightPerMeter": 112.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x12",
+    "diameter": 426,
+    "wallThickness": 12,
+    "weightPerMeter": 122.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x13",
+    "diameter": 426,
+    "wallThickness": 13,
+    "weightPerMeter": 132.41,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x14",
+    "diameter": 426,
+    "wallThickness": 14,
+    "weightPerMeter": 142.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x15",
+    "diameter": 426,
+    "wallThickness": 15,
+    "weightPerMeter": 152.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x16",
+    "diameter": 426,
+    "wallThickness": 16,
+    "weightPerMeter": 161.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x17",
+    "diameter": 426,
+    "wallThickness": 17,
+    "weightPerMeter": 171.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x18",
+    "diameter": 426,
+    "wallThickness": 18,
+    "weightPerMeter": 176.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x19",
+    "diameter": 426,
+    "wallThickness": 19,
+    "weightPerMeter": 181.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x20",
+    "diameter": 426,
+    "wallThickness": 20,
+    "weightPerMeter": 190.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x21",
+    "diameter": 426,
+    "wallThickness": 21,
+    "weightPerMeter": 200.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x22",
+    "diameter": 426,
+    "wallThickness": 22,
+    "weightPerMeter": 209.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "426x23",
+    "diameter": 426,
+    "wallThickness": 23,
+    "weightPerMeter": 219.19,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x4.5",
+    "diameter": 508,
+    "wallThickness": 4.5,
+    "weightPerMeter": 55.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x5",
+    "diameter": 508,
+    "wallThickness": 5,
+    "weightPerMeter": 62.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x5.5",
+    "diameter": 508,
+    "wallThickness": 5.5,
+    "weightPerMeter": 68.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x6",
+    "diameter": 508,
+    "wallThickness": 6,
+    "weightPerMeter": 74.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x6.5",
+    "diameter": 508,
+    "wallThickness": 6.5,
+    "weightPerMeter": 80.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x7",
+    "diameter": 508,
+    "wallThickness": 7,
+    "weightPerMeter": 86.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x8",
+    "diameter": 508,
+    "wallThickness": 8,
+    "weightPerMeter": 98.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x9",
+    "diameter": 508,
+    "wallThickness": 9,
+    "weightPerMeter": 110.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x10",
+    "diameter": 508,
+    "wallThickness": 10,
+    "weightPerMeter": 122.81,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x11",
+    "diameter": 508,
+    "wallThickness": 11,
+    "weightPerMeter": 134.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x12",
+    "diameter": 508,
+    "wallThickness": 12,
+    "weightPerMeter": 146.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x13",
+    "diameter": 508,
+    "wallThickness": 13,
+    "weightPerMeter": 158.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x14",
+    "diameter": 508,
+    "wallThickness": 14,
+    "weightPerMeter": 170.56,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x15",
+    "diameter": 508,
+    "wallThickness": 15,
+    "weightPerMeter": 182.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x16",
+    "diameter": 508,
+    "wallThickness": 16,
+    "weightPerMeter": 194.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x17",
+    "diameter": 508,
+    "wallThickness": 17,
+    "weightPerMeter": 205.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x18",
+    "diameter": 508,
+    "wallThickness": 18,
+    "weightPerMeter": 217.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x19",
+    "diameter": 508,
+    "wallThickness": 19,
+    "weightPerMeter": 229.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x20",
+    "diameter": 508,
+    "wallThickness": 20,
+    "weightPerMeter": 240.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x21",
+    "diameter": 508,
+    "wallThickness": 21,
+    "weightPerMeter": 252.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x22",
+    "diameter": 508,
+    "wallThickness": 22,
+    "weightPerMeter": 263.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x23",
+    "diameter": 508,
+    "wallThickness": 23,
+    "weightPerMeter": 275.1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x24",
+    "diameter": 508,
+    "wallThickness": 24,
+    "weightPerMeter": 286.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x25",
+    "diameter": 508,
+    "wallThickness": 25,
+    "weightPerMeter": 297.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x26",
+    "diameter": 508,
+    "wallThickness": 26,
+    "weightPerMeter": 309.06,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x27",
+    "diameter": 508,
+    "wallThickness": 27,
+    "weightPerMeter": 320.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x28",
+    "diameter": 508,
+    "wallThickness": 28,
+    "weightPerMeter": 331.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x29",
+    "diameter": 508,
+    "wallThickness": 29,
+    "weightPerMeter": 342.57,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x30",
+    "diameter": 508,
+    "wallThickness": 30,
+    "weightPerMeter": 353.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x31",
+    "diameter": 508,
+    "wallThickness": 31,
+    "weightPerMeter": 364.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x32",
+    "diameter": 508,
+    "wallThickness": 32,
+    "weightPerMeter": 375.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x33",
+    "diameter": 508,
+    "wallThickness": 33,
+    "weightPerMeter": 386.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "508x34",
+    "diameter": 508,
+    "wallThickness": 34,
+    "weightPerMeter": 397.46,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x5",
+    "diameter": 530,
+    "wallThickness": 5,
+    "weightPerMeter": 64.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x5.5",
+    "diameter": 530,
+    "wallThickness": 5.5,
+    "weightPerMeter": 71.14,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x6",
+    "diameter": 530,
+    "wallThickness": 6,
+    "weightPerMeter": 77.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x6.5",
+    "diameter": 530,
+    "wallThickness": 6.5,
+    "weightPerMeter": 83.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x7",
+    "diameter": 530,
+    "wallThickness": 7,
+    "weightPerMeter": 90.29,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x8",
+    "diameter": 530,
+    "wallThickness": 8,
+    "weightPerMeter": 102.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x9",
+    "diameter": 530,
+    "wallThickness": 9,
+    "weightPerMeter": 115.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x10",
+    "diameter": 530,
+    "wallThickness": 10,
+    "weightPerMeter": 128.24,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x11",
+    "diameter": 530,
+    "wallThickness": 11,
+    "weightPerMeter": 140.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x12",
+    "diameter": 530,
+    "wallThickness": 12,
+    "weightPerMeter": 153.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x13",
+    "diameter": 530,
+    "wallThickness": 13,
+    "weightPerMeter": 165.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x14",
+    "diameter": 530,
+    "wallThickness": 14,
+    "weightPerMeter": 178.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x15",
+    "diameter": 530,
+    "wallThickness": 15,
+    "weightPerMeter": 190.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x16",
+    "diameter": 530,
+    "wallThickness": 16,
+    "weightPerMeter": 202.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x17",
+    "diameter": 530,
+    "wallThickness": 17,
+    "weightPerMeter": 215.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x18",
+    "diameter": 530,
+    "wallThickness": 18,
+    "weightPerMeter": 227.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x19",
+    "diameter": 530,
+    "wallThickness": 19,
+    "weightPerMeter": 239.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x20",
+    "diameter": 530,
+    "wallThickness": 20,
+    "weightPerMeter": 251.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x21",
+    "diameter": 530,
+    "wallThickness": 21,
+    "weightPerMeter": 263.61,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x22",
+    "diameter": 530,
+    "wallThickness": 22,
+    "weightPerMeter": 275.62,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x23",
+    "diameter": 530,
+    "wallThickness": 23,
+    "weightPerMeter": 287.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x24",
+    "diameter": 530,
+    "wallThickness": 24,
+    "weightPerMeter": 299.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x25",
+    "diameter": 530,
+    "wallThickness": 25,
+    "weightPerMeter": 311.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x26",
+    "diameter": 530,
+    "wallThickness": 26,
+    "weightPerMeter": 323.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x27",
+    "diameter": 530,
+    "wallThickness": 27,
+    "weightPerMeter": 334.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x28",
+    "diameter": 530,
+    "wallThickness": 28,
+    "weightPerMeter": 346.64,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x29",
+    "diameter": 530,
+    "wallThickness": 29,
+    "weightPerMeter": 358.31,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x30",
+    "diameter": 530,
+    "wallThickness": 30,
+    "weightPerMeter": 369.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "530x31",
+    "diameter": 530,
+    "wallThickness": 31,
+    "weightPerMeter": 381.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x7",
+    "diameter": 630,
+    "wallThickness": 7,
+    "weightPerMeter": 107.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x8",
+    "diameter": 630,
+    "wallThickness": 8,
+    "weightPerMeter": 122.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x9",
+    "diameter": 630,
+    "wallThickness": 9,
+    "weightPerMeter": 137.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x10",
+    "diameter": 630,
+    "wallThickness": 10,
+    "weightPerMeter": 152.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x11",
+    "diameter": 630,
+    "wallThickness": 11,
+    "weightPerMeter": 167.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x12",
+    "diameter": 630,
+    "wallThickness": 12,
+    "weightPerMeter": 182.89,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x13",
+    "diameter": 630,
+    "wallThickness": 13,
+    "weightPerMeter": 197.81,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x14",
+    "diameter": 630,
+    "wallThickness": 14,
+    "weightPerMeter": 212.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x15",
+    "diameter": 630,
+    "wallThickness": 15,
+    "weightPerMeter": 227.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x16",
+    "diameter": 630,
+    "wallThickness": 16,
+    "weightPerMeter": 242.27,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x17",
+    "diameter": 630,
+    "wallThickness": 17,
+    "weightPerMeter": 257,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x18",
+    "diameter": 630,
+    "wallThickness": 18,
+    "weightPerMeter": 271.67,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x19",
+    "diameter": 630,
+    "wallThickness": 19,
+    "weightPerMeter": 286.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x20",
+    "diameter": 630,
+    "wallThickness": 20,
+    "weightPerMeter": 300.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x21",
+    "diameter": 630,
+    "wallThickness": 21,
+    "weightPerMeter": 315.4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x22",
+    "diameter": 630,
+    "wallThickness": 22,
+    "weightPerMeter": 329.87,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x23",
+    "diameter": 630,
+    "wallThickness": 23,
+    "weightPerMeter": 344.3,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x24",
+    "diameter": 630,
+    "wallThickness": 24,
+    "weightPerMeter": 358.68,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x25",
+    "diameter": 630,
+    "wallThickness": 25,
+    "weightPerMeter": 373.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x26",
+    "diameter": 630,
+    "wallThickness": 26,
+    "weightPerMeter": 387.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x27",
+    "diameter": 630,
+    "wallThickness": 27,
+    "weightPerMeter": 401.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x28",
+    "diameter": 630,
+    "wallThickness": 28,
+    "weightPerMeter": 415.69,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x29",
+    "diameter": 630,
+    "wallThickness": 29,
+    "weightPerMeter": 429.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x30",
+    "diameter": 630,
+    "wallThickness": 30,
+    "weightPerMeter": 443.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x31",
+    "diameter": 630,
+    "wallThickness": 31,
+    "weightPerMeter": 457.94,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x32",
+    "diameter": 630,
+    "wallThickness": 32,
+    "weightPerMeter": 471.92,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x33",
+    "diameter": 630,
+    "wallThickness": 33,
+    "weightPerMeter": 485.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "630x34",
+    "diameter": 630,
+    "wallThickness": 34,
+    "weightPerMeter": 499.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x7",
+    "diameter": 720,
+    "wallThickness": 7,
+    "weightPerMeter": 123.09,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x8",
+    "diameter": 720,
+    "wallThickness": 8,
+    "weightPerMeter": 140.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x9",
+    "diameter": 720,
+    "wallThickness": 9,
+    "weightPerMeter": 157.81,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x10",
+    "diameter": 720,
+    "wallThickness": 10,
+    "weightPerMeter": 175.1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x11",
+    "diameter": 720,
+    "wallThickness": 11,
+    "weightPerMeter": 192.34,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x12",
+    "diameter": 720,
+    "wallThickness": 12,
+    "weightPerMeter": 209.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x13",
+    "diameter": 720,
+    "wallThickness": 13,
+    "weightPerMeter": 226.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x14",
+    "diameter": 720,
+    "wallThickness": 14,
+    "weightPerMeter": 243.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x15",
+    "diameter": 720,
+    "wallThickness": 15,
+    "weightPerMeter": 260.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x16",
+    "diameter": 720,
+    "wallThickness": 16,
+    "weightPerMeter": 277.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x17",
+    "diameter": 720,
+    "wallThickness": 17,
+    "weightPerMeter": 294.73,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x18",
+    "diameter": 720,
+    "wallThickness": 18,
+    "weightPerMeter": 311.62,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x19",
+    "diameter": 720,
+    "wallThickness": 19,
+    "weightPerMeter": 328.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x20",
+    "diameter": 720,
+    "wallThickness": 20,
+    "weightPerMeter": 345.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x21",
+    "diameter": 720,
+    "wallThickness": 21,
+    "weightPerMeter": 362.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x22",
+    "diameter": 720,
+    "wallThickness": 22,
+    "weightPerMeter": 378.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x23",
+    "diameter": 720,
+    "wallThickness": 23,
+    "weightPerMeter": 395.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x24",
+    "diameter": 720,
+    "wallThickness": 24,
+    "weightPerMeter": 411.95,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x25",
+    "diameter": 720,
+    "wallThickness": 25,
+    "weightPerMeter": 428.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x26",
+    "diameter": 720,
+    "wallThickness": 26,
+    "weightPerMeter": 444.99,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x27",
+    "diameter": 720,
+    "wallThickness": 27,
+    "weightPerMeter": 461.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x28",
+    "diameter": 720,
+    "wallThickness": 28,
+    "weightPerMeter": 477.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x29",
+    "diameter": 720,
+    "wallThickness": 29,
+    "weightPerMeter": 494.19,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x30",
+    "diameter": 720,
+    "wallThickness": 30,
+    "weightPerMeter": 510.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x31",
+    "diameter": 720,
+    "wallThickness": 31,
+    "weightPerMeter": 526.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x32",
+    "diameter": 720,
+    "wallThickness": 32,
+    "weightPerMeter": 542.95,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x33",
+    "diameter": 720,
+    "wallThickness": 33,
+    "weightPerMeter": 559.1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "720x34",
+    "diameter": 720,
+    "wallThickness": 34,
+    "weightPerMeter": 575.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x7",
+    "diameter": 820,
+    "wallThickness": 7,
+    "weightPerMeter": 140.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x8",
+    "diameter": 820,
+    "wallThickness": 8,
+    "weightPerMeter": 160.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x9",
+    "diameter": 820,
+    "wallThickness": 9,
+    "weightPerMeter": 180,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x10",
+    "diameter": 820,
+    "wallThickness": 10,
+    "weightPerMeter": 199.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x11",
+    "diameter": 820,
+    "wallThickness": 11,
+    "weightPerMeter": 219.46,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x12",
+    "diameter": 820,
+    "wallThickness": 12,
+    "weightPerMeter": 239.12,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x13",
+    "diameter": 820,
+    "wallThickness": 13,
+    "weightPerMeter": 258.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x14",
+    "diameter": 820,
+    "wallThickness": 14,
+    "weightPerMeter": 278.28,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x15",
+    "diameter": 820,
+    "wallThickness": 15,
+    "weightPerMeter": 297.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x16",
+    "diameter": 820,
+    "wallThickness": 16,
+    "weightPerMeter": 317.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x17",
+    "diameter": 820,
+    "wallThickness": 17,
+    "weightPerMeter": 336.65,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x18",
+    "diameter": 820,
+    "wallThickness": 18,
+    "weightPerMeter": 356.01,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x19",
+    "diameter": 820,
+    "wallThickness": 19,
+    "weightPerMeter": 375.32,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x20",
+    "diameter": 820,
+    "wallThickness": 20,
+    "weightPerMeter": 394.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x21",
+    "diameter": 820,
+    "wallThickness": 21,
+    "weightPerMeter": 413.8,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x22",
+    "diameter": 820,
+    "wallThickness": 22,
+    "weightPerMeter": 432.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x23",
+    "diameter": 820,
+    "wallThickness": 23,
+    "weightPerMeter": 452.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x24",
+    "diameter": 820,
+    "wallThickness": 24,
+    "weightPerMeter": 471.13,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x25",
+    "diameter": 820,
+    "wallThickness": 25,
+    "weightPerMeter": 490.15,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x26",
+    "diameter": 820,
+    "wallThickness": 26,
+    "weightPerMeter": 509.11,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x27",
+    "diameter": 820,
+    "wallThickness": 27,
+    "weightPerMeter": 528.03,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x28",
+    "diameter": 820,
+    "wallThickness": 28,
+    "weightPerMeter": 546.89,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x29",
+    "diameter": 820,
+    "wallThickness": 29,
+    "weightPerMeter": 565.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x30",
+    "diameter": 820,
+    "wallThickness": 30,
+    "weightPerMeter": 584.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x31",
+    "diameter": 820,
+    "wallThickness": 31,
+    "weightPerMeter": 603.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x32",
+    "diameter": 820,
+    "wallThickness": 32,
+    "weightPerMeter": 621.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x33",
+    "diameter": 820,
+    "wallThickness": 33,
+    "weightPerMeter": 640.48,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "820x34",
+    "diameter": 820,
+    "wallThickness": 34,
+    "weightPerMeter": 659.05,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x7",
+    "diameter": 920,
+    "wallThickness": 7,
+    "weightPerMeter": 157.61,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x8",
+    "diameter": 920,
+    "wallThickness": 8,
+    "weightPerMeter": 179.93,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x9",
+    "diameter": 920,
+    "wallThickness": 9,
+    "weightPerMeter": 202.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x10",
+    "diameter": 920,
+    "wallThickness": 10,
+    "weightPerMeter": 224.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x11",
+    "diameter": 920,
+    "wallThickness": 11,
+    "weightPerMeter": 246.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x12",
+    "diameter": 920,
+    "wallThickness": 12,
+    "weightPerMeter": 268.71,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x13",
+    "diameter": 920,
+    "wallThickness": 13,
+    "weightPerMeter": 290.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x14",
+    "diameter": 920,
+    "wallThickness": 14,
+    "weightPerMeter": 312.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x15",
+    "diameter": 920,
+    "wallThickness": 15,
+    "weightPerMeter": 334.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x16",
+    "diameter": 920,
+    "wallThickness": 16,
+    "weightPerMeter": 356.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x17",
+    "diameter": 920,
+    "wallThickness": 17,
+    "weightPerMeter": 378.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x18",
+    "diameter": 920,
+    "wallThickness": 18,
+    "weightPerMeter": 400.4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x19",
+    "diameter": 920,
+    "wallThickness": 19,
+    "weightPerMeter": 422.18,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "920x20",
+    "diameter": 920,
+    "wallThickness": 20,
+    "weightPerMeter": 443.91,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x8",
+    "diameter": 1020,
+    "wallThickness": 8,
+    "weightPerMeter": 199.66,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x9",
+    "diameter": 1020,
+    "wallThickness": 9,
+    "weightPerMeter": 224.39,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x10",
+    "diameter": 1020,
+    "wallThickness": 10,
+    "weightPerMeter": 249.08,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x11",
+    "diameter": 1020,
+    "wallThickness": 11,
+    "weightPerMeter": 273.72,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x12",
+    "diameter": 1020,
+    "wallThickness": 12,
+    "weightPerMeter": 298.31,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x13",
+    "diameter": 1020,
+    "wallThickness": 13,
+    "weightPerMeter": 322.84,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x14",
+    "diameter": 1020,
+    "wallThickness": 14,
+    "weightPerMeter": 347.33,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x15",
+    "diameter": 1020,
+    "wallThickness": 15,
+    "weightPerMeter": 371.77,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x16",
+    "diameter": 1020,
+    "wallThickness": 16,
+    "weightPerMeter": 396.16,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x17",
+    "diameter": 1020,
+    "wallThickness": 17,
+    "weightPerMeter": 420.5,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x18",
+    "diameter": 1020,
+    "wallThickness": 18,
+    "weightPerMeter": 444.79,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x19",
+    "diameter": 1020,
+    "wallThickness": 19,
+    "weightPerMeter": 469.04,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x20",
+    "diameter": 1020,
+    "wallThickness": 20,
+    "weightPerMeter": 493.23,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x21",
+    "diameter": 1020,
+    "wallThickness": 21,
+    "weightPerMeter": 517.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x22",
+    "diameter": 1020,
+    "wallThickness": 22,
+    "weightPerMeter": 541.47,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x23",
+    "diameter": 1020,
+    "wallThickness": 23,
+    "weightPerMeter": 565.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x24",
+    "diameter": 1020,
+    "wallThickness": 24,
+    "weightPerMeter": 589.51,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x25",
+    "diameter": 1020,
+    "wallThickness": 25,
+    "weightPerMeter": 613.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x26",
+    "diameter": 1020,
+    "wallThickness": 26,
+    "weightPerMeter": 637.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x27",
+    "diameter": 1020,
+    "wallThickness": 27,
+    "weightPerMeter": 661.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x28",
+    "diameter": 1020,
+    "wallThickness": 28,
+    "weightPerMeter": 685,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x29",
+    "diameter": 1020,
+    "wallThickness": 29,
+    "weightPerMeter": 708.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x30",
+    "diameter": 1020,
+    "wallThickness": 30,
+    "weightPerMeter": 732.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x31",
+    "diameter": 1020,
+    "wallThickness": 31,
+    "weightPerMeter": 756.1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x32",
+    "diameter": 1020,
+    "wallThickness": 32,
+    "weightPerMeter": 779.7,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x33",
+    "diameter": 1020,
+    "wallThickness": 33,
+    "weightPerMeter": 803.25,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1020x34",
+    "diameter": 1020,
+    "wallThickness": 34,
+    "weightPerMeter": 826.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x10",
+    "diameter": 1120,
+    "wallThickness": 10,
+    "weightPerMeter": 273.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x11",
+    "diameter": 1120,
+    "wallThickness": 11,
+    "weightPerMeter": 300.85,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x12",
+    "diameter": 1120,
+    "wallThickness": 12,
+    "weightPerMeter": 327.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x13",
+    "diameter": 1120,
+    "wallThickness": 13,
+    "weightPerMeter": 354.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x14",
+    "diameter": 1120,
+    "wallThickness": 14,
+    "weightPerMeter": 381.86,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x15",
+    "diameter": 1120,
+    "wallThickness": 15,
+    "weightPerMeter": 408.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x16",
+    "diameter": 1120,
+    "wallThickness": 16,
+    "weightPerMeter": 435.62,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x17",
+    "diameter": 1120,
+    "wallThickness": 17,
+    "weightPerMeter": 462.43,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x18",
+    "diameter": 1120,
+    "wallThickness": 18,
+    "weightPerMeter": 489.19,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x19",
+    "diameter": 1120,
+    "wallThickness": 19,
+    "weightPerMeter": 515.89,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1120x20",
+    "diameter": 1120,
+    "wallThickness": 20,
+    "weightPerMeter": 542.55,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x12",
+    "diameter": 1220,
+    "wallThickness": 12,
+    "weightPerMeter": 357.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x13",
+    "diameter": 1220,
+    "wallThickness": 13,
+    "weightPerMeter": 386.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x14",
+    "diameter": 1220,
+    "wallThickness": 14,
+    "weightPerMeter": 416.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x15",
+    "diameter": 1220,
+    "wallThickness": 15,
+    "weightPerMeter": 445.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x16",
+    "diameter": 1220,
+    "wallThickness": 16,
+    "weightPerMeter": 475.08,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x17",
+    "diameter": 1220,
+    "wallThickness": 17,
+    "weightPerMeter": 504.35,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x18",
+    "diameter": 1220,
+    "wallThickness": 18,
+    "weightPerMeter": 533.58,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x19",
+    "diameter": 1220,
+    "wallThickness": 19,
+    "weightPerMeter": 562.75,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x20",
+    "diameter": 1220,
+    "wallThickness": 20,
+    "weightPerMeter": 591.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x21",
+    "diameter": 1220,
+    "wallThickness": 21,
+    "weightPerMeter": 620.95,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x22",
+    "diameter": 1220,
+    "wallThickness": 22,
+    "weightPerMeter": 649.98,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x23",
+    "diameter": 1220,
+    "wallThickness": 23,
+    "weightPerMeter": 678.96,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x24",
+    "diameter": 1220,
+    "wallThickness": 24,
+    "weightPerMeter": 707.88,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x25",
+    "diameter": 1220,
+    "wallThickness": 25,
+    "weightPerMeter": 736.76,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x26",
+    "diameter": 1220,
+    "wallThickness": 26,
+    "weightPerMeter": 765.59,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x27",
+    "diameter": 1220,
+    "wallThickness": 27,
+    "weightPerMeter": 794.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x28",
+    "diameter": 1220,
+    "wallThickness": 28,
+    "weightPerMeter": 823.1,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x29",
+    "diameter": 1220,
+    "wallThickness": 29,
+    "weightPerMeter": 851.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x30",
+    "diameter": 1220,
+    "wallThickness": 30,
+    "weightPerMeter": 880.42,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x31",
+    "diameter": 1220,
+    "wallThickness": 31,
+    "weightPerMeter": 909,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x32",
+    "diameter": 1220,
+    "wallThickness": 32,
+    "weightPerMeter": 937.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x33",
+    "diameter": 1220,
+    "wallThickness": 33,
+    "weightPerMeter": 966.02,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1220x34",
+    "diameter": 1220,
+    "wallThickness": 34,
+    "weightPerMeter": 994.45,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x13",
+    "diameter": 1420,
+    "wallThickness": 13,
+    "weightPerMeter": 451.08,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x14",
+    "diameter": 1420,
+    "wallThickness": 14,
+    "weightPerMeter": 485.44,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x15",
+    "diameter": 1420,
+    "wallThickness": 15,
+    "weightPerMeter": 519.74,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x16",
+    "diameter": 1420,
+    "wallThickness": 16,
+    "weightPerMeter": 554,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x17",
+    "diameter": 1420,
+    "wallThickness": 17,
+    "weightPerMeter": 588.2,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x18",
+    "diameter": 1420,
+    "wallThickness": 18,
+    "weightPerMeter": 622.36,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x19",
+    "diameter": 1420,
+    "wallThickness": 19,
+    "weightPerMeter": 656.46,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x20",
+    "diameter": 1420,
+    "wallThickness": 20,
+    "weightPerMeter": 690.52,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x21",
+    "diameter": 1420,
+    "wallThickness": 21,
+    "weightPerMeter": 724.53,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x22",
+    "diameter": 1420,
+    "wallThickness": 22,
+    "weightPerMeter": 758.49,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x23",
+    "diameter": 1420,
+    "wallThickness": 23,
+    "weightPerMeter": 792.4,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x24",
+    "diameter": 1420,
+    "wallThickness": 24,
+    "weightPerMeter": 826.26,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x25",
+    "diameter": 1420,
+    "wallThickness": 25,
+    "weightPerMeter": 860.07,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x26",
+    "diameter": 1420,
+    "wallThickness": 26,
+    "weightPerMeter": 893.83,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x27",
+    "diameter": 1420,
+    "wallThickness": 27,
+    "weightPerMeter": 927.54,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x28",
+    "diameter": 1420,
+    "wallThickness": 28,
+    "weightPerMeter": 961.21,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x29",
+    "diameter": 1420,
+    "wallThickness": 29,
+    "weightPerMeter": 994.82,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x30",
+    "diameter": 1420,
+    "wallThickness": 30,
+    "weightPerMeter": 1028.38,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x31",
+    "diameter": 1420,
+    "wallThickness": 31,
+    "weightPerMeter": 1061.9,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x32",
+    "diameter": 1420,
+    "wallThickness": 32,
+    "weightPerMeter": 1095.37,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x33",
+    "diameter": 1420,
+    "wallThickness": 33,
+    "weightPerMeter": 1128.78,
+    "gost": "ГОСТ 10704-91"
+  },
+  {
+    "slug": "1420x34",
+    "diameter": 1420,
+    "wallThickness": 34,
+    "weightPerMeter": 1162.15,
+    "gost": "ГОСТ 10704-91"
+  }
+]

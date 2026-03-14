@@ -1,0 +1,125 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import BeamCrossSection from '@components/BeamCrossSection.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getBeams, getBeamGostsForProfile } from '@lib/data';
+import { beamMeta } from '@lib/seo';
+import { relatedBeams } from '@lib/links';
+
+export function getStaticPaths() {
+  return getBeams().map((b) => ({
+    params: { slug: b.slug },
+    props: { beam: b },
+  }));
+}
+
+const { beam } = Astro.props;
+const allBeams = getBeams();
+const meta = beamMeta(beam.profile, beam.weightPerMeter, beam.h);
+const related = relatedBeams(allBeams, beam.slug);
+const allGosts = getBeamGostsForProfile(beam.profile);
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Двутавр ${beam.profile} — ГОСТ 35087-2024`}
+  breadcrumbs={[
+    { label: 'Справочник ГОСТ', href: '/gost/' },
+    { label: 'Двутавры', href: '/gost/dvutavry/' },
+    { label: beam.profile, href: `/gost/dvutavry/${beam.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Размеры и масса</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <BeamCrossSection h={beam.h} b={beam.b} s={beam.s} t={beam.t} />
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{beam.h}</div>
+          <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{beam.b}</div>
+          <div class="text-xs text-text-muted mt-1">Полка b, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{beam.s}/{beam.t}</div>
+          <div class="text-xs text-text-muted mt-1">Стенка/полка, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-accent">{beam.weightPerMeter}</div>
+          <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Механические характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Площадь сечения', value: `${beam.area} см²` },
+        { param: 'Момент инерции Ix', value: `${beam.Ix} см⁴` },
+        { param: 'Момент сопротивления Wx', value: `${beam.Wx} см³` },
+        { param: 'Радиус инерции ix', value: `${beam.ix} см` },
+        { param: 'Момент инерции Iy', value: `${beam.Iy} см⁴` },
+        { param: 'Момент сопротивления Wy', value: `${beam.Wy} см³` },
+        { param: 'Радиус инерции iy', value: `${beam.iy} см` },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы по длине</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Двутавр ${beam.profile}`}
+      weightPerUnit={beam.weightPerMeter}
+      mode="length"
+      unitLabel="кг/м"
+      defaultLength={6}
+    />
+  </section>
+
+  {allGosts.length > 0 && (
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-primary mb-3">
+        Профиль {beam.profile} в различных ГОСТах
+      </h2>
+      <GostTable
+        columns={[
+          { key: 'gost', label: 'ГОСТ / Стандарт' },
+          { key: 'weightPerMeterKg', label: 'Масса', unit: 'кг/м', align: 'right' },
+        ]}
+        rows={allGosts}
+      />
+    </section>
+  )}
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Область применения</h2>
+    <p class="text-text-muted leading-relaxed">
+      Двутавр {beam.profile} (высота {beam.h} мм, масса {beam.weightPerMeter} кг/м)
+      {beam.profile.includes('Б') && ' — балка нормального типа. Применяется в строительных каркасах, перекрытиях, подкрановых балках.'}
+      {beam.profile.includes('Ш') && ' — широкополочная балка. Используется в качестве колонн, стоек, ригелей в рамных конструкциях.'}
+      {beam.profile.includes('К') && ' — колонный профиль. Оптимален для колонн зданий и сооружений благодаря повышенной устойчивости.'}
+      {beam.profile.includes('ДБ') && ' — дополнительная серия балочного типа.'}
+      {beam.profile.includes('ДК') && ' — дополнительная серия колонного типа.'}
+    </p>
+  </section>
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на двутавр {beam.profile}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие двутавры" items={related} />
+</Gost>

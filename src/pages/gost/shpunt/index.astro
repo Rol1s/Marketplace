@@ -1,0 +1,75 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getSheetPiles } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const piles = getSheetPiles();
+
+const seriesMap = new Map<string, typeof piles>();
+for (const p of piles) {
+  const series = p.type.replace(/[\s-]?\d.*$/, '').trim() || p.type.split(' ')[0];
+  if (!seriesMap.has(series)) seriesMap.set(series, []);
+  seriesMap.get(series)!.push(p);
+}
+
+const title = `Шпунт Ларсена — все типы, вес, характеристики | ${SITE.name}`;
+const description = `Полный каталог шпунта Ларсена: ${piles.length} типов. Arcelor, Gerdau, JFE, Larssen. Масса, площадь, характеристики каждого профиля.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник ГОСТ', href: '/gost/' },
+      { label: 'Шпунт Ларсена', href: '/gost/shpunt/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Шпунт Ларсена — каталог типов
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      {piles.length} типов шпунта Ларсена от ведущих производителей.
+      Масса, площадь стены, характеристики каждого профиля.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+      {piles.slice(0, 100).map((p) => (
+        <a
+          href={`/gost/shpunt/${p.slug}/`}
+          class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+        >
+          <div class="text-sm font-bold text-primary group-hover:text-accent transition-colors truncate">
+            {p.displayName}
+          </div>
+          <div class="text-xs text-text-muted mt-1">
+            {(p.weightPerMeterTons * 1000).toFixed(1)} кг/м
+          </div>
+        </a>
+      ))}
+    </div>
+
+    {piles.length > 100 && (
+      <details class="mt-6">
+        <summary class="cursor-pointer text-primary font-medium hover:underline">
+          Показать все {piles.length} типов
+        </summary>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mt-4">
+          {piles.slice(100).map((p) => (
+            <a
+              href={`/gost/shpunt/${p.slug}/`}
+              class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+            >
+              <div class="text-sm font-bold text-primary group-hover:text-accent truncate">
+                {p.displayName}
+              </div>
+              <div class="text-xs text-text-muted mt-1">
+                {(p.weightPerMeterTons * 1000).toFixed(1)} кг/м
+              </div>
+            </a>
+          ))}
+        </div>
+      </details>
+    )}
+  </div>
+</Base>

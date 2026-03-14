@@ -1,0 +1,43 @@
+---
+import { SITE, SECTIONS } from '@/config/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary text-white/80 mt-16">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-lg font-bold text-white mb-3">{SITE.name}</h3>
+        <p class="text-sm leading-relaxed">
+          ГОСТ-справочник металлопроката с калькулятором веса.
+          Точные данные по сортаменту, таблицы характеристик, расчёт массы.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Справочник</h4>
+        <ul class="space-y-2">
+          {SECTIONS.map((s) => (
+            <li>
+              <a href={`/gost/${s.slug}/`} class="text-sm hover:text-white transition-colors">
+                {s.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Инструменты</h4>
+        <ul class="space-y-2">
+          <li><a href="/calculator/" class="text-sm hover:text-white transition-colors">Калькулятор веса</a></li>
+          <li><a href="/zayavka/" class="text-sm hover:text-white transition-colors">Оставить заявку</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/20 mt-8 pt-6 text-center text-xs text-white/50">
+      &copy; {year} {SITE.name}. Данные предоставлены в справочных целях.
+    </div>
+  </div>
+</footer>

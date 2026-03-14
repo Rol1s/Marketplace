@@ -1,0 +1,5592 @@
+[
+  {
+    "profile": "10",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 9.46
+  },
+  {
+    "profile": "10Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 8.1
+  },
+  {
+    "profile": "10Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 8.1
+  },
+  {
+    "profile": "10Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 8.1
+  },
+  {
+    "profile": "10Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 8.1
+  },
+  {
+    "profile": "10ДК0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 12.2
+  },
+  {
+    "profile": "10ДК0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 12.2
+  },
+  {
+    "profile": "10ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 16.7
+  },
+  {
+    "profile": "10ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 16.7
+  },
+  {
+    "profile": "10ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 20.4
+  },
+  {
+    "profile": "10ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 20.4
+  },
+  {
+    "profile": "10ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 41.8
+  },
+  {
+    "profile": "10ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 41.8
+  },
+  {
+    "profile": "10У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 9.46
+  },
+  {
+    "profile": "12",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 11.5
+  },
+  {
+    "profile": "12Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 8.7
+  },
+  {
+    "profile": "12Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 8.7
+  },
+  {
+    "profile": "12Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 8.7
+  },
+  {
+    "profile": "12Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 8.7
+  },
+  {
+    "profile": "12Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 10.4
+  },
+  {
+    "profile": "12Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 10.4
+  },
+  {
+    "profile": "12Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 10.4
+  },
+  {
+    "profile": "12Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 10.4
+  },
+  {
+    "profile": "12ДК0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 14.6
+  },
+  {
+    "profile": "12ДК0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 14.6
+  },
+  {
+    "profile": "12ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 19.9
+  },
+  {
+    "profile": "12ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 19.9
+  },
+  {
+    "profile": "12ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 26.7
+  },
+  {
+    "profile": "12ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 26.7
+  },
+  {
+    "profile": "12ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 52.1
+  },
+  {
+    "profile": "12ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 52.1
+  },
+  {
+    "profile": "12У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 11.5
+  },
+  {
+    "profile": "13С1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 24.74
+  },
+  {
+    "profile": "13С1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 24.7
+  },
+  {
+    "profile": "13С1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 24.74
+  },
+  {
+    "profile": "14",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 13.7
+  },
+  {
+    "profile": "14Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 10.5
+  },
+  {
+    "profile": "14Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 10.5
+  },
+  {
+    "profile": "14Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 10.5
+  },
+  {
+    "profile": "14Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 10.5
+  },
+  {
+    "profile": "14Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 12.9
+  },
+  {
+    "profile": "14Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 12.9
+  },
+  {
+    "profile": "14Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 12.9
+  },
+  {
+    "profile": "14Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 12.9
+  },
+  {
+    "profile": "14ДК0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 18.1
+  },
+  {
+    "profile": "14ДК0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 18.1
+  },
+  {
+    "profile": "14ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 24.7
+  },
+  {
+    "profile": "14ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 24.7
+  },
+  {
+    "profile": "14ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 33.7
+  },
+  {
+    "profile": "14ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 33.7
+  },
+  {
+    "profile": "14ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 62.9
+  },
+  {
+    "profile": "14ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 62.9
+  },
+  {
+    "profile": "14С",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 16.9
+  },
+  {
+    "profile": "14У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 13.7
+  },
+  {
+    "profile": "15ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 22.5
+  },
+  {
+    "profile": "15ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 22.5
+  },
+  {
+    "profile": "15ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 29.9
+  },
+  {
+    "profile": "15ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 29.9
+  },
+  {
+    "profile": "15ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 37.3
+  },
+  {
+    "profile": "15ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 37.3
+  },
+  {
+    "profile": "15К1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 26.8
+  },
+  {
+    "profile": "15К1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 26.8
+  },
+  {
+    "profile": "15К1",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 26.8
+  },
+  {
+    "profile": "15К1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 26.8
+  },
+  {
+    "profile": "15К1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 22.5
+  },
+  {
+    "profile": "15К2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 31.5
+  },
+  {
+    "profile": "15К2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 31.5
+  },
+  {
+    "profile": "15К2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 31.5
+  },
+  {
+    "profile": "15К2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 31.5
+  },
+  {
+    "profile": "15К2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 29.8
+  },
+  {
+    "profile": "15К3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 39.1
+  },
+  {
+    "profile": "15К3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 39.1
+  },
+  {
+    "profile": "15К3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 39.1
+  },
+  {
+    "profile": "15К3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 39.1
+  },
+  {
+    "profile": "15К3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 37.1
+  },
+  {
+    "profile": "15К4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 46.8
+  },
+  {
+    "profile": "15К4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 46.8
+  },
+  {
+    "profile": "15К4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 46.8
+  },
+  {
+    "profile": "15К4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 46.8
+  },
+  {
+    "profile": "15К5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 56.3
+  },
+  {
+    "profile": "15К5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 56.3
+  },
+  {
+    "profile": "15К5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 56.3
+  },
+  {
+    "profile": "15К5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 56.3
+  },
+  {
+    "profile": "16",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 15.9
+  },
+  {
+    "profile": "16Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 12.7
+  },
+  {
+    "profile": "16Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 12.7
+  },
+  {
+    "profile": "16Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 12.7
+  },
+  {
+    "profile": "16Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 12.7
+  },
+  {
+    "profile": "16Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 15.8
+  },
+  {
+    "profile": "16Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 15.8
+  },
+  {
+    "profile": "16Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 15.8
+  },
+  {
+    "profile": "16Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 15.8
+  },
+  {
+    "profile": "16ДК0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 23.8
+  },
+  {
+    "profile": "16ДК0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 23.8
+  },
+  {
+    "profile": "16ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 30.4
+  },
+  {
+    "profile": "16ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 30.4
+  },
+  {
+    "profile": "16ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 42.6
+  },
+  {
+    "profile": "16ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 42.6
+  },
+  {
+    "profile": "16ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 76.2
+  },
+  {
+    "profile": "16ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 76.2
+  },
+  {
+    "profile": "16У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 15.9
+  },
+  {
+    "profile": "18",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 18.4
+  },
+  {
+    "profile": "18Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 15.4
+  },
+  {
+    "profile": "18Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 15.4
+  },
+  {
+    "profile": "18Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 15.4
+  },
+  {
+    "profile": "18Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 15.4
+  },
+  {
+    "profile": "18Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 18.8
+  },
+  {
+    "profile": "18Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 18.8
+  },
+  {
+    "profile": "18Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 18.8
+  },
+  {
+    "profile": "18Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 18.8
+  },
+  {
+    "profile": "18ДК0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 28.7
+  },
+  {
+    "profile": "18ДК0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 28.7
+  },
+  {
+    "profile": "18ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 35.5
+  },
+  {
+    "profile": "18ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 35.5
+  },
+  {
+    "profile": "18ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 51
+  },
+  {
+    "profile": "18ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 51
+  },
+  {
+    "profile": "18ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 88.9
+  },
+  {
+    "profile": "18ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 88.9
+  },
+  {
+    "profile": "18М",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 25.8
+  },
+  {
+    "profile": "18У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 18.4
+  },
+  {
+    "profile": "20",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 21
+  },
+  {
+    "profile": "20Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 21.3
+  },
+  {
+    "profile": "20Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 21.3
+  },
+  {
+    "profile": "20Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 22.4
+  },
+  {
+    "profile": "20Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 21.3
+  },
+  {
+    "profile": "20Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 25.3
+  },
+  {
+    "profile": "20Б2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 25.3
+  },
+  {
+    "profile": "20Б2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 25.3
+  },
+  {
+    "profile": "20Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 25.3
+  },
+  {
+    "profile": "20Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 31.6
+  },
+  {
+    "profile": "20Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 31.6
+  },
+  {
+    "profile": "20Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 31.6
+  },
+  {
+    "profile": "20Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 31.6
+  },
+  {
+    "profile": "20Д1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 26.6
+  },
+  {
+    "profile": "20Д2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 31.3
+  },
+  {
+    "profile": "20ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 26.6
+  },
+  {
+    "profile": "20ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 26.6
+  },
+  {
+    "profile": "20ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 31.4
+  },
+  {
+    "profile": "20ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 31.4
+  },
+  {
+    "profile": "20ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 46
+  },
+  {
+    "profile": "20ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 46
+  },
+  {
+    "profile": "20ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 52.3
+  },
+  {
+    "profile": "20ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 52.3
+  },
+  {
+    "profile": "20ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 59.4
+  },
+  {
+    "profile": "20ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 59.4
+  },
+  {
+    "profile": "20ДК4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 71.5
+  },
+  {
+    "profile": "20ДК4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 71.5
+  },
+  {
+    "profile": "20ДК5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 86.8
+  },
+  {
+    "profile": "20ДК5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 86.8
+  },
+  {
+    "profile": "20ДК6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 99.5
+  },
+  {
+    "profile": "20ДК6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 99.5
+  },
+  {
+    "profile": "20К1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 41.4
+  },
+  {
+    "profile": "20К1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 41.4
+  },
+  {
+    "profile": "20К1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 41.5
+  },
+  {
+    "profile": "20К1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 41.4
+  },
+  {
+    "profile": "20К2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 49.9
+  },
+  {
+    "profile": "20К2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 49.9
+  },
+  {
+    "profile": "20К2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 46.9
+  },
+  {
+    "profile": "20К2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 49.9
+  },
+  {
+    "profile": "20К2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 46.1
+  },
+  {
+    "profile": "20К3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 57.8
+  },
+  {
+    "profile": "20К3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 57.8
+  },
+  {
+    "profile": "20К3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 57.8
+  },
+  {
+    "profile": "20К3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 57.8
+  },
+  {
+    "profile": "20К3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 52
+  },
+  {
+    "profile": "20К4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 69.3
+  },
+  {
+    "profile": "20К4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 69.3
+  },
+  {
+    "profile": "20К4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 69.3
+  },
+  {
+    "profile": "20К4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 69.3
+  },
+  {
+    "profile": "20К4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 59
+  },
+  {
+    "profile": "20К5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 78
+  },
+  {
+    "profile": "20К5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 78
+  },
+  {
+    "profile": "20К5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 78
+  },
+  {
+    "profile": "20К5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 78
+  },
+  {
+    "profile": "20К5А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 71
+  },
+  {
+    "profile": "20К6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 90.3
+  },
+  {
+    "profile": "20К6",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 90.3
+  },
+  {
+    "profile": "20К6",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 90.3
+  },
+  {
+    "profile": "20К6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 90.3
+  },
+  {
+    "profile": "20К6А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 86
+  },
+  {
+    "profile": "20К7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 102.9
+  },
+  {
+    "profile": "20К7",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 102.9
+  },
+  {
+    "profile": "20К7",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 102.9
+  },
+  {
+    "profile": "20К7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 102.9
+  },
+  {
+    "profile": "20К7А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 100
+  },
+  {
+    "profile": "20К8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 118.4
+  },
+  {
+    "profile": "20К8",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 118.4
+  },
+  {
+    "profile": "20К8",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 118.4
+  },
+  {
+    "profile": "20К8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 118.4
+  },
+  {
+    "profile": "20С",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 27.9
+  },
+  {
+    "profile": "20С1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 56.2
+  },
+  {
+    "profile": "20С1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 56.2
+  },
+  {
+    "profile": "20С1",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 56.2
+  },
+  {
+    "profile": "20С1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 56.2
+  },
+  {
+    "profile": "20Са",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 31.1
+  },
+  {
+    "profile": "20У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 21
+  },
+  {
+    "profile": "20Ш0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 24.4
+  },
+  {
+    "profile": "20Ш0",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 24.4
+  },
+  {
+    "profile": "20Ш0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 24.4
+  },
+  {
+    "profile": "20Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 30.6
+  },
+  {
+    "profile": "20Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 30.6
+  },
+  {
+    "profile": "20Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 30.6
+  },
+  {
+    "profile": "20Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 30.6
+  },
+  {
+    "profile": "20Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 38.8
+  },
+  {
+    "profile": "20Ш2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 38.8
+  },
+  {
+    "profile": "20Ш2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 38.8
+  },
+  {
+    "profile": "20Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 38.8
+  },
+  {
+    "profile": "20Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 47
+  },
+  {
+    "profile": "20Ш3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 47
+  },
+  {
+    "profile": "20Ш3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 47
+  },
+  {
+    "profile": "20Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 47
+  },
+  {
+    "profile": "20Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 58.9
+  },
+  {
+    "profile": "20Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 58.9
+  },
+  {
+    "profile": "20Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 70.9
+  },
+  {
+    "profile": "20Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 70.9
+  },
+  {
+    "profile": "20Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 88.2
+  },
+  {
+    "profile": "20Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 88.2
+  },
+  {
+    "profile": "22",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 24
+  },
+  {
+    "profile": "22С",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 33.1
+  },
+  {
+    "profile": "22У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 24
+  },
+  {
+    "profile": "23Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 25.8
+  },
+  {
+    "profile": "23К1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 52.2
+  },
+  {
+    "profile": "23К2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 59.5
+  },
+  {
+    "profile": "23Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 36.2
+  },
+  {
+    "profile": "24",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 27.3
+  },
+  {
+    "profile": "24ДБ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 27.8
+  },
+  {
+    "profile": "24М",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 38.3
+  },
+  {
+    "profile": "24У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 27.3
+  },
+  {
+    "profile": "25Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 25.7
+  },
+  {
+    "profile": "25Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 25.7
+  },
+  {
+    "profile": "25Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 25.7
+  },
+  {
+    "profile": "25Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 29.6
+  },
+  {
+    "profile": "25Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 29.6
+  },
+  {
+    "profile": "25Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 29.6
+  },
+  {
+    "profile": "25Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 37.4
+  },
+  {
+    "profile": "25Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 37.4
+  },
+  {
+    "profile": "25Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 37.4
+  },
+  {
+    "profile": "25Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 37.4
+  },
+  {
+    "profile": "25Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 45.3
+  },
+  {
+    "profile": "25Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 45.3
+  },
+  {
+    "profile": "25Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 45.3
+  },
+  {
+    "profile": "25Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 45.3
+  },
+  {
+    "profile": "25Д1В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 31.1
+  },
+  {
+    "profile": "25Д2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 32.7
+  },
+  {
+    "profile": "25Д2В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 37
+  },
+  {
+    "profile": "25Д3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 38.5
+  },
+  {
+    "profile": "25Д3В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 43
+  },
+  {
+    "profile": "25Д4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 44.8
+  },
+  {
+    "profile": "25ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 31.1
+  },
+  {
+    "profile": "25ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 31.1
+  },
+  {
+    "profile": "25ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 37
+  },
+  {
+    "profile": "25ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 37
+  },
+  {
+    "profile": "25ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 43
+  },
+  {
+    "profile": "25ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 43
+  },
+  {
+    "profile": "25ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 32.7
+  },
+  {
+    "profile": "25ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 32.7
+  },
+  {
+    "profile": "25ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 38.7
+  },
+  {
+    "profile": "25ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 38.7
+  },
+  {
+    "profile": "25ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 44.9
+  },
+  {
+    "profile": "25ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 44.9
+  },
+  {
+    "profile": "25ДК1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 72.9
+  },
+  {
+    "profile": "25ДК1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 72.9
+  },
+  {
+    "profile": "25ДК2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 80.1
+  },
+  {
+    "profile": "25ДК2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 80.1
+  },
+  {
+    "profile": "25ДК3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 89.6
+  },
+  {
+    "profile": "25ДК3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 89.6
+  },
+  {
+    "profile": "25ДК4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 101.2
+  },
+  {
+    "profile": "25ДК4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 101.2
+  },
+  {
+    "profile": "25ДК5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 115
+  },
+  {
+    "profile": "25ДК5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 115
+  },
+  {
+    "profile": "25ДК6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 131
+  },
+  {
+    "profile": "25ДК6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 131
+  },
+  {
+    "profile": "25ДК7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 149
+  },
+  {
+    "profile": "25ДК7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 149
+  },
+  {
+    "profile": "25ДК8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 167
+  },
+  {
+    "profile": "25ДК8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 167
+  },
+  {
+    "profile": "25К1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 62.6
+  },
+  {
+    "profile": "25К1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 62.6
+  },
+  {
+    "profile": "25К1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 62.6
+  },
+  {
+    "profile": "25К1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 73
+  },
+  {
+    "profile": "25К2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 72.4
+  },
+  {
+    "profile": "25К2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 72.4
+  },
+  {
+    "profile": "25К2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 72.4
+  },
+  {
+    "profile": "25К2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 80
+  },
+  {
+    "profile": "25К3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 80.2
+  },
+  {
+    "profile": "25К3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 80.2
+  },
+  {
+    "profile": "25К3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 80.2
+  },
+  {
+    "profile": "25К3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 89
+  },
+  {
+    "profile": "25К4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 90.1
+  },
+  {
+    "profile": "25К4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 90.1
+  },
+  {
+    "profile": "25К4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 90.1
+  },
+  {
+    "profile": "25К4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 90.1
+  },
+  {
+    "profile": "25К4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 101
+  },
+  {
+    "profile": "25К5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 103
+  },
+  {
+    "profile": "25К5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 102.9
+  },
+  {
+    "profile": "25К5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 102.9
+  },
+  {
+    "profile": "25К5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 103
+  },
+  {
+    "profile": "25К6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 115.5
+  },
+  {
+    "profile": "25К6",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 115.5
+  },
+  {
+    "profile": "25К6",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 115.5
+  },
+  {
+    "profile": "25К6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 115.5
+  },
+  {
+    "profile": "25К7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 134.9
+  },
+  {
+    "profile": "25К7",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 134.9
+  },
+  {
+    "profile": "25К7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 134.9
+  },
+  {
+    "profile": "25К8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 153.1
+  },
+  {
+    "profile": "25К8",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 153
+  },
+  {
+    "profile": "25К8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 153.1
+  },
+  {
+    "profile": "25К9",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 171.3
+  },
+  {
+    "profile": "25К9",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 171.3
+  },
+  {
+    "profile": "25К9",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 171.3
+  },
+  {
+    "profile": "25К10",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 197.5
+  },
+  {
+    "profile": "25К10",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 197.5
+  },
+  {
+    "profile": "25К10",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 197.5
+  },
+  {
+    "profile": "25С1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 64.4
+  },
+  {
+    "profile": "25С1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 64.4
+  },
+  {
+    "profile": "25С1",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 64.4
+  },
+  {
+    "profile": "25С1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 64.4
+  },
+  {
+    "profile": "25С2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 82.2
+  },
+  {
+    "profile": "25С2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 82.2
+  },
+  {
+    "profile": "25С2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 82.2
+  },
+  {
+    "profile": "25С2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 82.2
+  },
+  {
+    "profile": "25Ш0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 36.8
+  },
+  {
+    "profile": "25Ш0",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 36.8
+  },
+  {
+    "profile": "25Ш0",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 36.8
+  },
+  {
+    "profile": "25Ш0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 36.8
+  },
+  {
+    "profile": "25Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 44.2
+  },
+  {
+    "profile": "25Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 44.1
+  },
+  {
+    "profile": "25Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 44.2
+  },
+  {
+    "profile": "25Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 53.8
+  },
+  {
+    "profile": "25Ш2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 53.8
+  },
+  {
+    "profile": "25Ш2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 53.8
+  },
+  {
+    "profile": "25Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 53.8
+  },
+  {
+    "profile": "25Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 67.3
+  },
+  {
+    "profile": "25Ш3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 67.3
+  },
+  {
+    "profile": "25Ш3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 67.3
+  },
+  {
+    "profile": "25Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 67.3
+  },
+  {
+    "profile": "25Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 84.4
+  },
+  {
+    "profile": "25Ш4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 84.4
+  },
+  {
+    "profile": "25Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 84.4
+  },
+  {
+    "profile": "25Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 104.7
+  },
+  {
+    "profile": "25Ш5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 104.7
+  },
+  {
+    "profile": "25Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 104.7
+  },
+  {
+    "profile": "25Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 128.3
+  },
+  {
+    "profile": "25Ш6",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 128.3
+  },
+  {
+    "profile": "25Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 128.3
+  },
+  {
+    "profile": "26Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 28
+  },
+  {
+    "profile": "26Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 31.2
+  },
+  {
+    "profile": "26К1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 65.2
+  },
+  {
+    "profile": "26К2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 73.2
+  },
+  {
+    "profile": "26К3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 83.1
+  },
+  {
+    "profile": "26Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 42.7
+  },
+  {
+    "profile": "26Ш2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 49.2
+  },
+  {
+    "profile": "27",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 31.5
+  },
+  {
+    "profile": "27ДБ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 31.9
+  },
+  {
+    "profile": "27С",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 42.8
+  },
+  {
+    "profile": "27Са",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 47
+  },
+  {
+    "profile": "27У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 31.5
+  },
+  {
+    "profile": "30",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 36.5
+  },
+  {
+    "profile": "30Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 32
+  },
+  {
+    "profile": "30Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 32
+  },
+  {
+    "profile": "30Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 32.9
+  },
+  {
+    "profile": "30Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 32
+  },
+  {
+    "profile": "30Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 36.7
+  },
+  {
+    "profile": "30Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 36.7
+  },
+  {
+    "profile": "30Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 36.6
+  },
+  {
+    "profile": "30Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 36.7
+  },
+  {
+    "profile": "30Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 46.1
+  },
+  {
+    "profile": "30Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 46.1
+  },
+  {
+    "profile": "30Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 46.1
+  },
+  {
+    "profile": "30Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 46.1
+  },
+  {
+    "profile": "30Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 55.6
+  },
+  {
+    "profile": "30Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 55.6
+  },
+  {
+    "profile": "30Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 55.6
+  },
+  {
+    "profile": "30Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 55.6
+  },
+  {
+    "profile": "30ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 28.4
+  },
+  {
+    "profile": "30ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 28.4
+  },
+  {
+    "profile": "30ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 32.8
+  },
+  {
+    "profile": "30ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 32.8
+  },
+  {
+    "profile": "30ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 38.9
+  },
+  {
+    "profile": "30ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 38.9
+  },
+  {
+    "profile": "30ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 44.8
+  },
+  {
+    "profile": "30ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 44.8
+  },
+  {
+    "profile": "30ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 52.5
+  },
+  {
+    "profile": "30ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 52.5
+  },
+  {
+    "profile": "30ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 40.3
+  },
+  {
+    "profile": "30ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 40.3
+  },
+  {
+    "profile": "30ДБ7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 46.2
+  },
+  {
+    "profile": "30ДБ7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 46.2
+  },
+  {
+    "profile": "30ДБ8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 54
+  },
+  {
+    "profile": "30ДБ8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 54
+  },
+  {
+    "profile": "30ДШ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 72.7
+  },
+  {
+    "profile": "30К1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 87
+  },
+  {
+    "profile": "30К1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 87
+  },
+  {
+    "profile": "30К1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 84.8
+  },
+  {
+    "profile": "30К1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 87
+  },
+  {
+    "profile": "30К2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 94
+  },
+  {
+    "profile": "30К2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 94
+  },
+  {
+    "profile": "30К2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 96.3
+  },
+  {
+    "profile": "30К2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 94
+  },
+  {
+    "profile": "30К3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30К3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30К3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 108.9
+  },
+  {
+    "profile": "30К3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30К4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30К4",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30К4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30К5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 117.4
+  },
+  {
+    "profile": "30К5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 117.4
+  },
+  {
+    "profile": "30К5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 117.4
+  },
+  {
+    "profile": "30К5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 117.4
+  },
+  {
+    "profile": "30К6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "30К6",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "30К6",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "30К6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "30К7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 142
+  },
+  {
+    "profile": "30К7",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 142
+  },
+  {
+    "profile": "30К7",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 142
+  },
+  {
+    "profile": "30К7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 142
+  },
+  {
+    "profile": "30К8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 161.8
+  },
+  {
+    "profile": "30К8",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 161.8
+  },
+  {
+    "profile": "30К8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 161.8
+  },
+  {
+    "profile": "30К9",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 182.2
+  },
+  {
+    "profile": "30К9",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 182.2
+  },
+  {
+    "profile": "30К9",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 182.2
+  },
+  {
+    "profile": "30К10",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 203.8
+  },
+  {
+    "profile": "30К10",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 203.8
+  },
+  {
+    "profile": "30К10",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 203.8
+  },
+  {
+    "profile": "30К11",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 225.4
+  },
+  {
+    "profile": "30К11",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 225.4
+  },
+  {
+    "profile": "30К11",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 225.4
+  },
+  {
+    "profile": "30К12",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 250
+  },
+  {
+    "profile": "30К12",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 250
+  },
+  {
+    "profile": "30К12",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 250
+  },
+  {
+    "profile": "30К13",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 280.4
+  },
+  {
+    "profile": "30К13",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 280.4
+  },
+  {
+    "profile": "30К13",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 280.4
+  },
+  {
+    "profile": "30К14",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 309.9
+  },
+  {
+    "profile": "30К14",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 309.9
+  },
+  {
+    "profile": "30К15",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 340.3
+  },
+  {
+    "profile": "30К15",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 340.3
+  },
+  {
+    "profile": "30К16",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 376.6
+  },
+  {
+    "profile": "30К16",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 376.6
+  },
+  {
+    "profile": "30К17",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 413.2
+  },
+  {
+    "profile": "30К17",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 413.2
+  },
+  {
+    "profile": "30К18",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 455.8
+  },
+  {
+    "profile": "30К18",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 455.8
+  },
+  {
+    "profile": "30К19",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 510.4
+  },
+  {
+    "profile": "30К19",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 510.4
+  },
+  {
+    "profile": "30К20",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 563.6
+  },
+  {
+    "profile": "30К20",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 563.6
+  },
+  {
+    "profile": "30К21",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 631.5
+  },
+  {
+    "profile": "30К21",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 631.5
+  },
+  {
+    "profile": "30М",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 50.2
+  },
+  {
+    "profile": "30С1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 84.5
+  },
+  {
+    "profile": "30С1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 84.5
+  },
+  {
+    "profile": "30С1",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 84.5
+  },
+  {
+    "profile": "30С1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 84.5
+  },
+  {
+    "profile": "30С2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30С2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30С2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30С2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "30У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 36.5
+  },
+  {
+    "profile": "30Ш0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 48.3
+  },
+  {
+    "profile": "30Ш0",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 48.3
+  },
+  {
+    "profile": "30Ш0",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 48.3
+  },
+  {
+    "profile": "30Ш0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 48.3
+  },
+  {
+    "profile": "30Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 56.8
+  },
+  {
+    "profile": "30Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 56.8
+  },
+  {
+    "profile": "30Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 53.6
+  },
+  {
+    "profile": "30Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 56.8
+  },
+  {
+    "profile": "30Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 68.6
+  },
+  {
+    "profile": "30Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 68.6
+  },
+  {
+    "profile": "30Ш2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 61
+  },
+  {
+    "profile": "30Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 68.6
+  },
+  {
+    "profile": "30Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 82.9
+  },
+  {
+    "profile": "30Ш3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 82.9
+  },
+  {
+    "profile": "30Ш3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 82.9
+  },
+  {
+    "profile": "30Ш3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 68.3
+  },
+  {
+    "profile": "30Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 82.9
+  },
+  {
+    "profile": "30Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 100.9
+  },
+  {
+    "profile": "30Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 100.9
+  },
+  {
+    "profile": "30Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 127.5
+  },
+  {
+    "profile": "30Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 127.5
+  },
+  {
+    "profile": "30Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 163.3
+  },
+  {
+    "profile": "30Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 163.3
+  },
+  {
+    "profile": "31Б1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 38.7
+  },
+  {
+    "profile": "31Б1В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 40.3
+  },
+  {
+    "profile": "31Б2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 44.5
+  },
+  {
+    "profile": "31Б2В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 46.1
+  },
+  {
+    "profile": "31Б3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 52
+  },
+  {
+    "profile": "31Б3В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 54
+  },
+  {
+    "profile": "31У3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 28.3
+  },
+  {
+    "profile": "31У4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 32.7
+  },
+  {
+    "profile": "32С1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 180
+  },
+  {
+    "profile": "32С1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 180
+  },
+  {
+    "profile": "32С1",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 180
+  },
+  {
+    "profile": "32С1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 180
+  },
+  {
+    "profile": "32С2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 222.9
+  },
+  {
+    "profile": "32С2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 222.9
+  },
+  {
+    "profile": "32С2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 222.9
+  },
+  {
+    "profile": "32С2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 222.9
+  },
+  {
+    "profile": "33",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 42.2
+  },
+  {
+    "profile": "33У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 42.2
+  },
+  {
+    "profile": "35Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 41.4
+  },
+  {
+    "profile": "35Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 41.4
+  },
+  {
+    "profile": "35Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 38.9
+  },
+  {
+    "profile": "35Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 41.4
+  },
+  {
+    "profile": "35Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 49.6
+  },
+  {
+    "profile": "35Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 49.6
+  },
+  {
+    "profile": "35Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 43.3
+  },
+  {
+    "profile": "35Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 49.6
+  },
+  {
+    "profile": "35Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 60.5
+  },
+  {
+    "profile": "35Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 60.5
+  },
+  {
+    "profile": "35Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 60.5
+  },
+  {
+    "profile": "35Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 60.5
+  },
+  {
+    "profile": "35Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 72.9
+  },
+  {
+    "profile": "35Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 72.9
+  },
+  {
+    "profile": "35Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 72.9
+  },
+  {
+    "profile": "35Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 72.9
+  },
+  {
+    "profile": "35ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 32.8
+  },
+  {
+    "profile": "35ДБ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 33.6
+  },
+  {
+    "profile": "35ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 32.8
+  },
+  {
+    "profile": "35ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 39.1
+  },
+  {
+    "profile": "35ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 39.1
+  },
+  {
+    "profile": "35ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 45
+  },
+  {
+    "profile": "35ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 45
+  },
+  {
+    "profile": "35ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 50.6
+  },
+  {
+    "profile": "35ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 50.6
+  },
+  {
+    "profile": "35ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 56.7
+  },
+  {
+    "profile": "35ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 56.7
+  },
+  {
+    "profile": "35ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 67.1
+  },
+  {
+    "profile": "35ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 67.1
+  },
+  {
+    "profile": "35ДБ7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 91
+  },
+  {
+    "profile": "35ДБ7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 91
+  },
+  {
+    "profile": "35ДБ8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 101.4
+  },
+  {
+    "profile": "35ДБ8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 101.4
+  },
+  {
+    "profile": "35ДБ9",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 110.4
+  },
+  {
+    "profile": "35ДБ9",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 110.4
+  },
+  {
+    "profile": "35ДБ10",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 121.9
+  },
+  {
+    "profile": "35ДБ10",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 121.9
+  },
+  {
+    "profile": "35К1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 109.1
+  },
+  {
+    "profile": "35К1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 109.1
+  },
+  {
+    "profile": "35К1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 109.7
+  },
+  {
+    "profile": "35К1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 109.1
+  },
+  {
+    "profile": "35К1.5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 122.8
+  },
+  {
+    "profile": "35К1.5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 122.8
+  },
+  {
+    "profile": "35К1.5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 122.8
+  },
+  {
+    "profile": "35К1.5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 122.8
+  },
+  {
+    "profile": "35К2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 136.5
+  },
+  {
+    "profile": "35К2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 136.5
+  },
+  {
+    "profile": "35К2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 125.9
+  },
+  {
+    "profile": "35К2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 136.5
+  },
+  {
+    "profile": "35К3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 154.2
+  },
+  {
+    "profile": "35К3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 154.2
+  },
+  {
+    "profile": "35К3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 154.2
+  },
+  {
+    "profile": "35К3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 144.5
+  },
+  {
+    "profile": "35К3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 154.2
+  },
+  {
+    "profile": "35К4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 172.1
+  },
+  {
+    "profile": "35К4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 172.1
+  },
+  {
+    "profile": "35К4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 172.1
+  },
+  {
+    "profile": "35К4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 172.1
+  },
+  {
+    "profile": "35К5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 190
+  },
+  {
+    "profile": "35К5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 190
+  },
+  {
+    "profile": "35К5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 190
+  },
+  {
+    "profile": "35К5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 190
+  },
+  {
+    "profile": "35К6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 207.9
+  },
+  {
+    "profile": "35К6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 207.9
+  },
+  {
+    "profile": "35К7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 233.1
+  },
+  {
+    "profile": "35К7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 233.1
+  },
+  {
+    "profile": "35К8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 255.5
+  },
+  {
+    "profile": "35К8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 255.5
+  },
+  {
+    "profile": "35К9",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 280.9
+  },
+  {
+    "profile": "35К9",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 280.9
+  },
+  {
+    "profile": "35К10",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 307.6
+  },
+  {
+    "profile": "35К10",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 307.6
+  },
+  {
+    "profile": "35К11",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 343.8
+  },
+  {
+    "profile": "35К11",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 343.8
+  },
+  {
+    "profile": "35К12",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 381.3
+  },
+  {
+    "profile": "35К12",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 381.3
+  },
+  {
+    "profile": "35К13",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 419
+  },
+  {
+    "profile": "35К13",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 419
+  },
+  {
+    "profile": "35К14",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 456.8
+  },
+  {
+    "profile": "35К14",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 456.8
+  },
+  {
+    "profile": "35К15",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 503.2
+  },
+  {
+    "profile": "35К15",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 503.2
+  },
+  {
+    "profile": "35К16",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 564.6
+  },
+  {
+    "profile": "35К16",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 564.6
+  },
+  {
+    "profile": "35К17",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 618.8
+  },
+  {
+    "profile": "35К17",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 618.8
+  },
+  {
+    "profile": "35К18",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 681.8
+  },
+  {
+    "profile": "35К18",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 681.8
+  },
+  {
+    "profile": "35К19",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 751.2
+  },
+  {
+    "profile": "35К19",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 751.2
+  },
+  {
+    "profile": "35К20",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 829.7
+  },
+  {
+    "profile": "35К20",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 829.7
+  },
+  {
+    "profile": "35К21",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 912.2
+  },
+  {
+    "profile": "35К21",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 912.2
+  },
+  {
+    "profile": "35К22",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 1001.8
+  },
+  {
+    "profile": "35К22",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 1001.8
+  },
+  {
+    "profile": "35К23",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 1104.7
+  },
+  {
+    "profile": "35К23",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 1104.7
+  },
+  {
+    "profile": "35К24",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 1213.7
+  },
+  {
+    "profile": "35К24",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 1213.7
+  },
+  {
+    "profile": "35С1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 106.2
+  },
+  {
+    "profile": "35С1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 106.2
+  },
+  {
+    "profile": "35С1",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 106.2
+  },
+  {
+    "profile": "35С1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 106.2
+  },
+  {
+    "profile": "35С2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 130.8
+  },
+  {
+    "profile": "35С2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 130.8
+  },
+  {
+    "profile": "35С2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 130.8
+  },
+  {
+    "profile": "35С2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 130.8
+  },
+  {
+    "profile": "35С3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 155.7
+  },
+  {
+    "profile": "35С3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 155.7
+  },
+  {
+    "profile": "35С3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 155.7
+  },
+  {
+    "profile": "35С3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 155.7
+  },
+  {
+    "profile": "35Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 65.3
+  },
+  {
+    "profile": "35Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 65.3
+  },
+  {
+    "profile": "35Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 75.1
+  },
+  {
+    "profile": "35Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 65.3
+  },
+  {
+    "profile": "35Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 79.7
+  },
+  {
+    "profile": "35Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 79.7
+  },
+  {
+    "profile": "35Ш2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 82.2
+  },
+  {
+    "profile": "35Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 79.7
+  },
+  {
+    "profile": "35Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 98.9
+  },
+  {
+    "profile": "35Ш3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 98.9
+  },
+  {
+    "profile": "35Ш3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 98.9
+  },
+  {
+    "profile": "35Ш3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 91.3
+  },
+  {
+    "profile": "35Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 98.9
+  },
+  {
+    "profile": "35Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 118.3
+  },
+  {
+    "profile": "35Ш4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 118.3
+  },
+  {
+    "profile": "35Ш4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 118.3
+  },
+  {
+    "profile": "35Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 118.3
+  },
+  {
+    "profile": "35Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 147.2
+  },
+  {
+    "profile": "35Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 147.2
+  },
+  {
+    "profile": "35Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 179.9
+  },
+  {
+    "profile": "35Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 179.9
+  },
+  {
+    "profile": "35Ш7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 223.6
+  },
+  {
+    "profile": "35Ш7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 223.6
+  },
+  {
+    "profile": "36",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 48.6
+  },
+  {
+    "profile": "36Б1В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 45
+  },
+  {
+    "profile": "36Б2В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 51
+  },
+  {
+    "profile": "36Б3В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 57
+  },
+  {
+    "profile": "36Б4В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 67.1
+  },
+  {
+    "profile": "36ДБ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 49.1
+  },
+  {
+    "profile": "36М",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 57.9
+  },
+  {
+    "profile": "36С",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 71.3
+  },
+  {
+    "profile": "36У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 48.6
+  },
+  {
+    "profile": "36У1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 32.9
+  },
+  {
+    "profile": "36У2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 39
+  },
+  {
+    "profile": "36Ш1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 91
+  },
+  {
+    "profile": "36Ш2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 101
+  },
+  {
+    "profile": "36Ш3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 110
+  },
+  {
+    "profile": "36Ш4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 122
+  },
+  {
+    "profile": "40",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 57
+  },
+  {
+    "profile": "40Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 56.6
+  },
+  {
+    "profile": "40Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 56.6
+  },
+  {
+    "profile": "40Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 48.1
+  },
+  {
+    "profile": "40Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 56.6
+  },
+  {
+    "profile": "40Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 66
+  },
+  {
+    "profile": "40Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 66
+  },
+  {
+    "profile": "40Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 54.7
+  },
+  {
+    "profile": "40Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 66
+  },
+  {
+    "profile": "40Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 80.1
+  },
+  {
+    "profile": "40Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 80.1
+  },
+  {
+    "profile": "40Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 80.1
+  },
+  {
+    "profile": "40Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 80.1
+  },
+  {
+    "profile": "40Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 94.3
+  },
+  {
+    "profile": "40Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 94.3
+  },
+  {
+    "profile": "40Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 94.3
+  },
+  {
+    "profile": "40Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 94.3
+  },
+  {
+    "profile": "40ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 39.2
+  },
+  {
+    "profile": "40ДБ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 39.7
+  },
+  {
+    "profile": "40ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 39.2
+  },
+  {
+    "profile": "40ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 46.2
+  },
+  {
+    "profile": "40ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 46.2
+  },
+  {
+    "profile": "40ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 53.4
+  },
+  {
+    "profile": "40ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 53.4
+  },
+  {
+    "profile": "40ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 59.5
+  },
+  {
+    "profile": "40ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 59.5
+  },
+  {
+    "profile": "40ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 67.5
+  },
+  {
+    "profile": "40ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 67.5
+  },
+  {
+    "profile": "40ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 74.9
+  },
+  {
+    "profile": "40ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 74.9
+  },
+  {
+    "profile": "40ДБ7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 85
+  },
+  {
+    "profile": "40ДБ7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 85
+  },
+  {
+    "profile": "40ДШ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 124
+  },
+  {
+    "profile": "40К1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 146.7
+  },
+  {
+    "profile": "40К1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 146.6
+  },
+  {
+    "profile": "40К1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 138
+  },
+  {
+    "profile": "40К1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 146.7
+  },
+  {
+    "profile": "40К2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 171.7
+  },
+  {
+    "profile": "40К2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 171.7
+  },
+  {
+    "profile": "40К2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 165.6
+  },
+  {
+    "profile": "40К2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 171.7
+  },
+  {
+    "profile": "40К3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 200.1
+  },
+  {
+    "profile": "40К3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 200.1
+  },
+  {
+    "profile": "40К3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 202.3
+  },
+  {
+    "profile": "40К3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 200.1
+  },
+  {
+    "profile": "40К4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 231.9
+  },
+  {
+    "profile": "40К4",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 231.9
+  },
+  {
+    "profile": "40К4",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 242.2
+  },
+  {
+    "profile": "40К4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 231.9
+  },
+  {
+    "profile": "40К4.5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 255.6
+  },
+  {
+    "profile": "40К4.5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 255.6
+  },
+  {
+    "profile": "40К4.5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 255.6
+  },
+  {
+    "profile": "40К4.5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 255.6
+  },
+  {
+    "profile": "40К5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 290.8
+  },
+  {
+    "profile": "40К5",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 290.8
+  },
+  {
+    "profile": "40К5",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 291.2
+  },
+  {
+    "profile": "40К5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 290.8
+  },
+  {
+    "profile": "40К6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 305.9
+  },
+  {
+    "profile": "40К6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 305.9
+  },
+  {
+    "profile": "40К7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 344.1
+  },
+  {
+    "profile": "40К7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 344.1
+  },
+  {
+    "profile": "40К8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 382.4
+  },
+  {
+    "profile": "40К8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 382.4
+  },
+  {
+    "profile": "40К9",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 429.6
+  },
+  {
+    "profile": "40К9",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 429.6
+  },
+  {
+    "profile": "40К10",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 482.8
+  },
+  {
+    "profile": "40К10",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 482.8
+  },
+  {
+    "profile": "40К11",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 542.6
+  },
+  {
+    "profile": "40К11",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 542.6
+  },
+  {
+    "profile": "40К12",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 607.1
+  },
+  {
+    "profile": "40К12",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 607.1
+  },
+  {
+    "profile": "40К13",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 678
+  },
+  {
+    "profile": "40К13",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 678
+  },
+  {
+    "profile": "40К14",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 758.2
+  },
+  {
+    "profile": "40К14",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 758.2
+  },
+  {
+    "profile": "40К15",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 848.9
+  },
+  {
+    "profile": "40К15",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 848.9
+  },
+  {
+    "profile": "40К16",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 949.5
+  },
+  {
+    "profile": "40К16",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 949.5
+  },
+  {
+    "profile": "40К17",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 1066.6
+  },
+  {
+    "profile": "40К17",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 1066.6
+  },
+  {
+    "profile": "40К18",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 1192.9
+  },
+  {
+    "profile": "40К18",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 1192.9
+  },
+  {
+    "profile": "40К19",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 1331.6
+  },
+  {
+    "profile": "40К19",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 1331.6
+  },
+  {
+    "profile": "40С1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 140.1
+  },
+  {
+    "profile": "40С1",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 140.1
+  },
+  {
+    "profile": "40С1",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 140.1
+  },
+  {
+    "profile": "40С1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 140.1
+  },
+  {
+    "profile": "40С2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 168.3
+  },
+  {
+    "profile": "40С2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 168.3
+  },
+  {
+    "profile": "40С2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 168.3
+  },
+  {
+    "profile": "40С2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 168.3
+  },
+  {
+    "profile": "40С3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 196.8
+  },
+  {
+    "profile": "40С3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 196.8
+  },
+  {
+    "profile": "40С3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 196.8
+  },
+  {
+    "profile": "40С3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 196.8
+  },
+  {
+    "profile": "40У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 57
+  },
+  {
+    "profile": "40Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 88.6
+  },
+  {
+    "profile": "40Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 88.6
+  },
+  {
+    "profile": "40Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 96.1
+  },
+  {
+    "profile": "40Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 88.6
+  },
+  {
+    "profile": "40Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 106.7
+  },
+  {
+    "profile": "40Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 106.7
+  },
+  {
+    "profile": "40Ш2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 111.1
+  },
+  {
+    "profile": "40Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 106.7
+  },
+  {
+    "profile": "40Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 129.4
+  },
+  {
+    "profile": "40Ш3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 129.4
+  },
+  {
+    "profile": "40Ш3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 129.4
+  },
+  {
+    "profile": "40Ш3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 123.4
+  },
+  {
+    "profile": "40Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 129.4
+  },
+  {
+    "profile": "40Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 158.6
+  },
+  {
+    "profile": "40Ш4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 158.6
+  },
+  {
+    "profile": "40Ш4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 158.6
+  },
+  {
+    "profile": "40Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 158.6
+  },
+  {
+    "profile": "40Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 198
+  },
+  {
+    "profile": "40Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 198
+  },
+  {
+    "profile": "40Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 238.1
+  },
+  {
+    "profile": "40Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 238.1
+  },
+  {
+    "profile": "40Ш7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 289.7
+  },
+  {
+    "profile": "40Ш7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 289.7
+  },
+  {
+    "profile": "41Б1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 53
+  },
+  {
+    "profile": "41Б2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 60
+  },
+  {
+    "profile": "41Б3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 67
+  },
+  {
+    "profile": "41Б4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 75
+  },
+  {
+    "profile": "41Б5А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 85
+  },
+  {
+    "profile": "41У1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 38.8
+  },
+  {
+    "profile": "41У2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 46.1
+  },
+  {
+    "profile": "45",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 66.5
+  },
+  {
+    "profile": "45Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 66.2
+  },
+  {
+    "profile": "45Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 66.2
+  },
+  {
+    "profile": "45Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 59.8
+  },
+  {
+    "profile": "45Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 66.2
+  },
+  {
+    "profile": "45Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 76
+  },
+  {
+    "profile": "45Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 76
+  },
+  {
+    "profile": "45Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 67.5
+  },
+  {
+    "profile": "45Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 76
+  },
+  {
+    "profile": "45Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 90.6
+  },
+  {
+    "profile": "45Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 90.6
+  },
+  {
+    "profile": "45Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 90.6
+  },
+  {
+    "profile": "45Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 90.6
+  },
+  {
+    "profile": "45Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 105.4
+  },
+  {
+    "profile": "45Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 105.4
+  },
+  {
+    "profile": "45Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 105.4
+  },
+  {
+    "profile": "45Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 105.4
+  },
+  {
+    "profile": "45ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 52
+  },
+  {
+    "profile": "45ДБ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 52.6
+  },
+  {
+    "profile": "45ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 52
+  },
+  {
+    "profile": "45ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 59.6
+  },
+  {
+    "profile": "45ДБ2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 65
+  },
+  {
+    "profile": "45ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 59.6
+  },
+  {
+    "profile": "45ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 68.5
+  },
+  {
+    "profile": "45ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 68.5
+  },
+  {
+    "profile": "45ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 74.2
+  },
+  {
+    "profile": "45ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 74.2
+  },
+  {
+    "profile": "45ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 82.1
+  },
+  {
+    "profile": "45ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 82.1
+  },
+  {
+    "profile": "45ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 67.1
+  },
+  {
+    "profile": "45ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 67.1
+  },
+  {
+    "profile": "45ДБ7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 74.2
+  },
+  {
+    "profile": "45ДБ7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 74.2
+  },
+  {
+    "profile": "45ДБ8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 81.9
+  },
+  {
+    "profile": "45ДБ8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 81.9
+  },
+  {
+    "profile": "45ДБ9",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 89.3
+  },
+  {
+    "profile": "45ДБ9",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 89.3
+  },
+  {
+    "profile": "45ДБ10",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 96.6
+  },
+  {
+    "profile": "45ДБ10",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 96.6
+  },
+  {
+    "profile": "45ДБ11",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "45ДБ11",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 105.8
+  },
+  {
+    "profile": "45М",
+    "gost": "ГОСТ 19425-74",
+    "weightPerMeterKg": 77.6
+  },
+  {
+    "profile": "45У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 66.5
+  },
+  {
+    "profile": "45Ш0",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 106
+  },
+  {
+    "profile": "45Ш0",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 106
+  },
+  {
+    "profile": "45Ш0",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 106
+  },
+  {
+    "profile": "45Ш0",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 106
+  },
+  {
+    "profile": "45Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 123.6
+  },
+  {
+    "profile": "45Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 123.5
+  },
+  {
+    "profile": "45Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 123.6
+  },
+  {
+    "profile": "45Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 144.7
+  },
+  {
+    "profile": "45Ш2",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 144.7
+  },
+  {
+    "profile": "45Ш2",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 144.7
+  },
+  {
+    "profile": "45Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 144.7
+  },
+  {
+    "profile": "45Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 166
+  },
+  {
+    "profile": "45Ш3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 166
+  },
+  {
+    "profile": "45Ш3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 166
+  },
+  {
+    "profile": "45Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 166
+  },
+  {
+    "profile": "45Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 206
+  },
+  {
+    "profile": "45Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 206
+  },
+  {
+    "profile": "45Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 245.7
+  },
+  {
+    "profile": "45Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 245.7
+  },
+  {
+    "profile": "45Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 298.7
+  },
+  {
+    "profile": "45Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 298.7
+  },
+  {
+    "profile": "46Б1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 74
+  },
+  {
+    "profile": "46Б1В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 67.1
+  },
+  {
+    "profile": "46Б2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 82
+  },
+  {
+    "profile": "46Б3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 89
+  },
+  {
+    "profile": "46Б4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 97
+  },
+  {
+    "profile": "46Б5А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 106
+  },
+  {
+    "profile": "46У1В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 52.3
+  },
+  {
+    "profile": "46У2В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 59.8
+  },
+  {
+    "profile": "46У3В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 67.2
+  },
+  {
+    "profile": "46У4В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 74.2
+  },
+  {
+    "profile": "46У5В",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 82.1
+  },
+  {
+    "profile": "50",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 78.5
+  },
+  {
+    "profile": "50Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 72.5
+  },
+  {
+    "profile": "50Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 72.5
+  },
+  {
+    "profile": "50Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 73
+  },
+  {
+    "profile": "50Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 72.5
+  },
+  {
+    "profile": "50Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 79.5
+  },
+  {
+    "profile": "50Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 79.5
+  },
+  {
+    "profile": "50Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 80.7
+  },
+  {
+    "profile": "50Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 79.5
+  },
+  {
+    "profile": "50Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 89.7
+  },
+  {
+    "profile": "50Б3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 89.7
+  },
+  {
+    "profile": "50Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 89.7
+  },
+  {
+    "profile": "50Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 109.9
+  },
+  {
+    "profile": "50Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 109.9
+  },
+  {
+    "profile": "50Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 109.9
+  },
+  {
+    "profile": "50Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 109.9
+  },
+  {
+    "profile": "50Б5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 133.9
+  },
+  {
+    "profile": "50Б5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 133.9
+  },
+  {
+    "profile": "50Б5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 133.9
+  },
+  {
+    "profile": "50Б5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 133.9
+  },
+  {
+    "profile": "50ДШ1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 155
+  },
+  {
+    "profile": "50У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 78.5
+  },
+  {
+    "profile": "50Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 114.2
+  },
+  {
+    "profile": "50Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 114.2
+  },
+  {
+    "profile": "50Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 114.4
+  },
+  {
+    "profile": "50Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 114.2
+  },
+  {
+    "profile": "50Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 138.4
+  },
+  {
+    "profile": "50Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 138.4
+  },
+  {
+    "profile": "50Ш2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 138.7
+  },
+  {
+    "profile": "50Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 138.4
+  },
+  {
+    "profile": "50Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 156.1
+  },
+  {
+    "profile": "50Ш3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 156.1
+  },
+  {
+    "profile": "50Ш3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 156.4
+  },
+  {
+    "profile": "50Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 156.1
+  },
+  {
+    "profile": "50Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 173.8
+  },
+  {
+    "profile": "50Ш4",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 173.8
+  },
+  {
+    "profile": "50Ш4",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 174.1
+  },
+  {
+    "profile": "50Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 173.8
+  },
+  {
+    "profile": "50Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 204.7
+  },
+  {
+    "profile": "50Ш5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 204.7
+  },
+  {
+    "profile": "50Ш5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 204.7
+  },
+  {
+    "profile": "50Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 204.7
+  },
+  {
+    "profile": "50Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 243.2
+  },
+  {
+    "profile": "50Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 243.2
+  },
+  {
+    "profile": "50Ш7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 292.7
+  },
+  {
+    "profile": "50Ш7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 292.7
+  },
+  {
+    "profile": "50Ш8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 347.6
+  },
+  {
+    "profile": "50Ш8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 347.6
+  },
+  {
+    "profile": "53Б3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 92
+  },
+  {
+    "profile": "53Б4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 101
+  },
+  {
+    "profile": "53Б5А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 109
+  },
+  {
+    "profile": "53Б6А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 123
+  },
+  {
+    "profile": "53Б7А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 138
+  },
+  {
+    "profile": "53ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 72
+  },
+  {
+    "profile": "53ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 72
+  },
+  {
+    "profile": "53ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 82
+  },
+  {
+    "profile": "53ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 82
+  },
+  {
+    "profile": "53ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 92.5
+  },
+  {
+    "profile": "53ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 92.5
+  },
+  {
+    "profile": "53ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 101.4
+  },
+  {
+    "profile": "53ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 101.4
+  },
+  {
+    "profile": "53ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 109
+  },
+  {
+    "profile": "53ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 109
+  },
+  {
+    "profile": "53ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 123.2
+  },
+  {
+    "profile": "53ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 123.2
+  },
+  {
+    "profile": "53ДБ7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 138.3
+  },
+  {
+    "profile": "53ДБ7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 138.3
+  },
+  {
+    "profile": "55",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 92.6
+  },
+  {
+    "profile": "55Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 89
+  },
+  {
+    "profile": "55Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 89
+  },
+  {
+    "profile": "55Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 89
+  },
+  {
+    "profile": "55Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 89
+  },
+  {
+    "profile": "55Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 97.9
+  },
+  {
+    "profile": "55Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 97.9
+  },
+  {
+    "profile": "55Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 97.9
+  },
+  {
+    "profile": "55Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 97.9
+  },
+  {
+    "profile": "55Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 116.7
+  },
+  {
+    "profile": "55Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 116.7
+  },
+  {
+    "profile": "55Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 116.7
+  },
+  {
+    "profile": "55Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 116.7
+  },
+  {
+    "profile": "55Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 137.3
+  },
+  {
+    "profile": "55Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 137.3
+  },
+  {
+    "profile": "55Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 137.3
+  },
+  {
+    "profile": "55Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 137.3
+  },
+  {
+    "profile": "55У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 92.6
+  },
+  {
+    "profile": "60",
+    "gost": "ГОСТ 8239-89",
+    "weightPerMeterKg": 108
+  },
+  {
+    "profile": "60Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 94.6
+  },
+  {
+    "profile": "60Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 94.6
+  },
+  {
+    "profile": "60Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 106.2
+  },
+  {
+    "profile": "60Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 94.6
+  },
+  {
+    "profile": "60Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 105.5
+  },
+  {
+    "profile": "60Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 105.5
+  },
+  {
+    "profile": "60Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 115.6
+  },
+  {
+    "profile": "60Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 105.5
+  },
+  {
+    "profile": "60Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 118.8
+  },
+  {
+    "profile": "60Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 118.8
+  },
+  {
+    "profile": "60Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 118.8
+  },
+  {
+    "profile": "60Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 118.8
+  },
+  {
+    "profile": "60Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 142.9
+  },
+  {
+    "profile": "60Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 142.8
+  },
+  {
+    "profile": "60Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 142.8
+  },
+  {
+    "profile": "60Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 142.9
+  },
+  {
+    "profile": "60ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 81.9
+  },
+  {
+    "profile": "60ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 81.9
+  },
+  {
+    "profile": "60ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 92.3
+  },
+  {
+    "profile": "60ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 92.3
+  },
+  {
+    "profile": "60ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 101.7
+  },
+  {
+    "profile": "60ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 101.7
+  },
+  {
+    "profile": "60ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 113.4
+  },
+  {
+    "profile": "60ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 113.4
+  },
+  {
+    "profile": "60ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 125.1
+  },
+  {
+    "profile": "60ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 125.1
+  },
+  {
+    "profile": "60ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 140.1
+  },
+  {
+    "profile": "60ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 140.1
+  },
+  {
+    "profile": "60ДБ7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 153
+  },
+  {
+    "profile": "60ДБ7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 153
+  },
+  {
+    "profile": "60У",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 108
+  },
+  {
+    "profile": "60Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 137
+  },
+  {
+    "profile": "60Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 137
+  },
+  {
+    "profile": "60Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 142.1
+  },
+  {
+    "profile": "60Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 137
+  },
+  {
+    "profile": "60Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 170.7
+  },
+  {
+    "profile": "60Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 170.7
+  },
+  {
+    "profile": "60Ш2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 176.9
+  },
+  {
+    "profile": "60Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 170.7
+  },
+  {
+    "profile": "60Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 198.1
+  },
+  {
+    "profile": "60Ш3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 198.1
+  },
+  {
+    "profile": "60Ш3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 205.5
+  },
+  {
+    "profile": "60Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 198.1
+  },
+  {
+    "profile": "60Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 225.6
+  },
+  {
+    "profile": "60Ш4",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 225.6
+  },
+  {
+    "profile": "60Ш4",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 234.2
+  },
+  {
+    "profile": "60Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 225.6
+  },
+  {
+    "profile": "60Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 265.4
+  },
+  {
+    "profile": "60Ш5",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 265.4
+  },
+  {
+    "profile": "60Ш5",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 265.4
+  },
+  {
+    "profile": "60Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 265.4
+  },
+  {
+    "profile": "60Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 324.2
+  },
+  {
+    "profile": "60Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 324.2
+  },
+  {
+    "profile": "60Ш7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 377.5
+  },
+  {
+    "profile": "60Ш7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 377.5
+  },
+  {
+    "profile": "60Ш8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 450.6
+  },
+  {
+    "profile": "60Ш8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 450.6
+  },
+  {
+    "profile": "61Б1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 101
+  },
+  {
+    "profile": "61Б2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 113
+  },
+  {
+    "profile": "61Б3А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 125
+  },
+  {
+    "profile": "61Б4А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 140
+  },
+  {
+    "profile": "61У1А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 82
+  },
+  {
+    "profile": "61У2А",
+    "gost": "ТУ 0925-016-00186269-2016",
+    "weightPerMeterKg": 92
+  },
+  {
+    "profile": "70Б0",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 120.1
+  },
+  {
+    "profile": "70Б1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "70Б1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "70Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "70Б1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 129.3
+  },
+  {
+    "profile": "70Б2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 144.16
+  },
+  {
+    "profile": "70Б2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 144.2
+  },
+  {
+    "profile": "70Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 144.2
+  },
+  {
+    "profile": "70Б2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 144.16
+  },
+  {
+    "profile": "70Б3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 165.1
+  },
+  {
+    "profile": "70Б3",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 165.1
+  },
+  {
+    "profile": "70Б3",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 165.1
+  },
+  {
+    "profile": "70Б3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 165.1
+  },
+  {
+    "profile": "70Б4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 194.8
+  },
+  {
+    "profile": "70Б4",
+    "gost": "ТУ 24107-036-00186269-2017",
+    "weightPerMeterKg": 194.8
+  },
+  {
+    "profile": "70Б4",
+    "gost": "ТУ 0925-036-00186269-2016",
+    "weightPerMeterKg": 194.8
+  },
+  {
+    "profile": "70Б4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 194.8
+  },
+  {
+    "profile": "70ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 125
+  },
+  {
+    "profile": "70ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 125
+  },
+  {
+    "profile": "70ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 140
+  },
+  {
+    "profile": "70ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 140
+  },
+  {
+    "profile": "70ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 152
+  },
+  {
+    "profile": "70ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 152
+  },
+  {
+    "profile": "70ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 170
+  },
+  {
+    "profile": "70ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 170
+  },
+  {
+    "profile": "70ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 192
+  },
+  {
+    "profile": "70ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 192
+  },
+  {
+    "profile": "70Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 166
+  },
+  {
+    "profile": "70Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 166
+  },
+  {
+    "profile": "70Ш1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 169.9
+  },
+  {
+    "profile": "70Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 166
+  },
+  {
+    "profile": "70Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 190.4
+  },
+  {
+    "profile": "70Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 190.4
+  },
+  {
+    "profile": "70Ш2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 197.6
+  },
+  {
+    "profile": "70Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 190.4
+  },
+  {
+    "profile": "70Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 226.9
+  },
+  {
+    "profile": "70Ш3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 226.9
+  },
+  {
+    "profile": "70Ш3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 235.4
+  },
+  {
+    "profile": "70Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 226.9
+  },
+  {
+    "profile": "70Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 258.6
+  },
+  {
+    "profile": "70Ш4",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 258.6
+  },
+  {
+    "profile": "70Ш4",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 268.1
+  },
+  {
+    "profile": "70Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 258.6
+  },
+  {
+    "profile": "70Ш5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 294.9
+  },
+  {
+    "profile": "70Ш5",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 294.9
+  },
+  {
+    "profile": "70Ш5",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 305.9
+  },
+  {
+    "profile": "70Ш5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 294.9
+  },
+  {
+    "profile": "70Ш6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 359.7
+  },
+  {
+    "profile": "70Ш6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 359.7
+  },
+  {
+    "profile": "70Ш7",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 431.2
+  },
+  {
+    "profile": "70Ш7",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 431.2
+  },
+  {
+    "profile": "70Ш8",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 518.3
+  },
+  {
+    "profile": "70Ш8",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 518.3
+  },
+  {
+    "profile": "80Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 159.5
+  },
+  {
+    "profile": "80Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 177.9
+  },
+  {
+    "profile": "80Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 164.6
+  },
+  {
+    "profile": "80Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 164.6
+  },
+  {
+    "profile": "80Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 164.6
+  },
+  {
+    "profile": "80Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 191.1
+  },
+  {
+    "profile": "80Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 191.1
+  },
+  {
+    "profile": "80Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 191.1
+  },
+  {
+    "profile": "85ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 176
+  },
+  {
+    "profile": "85ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 176
+  },
+  {
+    "profile": "85ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 193
+  },
+  {
+    "profile": "85ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 193
+  },
+  {
+    "profile": "85ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 210
+  },
+  {
+    "profile": "85ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 210
+  },
+  {
+    "profile": "85ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 226
+  },
+  {
+    "profile": "85ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 226
+  },
+  {
+    "profile": "85ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 251
+  },
+  {
+    "profile": "85ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 251
+  },
+  {
+    "profile": "90Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 194
+  },
+  {
+    "profile": "90Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 213.8
+  },
+  {
+    "profile": "90ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 201
+  },
+  {
+    "profile": "90ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 201
+  },
+  {
+    "profile": "90ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 223
+  },
+  {
+    "profile": "90ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 223
+  },
+  {
+    "profile": "90ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 238
+  },
+  {
+    "profile": "90ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 238
+  },
+  {
+    "profile": "90ДБ4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 253
+  },
+  {
+    "profile": "90ДБ4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 253
+  },
+  {
+    "profile": "90ДБ5",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 271
+  },
+  {
+    "profile": "90ДБ5",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 271
+  },
+  {
+    "profile": "90ДБ6",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 289
+  },
+  {
+    "profile": "90ДБ6",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 289
+  },
+  {
+    "profile": "90Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 191.5
+  },
+  {
+    "profile": "90Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 191.5
+  },
+  {
+    "profile": "90Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 191.5
+  },
+  {
+    "profile": "90Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 212.6
+  },
+  {
+    "profile": "90Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 212.6
+  },
+  {
+    "profile": "90Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 212.6
+  },
+  {
+    "profile": "100Б1",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 230.6
+  },
+  {
+    "profile": "100Б2",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 258.2
+  },
+  {
+    "profile": "100Б3",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 285.7
+  },
+  {
+    "profile": "100Б4",
+    "gost": "ГОСТ 26020-83",
+    "weightPerMeterKg": 314.5
+  },
+  {
+    "profile": "100ДБ1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 222
+  },
+  {
+    "profile": "100ДБ1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 222
+  },
+  {
+    "profile": "100ДБ2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 249
+  },
+  {
+    "profile": "100ДБ2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 249
+  },
+  {
+    "profile": "100ДБ3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 272
+  },
+  {
+    "profile": "100ДБ3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 272
+  },
+  {
+    "profile": "100Ш1",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 230.6
+  },
+  {
+    "profile": "100Ш1",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 230.6
+  },
+  {
+    "profile": "100Ш1",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 230.6
+  },
+  {
+    "profile": "100Ш2",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 258.2
+  },
+  {
+    "profile": "100Ш2",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 258.2
+  },
+  {
+    "profile": "100Ш2",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 258.2
+  },
+  {
+    "profile": "100Ш3",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 285.7
+  },
+  {
+    "profile": "100Ш3",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 285.7
+  },
+  {
+    "profile": "100Ш3",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 285.7
+  },
+  {
+    "profile": "100Ш4",
+    "gost": "ГОСТ Р 57837-2017",
+    "weightPerMeterKg": 314.5
+  },
+  {
+    "profile": "100Ш4",
+    "gost": "СТО АСЧМ 20-93",
+    "weightPerMeterKg": 314.5
+  },
+  {
+    "profile": "100Ш4",
+    "gost": "ГОСТ 35087-2024",
+    "weightPerMeterKg": 314.5
+  }
+]

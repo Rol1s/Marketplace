@@ -1,0 +1,131 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import ChannelCrossSection from '@components/ChannelCrossSection.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getChannels } from '@lib/data';
+import { channelMeta } from '@lib/seo';
+import { relatedChannels } from '@lib/links';
+
+export function getStaticPaths() {
+  return getChannels().map((ch) => ({
+    params: { slug: ch.slug },
+    props: { channel: ch },
+  }));
+}
+
+const { channel } = Astro.props;
+const allChannels = getChannels();
+const meta = channelMeta(channel.profile, channel.weight, channel.h);
+const related = relatedChannels(allChannels, channel.slug);
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Швеллер ${channel.profile} — ГОСТ 8240-97`}
+  breadcrumbs={[
+    { label: 'Справочник ГОСТ', href: '/gost/' },
+    { label: 'Швеллеры', href: '/gost/shvellery/' },
+    { label: channel.profile, href: `/gost/shvellery/${channel.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Размеры и масса</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <ChannelCrossSection h={channel.h} b={channel.b} s={channel.s} t={channel.t} />
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{channel.h}</div>
+          <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{channel.b}</div>
+          <div class="text-xs text-text-muted mt-1">Полка b, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{channel.s}/{channel.t}</div>
+          <div class="text-xs text-text-muted mt-1">Стенка/полка, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-accent">{channel.weight}</div>
+          <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Полные характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Высота h', value: `${channel.h} мм` },
+        { param: 'Ширина полки b', value: `${channel.b} мм` },
+        { param: 'Толщина стенки s', value: `${channel.s} мм` },
+        { param: 'Толщина полки t', value: `${channel.t} мм` },
+        { param: 'Радиус скругления R', value: `≤ ${channel.rNotMore} мм` },
+        { param: 'Радиус r', value: `${channel.r} мм` },
+        { param: 'Площадь сечения', value: `${channel.area} см²` },
+        { param: 'Масса 1 м', value: `${channel.weight} кг` },
+        { param: 'ГОСТ', value: channel.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Механические характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Момент инерции Ix', value: `${channel.Ix} см⁴` },
+        { param: 'Момент сопротивления Wx', value: `${channel.Wx} см³` },
+        { param: 'Радиус инерции ix', value: `${channel.ix} см` },
+        { param: 'Момент инерции Iy', value: `${channel.Iy} см⁴` },
+        { param: 'Момент сопротивления Wy', value: `${channel.Wy} см³` },
+        { param: 'Радиус инерции iy', value: `${channel.iy} см` },
+        { param: 'Координата Xo', value: `${channel.Xo} см` },
+        { param: 'Координата Zo', value: `${channel.Zo} см` },
+      ]}
+      caption="Механические свойства по ГОСТ 8240-97"
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы по длине</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Швеллер ${channel.profile}`}
+      weightPerUnit={channel.weight}
+      mode="length"
+      unitLabel="кг/м"
+      defaultLength={6}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Область применения</h2>
+    <p class="text-text-muted leading-relaxed">
+      Швеллер {channel.profile} (высота {channel.h} мм) по ГОСТ 8240-97 применяется
+      {channel.h <= 100 && ' в лёгких металлоконструкциях, каркасах, ограждениях, при изготовлении лестниц и площадок обслуживания.'}
+      {channel.h > 100 && channel.h <= 200 && ' в строительных каркасах, перекрытиях, мостовых конструкциях, при изготовлении колонн и балок.'}
+      {channel.h > 200 && ' в тяжёлых металлоконструкциях, мостостроении, промышленных зданиях, при усилении фундаментов и устройстве перекрытий.'}
+      {' '}Тип полки: {channel.profile.endsWith('У') ? 'с уклоном внутренних граней полок' : channel.profile.endsWith('П') ? 'с параллельными гранями полок' : 'экономичный'}.
+    </p>
+  </section>
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на швеллер {channel.profile}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие швеллеры" items={related} />
+</Gost>

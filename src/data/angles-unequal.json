@@ -1,0 +1,632 @@
+[
+  {
+    "slug": "25x16x3",
+    "gost": "ГОСТ 8510-86",
+    "size": "25x16x3",
+    "aMm": 25,
+    "bMm": 16,
+    "thicknessMm": 3,
+    "crossSectionAreaMm2": 116,
+    "massPerMeterKg": 0.91
+  },
+  {
+    "slug": "30x20x3",
+    "gost": "ГОСТ 8510-86",
+    "size": "30x20x3",
+    "aMm": 30,
+    "bMm": 20,
+    "thicknessMm": 3,
+    "crossSectionAreaMm2": 143,
+    "massPerMeterKg": 1.12
+  },
+  {
+    "slug": "30x20x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "30x20x4",
+    "aMm": 30,
+    "bMm": 20,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 186,
+    "massPerMeterKg": 1.46
+  },
+  {
+    "slug": "32x20x3",
+    "gost": "ГОСТ 8510-86",
+    "size": "32x20x3",
+    "aMm": 32,
+    "bMm": 20,
+    "thicknessMm": 3,
+    "crossSectionAreaMm2": 149,
+    "massPerMeterKg": 1.17
+  },
+  {
+    "slug": "32x20x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "32x20x4",
+    "aMm": 32,
+    "bMm": 20,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 194,
+    "massPerMeterKg": 1.52
+  },
+  {
+    "slug": "40x25x3",
+    "gost": "ГОСТ 8510-86",
+    "size": "40x25x3",
+    "aMm": 40,
+    "bMm": 25,
+    "thicknessMm": 3,
+    "crossSectionAreaMm2": 188,
+    "massPerMeterKg": 1.48
+  },
+  {
+    "slug": "40x25x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "40x25x4",
+    "aMm": 40,
+    "bMm": 25,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 247,
+    "massPerMeterKg": 1.94
+  },
+  {
+    "slug": "40x25x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "40x25x5",
+    "aMm": 40,
+    "bMm": 25,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 302,
+    "massPerMeterKg": 2.37
+  },
+  {
+    "slug": "40x30x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "40x30x4",
+    "aMm": 40,
+    "bMm": 30,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 288,
+    "massPerMeterKg": 2.26
+  },
+  {
+    "slug": "40x30x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "40x30x5",
+    "aMm": 40,
+    "bMm": 30,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 354,
+    "massPerMeterKg": 2.78
+  },
+  {
+    "slug": "45x28x3",
+    "gost": "ГОСТ 8510-86",
+    "size": "45x28x3",
+    "aMm": 45,
+    "bMm": 28,
+    "thicknessMm": 3,
+    "crossSectionAreaMm2": 214,
+    "massPerMeterKg": 1.68
+  },
+  {
+    "slug": "45x28x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "45x28x4",
+    "aMm": 45,
+    "bMm": 28,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 280,
+    "massPerMeterKg": 2.2
+  },
+  {
+    "slug": "50x32x3",
+    "gost": "ГОСТ 8510-86",
+    "size": "50x32x3",
+    "aMm": 50,
+    "bMm": 32,
+    "thicknessMm": 3,
+    "crossSectionAreaMm2": 242,
+    "massPerMeterKg": 1.9
+  },
+  {
+    "slug": "50x32x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "50x32x4",
+    "aMm": 50,
+    "bMm": 32,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 318,
+    "massPerMeterKg": 2.5
+  },
+  {
+    "slug": "56x36x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "56x36x4",
+    "aMm": 56,
+    "bMm": 36,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 358,
+    "massPerMeterKg": 2.81
+  },
+  {
+    "slug": "56x36x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "56x36x5",
+    "aMm": 56,
+    "bMm": 36,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 441,
+    "massPerMeterKg": 3.46
+  },
+  {
+    "slug": "63x40x4",
+    "gost": "ГОСТ 8510-86",
+    "size": "63x40x4",
+    "aMm": 63,
+    "bMm": 40,
+    "thicknessMm": 4,
+    "crossSectionAreaMm2": 404,
+    "massPerMeterKg": 3.17
+  },
+  {
+    "slug": "63x40x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "63x40x5",
+    "aMm": 63,
+    "bMm": 40,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 498,
+    "massPerMeterKg": 3.91
+  },
+  {
+    "slug": "63x40x6",
+    "gost": "ГОСТ 8510-86",
+    "size": "63x40x6",
+    "aMm": 63,
+    "bMm": 40,
+    "thicknessMm": 6,
+    "crossSectionAreaMm2": 590,
+    "massPerMeterKg": 4.63
+  },
+  {
+    "slug": "63x40x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "63x40x8",
+    "aMm": 63,
+    "bMm": 40,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 768,
+    "massPerMeterKg": 6.03
+  },
+  {
+    "slug": "65x50x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "65x50x5",
+    "aMm": 65,
+    "bMm": 50,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 556,
+    "massPerMeterKg": 4.36
+  },
+  {
+    "slug": "65x50x6",
+    "gost": "ГОСТ 8510-86",
+    "size": "65x50x6",
+    "aMm": 65,
+    "bMm": 50,
+    "thicknessMm": 6,
+    "crossSectionAreaMm2": 660,
+    "massPerMeterKg": 5.18
+  },
+  {
+    "slug": "65x50x7",
+    "gost": "ГОСТ 8510-86",
+    "size": "65x50x7",
+    "aMm": 65,
+    "bMm": 50,
+    "thicknessMm": 7,
+    "crossSectionAreaMm2": 762,
+    "massPerMeterKg": 5.98
+  },
+  {
+    "slug": "65x50x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "65x50x8",
+    "aMm": 65,
+    "bMm": 50,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 862,
+    "massPerMeterKg": 6.77
+  },
+  {
+    "slug": "70x45x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "70x45x5",
+    "aMm": 70,
+    "bMm": 45,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 559,
+    "massPerMeterKg": 4.39
+  },
+  {
+    "slug": "75x50x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "75x50x5",
+    "aMm": 75,
+    "bMm": 50,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 610,
+    "massPerMeterKg": 4.79
+  },
+  {
+    "slug": "75x50x6",
+    "gost": "ГОСТ 8510-86",
+    "size": "75x50x6",
+    "aMm": 75,
+    "bMm": 50,
+    "thicknessMm": 6,
+    "crossSectionAreaMm2": 725,
+    "massPerMeterKg": 5.69
+  },
+  {
+    "slug": "75x50x7",
+    "gost": "ГОСТ 8510-86",
+    "size": "75x50x7",
+    "aMm": 75,
+    "bMm": 50,
+    "thicknessMm": 7,
+    "crossSectionAreaMm2": 838,
+    "massPerMeterKg": 6.57
+  },
+  {
+    "slug": "75x50x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "75x50x8",
+    "aMm": 75,
+    "bMm": 50,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 947,
+    "massPerMeterKg": 7.43
+  },
+  {
+    "slug": "80x50x5",
+    "gost": "ГОСТ 8510-86",
+    "size": "80x50x5",
+    "aMm": 80,
+    "bMm": 50,
+    "thicknessMm": 5,
+    "crossSectionAreaMm2": 635,
+    "massPerMeterKg": 4.99
+  },
+  {
+    "slug": "80x50x6",
+    "gost": "ГОСТ 8510-86",
+    "size": "80x50x6",
+    "aMm": 80,
+    "bMm": 50,
+    "thicknessMm": 6,
+    "crossSectionAreaMm2": 755,
+    "massPerMeterKg": 5.92
+  },
+  {
+    "slug": "80x50x7",
+    "gost": "ГОСТ 8510-86",
+    "size": "80x50x7",
+    "aMm": 80,
+    "bMm": 50,
+    "thicknessMm": 7,
+    "crossSectionAreaMm2": 873,
+    "massPerMeterKg": 6.85
+  },
+  {
+    "slug": "80x60x6",
+    "gost": "ГОСТ 8510-86",
+    "size": "80x60x6",
+    "aMm": 80,
+    "bMm": 60,
+    "thicknessMm": 6,
+    "crossSectionAreaMm2": 814,
+    "massPerMeterKg": 6.39
+  },
+  {
+    "slug": "80x60x7",
+    "gost": "ГОСТ 8510-86",
+    "size": "80x60x7",
+    "aMm": 80,
+    "bMm": 60,
+    "thicknessMm": 7,
+    "crossSectionAreaMm2": 942,
+    "massPerMeterKg": 7.39
+  },
+  {
+    "slug": "80x60x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "80x60x8",
+    "aMm": 80,
+    "bMm": 60,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 1066,
+    "massPerMeterKg": 8.37
+  },
+  {
+    "slug": "90x56x5.5",
+    "gost": "ГОСТ 8510-86",
+    "size": "90x56x5.5",
+    "aMm": 90,
+    "bMm": 56,
+    "thicknessMm": 5.5,
+    "crossSectionAreaMm2": 786,
+    "massPerMeterKg": 6.17
+  },
+  {
+    "slug": "90x56x6",
+    "gost": "ГОСТ 8510-86",
+    "size": "90x56x6",
+    "aMm": 90,
+    "bMm": 56,
+    "thicknessMm": 6,
+    "crossSectionAreaMm2": 854,
+    "massPerMeterKg": 6.7
+  },
+  {
+    "slug": "90x56x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "90x56x8",
+    "aMm": 90,
+    "bMm": 56,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 1117,
+    "massPerMeterKg": 8.77
+  },
+  {
+    "slug": "100x63x6",
+    "gost": "ГОСТ 8510-86",
+    "size": "100x63x6",
+    "aMm": 100,
+    "bMm": 63,
+    "thicknessMm": 6,
+    "crossSectionAreaMm2": 959,
+    "massPerMeterKg": 7.53
+  },
+  {
+    "slug": "100x63x7",
+    "gost": "ГОСТ 8510-86",
+    "size": "100x63x7",
+    "aMm": 100,
+    "bMm": 63,
+    "thicknessMm": 7,
+    "crossSectionAreaMm2": 1109,
+    "massPerMeterKg": 8.7
+  },
+  {
+    "slug": "100x63x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "100x63x8",
+    "aMm": 100,
+    "bMm": 63,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 1257,
+    "massPerMeterKg": 9.87
+  },
+  {
+    "slug": "100x63x10",
+    "gost": "ГОСТ 8510-86",
+    "size": "100x63x10",
+    "aMm": 100,
+    "bMm": 63,
+    "thicknessMm": 10,
+    "crossSectionAreaMm2": 1547,
+    "massPerMeterKg": 12.14
+  },
+  {
+    "slug": "100x65x7",
+    "gost": "ГОСТ 8510-86",
+    "size": "100x65x7",
+    "aMm": 100,
+    "bMm": 65,
+    "thicknessMm": 7,
+    "crossSectionAreaMm2": 1123,
+    "massPerMeterKg": 8.81
+  },
+  {
+    "slug": "100x65x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "100x65x8",
+    "aMm": 100,
+    "bMm": 65,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 1273,
+    "massPerMeterKg": 9.99
+  },
+  {
+    "slug": "100x65x10",
+    "gost": "ГОСТ 8510-86",
+    "size": "100x65x10",
+    "aMm": 100,
+    "bMm": 65,
+    "thicknessMm": 10,
+    "crossSectionAreaMm2": 1567,
+    "massPerMeterKg": 12.3
+  },
+  {
+    "slug": "110x70x6.5",
+    "gost": "ГОСТ 8510-86",
+    "size": "110x70x6.5",
+    "aMm": 110,
+    "bMm": 70,
+    "thicknessMm": 6.5,
+    "crossSectionAreaMm2": 1144,
+    "massPerMeterKg": 8.98
+  },
+  {
+    "slug": "110x70x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "110x70x8",
+    "aMm": 110,
+    "bMm": 70,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 1393,
+    "massPerMeterKg": 10.93
+  },
+  {
+    "slug": "125x80x7",
+    "gost": "ГОСТ 8510-86",
+    "size": "125x80x7",
+    "aMm": 125,
+    "bMm": 80,
+    "thicknessMm": 7,
+    "crossSectionAreaMm2": 1407,
+    "massPerMeterKg": 11.04
+  },
+  {
+    "slug": "125x80x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "125x80x8",
+    "aMm": 125,
+    "bMm": 80,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 1602,
+    "massPerMeterKg": 12.58
+  },
+  {
+    "slug": "125x80x10",
+    "gost": "ГОСТ 8510-86",
+    "size": "125x80x10",
+    "aMm": 125,
+    "bMm": 80,
+    "thicknessMm": 10,
+    "crossSectionAreaMm2": 1970,
+    "massPerMeterKg": 15.47
+  },
+  {
+    "slug": "125x80x12",
+    "gost": "ГОСТ 8510-86",
+    "size": "125x80x12",
+    "aMm": 125,
+    "bMm": 80,
+    "thicknessMm": 12,
+    "crossSectionAreaMm2": 2337,
+    "massPerMeterKg": 18.34
+  },
+  {
+    "slug": "140x90x8",
+    "gost": "ГОСТ 8510-86",
+    "size": "140x90x8",
+    "aMm": 140,
+    "bMm": 90,
+    "thicknessMm": 8,
+    "crossSectionAreaMm2": 1801,
+    "massPerMeterKg": 14.13
+  },
+  {
+    "slug": "140x90x10",
+    "gost": "ГОСТ 8510-86",
+    "size": "140x90x10",
+    "aMm": 140,
+    "bMm": 90,
+    "thicknessMm": 10,
+    "crossSectionAreaMm2": 2223,
+    "massPerMeterKg": 17.46
+  },
+  {
+    "slug": "160x100x9",
+    "gost": "ГОСТ 8510-86",
+    "size": "160x100x9",
+    "aMm": 160,
+    "bMm": 100,
+    "thicknessMm": 9,
+    "crossSectionAreaMm2": 2288,
+    "massPerMeterKg": 17.96
+  },
+  {
+    "slug": "160x100x10",
+    "gost": "ГОСТ 8510-86",
+    "size": "160x100x10",
+    "aMm": 160,
+    "bMm": 100,
+    "thicknessMm": 10,
+    "crossSectionAreaMm2": 2530,
+    "massPerMeterKg": 19.85
+  },
+  {
+    "slug": "160x100x12",
+    "gost": "ГОСТ 8510-86",
+    "size": "160x100x12",
+    "aMm": 160,
+    "bMm": 100,
+    "thicknessMm": 12,
+    "crossSectionAreaMm2": 3004,
+    "massPerMeterKg": 23.58
+  },
+  {
+    "slug": "160x100x14",
+    "gost": "ГОСТ 8510-86",
+    "size": "160x100x14",
+    "aMm": 160,
+    "bMm": 100,
+    "thicknessMm": 14,
+    "crossSectionAreaMm2": 3472,
+    "massPerMeterKg": 27.26
+  },
+  {
+    "slug": "180x110x10",
+    "gost": "ГОСТ 8510-86",
+    "size": "180x110x10",
+    "aMm": 180,
+    "bMm": 110,
+    "thicknessMm": 10,
+    "crossSectionAreaMm2": 2830,
+    "massPerMeterKg": 22.2
+  },
+  {
+    "slug": "180x110x12",
+    "gost": "ГОСТ 8510-86",
+    "size": "180x110x12",
+    "aMm": 180,
+    "bMm": 110,
+    "thicknessMm": 12,
+    "crossSectionAreaMm2": 3364,
+    "massPerMeterKg": 26.4
+  },
+  {
+    "slug": "180x110x14",
+    "gost": "ГОСТ 8510-86",
+    "size": "180x110x14",
+    "aMm": 180,
+    "bMm": 110,
+    "thicknessMm": 14,
+    "crossSectionAreaMm2": 3888,
+    "massPerMeterKg": 30.51
+  },
+  {
+    "slug": "200x125x12",
+    "gost": "ГОСТ 8510-86",
+    "size": "200x125x12",
+    "aMm": 200,
+    "bMm": 125,
+    "thicknessMm": 12,
+    "crossSectionAreaMm2": 3787,
+    "massPerMeterKg": 29.74
+  },
+  {
+    "slug": "200x125x14",
+    "gost": "ГОСТ 8510-86",
+    "size": "200x125x14",
+    "aMm": 200,
+    "bMm": 125,
+    "thicknessMm": 14,
+    "crossSectionAreaMm2": 4387,
+    "massPerMeterKg": 34.43
+  },
+  {
+    "slug": "200x125x16",
+    "gost": "ГОСТ 8510-86",
+    "size": "200x125x16",
+    "aMm": 200,
+    "bMm": 125,
+    "thicknessMm": 16,
+    "crossSectionAreaMm2": 4977,
+    "massPerMeterKg": 39.07
+  }
+]

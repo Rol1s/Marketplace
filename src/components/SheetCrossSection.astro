@@ -1,0 +1,83 @@
+---
+interface Props {
+  thickness: number;
+  width: number;
+  length: number;
+}
+
+const { thickness, width, length } = Astro.props;
+
+const svgW = 320;
+const svgH = 200;
+
+const sheetW = 220;
+const sheetH = Math.max(8, Math.min(60, thickness * 3));
+
+const cx = svgW / 2;
+const cy = svgH / 2 - 10;
+
+const sx = cx - sheetW / 2;
+const sy = cy - sheetH / 2;
+
+const isoOff = 30;
+---
+
+<div class="flex flex-col items-center">
+  <svg
+    viewBox={`0 0 ${svgW} ${svgH}`}
+    class="w-full max-w-[320px]"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <marker id="sh-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+      </marker>
+    </defs>
+
+    <!-- 3D isometric sheet -->
+    <!-- Top face -->
+    <path
+      d={`M ${sx} ${sy} l ${isoOff} ${-isoOff} h ${sheetW} l ${-isoOff} ${isoOff} Z`}
+      fill="#d5dbe3"
+      stroke="#1e3a5f"
+      stroke-width="1"
+    />
+    <!-- Front face -->
+    <rect x={sx} y={sy} width={sheetW} height={sheetH} fill="#c0c8d2" stroke="#1e3a5f" stroke-width="1"/>
+    <!-- Right face -->
+    <path
+      d={`M ${sx + sheetW} ${sy} l ${isoOff} ${-isoOff} v ${sheetH} l ${-isoOff} ${isoOff} Z`}
+      fill="#a8b4c0"
+      stroke="#1e3a5f"
+      stroke-width="1"
+    />
+
+    <!-- Dimension: thickness (left side) -->
+    <line x1={sx - 16} y1={sy} x2={sx - 16} y2={sy + sheetH}
+      stroke="#1e3a5f" stroke-width="0.8" marker-start="url(#sh-arr)" marker-end="url(#sh-arr)"/>
+    <line x1={sx - 3} y1={sy} x2={sx - 20} y2={sy} stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1={sx - 3} y1={sy + sheetH} x2={sx - 20} y2={sy + sheetH} stroke="#1e3a5f" stroke-width="0.5"/>
+    <text x={sx - 24} y={cy + 4} text-anchor="end" fill="#1e3a5f" font-size="11" font-weight="600">{thickness}</text>
+
+    <!-- Dimension: width (bottom) -->
+    <line x1={sx} y1={sy + sheetH + 16} x2={sx + sheetW} y2={sy + sheetH + 16}
+      stroke="#1e3a5f" stroke-width="0.8" marker-start="url(#sh-arr)" marker-end="url(#sh-arr)"/>
+    <line x1={sx} y1={sy + sheetH + 4} x2={sx} y2={sy + sheetH + 20} stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1={sx + sheetW} y1={sy + sheetH + 4} x2={sx + sheetW} y2={sy + sheetH + 20} stroke="#1e3a5f" stroke-width="0.5"/>
+    <text x={cx} y={sy + sheetH + 30} text-anchor="middle" fill="#1e3a5f" font-size="11" font-weight="600">{width}</text>
+
+    <!-- Dimension: length (top-right, isometric) -->
+    <text
+      x={sx + sheetW + isoOff / 2 + 6}
+      y={sy - isoOff / 2 - 4}
+      text-anchor="start"
+      fill="#64748b"
+      font-size="10"
+    >L={length}</text>
+
+    <!-- Label -->
+    <text x={svgW / 2} y={svgH - 4} text-anchor="middle" fill="#64748b" font-size="10">
+      Лист {thickness}x{width}x{length}, ГОСТ 19903-2015
+    </text>
+  </svg>
+</div>

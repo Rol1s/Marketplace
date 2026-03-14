@@ -1,0 +1,61 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getBeams } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const beams = getBeams();
+const title = `Двутавры стальные ГОСТ 35087-2024 — сортамент, вес | ${SITE.name}`;
+const description = `Полный сортамент стальных двутавровых балок по ГОСТ 35087-2024. ${beams.length} профилей с размерами, массой и механическими характеристиками.`;
+
+const beamTypes = [
+  { prefix: 'Б', name: 'Нормальные (Б)', filter: (p: string) => /^\d+Б/.test(p) },
+  { prefix: 'Ш', name: 'Широкополочные (Ш)', filter: (p: string) => /^\d+Ш/.test(p) },
+  { prefix: 'К', name: 'Колонные (К)', filter: (p: string) => /^\d+К/.test(p) },
+  { prefix: 'ДБ', name: 'Дополнительные (ДБ)', filter: (p: string) => /^\d+ДБ/.test(p) },
+  { prefix: 'ДК', name: 'Дополнительные колонные (ДК)', filter: (p: string) => /^\d+ДК/.test(p) },
+];
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник ГОСТ', href: '/gost/' },
+      { label: 'Двутавры', href: '/gost/dvutavry/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Двутавры стальные — ГОСТ 35087-2024
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Сортамент горячекатаных двутавровых балок по ГОСТ 35087-2024.
+      {beams.length} профилей — нормальные, широкополочные, колонные серии.
+    </p>
+
+    {beamTypes.map((bt) => {
+      const group = beams.filter((b) => bt.filter(b.profile));
+      return group.length > 0 && (
+        <section class="mb-10">
+          <h2 class="text-xl font-bold text-primary mb-4">{bt.name}</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {group.map((b) => (
+              <a
+                href={`/gost/dvutavry/${b.slug}/`}
+                class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+              >
+                <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">
+                  {b.profile}
+                </div>
+                <div class="text-xs text-text-muted mt-1">
+                  h={b.h} мм, {b.weightPerMeter} кг/м
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+</Base>

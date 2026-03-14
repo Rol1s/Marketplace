@@ -1,0 +1,124 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import SheetCrossSection from '@components/SheetCrossSection.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getSheets } from '@lib/data';
+import { sheetMeta } from '@lib/seo';
+import { sheetWeight, formatWeight } from '@lib/calculator';
+import { relatedSheets } from '@lib/links';
+
+export function getStaticPaths() {
+  return getSheets().map((s) => ({
+    params: { slug: s.slug },
+    props: { sheet: s },
+  }));
+}
+
+const { sheet } = Astro.props;
+const allSheets = getSheets();
+const meta = sheetMeta(sheet.thickness, sheet.width, sheet.length);
+const related = relatedSheets(allSheets, sheet.slug);
+
+const weightKg = sheetWeight(sheet.thickness, sheet.width, sheet.length);
+const weightPerM2 = (sheet.thickness * 7.85).toFixed(2);
+const areaM2 = ((sheet.width * sheet.length) / 1_000_000).toFixed(2);
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Лист стальной ${sheet.thickness}×${sheet.width}×${sheet.length} мм — ГОСТ 19903-2015`}
+  breadcrumbs={[
+    { label: 'Справочник ГОСТ', href: '/gost/' },
+    { label: 'Листы', href: '/gost/listy/' },
+    { label: `${sheet.thickness}×${sheet.width}×${sheet.length}`, href: `/gost/listy/${sheet.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <SheetCrossSection thickness={sheet.thickness} width={sheet.width} length={sheet.length} />
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{sheet.thickness}</div>
+          <div class="text-xs text-text-muted mt-1">Толщина, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{sheet.width}x{sheet.length}</div>
+          <div class="text-xs text-text-muted mt-1">Размеры, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-accent">{weightKg.toFixed(1)}</div>
+          <div class="text-xs text-text-muted mt-1">Масса листа, кг</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{areaM2}</div>
+          <div class="text-xs text-text-muted mt-1">Площадь, м²</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Толщина', value: `${sheet.thickness} мм` },
+        { param: 'Ширина', value: `${sheet.width} мм` },
+        { param: 'Длина', value: `${sheet.length} мм` },
+        { param: 'Площадь листа', value: `${areaM2} м²` },
+        { param: 'Масса листа', value: formatWeight(weightKg) },
+        { param: 'Масса 1 м² при толщине ' + sheet.thickness + ' мм', value: `${weightPerM2} кг` },
+        { param: 'ГОСТ', value: sheet.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор массы листов</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Лист ${sheet.thickness}x${sheet.width}x${sheet.length}`}
+      weightPerUnit={weightKg}
+      mode="piece"
+      unitLabel="кг/лист"
+    />
+  </section>
+
+  <section class="mb-8">
+    <details class="group">
+      <summary class="cursor-pointer text-lg font-bold text-primary mb-3 list-none flex items-center gap-2">
+        <svg class="w-4 h-4 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        Масса листов разного количества
+      </summary>
+      <div class="mt-3">
+        <GostTable
+          columns={[
+            { key: 'qty', label: 'Кол-во листов', align: 'right' },
+            { key: 'weight', label: 'Масса', unit: 'кг', align: 'right' },
+            { key: 'weightT', label: 'Масса', unit: 'т', align: 'right' },
+          ]}
+          rows={[1, 2, 5, 10, 20, 50].map((qty) => ({
+            qty,
+            weight: (weightKg * qty).toFixed(1),
+            weightT: ((weightKg * qty) / 1000).toFixed(3),
+          }))}
+        />
+      </div>
+    </details>
+  </section>
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на лист {sheet.thickness}x{sheet.width}x{sheet.length}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие размеры листов" items={related} />
+</Gost>

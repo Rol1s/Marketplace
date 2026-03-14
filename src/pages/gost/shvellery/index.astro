@@ -1,0 +1,58 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getChannels } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const channels = getChannels();
+const title = `Швеллеры стальные ГОСТ 8240-97 — сортамент, вес, характеристики | ${SITE.name}`;
+const description = `Полный сортамент стальных швеллеров по ГОСТ 8240-97. ${channels.length} профилей с таблицами размеров, массы, моментов инерции и сопротивления.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник ГОСТ', href: '/gost/' },
+      { label: 'Швеллеры', href: '/gost/shvellery/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Швеллеры стальные — ГОСТ 8240-97
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Сортамент стальных горячекатаных швеллеров по ГОСТ 8240-97.
+      {channels.length} профилей с полными механическими характеристиками.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
+      {channels.map((ch) => (
+        <a
+          href={`/gost/shvellery/${ch.slug}/`}
+          class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+        >
+          <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">
+            {ch.profile}
+          </div>
+          <div class="text-xs text-text-muted mt-1">
+            h={ch.h} мм, {ch.weight} кг/м
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-bold text-primary mb-4">Полная таблица швеллеров</h2>
+    <GostTable
+      columns={[
+        { key: 'profile', label: 'Профиль' },
+        { key: 'h', label: 'h', unit: 'мм', align: 'right' },
+        { key: 'b', label: 'b', unit: 'мм', align: 'right' },
+        { key: 's', label: 's', unit: 'мм', align: 'right' },
+        { key: 't', label: 't', unit: 'мм', align: 'right' },
+        { key: 'weight', label: 'Масса', unit: 'кг/м', align: 'right' },
+      ]}
+      rows={channels}
+    />
+  </div>
+</Base>

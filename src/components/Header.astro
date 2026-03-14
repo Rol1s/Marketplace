@@ -1,0 +1,77 @@
+---
+import { SITE, SECTIONS } from '@/config/site';
+---
+
+<header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-between h-14">
+      <a href="/" class="text-xl font-bold tracking-tight hover:opacity-90 transition-opacity">
+        {SITE.name}
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1">
+        {SECTIONS.map((section) => (
+          <a
+            href={`/gost/${section.slug}/`}
+            class="px-3 py-2 text-sm font-medium rounded-md hover:bg-white/10 transition-colors"
+          >
+            {section.name}
+          </a>
+        ))}
+        <a
+          href="/calculator/"
+          class="px-3 py-2 text-sm font-medium rounded-md hover:bg-white/10 transition-colors"
+        >
+          Калькулятор
+        </a>
+        <a
+          href="/zayavka/"
+          class="ml-2 px-4 py-2 text-sm font-semibold bg-accent rounded-md hover:bg-accent-light transition-colors"
+        >
+          Оставить заявку
+        </a>
+      </nav>
+
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 rounded-md hover:bg-white/10"
+        aria-label="Открыть меню"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <nav id="mobile-menu" class="lg:hidden hidden pb-4">
+      <div class="flex flex-col gap-1">
+        {SECTIONS.map((section) => (
+          <a
+            href={`/gost/${section.slug}/`}
+            class="px-3 py-2 text-sm font-medium rounded-md hover:bg-white/10"
+          >
+            {section.name}
+          </a>
+        ))}
+        <a
+          href="/calculator/"
+          class="px-3 py-2 text-sm font-medium rounded-md hover:bg-white/10"
+        >
+          Калькулятор
+        </a>
+        <a
+          href="/zayavka/"
+          class="mt-2 px-4 py-2 text-sm font-semibold bg-accent text-center rounded-md hover:bg-accent-light"
+        >
+          Оставить заявку
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>
