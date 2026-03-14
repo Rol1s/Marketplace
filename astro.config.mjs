@@ -4,8 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://rol1s.github.io',
-  base: '/Marketplace/',
+  site: 'https://nikamet.pro',
   integrations: [
     react(),
     sitemap(),
