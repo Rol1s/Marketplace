@@ -5,6 +5,7 @@ import AngleCrossSection from '@components/AngleCrossSection.astro';
 import WeightCalculator from '@components/WeightCalculator';
 import { getAnglesUnequal } from '@lib/data';
 import { angleUnequalMeta } from '@lib/seo';
+import ProductFAQ from '@components/ProductFAQ.astro';
 import { relatedAngles } from '@lib/links';
 
 export function getStaticPaths() {
@@ -67,6 +68,13 @@ const related = relatedAngles(all, angle.slug, '/ugolki/neravnopolochnye/');
       defaultLength={6}
     />
   </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес 1 метра уголка ${angle.size}?`, answer: `Масса 1 погонного метра уголка неравнополочного ${angle.size} по ГОСТ 8510-86 составляет <strong>${angle.massPerMeterKg} кг</strong>.` },
+    { question: `Сколько уголков ${angle.size} в тонне?`, answer: `В 1 тонне ${angle.massPerMeterKg > 0 ? (1000 / angle.massPerMeterKg).toFixed(2) : '—'} погонных метров уголка ${angle.size} (${angle.massPerMeterKg > 0 ? (1000 / (angle.massPerMeterKg * 6)).toFixed(0) : '—'} штук по 6 м).` },
+    { question: `Какой ГОСТ у уголка ${angle.size}?`, answer: `Уголок неравнополочный ${angle.size} изготавливается по <strong>ГОСТ 8510-86</strong>. Стандарт определяет сортамент стальных горячекатаных неравнополочных уголков.` },
+    { question: `Где купить уголок ${angle.size}?`, answer: `Оставьте заявку — мы подберём лучшее предложение по уголку ${angle.size}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
+  ]} />
 
   <section class="mb-8">
     <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">

@@ -1,0 +1,70 @@
+---
+import Gost from '@layouts/Gost.astro';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getCities, getBeams } from '@lib/data';
+import { SITE } from '@/config/site';
+import type { City, Beam } from '@lib/types';
+
+export function getStaticPaths() {
+  const cities = getCities();
+  const beams = getBeams();
+  const popular = beams.filter((_, i) => i % Math.max(1, Math.floor(beams.length / 20)) === 0).slice(0, 20);
+  return cities.flatMap((city) =>
+    popular.map((beam) => ({
+      params: { city: city.slug, slug: beam.slug },
+      props: { city, beam },
+    }))
+  );
+}
+
+const { city, beam } = Astro.props as { city: City; beam: Beam };
+---
+
+<Gost
+  title={`Двутавр ${beam.profile} ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  description={`Купить двутавр ${beam.profile} ${city.namePrep}. Масса ${beam.weightPerMeter} кг/м. Наличие, цены, доставка по ${city.region}.`}
+  h1={`Двутавр ${beam.profile} ${city.namePrep}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: city.name, href: `/${city.slug}/` },
+    { label: 'Двутавры', href: `/dvutavry/` },
+    { label: beam.profile, href: `/${city.slug}/dvutavry/${beam.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.profile}</div>
+        <div class="text-xs text-text-muted mt-1">Профиль</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{beam.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.h}</div>
+        <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Доставка {city.namePrep}</h2>
+    <p class="text-text-muted leading-relaxed">
+      Двутавр {beam.profile} по ГОСТ 35087-2024 доступен с доставкой {city.namePrep} и по {city.region}.
+      <a href={`/dvutavry/${beam.slug}/`} class="text-primary underline">Подробные характеристики двутавра {beam.profile}</a>.
+    </p>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Где купить двутавр ${beam.profile} ${city.namePrep}?`, answer: `Оставьте заявку — мы подберём двутавр ${beam.profile} от поставщиков ${city.namePrep}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
+    { question: `Какой вес двутавра ${beam.profile}?`, answer: `Масса 1 м двутавра ${beam.profile} — <strong>${beam.weightPerMeter} кг</strong>.` },
+    { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка металлопроката ${city.namePrep} и по ${city.region}.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Купить двутавр {beam.profile} {city.namePrep}
+    </a>
+  </section>
+</Gost>

@@ -1,0 +1,72 @@
+---
+import Gost from '@layouts/Gost.astro';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getCities, getSheets } from '@lib/data';
+import { sheetWeight } from '@lib/calculator';
+import { SITE } from '@/config/site';
+import type { City, Sheet } from '@lib/types';
+
+export function getStaticPaths() {
+  const cities = getCities();
+  const sheets = getSheets();
+  const popular = sheets.filter((_, i) => i % Math.max(1, Math.floor(sheets.length / 20)) === 0).slice(0, 20);
+  return cities.flatMap((city) =>
+    popular.map((sheet) => ({
+      params: { city: city.slug, slug: sheet.slug },
+      props: { city, sheet },
+    }))
+  );
+}
+
+const { city, sheet } = Astro.props as { city: City; sheet: Sheet };
+const weightKg = sheetWeight(sheet.thickness, sheet.width, sheet.length);
+---
+
+<Gost
+  title={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep} — цена | ${SITE.name}`}
+  description={`Купить лист стальной ${sheet.thickness}×${sheet.width}×${sheet.length} мм ${city.namePrep}. Масса ${weightKg.toFixed(1)} кг. Доставка по ${city.region}.`}
+  h1={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: city.name, href: `/${city.slug}/` },
+    { label: 'Листы', href: `/listy/` },
+    { label: `${sheet.thickness}×${sheet.width}×${sheet.length}`, href: `/${city.slug}/listy/${sheet.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{sheet.thickness}</div>
+        <div class="text-xs text-text-muted mt-1">Толщина, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{sheet.width}×{sheet.length}</div>
+        <div class="text-xs text-text-muted mt-1">Размеры, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{weightKg.toFixed(1)}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Доставка {city.namePrep}</h2>
+    <p class="text-text-muted leading-relaxed">
+      Лист стальной {sheet.thickness}×{sheet.width}×{sheet.length} мм доступен с доставкой {city.namePrep}.
+      <a href={`/listy/${sheet.slug}/`} class="text-primary underline">Подробные характеристики листа</a>.
+    </p>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Где купить лист ${sheet.thickness} мм ${city.namePrep}?`, answer: `Оставьте заявку — мы подберём лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
+    { question: `Какой вес листа ${sheet.thickness}×${sheet.width}×${sheet.length}?`, answer: `Масса листа — <strong>${weightKg.toFixed(1)} кг</strong>.` },
+    { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Купить лист {sheet.thickness}×{sheet.width}×{sheet.length} {city.namePrep}
+    </a>
+  </section>
+</Gost>

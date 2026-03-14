@@ -1,0 +1,52 @@
+---
+import Gost from '@layouts/Gost.astro';
+import SteelGradeInfo from '@components/SteelGradeInfo.astro';
+import { getBeams, getSteelGradesForProduct } from '@lib/data';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  const beams = getBeams();
+  const grades = getSteelGradesForProduct('dvutavry');
+  return beams.flatMap((b) =>
+    grades.map((grade) => ({
+      params: { slug: b.slug, grade: grade.slug },
+      props: { beam: b, grade },
+    }))
+  );
+}
+
+const { beam, grade } = Astro.props;
+const allGrades = getSteelGradesForProduct('dvutavry');
+const productName = `двутавра ${beam.profile}`;
+const otherGrades = allGrades.map((g) => ({
+  slug: g.slug,
+  name: g.name,
+  href: `/dvutavry/${beam.slug}/${g.slug}/`,
+}));
+---
+
+<Gost
+  title={`Двутавр ${beam.profile} из ${grade.name} — вес, характеристики | ${SITE.name}`}
+  description={`Двутавр ${beam.profile} из ${grade.nameGen}. Масса ${beam.weightPerMeter} кг/м. Свойства ${grade.name}, расчёт массы.`}
+  h1={`Двутавр ${beam.profile} из ${grade.name}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Двутавры', href: '/dvutavry/' },
+    { label: beam.profile, href: `/dvutavry/${beam.slug}/` },
+    { label: grade.name, href: `/dvutavry/${beam.slug}/${grade.slug}/` },
+  ]}
+>
+  <SteelGradeInfo
+    grade={grade}
+    productName={productName}
+    weightPerUnit={beam.weightPerMeter}
+    unitLabel="кг/м"
+    otherGrades={otherGrades}
+  />
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на двутавр {beam.profile} из {grade.name}
+    </a>
+  </section>
+</Gost>

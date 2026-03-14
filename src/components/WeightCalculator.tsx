@@ -85,6 +85,37 @@ export default function WeightCalculator({
           <div className="text-lg font-bold text-primary">{weightPerUnit} {unitLabel}</div>
         </div>
       </div>
+
+      <div className="border-t border-border/50 pt-4 mt-2">
+        <h4 className="text-sm font-semibold text-text-muted mb-3">Обратный расчёт: в 1 тонне</h4>
+        <div className={`grid gap-3 ${mode === 'length' ? 'grid-cols-2' : 'grid-cols-1'}`}>
+          {mode === 'length' ? (
+            <>
+              <div className="bg-surface rounded-lg p-3 text-center border border-border/50">
+                <div className="text-xs text-text-muted">Метров в 1 тонне</div>
+                <div className="text-lg font-bold text-primary">
+                  {weightPerUnit > 0 ? (1000 / weightPerUnit).toFixed(2) : '—'} м
+                </div>
+              </div>
+              <div className="bg-surface rounded-lg p-3 text-center border border-border/50">
+                <div className="text-xs text-text-muted">Штук по {length} м в 1 тонне</div>
+                <div className="text-lg font-bold text-accent">
+                  {weightPerUnit > 0 && length > 0
+                    ? Math.floor(1000 / (weightPerUnit * length))
+                    : '—'} шт
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="bg-surface rounded-lg p-3 text-center border border-border/50">
+              <div className="text-xs text-text-muted">Листов в 1 тонне</div>
+              <div className="text-lg font-bold text-primary">
+                {weightPerUnit > 0 ? Math.floor(1000 / weightPerUnit) : '—'} шт
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

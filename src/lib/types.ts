@@ -102,6 +102,25 @@ export interface SheetPile {
   areaPerMeterM2: number;
 }
 
+export interface SteelGrade {
+  slug: string;
+  name: string;
+  nameGen: string;
+  density: number;
+  tensileStrength: string;
+  yieldStrength: string;
+  elongation: string;
+  description: string;
+  products: string[];
+}
+
+export interface City {
+  slug: string;
+  name: string;
+  namePrep: string;
+  region: string;
+}
+
 export interface GostPageMeta {
   title: string;
   description: string;

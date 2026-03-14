@@ -1,0 +1,98 @@
+---
+import type { SteelGrade } from '@lib/types';
+import ProductFAQ from './ProductFAQ.astro';
+
+interface Props {
+  grade: SteelGrade;
+  productName: string;
+  weightPerUnit: number;
+  unitLabel: string;
+  otherGrades: { slug: string; name: string; href: string }[];
+}
+
+const { grade, productName, weightPerUnit, unitLabel, otherGrades } = Astro.props;
+
+const densityRatio = grade.density / 7850;
+const adjustedWeight = +(weightPerUnit * densityRatio).toFixed(3);
+const metersPerTon = adjustedWeight > 0 ? (1000 / adjustedWeight).toFixed(2) : '—';
+---
+
+<section class="mb-8">
+  <h2 class="text-lg font-bold text-primary mb-3">Характеристики {grade.name}</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+    <div class="bg-surface rounded-lg p-4 text-center">
+      <div class="text-xl font-bold text-primary">{grade.yieldStrength}</div>
+      <div class="text-xs text-text-muted mt-1">Предел текучести, МПа</div>
+    </div>
+    <div class="bg-surface rounded-lg p-4 text-center">
+      <div class="text-xl font-bold text-primary">{grade.tensileStrength}</div>
+      <div class="text-xs text-text-muted mt-1">Предел прочности, МПа</div>
+    </div>
+    <div class="bg-surface rounded-lg p-4 text-center">
+      <div class="text-xl font-bold text-accent">{grade.elongation}%</div>
+      <div class="text-xs text-text-muted mt-1">Относительное удлинение</div>
+    </div>
+    <div class="bg-surface rounded-lg p-4 text-center">
+      <div class="text-xl font-bold text-primary">{grade.density}</div>
+      <div class="text-xs text-text-muted mt-1">Плотность, кг/м³</div>
+    </div>
+  </div>
+  <p class="text-text-muted text-sm leading-relaxed">{grade.description}</p>
+</section>
+
+{grade.density !== 7850 && (
+  <section class="mb-8">
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+      <p class="text-sm text-amber-800">
+        Плотность {grade.name} составляет {grade.density} кг/м³ (отличается от стандартной 7850 кг/м³).
+        Скорректированная масса {productName}: <strong>{adjustedWeight} {unitLabel}</strong>
+        (стандартная: {weightPerUnit} {unitLabel}).
+      </p>
+    </div>
+  </section>
+)}
+
+<section class="mb-8">
+  <h2 class="text-lg font-bold text-primary mb-3">Масса и расчёт</h2>
+  <div class="grid grid-cols-3 gap-3">
+    <div class="bg-surface rounded-lg p-3 text-center border border-border/50">
+      <div class="text-xs text-text-muted">Масса 1 м</div>
+      <div class="text-lg font-bold text-primary">{adjustedWeight} {unitLabel}</div>
+    </div>
+    <div class="bg-surface rounded-lg p-3 text-center border border-border/50">
+      <div class="text-xs text-text-muted">Метров в 1 тонне</div>
+      <div class="text-lg font-bold text-accent">{metersPerTon} м</div>
+    </div>
+    <div class="bg-surface rounded-lg p-3 text-center border border-border/50">
+      <div class="text-xs text-text-muted">Плотность</div>
+      <div class="text-lg font-bold text-primary">{grade.density} кг/м³</div>
+    </div>
+  </div>
+</section>
+
+{otherGrades.length > 0 && (
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Другие марки стали</h2>
+    <div class="flex flex-wrap gap-2">
+      {otherGrades.map((g) => (
+        <a
+          href={g.href}
+          class={`inline-block px-3 py-2 rounded-lg text-sm border transition-colors ${
+            g.slug === grade.slug
+              ? 'bg-primary text-white border-primary font-bold'
+              : 'bg-surface border-border hover:border-primary text-text'
+          }`}
+        >
+          {g.name}
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+
+<ProductFAQ items={[
+  { question: `Какой вес ${productName} из ${grade.name}?`, answer: `Масса 1 погонного метра ${productName} из ${grade.nameGen} составляет <strong>${adjustedWeight} ${unitLabel}</strong> (плотность ${grade.density} кг/м³).` },
+  { question: `Какие свойства у ${grade.name}?`, answer: `${grade.name}: предел текучести ${grade.yieldStrength} МПа, предел прочности ${grade.tensileStrength} МПа, относительное удлинение ${grade.elongation}%.` },
+  { question: `Сколько метров ${productName} из ${grade.name} в тонне?`, answer: `В 1 тонне ${metersPerTon} погонных метров ${productName} из ${grade.nameGen}.` },
+  { question: `Где купить ${productName} из ${grade.name}?`, answer: `Оставьте заявку — мы подберём ${productName} из ${grade.nameGen} от проверенных поставщиков. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
+]} />

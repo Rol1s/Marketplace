@@ -1,0 +1,22 @@
+[
+  { "slug": "moskva", "name": "Москва", "namePrep": "в Москве", "region": "Московская область" },
+  { "slug": "spb", "name": "Санкт-Петербург", "namePrep": "в Санкт-Петербурге", "region": "Ленинградская область" },
+  { "slug": "ekaterinburg", "name": "Екатеринбург", "namePrep": "в Екатеринбурге", "region": "Свердловская область" },
+  { "slug": "novosibirsk", "name": "Новосибирск", "namePrep": "в Новосибирске", "region": "Новосибирская область" },
+  { "slug": "kazan", "name": "Казань", "namePrep": "в Казани", "region": "Республика Татарстан" },
+  { "slug": "chelyabinsk", "name": "Челябинск", "namePrep": "в Челябинске", "region": "Челябинская область" },
+  { "slug": "samara", "name": "Самара", "namePrep": "в Самаре", "region": "Самарская область" },
+  { "slug": "rostov", "name": "Ростов-на-Дону", "namePrep": "в Ростове-на-Дону", "region": "Ростовская область" },
+  { "slug": "ufa", "name": "Уфа", "namePrep": "в Уфе", "region": "Республика Башкортостан" },
+  { "slug": "krasnoyarsk", "name": "Красноярск", "namePrep": "в Красноярске", "region": "Красноярский край" },
+  { "slug": "voronezh", "name": "Воронеж", "namePrep": "в Воронеже", "region": "Воронежская область" },
+  { "slug": "perm", "name": "Пермь", "namePrep": "в Перми", "region": "Пермский край" },
+  { "slug": "volgograd", "name": "Волгоград", "namePrep": "в Волгограде", "region": "Волгоградская область" },
+  { "slug": "krasnodar", "name": "Краснодар", "namePrep": "в Краснодаре", "region": "Краснодарский край" },
+  { "slug": "tyumen", "name": "Тюмень", "namePrep": "в Тюмени", "region": "Тюменская область" },
+  { "slug": "nizhny-novgorod", "name": "Нижний Новгород", "namePrep": "в Нижнем Новгороде", "region": "Нижегородская область" },
+  { "slug": "omsk", "name": "Омск", "namePrep": "в Омске", "region": "Омская область" },
+  { "slug": "tomsk", "name": "Томск", "namePrep": "в Томске", "region": "Томская область" },
+  { "slug": "irkutsk", "name": "Иркутск", "namePrep": "в Иркутске", "region": "Иркутская область" },
+  { "slug": "surgut", "name": "Сургут", "namePrep": "в Сургуте", "region": "ХМАО-Югра" }
+]

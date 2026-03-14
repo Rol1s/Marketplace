@@ -7,6 +7,7 @@ import PipeCalculator from '@components/PipeCalculator';
 import { getPipes, getPipesByDiameter } from '@lib/data';
 import { pipeMeta } from '@lib/seo';
 import { pipeWeight, formatWeight } from '@lib/calculator';
+import ProductFAQ from '@components/ProductFAQ.astro';
 import { nearbyPipes } from '@lib/links';
 
 export function getStaticPaths() {
@@ -79,6 +80,13 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
       weightPerMeter={pipe.weightPerMeter}
     />
   </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес 1 метра трубы ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Масса 1 погонного метра трубы стальной ${pipe.diameter}×${pipe.wallThickness} мм по ГОСТ 10704-91 составляет <strong>${weight1m} кг</strong>.` },
+    { question: `Сколько труб ${pipe.diameter}×${pipe.wallThickness} в тонне?`, answer: `В 1 тонне ${weight1m > 0 ? (1000 / (weight1m * 11.7)).toFixed(0) : '—'} труб длиной 11.7 м (${weight1m > 0 ? (1000 / weight1m).toFixed(2) : '—'} погонных метров).` },
+    { question: `Какой ГОСТ у трубы ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Труба ${pipe.diameter}×${pipe.wallThickness} мм изготавливается по <strong>ГОСТ 10704-91</strong> (электросварные прямошовные). Сортамент труб регламентирует размеры и допуски.` },
+    { question: `Где купить трубу ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Оставьте заявку на нашем сайте — мы подберём лучшее предложение по трубе ${pipe.diameter}×${pipe.wallThickness} от проверенных поставщиков с доставкой по России. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
+  ]} />
 
   <!-- 3. CTA -->
   <section class="mb-8">

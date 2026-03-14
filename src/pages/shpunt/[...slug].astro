@@ -5,6 +5,7 @@ import RelatedItems from '@components/RelatedItems.astro';
 import WeightCalculator from '@components/WeightCalculator';
 import { getSheetPiles } from '@lib/data';
 import { shpuntMeta } from '@lib/seo';
+import ProductFAQ from '@components/ProductFAQ.astro';
 import { relatedSheetPiles } from '@lib/links';
 
 export function getStaticPaths() {
@@ -88,6 +89,13 @@ const weightKgPerM = pile.weightPerMeterTons * 1000;
       {weightKgPerM <= 60 && ' Лёгкий профиль — оптимален для неглубоких котлованов и временных ограждений.'}
     </p>
   </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес 1 метра шпунта ${pile.displayName}?`, answer: `Масса 1 погонного метра шпунта Ларсена ${pile.displayName} составляет <strong>${weightKgPerM.toFixed(1)} кг</strong> (${pile.weightPerMeterTons} т/м).` },
+    { question: `Сколько метров шпунта ${pile.displayName} в тонне?`, answer: `В 1 тонне ${weightKgPerM > 0 ? (1000 / weightKgPerM).toFixed(2) : '—'} погонных метров шпунта ${pile.displayName}.` },
+    { question: `Для чего применяется шпунт ${pile.displayName}?`, answer: `Шпунт Ларсена ${pile.displayName} применяется для устройства шпунтовых ограждений котлованов, укрепления берегов, строительства причалов, набережных и подпорных стен.` },
+    { question: `Где купить шпунт ${pile.displayName}?`, answer: `Оставьте заявку — мы подберём лучшее предложение по шпунту ${pile.displayName}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
+  ]} />
 
   <section class="mb-8">
     <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">

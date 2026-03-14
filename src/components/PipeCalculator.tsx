@@ -250,6 +250,26 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
       </div>
 
       <div className="bg-surface border border-border rounded-xl p-5">
+        <div className="border-t border-border/50 pt-4 mb-4">
+          <h4 className="text-sm font-semibold text-text-muted mb-3">Обратный расчёт: в 1 тонне</h4>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-white rounded-lg border border-border p-3 text-center">
+              <div className="text-xs text-text-muted">Метров в 1 тонне</div>
+              <div className="text-lg font-bold text-primary">
+                {weightPerMeter > 0 ? (1000 / weightPerMeter).toFixed(2) : '—'} м
+              </div>
+            </div>
+            <div className="bg-white rounded-lg border border-border p-3 text-center">
+              <div className="text-xs text-text-muted">Штук по {pipeLength} м в 1 тонне</div>
+              <div className="text-lg font-bold text-accent">
+                {weightPerPipe > 0 ? Math.floor(1000 / weightPerPipe) : '—'} шт
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-surface border border-border rounded-xl p-5">
         <h3 className="text-lg font-bold text-primary mb-4">
           Погрузка {qty} шт в шаланду
         </h3>

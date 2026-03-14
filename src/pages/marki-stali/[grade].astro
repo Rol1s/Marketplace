@@ -1,0 +1,190 @@
+---
+import Gost from '@layouts/Gost.astro';
+import SectionIcon from '@components/SectionIcon.astro';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getSteelGrades, getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getAnglesUnequal, getSheetPiles } from '@lib/data';
+import { SITE, SECTIONS } from '@/config/site';
+
+export function getStaticPaths() {
+  return getSteelGrades().map((g) => ({
+    params: { grade: g.slug },
+    props: { grade: g },
+  }));
+}
+
+const { grade } = Astro.props;
+const allGrades = getSteelGrades();
+
+interface ProductLink {
+  name: string;
+  href: string;
+}
+
+const sectionProducts: Record<string, { label: string; icon: string; items: ProductLink[] }> = {};
+
+if (grade.products.includes('truby')) {
+  const pipes = getPipes();
+  const popular = pipes.filter((_, i) => i % Math.ceil(pipes.length / 20) === 0).slice(0, 20);
+  sectionProducts['truby'] = {
+    label: 'Трубы',
+    icon: 'truby',
+    items: popular.map((p) => ({
+      name: `${p.diameter}×${p.wallThickness}`,
+      href: `/truby/${p.slug}/${grade.slug}/`,
+    })),
+  };
+}
+
+if (grade.products.includes('shvellery')) {
+  const channels = getChannels();
+  const popular = channels.slice(0, 15);
+  sectionProducts['shvellery'] = {
+    label: 'Швеллеры',
+    icon: 'shvellery',
+    items: popular.map((c) => ({
+      name: c.profile,
+      href: `/shvellery/${c.slug}/${grade.slug}/`,
+    })),
+  };
+}
+
+if (grade.products.includes('dvutavry')) {
+  const beams = getBeams();
+  const popular = beams.filter((_, i) => i % Math.ceil(beams.length / 15) === 0).slice(0, 15);
+  sectionProducts['dvutavry'] = {
+    label: 'Двутавры',
+    icon: 'dvutavry',
+    items: popular.map((b) => ({
+      name: b.profile,
+      href: `/dvutavry/${b.slug}/${grade.slug}/`,
+    })),
+  };
+}
+
+if (grade.products.includes('listy')) {
+  const sheets = getSheets();
+  const popular = sheets.filter((_, i) => i % Math.ceil(sheets.length / 15) === 0).slice(0, 15);
+  sectionProducts['listy'] = {
+    label: 'Листы',
+    icon: 'listy',
+    items: popular.map((s) => ({
+      name: `${s.thickness}×${s.width}×${s.length}`,
+      href: `/listy/${s.slug}/${grade.slug}/`,
+    })),
+  };
+}
+
+if (grade.products.includes('ugolki')) {
+  const eq = getAnglesEqual();
+  const popular = eq.slice(0, 10);
+  sectionProducts['ugolki-r'] = {
+    label: 'Уголки равнополочные',
+    icon: 'ugolki',
+    items: popular.map((a) => ({
+      name: a.size,
+      href: `/ugolki/ravnopolochnye/${a.slug}/${grade.slug}/`,
+    })),
+  };
+  const uneq = getAnglesUnequal();
+  const popularU = uneq.slice(0, 10);
+  sectionProducts['ugolki-n'] = {
+    label: 'Уголки неравнополочные',
+    icon: 'ugolki',
+    items: popularU.map((a) => ({
+      name: a.size,
+      href: `/ugolki/neravnopolochnye/${a.slug}/${grade.slug}/`,
+    })),
+  };
+}
+
+if (grade.products.includes('shpunt')) {
+  const piles = getSheetPiles();
+  sectionProducts['shpunt'] = {
+    label: 'Шпунт Ларсена',
+    icon: 'shpunt',
+    items: piles.slice(0, 15).map((p) => ({
+      name: p.displayName,
+      href: `/shpunt/${p.slug}/${grade.slug}/`,
+    })),
+  };
+}
+---
+
+<Gost
+  title={`${grade.name} — характеристики, применение в металлопрокате | ${SITE.name}`}
+  description={`Марка стали ${grade.name}: плотность ${grade.density} кг/м³, предел текучести ${grade.yieldStrength} МПа. Применение, совместимая продукция, калькулятор веса.`}
+  h1={`Марка стали ${grade.name}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Марки стали', href: '/marki-stali/' },
+    { label: grade.name, href: `/marki-stali/${grade.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-xl font-bold text-primary">{grade.yieldStrength}</div>
+        <div class="text-xs text-text-muted mt-1">Предел текучести, МПа</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-xl font-bold text-primary">{grade.tensileStrength}</div>
+        <div class="text-xs text-text-muted mt-1">Предел прочности, МПа</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-xl font-bold text-accent">{grade.elongation}%</div>
+        <div class="text-xs text-text-muted mt-1">Относительное удлинение</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-xl font-bold text-primary">{grade.density}</div>
+        <div class="text-xs text-text-muted mt-1">Плотность, кг/м³</div>
+      </div>
+    </div>
+    <p class="text-text-muted leading-relaxed">{grade.description}</p>
+  </section>
+
+  {Object.entries(sectionProducts).map(([key, section]) => (
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-primary mb-3 flex items-center gap-2">
+        <SectionIcon slug={section.icon} class="w-5 h-5" />
+        {section.label} из {grade.name}
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {section.items.map((item) => (
+          <a href={item.href}
+             class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors">
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Другие марки стали</h2>
+    <div class="flex flex-wrap gap-2">
+      {allGrades.map((g) => (
+        <a href={`/marki-stali/${g.slug}/`}
+           class={`inline-block px-3 py-2 rounded-lg text-sm border transition-colors ${
+             g.slug === grade.slug
+               ? 'bg-primary text-white border-primary font-bold'
+               : 'bg-surface border-border hover:border-primary text-text'
+           }`}>
+          {g.name}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какая плотность у ${grade.name}?`, answer: `Плотность ${grade.nameGen} составляет <strong>${grade.density} кг/м³</strong>.` },
+    { question: `Какой предел текучести у ${grade.name}?`, answer: `Предел текучести ${grade.nameGen} — <strong>${grade.yieldStrength} МПа</strong>, предел прочности — ${grade.tensileStrength} МПа.` },
+    { question: `Где применяется ${grade.name}?`, answer: grade.description },
+    { question: `Какой металлопрокат делают из ${grade.name}?`, answer: `Из ${grade.nameGen} производят: ${Object.values(sectionProducts).map((s) => s.label.toLowerCase()).join(', ')}.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на металлопрокат из {grade.name}
+    </a>
+  </section>
+</Gost>

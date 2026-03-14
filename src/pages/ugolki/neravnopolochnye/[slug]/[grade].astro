@@ -1,0 +1,53 @@
+---
+import Gost from '@layouts/Gost.astro';
+import SteelGradeInfo from '@components/SteelGradeInfo.astro';
+import { getAnglesUnequal, getSteelGradesForProduct } from '@lib/data';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  const angles = getAnglesUnequal();
+  const grades = getSteelGradesForProduct('ugolki');
+  return angles.flatMap((a) =>
+    grades.map((grade) => ({
+      params: { slug: a.slug, grade: grade.slug },
+      props: { angle: a, grade },
+    }))
+  );
+}
+
+const { angle, grade } = Astro.props;
+const allGrades = getSteelGradesForProduct('ugolki');
+const productName = `уголка ${angle.size}`;
+const otherGrades = allGrades.map((g) => ({
+  slug: g.slug,
+  name: g.name,
+  href: `/ugolki/neravnopolochnye/${angle.slug}/${g.slug}/`,
+}));
+---
+
+<Gost
+  title={`Уголок ${angle.size} из ${grade.name} — вес, характеристики | ${SITE.name}`}
+  description={`Уголок неравнополочный ${angle.size} из ${grade.nameGen}. Масса ${angle.massPerMeterKg} кг/м. Свойства ${grade.name}.`}
+  h1={`Уголок неравнополочный ${angle.size} из ${grade.name}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Уголки', href: '/ugolki/' },
+    { label: 'Неравнополочные', href: '/ugolki/neravnopolochnye/' },
+    { label: angle.size, href: `/ugolki/neravnopolochnye/${angle.slug}/` },
+    { label: grade.name, href: `/ugolki/neravnopolochnye/${angle.slug}/${grade.slug}/` },
+  ]}
+>
+  <SteelGradeInfo
+    grade={grade}
+    productName={productName}
+    weightPerUnit={angle.massPerMeterKg}
+    unitLabel="кг/м"
+    otherGrades={otherGrades}
+  />
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на уголок {angle.size} из {grade.name}
+    </a>
+  </section>
+</Gost>

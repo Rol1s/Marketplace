@@ -1,0 +1,79 @@
+---
+import Gost from '@layouts/Gost.astro';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getCities, getPipes, getUniquePipeDiameters } from '@lib/data';
+import { SITE } from '@/config/site';
+import type { City, Pipe } from '@lib/types';
+
+export function getStaticPaths() {
+  const cities = getCities();
+  const pipes = getPipes();
+  const diameters = getUniquePipeDiameters();
+  const popularDiameters = diameters.filter((_, i) => i % Math.max(1, Math.floor(diameters.length / 20)) === 0).slice(0, 20);
+  const popularPipes = pipes.filter((p) => popularDiameters.includes(p.diameter))
+    .filter((p, i, arr) => arr.findIndex((x) => x.diameter === p.diameter) === i);
+
+  return cities.flatMap((city) =>
+    popularPipes.map((pipe) => ({
+      params: { city: city.slug, slug: pipe.slug },
+      props: { city, pipe },
+    }))
+  );
+}
+
+const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
+---
+
+<Gost
+  title={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  description={`Купить трубу стальную ${pipe.diameter}×${pipe.wallThickness} мм ${city.namePrep}. Масса ${pipe.weightPerMeter} кг/м. Наличие, цены, доставка по ${city.region}.`}
+  h1={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: city.name, href: `/${city.slug}/` },
+    { label: 'Трубы', href: `/truby/` },
+    { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/${city.slug}/truby/${pipe.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.diameter}×{pipe.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Размер, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{pipe.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.weightPerMeter > 0 ? (1000 / pipe.weightPerMeter).toFixed(1) : '—'}</div>
+        <div class="text-xs text-text-muted mt-1">Метров в тонне</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Доставка {city.namePrep}</h2>
+    <p class="text-text-muted leading-relaxed">
+      Труба стальная {pipe.diameter}×{pipe.wallThickness} мм доступна с доставкой {city.namePrep}
+      и по {city.region}. Для уточнения наличия на складе, сроков и стоимости доставки
+      оставьте заявку — мы подберём лучшее предложение от поставщиков вашего региона.
+    </p>
+    <p class="text-text-muted leading-relaxed mt-2">
+      <a href={`/truby/${pipe.slug}/`} class="text-primary underline">Подробные характеристики трубы {pipe.diameter}×{pipe.wallThickness}</a>
+      — калькулятор веса, схема погрузки, таблица масс.
+    </p>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Где купить трубу ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}?`, answer: `Оставьте заявку на нашем сайте — мы подберём трубу ${pipe.diameter}×${pipe.wallThickness} от поставщиков ${city.namePrep} и ${city.region}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
+    { question: `Какой вес трубы ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Масса 1 погонного метра трубы ${pipe.diameter}×${pipe.wallThickness} мм — <strong>${pipe.weightPerMeter} кг</strong> по ГОСТ 10704-91.` },
+    { question: `Есть ли доставка трубы ${city.namePrep}?`, answer: `Да, мы организуем доставку металлопроката ${city.namePrep} и по всей ${city.region}. Стоимость доставки зависит от объёма заказа.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Купить трубу {pipe.diameter}×{pipe.wallThickness} {city.namePrep}
+    </a>
+  </section>
+</Gost>

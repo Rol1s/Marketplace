@@ -1,0 +1,70 @@
+---
+import Gost from '@layouts/Gost.astro';
+import SectionIcon from '@components/SectionIcon.astro';
+import { getCities, getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getSheetPiles } from '@lib/data';
+import { SITE, SECTIONS } from '@/config/site';
+import type { City } from '@lib/types';
+
+export function getStaticPaths() {
+  return getCities().map((city) => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props as { city: City };
+
+const popularPipes = getPipes().filter((_, i) => i % 50 === 0).slice(0, 8);
+const popularChannels = getChannels().slice(0, 6);
+const popularBeams = getBeams().filter((_, i) => i % 12 === 0).slice(0, 6);
+const popularSheets = getSheets().filter((_, i) => i % 20 === 0).slice(0, 6);
+const popularAngles = getAnglesEqual().slice(0, 6);
+const popularPiles = getSheetPiles().slice(0, 6);
+
+const sectionData = [
+  { slug: 'truby', name: 'Трубы', items: popularPipes.map((p) => ({ name: `${p.diameter}×${p.wallThickness}`, href: `/${city.slug}/truby/${p.slug}/` })) },
+  { slug: 'shvellery', name: 'Швеллеры', items: popularChannels.map((c) => ({ name: c.profile, href: `/${city.slug}/shvellery/${c.slug}/` })) },
+  { slug: 'dvutavry', name: 'Двутавры', items: popularBeams.map((b) => ({ name: b.profile, href: `/${city.slug}/dvutavry/${b.slug}/` })) },
+  { slug: 'listy', name: 'Листы', items: popularSheets.map((s) => ({ name: `${s.thickness}×${s.width}×${s.length}`, href: `/${city.slug}/listy/${s.slug}/` })) },
+  { slug: 'ugolki', name: 'Уголки', items: popularAngles.map((a) => ({ name: a.size, href: `/${city.slug}/ugolki/${a.slug}/` })) },
+  { slug: 'shpunt', name: 'Шпунт', items: popularPiles.map((p) => ({ name: p.displayName, href: `/${city.slug}/shpunt/${p.slug}/` })) },
+];
+---
+
+<Gost
+  title={`Металлопрокат ${city.namePrep} — купить с доставкой | ${SITE.name}`}
+  description={`Металлопрокат ${city.namePrep}: трубы, швеллеры, двутавры, листы, уголки, шпунт. Цены, наличие, доставка по ${city.region}.`}
+  h1={`Металлопрокат ${city.namePrep}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: city.name, href: `/${city.slug}/` },
+  ]}
+>
+  <p class="text-text-muted mb-8 leading-relaxed">
+    Каталог металлопроката с доставкой {city.namePrep} и по {city.region}.
+    Оставьте заявку — подберём лучшее предложение от поставщиков региона.
+  </p>
+
+  {sectionData.map((section) => (
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-primary mb-3 flex items-center gap-2">
+        <SectionIcon slug={section.slug} class="w-5 h-5" />
+        {section.name} {city.namePrep}
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {section.items.map((item) => (
+          <a href={item.href}
+             class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors">
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <section class="mb-8">
+    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на металлопрокат {city.namePrep}
+    </a>
+  </section>
+</Gost>
