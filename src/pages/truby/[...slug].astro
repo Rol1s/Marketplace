@@ -78,6 +78,7 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
       diameter={pipe.diameter}
       wallThickness={pipe.wallThickness}
       weightPerMeter={pipe.weightPerMeter}
+      availableWalls={sameDiameter.map((p) => ({ wallThickness: p.wallThickness, weightPerMeter: p.weightPerMeter, slug: p.slug }))}
     />
   </section>
 

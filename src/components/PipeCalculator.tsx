@@ -1,9 +1,16 @@
 import { useState, useMemo } from 'react';
 
+interface WallOption {
+  wallThickness: number;
+  weightPerMeter: number;
+  slug: string;
+}
+
 interface PipeCalculatorProps {
   diameter: number;
   wallThickness: number;
   weightPerMeter: number;
+  availableWalls?: WallOption[];
 }
 
 const TRAILERS = [
@@ -186,17 +193,21 @@ function TrailerSvg({ rowCounts, pipesToDraw, diameterMm, trailerWidthMm, traile
   );
 }
 
-export default function PipeCalculator({ diameter, wallThickness, weightPerMeter }: PipeCalculatorProps) {
+export default function PipeCalculator({ diameter, wallThickness, weightPerMeter, availableWalls = [] }: PipeCalculatorProps) {
+  const [selectedWall, setSelectedWall] = useState(wallThickness);
   const [pipeLengthStr, setPipeLengthStr] = useState('11.7');
   const [qtyStr, setQtyStr] = useState('10');
   const [trailerId, setTrailerId] = useState('standard');
+
+  const currentWpm = availableWalls.find((w) => w.wallThickness === selectedWall)?.weightPerMeter
+    ?? (selectedWall === wallThickness ? weightPerMeter : 0);
 
   const pipeLength = Number(pipeLengthStr) || 0;
   const qty = Math.max(0, Math.round(Number(qtyStr) || 0));
 
   const weightPerPipe = useMemo(() =>
-    calcPipeWeight(diameter, wallThickness, pipeLength),
-    [diameter, wallThickness, pipeLength]
+    calcPipeWeight(diameter, selectedWall, pipeLength),
+    [diameter, selectedWall, pipeLength]
   );
 
   const totalWeight = weightPerPipe * qty;
@@ -217,8 +228,28 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
     <div className="space-y-6">
       <div className="bg-surface border border-border rounded-xl p-5">
         <h3 className="text-lg font-bold text-primary mb-4">
-          Калькулятор веса трубы {diameter}×{wallThickness}
+          Калькулятор веса трубы {diameter}×{selectedWall}
         </h3>
+
+        {availableWalls.length > 1 && (
+          <div className="mb-4">
+            <span className="text-sm text-text-muted block mb-2">Стенка, мм</span>
+            <div className="flex flex-wrap gap-1.5">
+              {availableWalls.map((w) => (
+                <button key={w.wallThickness}
+                  onClick={() => setSelectedWall(w.wallThickness)}
+                  className={`px-2.5 py-1.5 text-sm rounded-md border transition-colors ${
+                    selectedWall === w.wallThickness
+                      ? 'bg-primary text-white border-primary font-bold'
+                      : 'bg-white border-border hover:border-primary text-text'
+                  }`}>
+                  {w.wallThickness}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-2 gap-4 mb-4">
           <label className="block">
             <span className="text-sm text-text-muted">Длина трубы, м</span>
@@ -244,7 +275,7 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
           </div>
           <div className="bg-white rounded-lg border border-border p-3 text-center">
             <div className="text-xs text-text-muted">Масса п.м.</div>
-            <div className="text-lg font-bold text-primary">{weightPerMeter} кг</div>
+            <div className="text-lg font-bold text-primary">{currentWpm || weightPerMeter} кг</div>
           </div>
         </div>
       </div>
@@ -256,7 +287,7 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
             <div className="bg-white rounded-lg border border-border p-3 text-center">
               <div className="text-xs text-text-muted">Метров в 1 тонне</div>
               <div className="text-lg font-bold text-primary">
-                {weightPerMeter > 0 ? (1000 / weightPerMeter).toFixed(2) : '—'} м
+                {(currentWpm || weightPerMeter) > 0 ? (1000 / (currentWpm || weightPerMeter)).toFixed(2) : '—'} м
               </div>
             </div>
             <div className="bg-white rounded-lg border border-border p-3 text-center">
@@ -358,7 +389,7 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
                 </thead>
                 <tbody className="text-sm">
                   <tr className="border-b border-border/50"><td className="py-1.5">Кузов</td><td className="text-right">{trailer.lengthM} × {(trailer.widthMm / 1000).toFixed(1)} × {(trailer.heightMm / 1000).toFixed(1)} м</td></tr>
-                  <tr className="border-b border-border/50"><td className="py-1.5">Труба</td><td className="text-right">⌀{diameter}×{wallThickness}, {pipeLength} м</td></tr>
+                  <tr className="border-b border-border/50"><td className="py-1.5">Труба</td><td className="text-right">⌀{diameter}×{selectedWall}, {pipeLength} м</td></tr>
                   <tr className="border-b border-border/50"><td className="py-1.5">Масса 1 трубы</td><td className="text-right font-medium">{formatWeight(weightPerPipe)}</td></tr>
                   <tr className="border-b border-border/50">
                     <td className="py-1.5">Укладка</td>
