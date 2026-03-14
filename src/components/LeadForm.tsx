@@ -5,7 +5,7 @@ interface LeadFormProps {
   source?: string;
 }
 
-const WORKER_URL = 'https://nikamet-form.workers.dev/submit';
+const API_URL = '/api/lead';
 
 export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
   const [name, setName] = useState('');
@@ -19,7 +19,7 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
 
     setStatus('loading');
     try {
-      const res = await fetch(WORKER_URL, {
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, message, source: source || window.location.pathname }),

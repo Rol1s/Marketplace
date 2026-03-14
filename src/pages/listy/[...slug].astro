@@ -8,6 +8,7 @@ import { getSheets } from '@lib/data';
 import { sheetMeta } from '@lib/seo';
 import { sheetWeight, formatWeight } from '@lib/calculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import { relatedSheets } from '@lib/links';
 
 export function getStaticPaths() {
@@ -127,6 +128,8 @@ const areaM2 = ((sheet.width * sheet.length) / 1_000_000).toFixed(2);
       Оставить заявку на лист {sheet.thickness}x{sheet.width}x{sheet.length}
     </a>
   </section>
+
+  <ProductCrossLinks productSlug="listy" itemSlug={sheet.slug} productType={`листа ${sheet.thickness}×${sheet.width}×${sheet.length}`} basePath="/listy/" />
 
   <RelatedItems title="Другие размеры листов" items={related} />
 </Gost>

@@ -8,6 +8,7 @@ import { getPipes, getPipesByDiameter } from '@lib/data';
 import { pipeMeta } from '@lib/seo';
 import { pipeWeight, formatWeight } from '@lib/calculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import { nearbyPipes } from '@lib/links';
 
 export function getStaticPaths() {
@@ -171,6 +172,7 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
     </div>
   </section>
 
-  <!-- 7. Перелинковка -->
+  <ProductCrossLinks productSlug="truby" itemSlug={pipe.slug} productType={`трубы ${pipe.diameter}×${pipe.wallThickness}`} basePath="/truby/" />
+
   <RelatedItems title="Трубы других диаметров" items={nearby} />
 </Gost>

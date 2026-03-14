@@ -6,6 +6,7 @@ import WeightCalculator from '@components/WeightCalculator';
 import { getSheetPiles } from '@lib/data';
 import { shpuntMeta } from '@lib/seo';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import { relatedSheetPiles } from '@lib/links';
 
 export function getStaticPaths() {
@@ -102,6 +103,8 @@ const weightKgPerM = pile.weightPerMeterTons * 1000;
       Оставить заявку на шпунт {pile.displayName}
     </a>
   </section>
+
+  <ProductCrossLinks productSlug="shpunt" itemSlug={pile.slug} productType={`шпунта ${pile.displayName}`} basePath="/shpunt/" />
 
   <RelatedItems title="Другие типы шпунта" items={related} />
 </Gost>
