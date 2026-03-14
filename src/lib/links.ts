@@ -11,7 +11,7 @@ export function relatedPipes(pipes: Pipe[], currentSlug: string, diameter: numbe
     .slice(0, 20)
     .map((p) => ({
       label: `${p.diameter}×${p.wallThickness}`,
-      href: `/gost/truby/${p.slug}/`,
+      href: `/truby/${p.slug}/`,
     }));
 }
 
@@ -21,7 +21,7 @@ export function nearbyPipes(pipes: Pipe[], currentDiameter: number): LinkItem[] 
   const nearby = diameters.slice(Math.max(0, idx - 3), idx + 4).filter((d) => d !== currentDiameter);
   return nearby.map((d) => ({
     label: `Труба ⌀${d}`,
-    href: `/gost/truby/${d}x${pipes.find((p) => p.diameter === d)!.wallThickness}/`,
+    href: `/truby/${d}x${pipes.find((p) => p.diameter === d)!.wallThickness}/`,
   }));
 }
 
@@ -31,7 +31,7 @@ export function relatedChannels(channels: Channel[], currentSlug: string): LinkI
     .slice(0, 15)
     .map((c) => ({
       label: `Швеллер ${c.profile}`,
-      href: `/gost/shvellery/${c.slug}/`,
+      href: `/shvellery/${c.slug}/`,
     }));
 }
 
@@ -41,7 +41,7 @@ export function relatedBeams(beams: Beam[], currentSlug: string): LinkItem[] {
     .slice(0, 15)
     .map((b) => ({
       label: `Двутавр ${b.profile}`,
-      href: `/gost/dvutavry/${b.slug}/`,
+      href: `/dvutavry/${b.slug}/`,
     }));
 }
 
@@ -51,7 +51,7 @@ export function relatedSheets(sheets: Sheet[], currentSlug: string): LinkItem[] 
     .slice(0, 15)
     .map((s) => ({
       label: `Лист ${s.thickness}×${s.width}×${s.length}`,
-      href: `/gost/listy/${s.slug}/`,
+      href: `/listy/${s.slug}/`,
     }));
 }
 
@@ -71,6 +71,6 @@ export function relatedSheetPiles(piles: SheetPile[], currentSlug: string): Link
     .slice(0, 15)
     .map((p) => ({
       label: p.displayName,
-      href: `/gost/shpunt/${p.slug}/`,
+      href: `/shpunt/${p.slug}/`,
     }));
 }

@@ -22,8 +22,8 @@ const groupedByDiameter = diameters.map((d) => ({
 <Base title={title} description={description}>
   <div class="max-w-5xl mx-auto px-4 py-8">
     <Breadcrumbs items={[
-      { label: 'Справочник ГОСТ', href: '/gost/' },
-      { label: 'Трубы', href: '/gost/truby/' },
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Трубы', href: '/truby/' },
     ]} />
 
     <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
@@ -39,7 +39,7 @@ const groupedByDiameter = diameters.map((d) => ({
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
       {groupedByDiameter.map((g) => (
         <a
-          href={`/gost/truby/${g.diameter}x${pipes.find((p) => p.diameter === g.diameter)!.wallThickness}/`}
+          href={`/truby/${g.diameter}x${pipes.find((p) => p.diameter === g.diameter)!.wallThickness}/`}
           class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
         >
           <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">
@@ -63,7 +63,7 @@ const groupedByDiameter = diameters.map((d) => ({
           { key: 'wallThickness', label: 'Стенка', unit: 'мм', align: 'right' },
           { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
         ]}
-        rows={pipes.map((p) => ({ ...p, _href: `/gost/truby/${p.slug}/` }))}
+        rows={pipes.map((p) => ({ ...p, _href: `/truby/${p.slug}/` }))}
       />
     </section>
   </div>

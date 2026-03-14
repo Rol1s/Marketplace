@@ -20,8 +20,8 @@ const description = `Полный каталог шпунта Ларсена: ${
 <Base title={title} description={description}>
   <div class="max-w-5xl mx-auto px-4 py-8">
     <Breadcrumbs items={[
-      { label: 'Справочник ГОСТ', href: '/gost/' },
-      { label: 'Шпунт Ларсена', href: '/gost/shpunt/' },
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Шпунт Ларсена', href: '/shpunt/' },
     ]} />
 
     <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
@@ -36,7 +36,7 @@ const description = `Полный каталог шпунта Ларсена: ${
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
       {piles.slice(0, 100).map((p) => (
         <a
-          href={`/gost/shpunt/${p.slug}/`}
+          href={`/shpunt/${p.slug}/`}
           class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
         >
           <div class="text-sm font-bold text-primary group-hover:text-accent transition-colors truncate">
@@ -57,7 +57,7 @@ const description = `Полный каталог шпунта Ларсена: ${
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mt-4">
           {piles.slice(100).map((p) => (
             <a
-              href={`/gost/shpunt/${p.slug}/`}
+              href={`/shpunt/${p.slug}/`}
               class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
             >
               <div class="text-sm font-bold text-primary group-hover:text-accent truncate">

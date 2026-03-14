@@ -17,7 +17,7 @@ export function getStaticPaths() {
 const { angle } = Astro.props;
 const all = getAnglesEqual();
 const meta = angleEqualMeta(angle.size, angle.massPerMeterKg);
-const related = relatedAngles(all, angle.slug, '/gost/ugolki/ravnopolochnye/');
+const related = relatedAngles(all, angle.slug, '/ugolki/ravnopolochnye/');
 ---
 
 <Gost
@@ -25,10 +25,10 @@ const related = relatedAngles(all, angle.slug, '/gost/ugolki/ravnopolochnye/');
   description={meta.description}
   h1={`Уголок равнополочный ${angle.size} — ГОСТ 8509-93`}
   breadcrumbs={[
-    { label: 'Справочник ГОСТ', href: '/gost/' },
-    { label: 'Уголки', href: '/gost/ugolki/' },
-    { label: 'Равнополочные', href: '/gost/ugolki/ravnopolochnye/' },
-    { label: angle.size, href: `/gost/ugolki/ravnopolochnye/${angle.slug}/` },
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Уголки', href: '/ugolki/' },
+    { label: 'Равнополочные', href: '/ugolki/ravnopolochnye/' },
+    { label: angle.size, href: `/ugolki/ravnopolochnye/${angle.slug}/` },
   ]}
 >
   <section class="mb-8">

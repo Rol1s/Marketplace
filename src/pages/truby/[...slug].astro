@@ -38,9 +38,9 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
   description={meta.description}
   h1={`Труба ${pipe.diameter}×${pipe.wallThickness} мм — ГОСТ 10704-91`}
   breadcrumbs={[
-    { label: 'Справочник ГОСТ', href: '/gost/' },
-    { label: 'Трубы', href: '/gost/truby/' },
-    { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/gost/truby/${pipe.slug}/` },
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Трубы', href: '/truby/' },
+    { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/truby/${pipe.slug}/` },
   ]}
 >
   <!-- 1. Характеристики: SVG + 4 карточки -->
@@ -109,7 +109,7 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
       <div class="flex flex-wrap gap-2">
         {sameDiameter.slice(0, 8).map((p) => (
           <a
-            href={`/gost/truby/${p.slug}/`}
+            href={`/truby/${p.slug}/`}
             class={`inline-block px-3 py-2 rounded-lg text-sm border transition-colors ${
               p.slug === pipe.slug
                 ? 'bg-primary text-white border-primary font-bold'
@@ -128,7 +128,7 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
           <div class="flex flex-wrap gap-2 mt-2">
             {sameDiameter.slice(8).map((p) => (
               <a
-                href={`/gost/truby/${p.slug}/`}
+                href={`/truby/${p.slug}/`}
                 class={`inline-block px-3 py-2 rounded-lg text-sm border transition-colors ${
                   p.slug === pipe.slug
                     ? 'bg-primary text-white border-primary font-bold'

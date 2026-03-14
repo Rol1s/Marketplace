@@ -21,8 +21,8 @@ const beamTypes = [
 <Base title={title} description={description}>
   <div class="max-w-5xl mx-auto px-4 py-8">
     <Breadcrumbs items={[
-      { label: 'Справочник ГОСТ', href: '/gost/' },
-      { label: 'Двутавры', href: '/gost/dvutavry/' },
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Двутавры', href: '/dvutavry/' },
     ]} />
 
     <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
@@ -42,7 +42,7 @@ const beamTypes = [
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {group.map((b) => (
               <a
-                href={`/gost/dvutavry/${b.slug}/`}
+                href={`/dvutavry/${b.slug}/`}
                 class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
               >
                 <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">

@@ -32,7 +32,7 @@ const description = `ГОСТ-справочник металлопроката:
 <Base title={title} description={description}>
   <div class="max-w-5xl mx-auto px-4 py-8">
     <Breadcrumbs items={[
-      { label: 'Справочник ГОСТ', href: '/gost/' },
+      { label: 'Справочник ГОСТ', href: '/sortament/' },
     ]} />
 
     <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
@@ -49,7 +49,7 @@ const description = `ГОСТ-справочник металлопроката:
         const count = counts[section.slug as keyof typeof counts] || 0;
         return (
           <a
-            href={`/gost/${section.slug}/`}
+            href={`/${section.slug}/`}
             class="group block p-6 rounded-xl border-2 border-border hover:border-primary hover:shadow-lg transition-all"
           >
             <SectionIcon slug={section.slug} class="w-10 h-10 mb-3 text-primary group-hover:text-accent transition-colors" />
