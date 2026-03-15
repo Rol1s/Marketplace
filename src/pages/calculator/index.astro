@@ -28,7 +28,7 @@ const description = 'Онлайн-калькулятор массы металл
         <h2 class="text-xl font-bold text-primary mb-4">Трубы</h2>
         <Calculator client:visible type="pipe" />
         <p class="text-xs text-text-muted mt-2">
-          Формула: M = π × (D − s) × s × ρ × L / 10⁶
+          Формула ГОСТ: M = 0,02466 × S × (D − S) × L (кг); D, S — мм, L — м.
         </p>
       </div>
 
@@ -36,7 +36,7 @@ const description = 'Онлайн-калькулятор массы металл
         <h2 class="text-xl font-bold text-primary mb-4">Листы</h2>
         <Calculator client:visible type="sheet" />
         <p class="text-xs text-text-muted mt-2">
-          Формула: M = t × W × L × ρ / 10⁹
+          Размеры в мм. Формула: M = t × W × L × 7,85 / 10⁶ (кг).
         </p>
       </div>
     </div>

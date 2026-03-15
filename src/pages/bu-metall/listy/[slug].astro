@@ -1,0 +1,103 @@
+---
+import Gost from '@layouts/Gost.astro';
+import BuMetallInfo from '@components/BuMetallInfo.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getSheets } from '@lib/data';
+import { sheetWeight, formatWeight } from '@lib/calculator';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  return getSheets().map((s) => ({
+    params: { slug: s.slug },
+    props: { sheet: s },
+  }));
+}
+
+const { sheet } = Astro.props;
+const weightKg = sheetWeight(sheet.thickness, sheet.width, sheet.length);
+const weightPerM2 = (sheet.thickness * 7.85).toFixed(2);
+---
+
+<Gost
+  title={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} б/у — вес, характеристики | ${SITE.name}`}
+  description={`Лист стальной б/у ${sheet.thickness}×${sheet.width}×${sheet.length} мм. Масса листа ${weightKg.toFixed(1)} кг по ${sheet.gost}. Применение, характеристики.`}
+  h1={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} б/у`}
+  breadcrumbs={[
+    { label: 'Справочник', href: '/sortament/' },
+    { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+    { label: 'Листы б/у', href: '/bu-metall/listy/' },
+    { label: `${sheet.thickness}×${sheet.width}×${sheet.length}`, href: `/bu-metall/listy/${sheet.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{sheet.thickness}</div>
+        <div class="text-xs text-text-muted mt-1">Толщина, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{sheet.width}×{sheet.length}</div>
+        <div class="text-xs text-text-muted mt-1">Размеры, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{weightKg.toFixed(1)}</div>
+        <div class="text-xs text-text-muted mt-1">Масса листа, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{weightPerM2}</div>
+        <div class="text-xs text-text-muted mt-1">кг/м²</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Толщина', value: `${sheet.thickness} мм` },
+        { param: 'Ширина', value: `${sheet.width} мм` },
+        { param: 'Длина', value: `${sheet.length} мм` },
+        { param: 'Масса листа', value: formatWeight(weightKg) },
+        { param: 'Масса 1 м²', value: `${weightPerM2} кг` },
+        { param: 'ГОСТ', value: sheet.gost },
+      ]}
+    />
+  </section>
+
+  <BuMetallInfo
+    productName={`лист ${sheet.thickness}×${sheet.width}×${sheet.length} мм`}
+    gost={sheet.gost}
+    baseHref={`/listy/${sheet.slug}/`}
+    baseLinkLabel={`Характеристики листа ${sheet.thickness}×${sheet.width}×${sheet.length} (новый)`}
+  />
+
+  <ProductFAQ items={[
+    {
+      question: `Какой вес листа ${sheet.thickness}×${sheet.width}×${sheet.length} б/у?`,
+      answer: `Масса листа б/у ${sheet.thickness}×${sheet.width}×${sheet.length} мм составляет <strong>${weightKg.toFixed(1)} кг</strong> по ${sheet.gost}. Вес б/у листа идентичен новому.`,
+    },
+    {
+      question: `Где применяется б/у лист ${sheet.thickness} мм?`,
+      answer: `Б/у лист ${sheet.thickness} мм применяется в изготовлении металлоконструкций, настилов, ограждений, сельхозоборудования и временных сооружений.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a
+      href="#lead-form"
+      class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth"
+    >
+      Оставить заявку на лист {sheet.thickness}×{sheet.width}×{sheet.length} б/у
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} б/у`} />
+  </section>
+</Gost>

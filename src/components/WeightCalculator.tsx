@@ -20,8 +20,8 @@ export default function WeightCalculator({
   mode,
   defaultLength = 6,
 }: WeightCalculatorProps) {
-  const [lengthStr, setLengthStr] = useState(String(defaultLength));
-  const [qtyStr, setQtyStr] = useState('10');
+  const [lengthStr, setLengthStr] = useState('');
+  const [qtyStr, setQtyStr] = useState('');
 
   const length = Number(lengthStr) || 0;
   const qty = Math.max(0, Math.round(Number(qtyStr) || 0));
@@ -48,6 +48,7 @@ export default function WeightCalculator({
               step="0.1"
               value={lengthStr}
               onChange={(e) => setLengthStr(e.target.value)}
+              placeholder={String(defaultLength)}
               className="mt-1 block w-full rounded-md border border-border px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
             />
           </label>
@@ -62,6 +63,7 @@ export default function WeightCalculator({
             step="1"
             value={qtyStr}
             onChange={(e) => setQtyStr(e.target.value)}
+            placeholder="10"
             className="mt-1 block w-full rounded-md border border-border px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
           />
         </label>

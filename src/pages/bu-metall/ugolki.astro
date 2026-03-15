@@ -1,0 +1,60 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getAnglesEqual, getAnglesUnequal } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const equal = getAnglesEqual();
+const unequal = getAnglesUnequal();
+const total = equal.length + unequal.length;
+
+const title = `Уголки стальные б/у — ${total} типоразмеров | ${SITE.name}`;
+const description = `Б/у уголки стальные равнополочные и неравнополочные. ${total} типоразмеров. Характеристики, вес по ГОСТ 8509/8510.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник', href: '/sortament/' },
+      { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+      { label: 'Уголки б/у', href: '/bu-metall/ugolki/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Уголки стальные б/у — ГОСТ 8509 / 8510
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Б/у уголки стальные равнополочные (ГОСТ 8509-93) и неравнополочные (ГОСТ 8510-86).
+      {total} типоразмеров. Вес и характеристики по ГОСТу.
+    </p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-4">Равнополочные ({equal.length} типоразмеров)</h2>
+      <GostTable
+        columns={[
+          { key: 'size', label: 'Размер', align: 'left' },
+          { key: 'thicknessMm', label: 'Толщина', unit: 'мм', align: 'right' },
+          { key: 'massPerMeterKg', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+        ]}
+        rows={equal.map((a) => ({ ...a, _href: `/bu-metall/ugolki/${a.slug}/` }))}
+      />
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-4">Неравнополочные ({unequal.length} типоразмеров)</h2>
+      <GostTable
+        columns={[
+          { key: 'size', label: 'Размер', align: 'left' },
+          { key: 'thicknessMm', label: 'Толщина', unit: 'мм', align: 'right' },
+          { key: 'massPerMeterKg', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+        ]}
+        rows={unequal.map((a) => ({ ...a, _href: `/bu-metall/ugolki/${a.slug}/` }))}
+      />
+    </section>
+
+    <LeadForm client:visible product="Уголки б/у" />
+  </div>
+</Base>

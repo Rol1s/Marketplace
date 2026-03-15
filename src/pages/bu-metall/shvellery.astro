@@ -1,0 +1,46 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getChannels } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const channels = getChannels();
+
+const title = `Швеллеры б/у — ${channels.length} типоразмеров | ${SITE.name}`;
+const description = `Б/у швеллеры стальные по ГОСТ 8240-97. ${channels.length} типоразмеров. Характеристики, вес, применение.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник', href: '/sortament/' },
+      { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+      { label: 'Швеллеры б/у', href: '/bu-metall/shvellery/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Швеллеры стальные б/у — ГОСТ 8240-97
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Б/у швеллеры стальные по ГОСТ 8240-97. {channels.length} типоразмеров.
+      Вес и геометрические характеристики по ГОСТу.
+    </p>
+
+    <section class="mb-10">
+      <GostTable
+        columns={[
+          { key: 'profile', label: 'Профиль', align: 'left' },
+          { key: 'h', label: 'h', unit: 'мм', align: 'right' },
+          { key: 'b', label: 'b', unit: 'мм', align: 'right' },
+          { key: 'weight', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+        ]}
+        rows={channels.map((c) => ({ ...c, _href: `/bu-metall/shvellery/${c.slug}/` }))}
+      />
+    </section>
+
+    <LeadForm client:visible product="Швеллеры б/у" />
+  </div>
+</Base>

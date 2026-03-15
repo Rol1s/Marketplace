@@ -10,7 +10,7 @@ const API_URL = '/api/lead';
 export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState(product ? `Интересует: ${product}` : '');
+  const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   async function handleSubmit(e: FormEvent) {
@@ -22,7 +22,13 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
       const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, message, source: source || window.location.pathname }),
+        body: JSON.stringify({
+          name,
+          phone,
+          message: message || undefined,
+          product: product || undefined,
+          source: source || window.location.pathname,
+        }),
       });
       setStatus(res.ok ? 'success' : 'error');
     } catch {
@@ -46,9 +52,12 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-surface border border-border rounded-xl p-5">
-      <h3 className="text-lg font-bold text-primary mb-4">
-        Оставить заявку
-      </h3>
+      {product && (
+        <div className="mb-4 bg-primary/5 border border-primary/20 rounded-lg p-3">
+          <span className="text-xs text-text-muted block">Вы запрашиваете:</span>
+          <span className="text-sm font-bold text-primary">{product}</span>
+        </div>
+      )}
 
       <div className="space-y-3 mb-4">
         <label className="block">
@@ -77,12 +86,12 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
         </label>
 
         <label className="block">
-          <span className="text-sm text-text-muted">Что вам нужно?</span>
+          <span className="text-sm text-text-muted">Комментарий</span>
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            rows={3}
-            placeholder="Опишите что нужно: тип металла, размер, количество, город"
+            rows={2}
+            placeholder="Длина, количество, город доставки..."
             className="mt-1 block w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none resize-none"
           />
         </label>

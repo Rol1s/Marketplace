@@ -1,0 +1,100 @@
+---
+import Gost from '@layouts/Gost.astro';
+import BuMetallInfo from '@components/BuMetallInfo.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getBeams } from '@lib/data';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  return getBeams().map((b) => ({
+    params: { slug: b.slug },
+    props: { beam: b },
+  }));
+}
+
+const { beam } = Astro.props;
+---
+
+<Gost
+  title={`Двутавр ${beam.profile} б/у — вес, характеристики | ${SITE.name}`}
+  description={`Двутавр б/у ${beam.profile}. Масса ${beam.weightPerMeter} кг/м по ${beam.gost}. Применение, характеристики.`}
+  h1={`Двутавр ${beam.profile} б/у`}
+  breadcrumbs={[
+    { label: 'Справочник', href: '/sortament/' },
+    { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+    { label: 'Двутавры б/у', href: '/bu-metall/dvutavry/' },
+    { label: beam.profile, href: `/bu-metall/dvutavry/${beam.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.profile}</div>
+        <div class="text-xs text-text-muted mt-1">Профиль</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.h}×{beam.b}</div>
+        <div class="text-xs text-text-muted mt-1">h×b, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{beam.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса 1 м, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.area}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь сечения, см²</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Профиль', value: beam.profile },
+        { param: 'Высота h', value: `${beam.h} мм` },
+        { param: 'Ширина полки b', value: `${beam.b} мм` },
+        { param: 'Толщина стенки s', value: `${beam.s} мм` },
+        { param: 'Масса 1 м', value: `${beam.weightPerMeter} кг` },
+        { param: 'ГОСТ', value: beam.gost },
+      ]}
+    />
+  </section>
+
+  <BuMetallInfo
+    productName={`двутавр ${beam.profile}`}
+    gost={beam.gost}
+    baseHref={`/dvutavry/${beam.slug}/`}
+    baseLinkLabel={`Характеристики двутавра ${beam.profile} (новый)`}
+  />
+
+  <ProductFAQ items={[
+    {
+      question: `Какой вес двутавра ${beam.profile} б/у?`,
+      answer: `Масса 1 погонного метра двутавра б/у ${beam.profile} составляет <strong>${beam.weightPerMeter} кг</strong> по ${beam.gost}. Вес б/у двутавра идентичен новому.`,
+    },
+    {
+      question: `Где применяется б/у двутавр ${beam.profile}?`,
+      answer: `Б/у двутавр ${beam.profile} применяется в несущих конструкциях промышленных и гражданских зданий, перекрытиях, мостовых конструкциях и металлических каркасах.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a
+      href="#lead-form"
+      class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth"
+    >
+      Оставить заявку на двутавр {beam.profile} б/у
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Двутавр ${beam.profile} б/у`} />
+  </section>
+</Gost>

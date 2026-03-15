@@ -1,0 +1,115 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getAnglesUnequal, getSheetPiles } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const counts = {
+  truby: getPipes().length,
+  shvellery: getChannels().length,
+  dvutavry: getBeams().length,
+  listy: getSheets().length,
+  ugolki: getAnglesEqual().length + getAnglesUnequal().length,
+  shpunt: getSheetPiles().length,
+};
+
+const total = Object.values(counts).reduce((a, b) => a + b, 0);
+
+const sections = [
+  { slug: 'truby', name: 'Трубы', gost: 'ГОСТ 10704-91', count: counts.truby },
+  { slug: 'shvellery', name: 'Швеллеры', gost: 'ГОСТ 8240-97', count: counts.shvellery },
+  { slug: 'dvutavry', name: 'Двутавры', gost: 'ГОСТ 35087-2024', count: counts.dvutavry },
+  { slug: 'listy', name: 'Листы', gost: 'ГОСТ 19903-2015', count: counts.listy },
+  { slug: 'ugolki', name: 'Уголки', gost: 'ГОСТ 8509 / 8510', count: counts.ugolki },
+  { slug: 'shpunt', name: 'Шпунт Ларсена', gost: 'Arcelor, JFE', count: counts.shpunt },
+];
+
+const title = `Б/у металлопрокат — трубы, швеллеры, двутавры, листы | ${SITE.name}`;
+const description = `Справочник б/у металлопроката: трубы, швеллеры, двутавры, листы, уголки, шпунт. ${total} типоразмеров. Характеристики по ГОСТ, вес, применение.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник', href: '/sortament/' },
+      { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Б/у металлопрокат — справочник
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Вторичный (б/у) металлопрокат — трубы, швеллеры, двутавры, листы, уголки и шпунт
+      после демонтажа объектов. Технические характеристики и вес б/у проката совпадают
+      с новым: те же ГОСТы, те же размеры. {total} типоразмеров.
+    </p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-4">Что такое б/у металлопрокат</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-surface rounded-xl p-5 border border-border">
+          <div class="text-base font-bold text-primary mb-2">Происхождение</div>
+          <p class="text-sm text-text-muted">
+            Вторичный прокат получают при демонтаже промышленных объектов, трубопроводов,
+            зданий и сооружений. Характеристики по ГОСТ сохраняются.
+          </p>
+        </div>
+        <div class="bg-surface rounded-xl p-5 border border-border">
+          <div class="text-base font-bold text-primary mb-2">Контроль качества</div>
+          <p class="text-sm text-text-muted">
+            Б/у прокат проходит визуальный и инструментальный контроль: проверка
+            геометрии, толщины стенки, отсутствия критических дефектов.
+          </p>
+        </div>
+        <div class="bg-surface rounded-xl p-5 border border-border">
+          <div class="text-base font-bold text-primary mb-2">Применение</div>
+          <p class="text-sm text-text-muted">
+            Фундаменты, временные конструкции, сельхозобъекты, промышленные площадки.
+            Экономия до 30–40% по сравнению с новым прокатом.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-6">Разделы б/у металлопроката</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sections.map((s) => (
+          <a
+            href={`/bu-metall/${s.slug}/`}
+            class="group block p-6 rounded-xl border-2 border-border hover:border-primary hover:shadow-lg transition-all"
+          >
+            <h2 class="text-xl font-bold text-primary group-hover:text-accent transition-colors">
+              {s.name} б/у
+            </h2>
+            <p class="text-sm text-text-muted mt-1">{s.gost}</p>
+            <p class="text-sm font-medium text-primary mt-3">
+              {s.count} {s.count === 1 ? 'типоразмер' : s.count < 5 ? 'типоразмера' : 'типоразмеров'}
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-bold text-primary mb-4">Как мы работаем с б/у металлом</h2>
+      <div class="space-y-3 text-text-muted leading-relaxed max-w-3xl">
+        <p>
+          Мы подбираем б/у металлопрокат нужных типоразмеров от проверенных поставщиков.
+          Вес и характеристики на каждой странице соответствуют ГОСТ — вы получаете
+          точные данные независимо от того, новый прокат или вторичный.
+        </p>
+        <p>
+          Если вам нужен конкретный типоразмер — оставьте заявку.
+          Мы подберём предложение от поставщиков б/у металлопроката в вашем регионе.
+        </p>
+      </div>
+    </section>
+
+    <section id="lead-form" class="scroll-mt-20">
+      <LeadForm client:visible product="Б/у металлопрокат" />
+    </section>
+  </div>
+</Base>

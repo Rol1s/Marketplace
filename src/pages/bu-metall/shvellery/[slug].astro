@@ -1,0 +1,100 @@
+---
+import Gost from '@layouts/Gost.astro';
+import BuMetallInfo from '@components/BuMetallInfo.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getChannels } from '@lib/data';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  return getChannels().map((ch) => ({
+    params: { slug: ch.slug },
+    props: { channel: ch },
+  }));
+}
+
+const { channel } = Astro.props;
+---
+
+<Gost
+  title={`Швеллер ${channel.profile} б/у — вес, характеристики | ${SITE.name}`}
+  description={`Швеллер б/у ${channel.profile}. Масса ${channel.weight} кг/м по ${channel.gost}. Применение, характеристики.`}
+  h1={`Швеллер ${channel.profile} б/у`}
+  breadcrumbs={[
+    { label: 'Справочник', href: '/sortament/' },
+    { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+    { label: 'Швеллеры б/у', href: '/bu-metall/shvellery/' },
+    { label: channel.profile, href: `/bu-metall/shvellery/${channel.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{channel.profile}</div>
+        <div class="text-xs text-text-muted mt-1">Профиль</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{channel.h}×{channel.b}</div>
+        <div class="text-xs text-text-muted mt-1">h×b, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{channel.weight}</div>
+        <div class="text-xs text-text-muted mt-1">Масса 1 м, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{channel.area}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь сечения, см²</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Профиль', value: channel.profile },
+        { param: 'Высота h', value: `${channel.h} мм` },
+        { param: 'Ширина полки b', value: `${channel.b} мм` },
+        { param: 'Толщина стенки s', value: `${channel.s} мм` },
+        { param: 'Масса 1 м', value: `${channel.weight} кг` },
+        { param: 'ГОСТ', value: channel.gost },
+      ]}
+    />
+  </section>
+
+  <BuMetallInfo
+    productName={`швеллер ${channel.profile}`}
+    gost={channel.gost}
+    baseHref={`/shvellery/${channel.slug}/`}
+    baseLinkLabel={`Характеристики швеллера ${channel.profile} (новый)`}
+  />
+
+  <ProductFAQ items={[
+    {
+      question: `Какой вес швеллера ${channel.profile} б/у?`,
+      answer: `Масса 1 погонного метра швеллера б/у ${channel.profile} составляет <strong>${channel.weight} кг</strong> по ${channel.gost}. Вес б/у швеллера не отличается от нового проката.`,
+    },
+    {
+      question: `Где применяется б/у швеллер ${channel.profile}?`,
+      answer: `Б/у швеллер ${channel.profile} применяется в строительстве перекрытий, стропильных конструкций, опорных балок и металлоконструкций, где не требуется новый сертифицированный прокат.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a
+      href="#lead-form"
+      class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth"
+    >
+      Оставить заявку на швеллер {channel.profile} б/у
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Швеллер ${channel.profile} б/у`} />
+  </section>
+</Gost>

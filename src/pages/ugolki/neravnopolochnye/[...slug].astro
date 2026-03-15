@@ -7,6 +7,7 @@ import { getAnglesUnequal } from '@lib/data';
 import { angleUnequalMeta } from '@lib/seo';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
+import LeadForm from '@components/LeadForm.tsx';
 import { relatedAngles } from '@lib/links';
 
 export function getStaticPaths() {
@@ -78,12 +79,29 @@ const related = relatedAngles(all, angle.slug, '/ugolki/neravnopolochnye/');
   ]} />
 
   <section class="mb-8">
-    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth">
       Оставить заявку на уголок {angle.size}
+    </a>
+  </section>
+
+  <section class="mb-8">
+    <a
+      href={`/bu-metall/ugolki/${angle.slug}/`}
+      class="flex items-center gap-4 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface"
+    >
+      <div class="flex-1">
+        <div class="font-bold text-primary">Уголок {angle.size} б/у</div>
+        <div class="text-sm text-text-muted mt-0.5">Вторичный прокат — те же характеристики, экономия до 30–40%</div>
+      </div>
+      <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
     </a>
   </section>
 
   <ProductCrossLinks productSlug="ugolki" itemSlug={angle.slug} productType={`уголка ${angle.size}`} basePath="/ugolki/neravnopolochnye/" />
 
   <RelatedItems title="Другие размеры" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Уголок неравнополочный ${angle.size}`} />
+  </section>
 </Gost>

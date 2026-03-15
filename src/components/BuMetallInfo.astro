@@ -1,0 +1,30 @@
+---
+interface Props {
+  productName: string;
+  gost: string;
+  baseHref: string;
+  baseLinkLabel: string;
+}
+
+const { productName, gost, baseHref, baseLinkLabel } = Astro.props;
+---
+
+<section class="mb-8">
+  <div class="bg-surface rounded-xl p-5 border border-border space-y-3">
+    <h2 class="text-base font-bold text-primary">Б/у металлопрокат — что это</h2>
+    <p class="text-sm text-text-muted leading-relaxed">
+      Вторичный (б/у) {productName} — прокат после демонтажа объектов.
+      Технические характеристики и вес совпадают с новым по {gost}:
+      те же размеры, те же допуски. Перед отгрузкой прокат проходит
+      визуальный и инструментальный контроль.
+    </p>
+    <p class="text-sm text-text-muted leading-relaxed">
+      Б/у металл позволяет сэкономить до 30–40% по сравнению с новым прокатом.
+      Применяется для временных конструкций, фундаментов, сельхозобъектов,
+      промышленных площадок и объектов, где не требуется сертификат на новый металл.
+    </p>
+    <a href={baseHref} class="inline-block text-sm text-primary hover:underline font-medium">
+      {baseLinkLabel} →
+    </a>
+  </div>
+</section>

@@ -1,0 +1,182 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getPipes } from '@lib/data';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  return getPipes()
+    .filter((p) => p.diameter >= 219 && p.diameter <= 1420)
+    .map((pipe) => ({
+      params: { slug: pipe.slug },
+      props: { pipe },
+    }));
+}
+
+const { pipe } = Astro.props;
+
+const weightRows = [1, 6, 11.7, 12].map((len) => ({
+  length: len,
+  weight: (pipe.weightPerMeter * len).toFixed(2),
+  weightT: ((pipe.weightPerMeter * len) / 1000).toFixed(3),
+}));
+
+const vusThickness = pipe.diameter >= 820 ? 3.5 : pipe.diameter >= 530 ? 3.0 : 2.5;
+---
+
+<Gost
+  title={`Труба ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС — применение, вес | ${SITE.name}`}
+  description={`Труба стальная ${pipe.diameter}×${pipe.wallThickness} мм в изоляции ВУС по ГОСТ 9.602-2016. Масса ${pipe.weightPerMeter} кг/м. Применение в теплосетях и газопроводах.`}
+  h1={`Труба ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Трубы', href: '/truby/' },
+    { label: 'Изоляция ВУС', href: '/truby/izolyaciya-vus/' },
+    { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/truby/${pipe.slug}/vus/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики трубы</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.diameter}</div>
+        <div class="text-xs text-text-muted mt-1">Диаметр, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{pipe.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса 1 м, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.weightPerMeter > 0 ? (1000 / pipe.weightPerMeter).toFixed(1) : '—'}</div>
+        <div class="text-xs text-text-muted mt-1">Метров в тонне</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Параметры изоляции ВУС</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-surface rounded-xl p-5 border border-border">
+        <div class="text-base font-bold text-primary mb-2">Тип</div>
+        <p class="text-sm text-text-muted">
+          ВУС — весьма усиленная изоляция. Трёхслойная структура:
+          эпоксидная грунтовка, адгезивный подслой, экструдированный полиэтилен.
+        </p>
+      </div>
+      <div class="bg-surface rounded-xl p-5 border border-border">
+        <div class="text-base font-bold text-primary mb-2">Толщина покрытия</div>
+        <p class="text-sm text-text-muted">
+          Для диаметра {pipe.diameter} мм — <strong>{vusThickness} мм</strong>.
+          Стандарт: ГОСТ 9.602-2016.
+        </p>
+      </div>
+      <div class="bg-surface rounded-xl p-5 border border-border">
+        <div class="text-base font-bold text-primary mb-2">Срок службы</div>
+        <p class="text-sm text-text-muted">
+          Не менее 40 лет при прокладке в агрессивных грунтах,
+          включая заболоченные участки и зоны блуждающих токов.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Применение трубы {pipe.diameter}×{pipe.wallThickness} в изоляции ВУС</h2>
+    <div class="text-text-muted leading-relaxed space-y-2">
+      <p>
+        Труба стальная {pipe.diameter}×{pipe.wallThickness} мм в изоляции ВУС применяется
+        для подземной прокладки трубопроводов с повышенными требованиями к антикоррозионной защите.
+      </p>
+      <p>
+        {pipe.diameter >= 530
+          ? `Диаметр ${pipe.diameter} мм типичен для магистральных газо- и нефтепроводов, крупных тепловых сетей промышленных предприятий и городских теплотрасс.`
+          : pipe.diameter >= 325
+          ? `Диаметр ${pipe.diameter} мм широко используется в городских системах теплоснабжения, водопроводных магистралях и распределительных газопроводах.`
+          : `Диаметр ${pipe.diameter} мм применяется в распределительных тепловых сетях, внутриквартальных водопроводах и вводных газопроводах.`}
+      </p>
+      <p>
+        Изоляция ВУС полностью защищает металл от электрохимической и почвенной коррозии,
+        а также от воздействия блуждающих токов.
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Масса трубы {pipe.diameter}×{pipe.wallThickness} по длине</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+      {weightRows.map((r) => (
+        <div class="bg-surface rounded-lg p-3 text-center">
+          <div class="text-xs text-text-muted">{r.length} м</div>
+          <div class="text-sm font-bold text-primary">
+            {Number(r.weightT) >= 1 ? `${r.weightT} т` : `${r.weight} кг`}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Наружный диаметр', value: `${pipe.diameter} мм` },
+        { param: 'Толщина стенки', value: `${pipe.wallThickness} мм` },
+        { param: 'Масса 1 пог. м', value: `${pipe.weightPerMeter} кг` },
+        { param: 'ГОСТ трубы', value: pipe.gost },
+        { param: 'Тип изоляции', value: 'ВУС (весьма усиленная)' },
+        { param: 'ГОСТ изоляции', value: 'ГОСТ 9.602-2016' },
+        { param: 'Толщина изоляции', value: `${vusThickness} мм` },
+        { param: 'Срок службы изоляции', value: 'не менее 40 лет' },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <div class="bg-surface rounded-xl p-5 border border-border">
+      <div class="text-sm font-semibold text-text-muted mb-2">Базовая страница трубы</div>
+      <a
+        href={`/truby/${pipe.slug}/`}
+        class="text-primary font-bold hover:underline text-lg"
+      >
+        Труба {pipe.diameter}×{pipe.wallThickness} — характеристики, калькулятор веса, погрузка →
+      </a>
+    </div>
+  </section>
+
+  <ProductFAQ items={[
+    {
+      question: `Что такое изоляция ВУС для трубы ${pipe.diameter}×${pipe.wallThickness}?`,
+      answer: `ВУС — весьма усиленная изоляция на основе экструдированного полиэтилена по ГОСТ 9.602-2016. Для трубы ${pipe.diameter}×${pipe.wallThickness} мм толщина покрытия составляет ${vusThickness} мм. Защищает от коррозии в агрессивных грунтах на срок не менее 40 лет.`,
+    },
+    {
+      question: `Какой вес трубы ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС?`,
+      answer: `Масса стальной части трубы ${pipe.diameter}×${pipe.wallThickness} мм составляет ${pipe.weightPerMeter} кг/м по ГОСТ ${pipe.gost}. Изоляция ВУС добавляет незначительный вес (~${(Math.PI * pipe.diameter / 1000 * vusThickness / 1000 * 950).toFixed(2)} кг/м).`,
+    },
+    {
+      question: `Где применяется труба ${pipe.diameter} мм в изоляции ВУС?`,
+      answer: `Труба ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС применяется для подземной прокладки тепловых сетей, газо- и водопроводов в грунтах с высокой коррозионной активностью, под дорогами и в заболоченных местностях.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a
+      href="#lead-form"
+      class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth"
+    >
+      Оставить заявку на трубу {pipe.diameter}×{pipe.wallThickness} в изоляции ВУС
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Труба ${pipe.diameter}×${pipe.wallThickness} ВУС`} />
+  </section>
+</Gost>

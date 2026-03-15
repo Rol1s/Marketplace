@@ -1,0 +1,46 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getBeams } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const beams = getBeams();
+
+const title = `Двутавры б/у — ${beams.length} типоразмеров | ${SITE.name}`;
+const description = `Б/у двутавры стальные по ГОСТ 35087-2024. ${beams.length} типоразмеров. Характеристики, вес, применение.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник', href: '/sortament/' },
+      { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+      { label: 'Двутавры б/у', href: '/bu-metall/dvutavry/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Двутавры стальные б/у — ГОСТ 35087-2024
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Б/у двутавры стальные по ГОСТ 35087-2024. {beams.length} типоразмеров.
+      Механические характеристики и вес по ГОСТу.
+    </p>
+
+    <section class="mb-10">
+      <GostTable
+        columns={[
+          { key: 'profile', label: 'Профиль', align: 'left' },
+          { key: 'h', label: 'h', unit: 'мм', align: 'right' },
+          { key: 'b', label: 'b', unit: 'мм', align: 'right' },
+          { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+        ]}
+        rows={beams.map((b) => ({ ...b, _href: `/bu-metall/dvutavry/${b.slug}/` }))}
+      />
+    </section>
+
+    <LeadForm client:visible product="Двутавры б/у" />
+  </div>
+</Base>

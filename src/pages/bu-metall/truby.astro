@@ -1,0 +1,70 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getPipes, getUniquePipeDiameters } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const pipes = getPipes();
+const diameters = getUniquePipeDiameters();
+
+const title = `Трубы б/у стальные — ${pipes.length} типоразмеров | ${SITE.name}`;
+const description = `Б/у трубы стальные по ГОСТ 10704-91. ${pipes.length} типоразмеров, диаметры от ${diameters[0]} до ${diameters[diameters.length - 1]} мм. Характеристики, вес, применение.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Справочник', href: '/sortament/' },
+      { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+      { label: 'Трубы б/у', href: '/bu-metall/truby/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Трубы стальные б/у — ГОСТ 10704-91
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Б/у трубы стальные электросварные по ГОСТ 10704-91. {pipes.length} типоразмеров,
+      диаметры от {diameters[0]} до {diameters[diameters.length - 1]} мм.
+      Вес и характеристики соответствуют ГОСТу. Выберите типоразмер для подробной информации.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
+      {diameters.map((d) => {
+        const pipesForD = pipes.filter((p) => p.diameter === d);
+        const first = pipesForD[0];
+        return (
+          <a
+            href={`/bu-metall/truby/${first.slug}/`}
+            class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+          >
+            <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">
+              ⌀ {d}
+            </div>
+            <div class="text-xs text-text-muted mt-1">
+              {pipesForD.length} {pipesForD.length < 5 ? 'размера' : 'размеров'}
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    <section class="mt-10">
+      <h2 class="text-xl font-bold text-primary mb-4">Полная таблица труб б/у</h2>
+      <GostTable
+        columns={[
+          { key: 'diameter', label: 'Диаметр', unit: 'мм', align: 'right' },
+          { key: 'wallThickness', label: 'Стенка', unit: 'мм', align: 'right' },
+          { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+        ]}
+        rows={pipes.map((p) => ({ ...p, _href: `/bu-metall/truby/${p.slug}/` }))}
+      />
+    </section>
+
+    <section class="mt-10">
+      <LeadForm client:visible product="Трубы б/у" />
+    </section>
+  </div>
+</Base>

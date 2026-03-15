@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { pipeWeight, formatWeight } from '@lib/calculator';
 
 interface WallOption {
   wallThickness: number;
@@ -14,16 +15,12 @@ interface PipeCalculatorProps {
 }
 
 const TRAILERS = [
-  { id: 'standard', name: 'Стандартная (13.6 м)', lengthM: 13.6, widthMm: 2500, heightMm: 2700, maxTons: 20 },
-  { id: 'long16', name: 'Удлинённая (16 м)', lengthM: 16, widthMm: 2500, heightMm: 2700, maxTons: 20 },
-  { id: 'long18', name: 'Негабарит (18 м)', lengthM: 18, widthMm: 2500, heightMm: 2700, maxTons: 20 },
+  { id: 'standard', name: 'Стандарт (13.6 м)', lengthM: 13.6, widthMm: 2450, heightMm: 2700, maxTons: 20 },
+  { id: 'long16', name: 'Площадка (16 м)', lengthM: 16, widthMm: 2500, heightMm: 2500, maxTons: 20 },
+  { id: 'long18', name: 'Негабарит (18 м)', lengthM: 18, widthMm: 2500, heightMm: 2300, maxTons: 20 },
 ] as const;
 
 const SQRT3_2 = Math.sqrt(3) / 2;
-
-function calcPipeWeight(diameter: number, wall: number, lengthM: number): number {
-  return (Math.PI * (diameter - wall) * wall * 7850 * lengthM) / 1_000_000;
-}
 
 interface LoadingResult {
   mode: 'hex' | 'grid';
@@ -89,105 +86,144 @@ function calcLoading(
   };
 }
 
-function formatWeight(kg: number): string {
-  if (kg >= 1000) return `${(kg / 1000).toFixed(2)} т`;
-  return `${kg.toFixed(2)} кг`;
-}
-
-function TrailerSvg({ rowCounts, pipesToDraw, diameterMm, trailerWidthMm, trailerHeightMm, mode }: {
+function TrailerSvg({ rowCounts, pipesToDraw, maxPipes, diameterMm, trailerWidthMm, trailerHeightMm, trailerLengthM, mode }: {
   rowCounts: number[];
   pipesToDraw: number;
+  maxPipes: number;
   diameterMm: number;
   trailerWidthMm: number;
   trailerHeightMm: number;
+  trailerLengthM: number;
   mode: 'hex' | 'grid';
 }) {
-  const svgW = 360;
-  const svgH = 240;
-  const pad = 38;
-  const usableW = svgW - pad * 2;
-  const usableH = svgH - pad * 2 - 10;
+  const svgW = 420;
+  const svgH = 280;
+  const padL = 42;
+  const padR = 20;
+  const padTop = 24;
+  const padBot = 48;
+  const usableW = svgW - padL - padR;
+  const usableH = svgH - padTop - padBot;
   const scaleX = usableW / trailerWidthMm;
   const scaleY = usableH / trailerHeightMm;
   const scale = Math.min(scaleX, scaleY);
   const trW = trailerWidthMm * scale;
   const trH = trailerHeightMm * scale;
-  const offsetX = (svgW - trW) / 2;
-  const offsetY = svgH - pad - trH;
-  const pipeR = Math.max((diameterMm * scale) / 2, 1.5);
+  const offsetX = padL + (usableW - trW) / 2;
+  const offsetY = padTop + (usableH - trH);
+  const pipeR = Math.max((diameterMm * scale) / 2, 2);
   const hexVertStep = diameterMm * SQRT3_2 * scale;
   const gridVertStep = diameterMm * scale;
 
-  let drawnCount = 0;
+  const totalSlots = rowCounts.reduce((s, c) => s + c, 0);
+  const slotsToShow = Math.min(totalSlots, maxPipes);
+
+  let slotIdx = 0;
   const circles: JSX.Element[] = [];
 
-  for (let row = 0; row < rowCounts.length && drawnCount < pipesToDraw; row++) {
+  for (let row = 0; row < rowCounts.length && slotIdx < slotsToShow; row++) {
     const isOffset = mode === 'hex' && row % 2 === 1;
     const countInRow = rowCounts[row];
     const xStart = isOffset ? offsetX + pipeR * 2 : offsetX + pipeR;
     const vertStep = mode === 'hex' ? hexVertStep : gridVertStep;
 
-    for (let col = 0; col < countInRow && drawnCount < pipesToDraw; col++) {
+    for (let col = 0; col < countInRow && slotIdx < slotsToShow; col++) {
       const cx = xStart + col * pipeR * 2;
       const cy = offsetY + trH - pipeR - row * vertStep;
+      const isFilled = slotIdx < pipesToDraw;
       circles.push(
         <circle key={`${row}-${col}`} cx={cx} cy={cy} r={Math.max(pipeR - 0.5, 1)}
-          fill="#7b8fa3" stroke="#2d3f52" strokeWidth={pipeR > 3 ? 0.8 : 0.3} opacity="0.85" />
+          fill={isFilled ? '#3b82f6' : 'none'}
+          stroke={isFilled ? '#1e40af' : '#94a3b8'}
+          strokeWidth={pipeR > 4 ? 1 : 0.5}
+          opacity={isFilled ? 0.9 : 0.35}
+          strokeDasharray={isFilled ? 'none' : (pipeR > 4 ? '2,2' : '1,1')}
+        />
       );
-      drawnCount++;
+      slotIdx++;
     }
   }
 
-  // Wooden block indicators for grid mode
   const blocks: JSX.Element[] = [];
   if (mode === 'grid' && pipeR > 8) {
-    for (let row = 1; row < rowCounts.length && row * rowCounts[0] < pipesToDraw; row++) {
+    for (let row = 1; row < rowCounts.length; row++) {
       for (let col = 0; col < rowCounts[0]; col++) {
         const bx = offsetX + col * pipeR * 2 + pipeR * 0.3;
         const by = offsetY + trH - row * gridVertStep - 2;
         blocks.push(
           <rect key={`b-${row}-${col}`} x={bx} y={by} width={pipeR * 1.4} height="4"
-            fill="#b45309" stroke="#92400e" strokeWidth="0.5" rx="1" opacity="0.6" />
+            fill="#b45309" stroke="#92400e" strokeWidth="0.5" rx="1" opacity="0.5" />
         );
       }
     }
   }
 
+  const filledPct = slotsToShow > 0 ? Math.round((pipesToDraw / slotsToShow) * 100) : 0;
+  const barY = offsetY + trH + 28;
+  const barW = trW;
+  const barH = 6;
+  const filledW = barW * Math.min(pipesToDraw / slotsToShow, 1);
+
   return (
-    <svg viewBox={`0 0 ${svgW} ${svgH}`} className="w-full max-w-md mx-auto">
+    <svg viewBox={`0 0 ${svgW} ${svgH}`} className="w-full max-w-lg mx-auto">
+      <defs>
+        <linearGradient id="trBg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#f1f5f9" />
+          <stop offset="100%" stopColor="#e2e8f0" />
+        </linearGradient>
+      </defs>
+
+      {/* Trailer body */}
       <rect x={offsetX} y={offsetY} width={trW} height={trH}
-        fill="#f8fafc" stroke="#475569" strokeWidth="2" rx="2" />
+        fill="url(#trBg)" stroke="#475569" strokeWidth="2" rx="3" />
+      {/* Floor */}
       <line x1={offsetX} y1={offsetY + trH} x2={offsetX + trW} y2={offsetY + trH}
         stroke="#334155" strokeWidth="3" />
-      <rect x={offsetX - 5} y={offsetY + trH} width="10" height="14" rx="3" fill="#334155" />
-      <rect x={offsetX + trW - 5} y={offsetY + trH} width="10" height="14" rx="3" fill="#334155" />
-      <line x1={offsetX - 15} y1={offsetY + trH + 14} x2={offsetX + trW + 15} y2={offsetY + trH + 14}
+      {/* Wheels */}
+      <rect x={offsetX - 5} y={offsetY + trH} width="10" height="12" rx="3" fill="#334155" />
+      <rect x={offsetX + trW - 5} y={offsetY + trH} width="10" height="12" rx="3" fill="#334155" />
+      <line x1={offsetX - 14} y1={offsetY + trH + 12} x2={offsetX + trW + 14} y2={offsetY + trH + 12}
         stroke="#cbd5e1" strokeWidth="1" />
+
       {blocks}
       {circles}
-      {/* Width */}
-      <line x1={offsetX} y1={offsetY + trH + 22} x2={offsetX + trW} y2={offsetY + trH + 22}
-        stroke="#64748b" strokeWidth="0.5" />
-      <line x1={offsetX} y1={offsetY + trH + 18} x2={offsetX} y2={offsetY + trH + 26}
-        stroke="#64748b" strokeWidth="0.5" />
-      <line x1={offsetX + trW} y1={offsetY + trH + 18} x2={offsetX + trW} y2={offsetY + trH + 26}
-        stroke="#64748b" strokeWidth="0.5" />
-      <text x={svgW / 2} y={offsetY + trH + 34} textAnchor="middle" fill="#64748b" fontSize="9">
-        {trailerWidthMm} мм
+
+      {/* Width dim */}
+      <line x1={offsetX} y1={offsetY + trH + 18} x2={offsetX + trW} y2={offsetY + trH + 18}
+        stroke="#94a3b8" strokeWidth="0.5" markerStart="url(#arw)" markerEnd="url(#arw)" />
+      <text x={offsetX + trW / 2} y={offsetY + trH + 25} textAnchor="middle" fill="#64748b" fontSize="8">
+        {trailerWidthMm} мм × {trailerLengthM} м
       </text>
-      {/* Height */}
-      <line x1={offsetX - 12} y1={offsetY} x2={offsetX - 12} y2={offsetY + trH}
-        stroke="#64748b" strokeWidth="0.5" />
-      <line x1={offsetX - 16} y1={offsetY} x2={offsetX - 8} y2={offsetY}
-        stroke="#64748b" strokeWidth="0.5" />
-      <line x1={offsetX - 16} y1={offsetY + trH} x2={offsetX - 8} y2={offsetY + trH}
-        stroke="#64748b" strokeWidth="0.5" />
-      <text x={offsetX - 16} y={offsetY + trH / 2} textAnchor="middle" fill="#64748b" fontSize="9"
-        transform={`rotate(-90, ${offsetX - 16}, ${offsetY + trH / 2})`}>
+
+      {/* Height dim */}
+      <line x1={offsetX - 10} y1={offsetY} x2={offsetX - 10} y2={offsetY + trH}
+        stroke="#94a3b8" strokeWidth="0.5" />
+      <line x1={offsetX - 14} y1={offsetY} x2={offsetX - 6} y2={offsetY}
+        stroke="#94a3b8" strokeWidth="0.5" />
+      <line x1={offsetX - 14} y1={offsetY + trH} x2={offsetX - 6} y2={offsetY + trH}
+        stroke="#94a3b8" strokeWidth="0.5" />
+      <text x={offsetX - 14} y={offsetY + trH / 2} textAnchor="middle" fill="#64748b" fontSize="8"
+        transform={`rotate(-90, ${offsetX - 14}, ${offsetY + trH / 2})`}>
         {trailerHeightMm} мм
       </text>
+
+      {/* Fill bar */}
+      <rect x={offsetX} y={barY} width={barW} height={barH} rx="3" fill="#e2e8f0" />
+      <rect x={offsetX} y={barY} width={filledW} height={barH} rx="3"
+        fill={filledPct >= 100 ? '#ef4444' : filledPct > 70 ? '#f59e0b' : '#3b82f6'} />
+
+      {/* Title */}
       <text x={svgW / 2} y={14} textAnchor="middle" fill="#1e3a5f" fontSize="11" fontWeight="bold">
-        {pipesToDraw} шт — {mode === 'hex' ? 'пирамидная' : 'сеточная'} укладка
+        Сечение кузова — {mode === 'hex' ? 'пирамидная' : 'сеточная'} укладка
+      </text>
+      {/* Legend */}
+      <circle cx={offsetX} cy={barY + barH + 12} r="4" fill="#3b82f6" opacity="0.9" />
+      <text x={offsetX + 8} y={barY + barH + 15} fill="#475569" fontSize="8">
+        Ваш заказ: {pipesToDraw} шт
+      </text>
+      <circle cx={offsetX + trW / 2} cy={barY + barH + 12} r="4" fill="none" stroke="#94a3b8" strokeDasharray="2,2" />
+      <text x={offsetX + trW / 2 + 8} y={barY + barH + 15} fill="#94a3b8" fontSize="8">
+        Свободно: {Math.max(0, slotsToShow - pipesToDraw)} шт
       </text>
     </svg>
   );
@@ -195,8 +231,8 @@ function TrailerSvg({ rowCounts, pipesToDraw, diameterMm, trailerWidthMm, traile
 
 export default function PipeCalculator({ diameter, wallThickness, weightPerMeter, availableWalls = [] }: PipeCalculatorProps) {
   const [selectedWall, setSelectedWall] = useState(wallThickness);
-  const [pipeLengthStr, setPipeLengthStr] = useState('11.7');
-  const [qtyStr, setQtyStr] = useState('10');
+  const [pipeLengthStr, setPipeLengthStr] = useState('');
+  const [qtyStr, setQtyStr] = useState('');
   const [trailerId, setTrailerId] = useState('standard');
 
   const currentWpm = availableWalls.find((w) => w.wallThickness === selectedWall)?.weightPerMeter
@@ -206,7 +242,7 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
   const qty = Math.max(0, Math.round(Number(qtyStr) || 0));
 
   const weightPerPipe = useMemo(() =>
-    calcPipeWeight(diameter, selectedWall, pipeLength),
+    pipeWeight(diameter, selectedWall, pipeLength),
     [diameter, selectedWall, pipeLength]
   );
 
@@ -255,12 +291,14 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
             <span className="text-sm text-text-muted">Длина трубы, м</span>
             <input type="number" step="0.1" min="0.1" value={pipeLengthStr}
               onChange={(e) => setPipeLengthStr(e.target.value)}
+              placeholder="11.7"
               className="mt-1 block w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none" />
           </label>
           <label className="block">
             <span className="text-sm text-text-muted">Количество, шт</span>
-            <input type="number" min="1" value={qtyStr}
+            <input type="number" min="0" value={qtyStr}
               onChange={(e) => setQtyStr(e.target.value)}
+              placeholder="10"
               className="mt-1 block w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none" />
           </label>
         </div>
@@ -373,9 +411,11 @@ export default function PipeCalculator({ diameter, wallThickness, weightPerMeter
             <TrailerSvg
               rowCounts={loading.rowCounts}
               pipesToDraw={pipesToShow}
+              maxPipes={loading.maxPipes}
               diameterMm={diameter}
               trailerWidthMm={trailer.widthMm}
               trailerHeightMm={trailer.heightMm}
+              trailerLengthM={trailer.lengthM}
               mode={loading.mode}
             />
 

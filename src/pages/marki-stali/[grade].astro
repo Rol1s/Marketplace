@@ -1,6 +1,7 @@
 ---
 import Gost from '@layouts/Gost.astro';
 import SectionIcon from '@components/SectionIcon.astro';
+import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import { getSteelGrades, getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getAnglesUnequal, getSheetPiles } from '@lib/data';
 import { SITE, SECTIONS } from '@/config/site';
@@ -183,8 +184,12 @@ if (grade.products.includes('shpunt')) {
   ]} />
 
   <section class="mb-8">
-    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth">
       Оставить заявку на металлопрокат из {grade.name}
     </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Металлопрокат из ${grade.name}`} />
   </section>
 </Gost>

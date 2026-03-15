@@ -1,0 +1,94 @@
+---
+import Gost from '@layouts/Gost.astro';
+import BuMetallInfo from '@components/BuMetallInfo.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getSheetPiles } from '@lib/data';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  return getSheetPiles().map((p) => ({
+    params: { slug: p.slug },
+    props: { pile: p },
+  }));
+}
+
+const { pile } = Astro.props;
+const weightPerMeterKg = (pile.weightPerMeterTons * 1000).toFixed(0);
+---
+
+<Gost
+  title={`${pile.displayName} б/у — вес, характеристики | ${SITE.name}`}
+  description={`Шпунт Ларсена б/у ${pile.displayName}. Масса ${weightPerMeterKg} кг/м. Применение для ограждений котлованов, берегоукреплений.`}
+  h1={`${pile.displayName} б/у`}
+  breadcrumbs={[
+    { label: 'Справочник', href: '/sortament/' },
+    { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+    { label: 'Шпунт б/у', href: '/bu-metall/shpunt/' },
+    { label: pile.displayName, href: `/bu-metall/shpunt/${pile.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pile.displayName}</div>
+        <div class="text-xs text-text-muted mt-1">Тип</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{weightPerMeterKg}</div>
+        <div class="text-xs text-text-muted mt-1">Масса 1 м, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pile.areaPerMeterM2}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь 1 м, м²</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Тип', value: pile.displayName },
+        { param: 'Масса 1 м', value: `${weightPerMeterKg} кг` },
+        { param: 'Площадь сечения 1 м', value: `${pile.areaPerMeterM2} м²` },
+      ]}
+    />
+  </section>
+
+  <BuMetallInfo
+    productName={`шпунт Ларсена ${pile.displayName}`}
+    gost="ГОСТ / Arcelor, JFE"
+    baseHref={`/shpunt/${pile.slug}/`}
+    baseLinkLabel={`Характеристики ${pile.displayName} (новый)`}
+  />
+
+  <ProductFAQ items={[
+    {
+      question: `Какой вес шпунта ${pile.displayName} б/у?`,
+      answer: `Масса 1 погонного метра шпунта б/у ${pile.displayName} составляет <strong>${weightPerMeterKg} кг</strong>. Вес б/у шпунта идентичен новому.`,
+    },
+    {
+      question: `Где применяется б/у шпунт ${pile.displayName}?`,
+      answer: `Б/у шпунт Ларсена ${pile.displayName} применяется для временного ограждения котлованов, берегоукреплений, подпорных стен. Б/у шпунт позволяет существенно снизить стоимость временных ограждений.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a
+      href="#lead-form"
+      class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth"
+    >
+      Оставить заявку на {pile.displayName} б/у
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`${pile.displayName} б/у`} />
+  </section>
+</Gost>

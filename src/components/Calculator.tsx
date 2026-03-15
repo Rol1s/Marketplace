@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent } from 'react';
+import { pipeWeight, sheetWeight, channelWeight } from '@lib/calculator';
 
 interface CalculatorProps {
   type: 'pipe' | 'sheet' | 'profile';
@@ -10,20 +11,6 @@ interface CalculatorProps {
     length?: number;
     massPerMeter?: number;
   };
-}
-
-const STEEL_DENSITY = 7850;
-
-function calcPipeWeight(diameter: number, wall: number, length: number): number {
-  return (Math.PI * (diameter - wall) * wall * STEEL_DENSITY * length) / 1_000_000;
-}
-
-function calcSheetWeight(thickness: number, width: number, length: number): number {
-  return (thickness * width * length * STEEL_DENSITY) / 1_000_000_000;
-}
-
-function calcProfileWeight(massPerMeter: number, length: number): number {
-  return massPerMeter * length;
 }
 
 function formatResult(kg: number): string {
@@ -46,11 +33,11 @@ export default function Calculator({ type, defaults = {} }: CalculatorProps) {
 
   let result = 0;
   if (type === 'pipe') {
-    result = calcPipeWeight(diameter, wallThickness, pipeLength) * qty;
+    result = pipeWeight(diameter, wallThickness, pipeLength) * qty;
   } else if (type === 'sheet') {
-    result = calcSheetWeight(thickness, width, length) * qty;
+    result = sheetWeight(thickness, width, length) * qty;
   } else {
-    result = calcProfileWeight(massPerMeter, profileLength) * qty;
+    result = channelWeight(massPerMeter, profileLength) * qty;
   }
 
   return (

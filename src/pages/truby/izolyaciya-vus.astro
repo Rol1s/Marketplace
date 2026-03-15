@@ -1,0 +1,132 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getPipes, getUniquePipeDiameters } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const allPipes = getPipes();
+const vusPipes = allPipes.filter((p) => p.diameter >= 219 && p.diameter <= 1420);
+const vusDiameters = [...new Set(vusPipes.map((p) => p.diameter))].sort((a, b) => a - b);
+
+const title = `Трубы в изоляции ВУС — диаметры 219–1420 мм | ${SITE.name}`;
+const description = `Трубы стальные в изоляции ВУС (весьма усиленная) диаметрами 219–1420 мм. Применение в теплосетях, газопроводах, подземных сетях. ${vusPipes.length} типоразмеров.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Трубы', href: '/truby/' },
+      { label: 'Изоляция ВУС', href: '/truby/izolyaciya-vus/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Трубы в изоляции ВУС — диаметры 219–1420 мм
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      ВУС (весьма усиленная изоляция) — трёхслойное антикоррозионное покрытие из экструдированного
+      полиэтилена по ГОСТ 9.602-2016. Применяется на трубах диаметром от 219 мм для подземной
+      прокладки тепловых сетей, водо- и газопроводов.
+    </p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-4">Что такое изоляция ВУС</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-surface rounded-xl p-5 border border-border">
+          <div class="text-lg font-bold text-primary mb-2">3 слоя защиты</div>
+          <p class="text-sm text-text-muted">
+            Грунтовка + адгезивный подслой + наружный слой экструдированного полиэтилена.
+            Общая толщина — 2,5–3,5 мм в зависимости от диаметра.
+          </p>
+        </div>
+        <div class="bg-surface rounded-xl p-5 border border-border">
+          <div class="text-lg font-bold text-primary mb-2">ГОСТ 9.602-2016</div>
+          <p class="text-sm text-text-muted">
+            Соответствие действующему стандарту защиты подземных металлических сооружений.
+            Срок службы изоляции — от 40 лет.
+          </p>
+        </div>
+        <div class="bg-surface rounded-xl p-5 border border-border">
+          <div class="text-lg font-bold text-primary mb-2">Применение</div>
+          <p class="text-sm text-text-muted">
+            Теплотрассы, магистральные газо- и водопроводы, подземные трубопроводы
+            в агрессивных грунтах.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-4">
+        Типоразмеры труб в изоляции ВУС — {vusDiameters.length} диаметров
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-6">
+        {vusDiameters.map((d) => {
+          const pipesForD = vusPipes.filter((p) => p.diameter === d);
+          const firstPipe = pipesForD[0];
+          const minWall = Math.min(...pipesForD.map((p) => p.wallThickness));
+          const maxWall = Math.max(...pipesForD.map((p) => p.wallThickness));
+          return (
+            <a
+              href={`/truby/${firstPipe.slug}/vus/`}
+              class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+            >
+              <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">
+                ⌀ {d}
+              </div>
+              <div class="text-xs text-text-muted mt-1">
+                стенка {minWall}–{maxWall} мм
+              </div>
+              <div class="text-xs text-text-muted">
+                {pipesForD.length} {pipesForD.length === 1 ? 'размер' : pipesForD.length < 5 ? 'размера' : 'размеров'}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-4">Полная таблица труб ВУС 219–1420 мм</h2>
+      <GostTable
+        columns={[
+          { key: 'diameter', label: 'Диаметр', unit: 'мм', align: 'right' },
+          { key: 'wallThickness', label: 'Стенка', unit: 'мм', align: 'right' },
+          { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+          { key: 'vus', label: 'Изоляция', align: 'left' },
+        ]}
+        rows={vusPipes.map((p) => ({
+          ...p,
+          vus: 'ВУС',
+          _href: `/truby/${p.slug}/vus/`,
+        }))}
+      />
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-bold text-primary mb-4">Преимущества изоляции ВУС</h2>
+      <div class="space-y-3 text-text-muted leading-relaxed max-w-3xl">
+        <p>
+          По сравнению с нормальной (НС) и усиленной (УС) изоляцией, <strong>ВУС обеспечивает
+          максимальную защиту</strong> при прокладке трубопроводов в грунтах с высокой
+          коррозионной активностью, в заболоченных местностях и под дорогами.
+        </p>
+        <p>
+          Трёхслойная структура — эпоксидная грунтовка, адгезив и наружный слой полиэтилена —
+          полностью исключает доступ влаги и агрессивных веществ к металлу трубы.
+        </p>
+        <p>
+          На каждой странице типоразмера указаны вес трубы, диаметр, толщина стенки
+          и параметры по ГОСТ 10704-91.
+        </p>
+      </div>
+    </section>
+
+    <section id="lead-form" class="scroll-mt-20">
+      <LeadForm client:visible product="Трубы в изоляции ВУС" />
+    </section>
+  </div>
+</Base>

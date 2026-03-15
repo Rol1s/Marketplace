@@ -1,0 +1,101 @@
+---
+import Gost from '@layouts/Gost.astro';
+import BuMetallInfo from '@components/BuMetallInfo.astro';
+import GostTable from '@components/GostTable.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import { getAnglesEqual, getAnglesUnequal } from '@lib/data';
+import { SITE } from '@/config/site';
+
+export function getStaticPaths() {
+  const equal = getAnglesEqual().map((a) => ({ params: { slug: a.slug }, props: { angle: a, isEqual: true } }));
+  const unequal = getAnglesUnequal().map((a) => ({ params: { slug: a.slug }, props: { angle: a, isEqual: false } }));
+  return [...equal, ...unequal];
+}
+
+const { angle, isEqual } = Astro.props;
+const typeName = isEqual ? 'равнополочный' : 'неравнополочный';
+const gostLabel = isEqual ? 'ГОСТ 8509-93' : 'ГОСТ 8510-86';
+---
+
+<Gost
+  title={`Уголок ${angle.size} б/у — вес, характеристики | ${SITE.name}`}
+  description={`Уголок б/у ${angle.size} (${typeName}). Масса ${angle.massPerMeterKg} кг/м по ${gostLabel}. Применение, характеристики.`}
+  h1={`Уголок ${angle.size} б/у`}
+  breadcrumbs={[
+    { label: 'Справочник', href: '/sortament/' },
+    { label: 'Б/у металлопрокат', href: '/bu-metall/' },
+    { label: 'Уголки б/у', href: '/bu-metall/ugolki/' },
+    { label: angle.size, href: `/bu-metall/ugolki/${angle.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{angle.size}</div>
+        <div class="text-xs text-text-muted mt-1">Размер</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{angle.thicknessMm}</div>
+        <div class="text-xs text-text-muted mt-1">Толщина, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{angle.massPerMeterKg}</div>
+        <div class="text-xs text-text-muted mt-1">Масса 1 м, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{angle.crossSectionAreaMm2}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь, мм²</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Размер', value: angle.size },
+        { param: 'Полка A', value: `${angle.aMm} мм` },
+        { param: 'Полка B', value: `${angle.bMm} мм` },
+        { param: 'Толщина', value: `${angle.thicknessMm} мм` },
+        { param: 'Масса 1 м', value: `${angle.massPerMeterKg} кг` },
+        { param: 'ГОСТ', value: gostLabel },
+      ]}
+    />
+  </section>
+
+  <BuMetallInfo
+    productName={`уголок ${angle.size} (${typeName})`}
+    gost={gostLabel}
+    baseHref={isEqual ? `/ugolki/ravnopolochnye/${angle.slug}/` : `/ugolki/neravnopolochnye/${angle.slug}/`}
+    baseLinkLabel={`Характеристики уголка ${angle.size} (новый)`}
+  />
+
+  <ProductFAQ items={[
+    {
+      question: `Какой вес уголка ${angle.size} б/у?`,
+      answer: `Масса 1 погонного метра уголка б/у ${angle.size} составляет <strong>${angle.massPerMeterKg} кг</strong> по ${gostLabel}. Вес б/у уголка идентичен новому.`,
+    },
+    {
+      question: `Где применяется б/у уголок ${angle.size}?`,
+      answer: `Б/у уголок ${angle.size} применяется в сварных металлоконструкциях, рамах, стеллажах, ограждениях, фермах и опорных конструкциях.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a
+      href="#lead-form"
+      class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth"
+    >
+      Оставить заявку на уголок {angle.size} б/у
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Уголок ${angle.size} б/у`} />
+  </section>
+</Gost>
