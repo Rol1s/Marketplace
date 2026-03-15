@@ -9,9 +9,8 @@ import type { City, Sheet } from '@lib/types';
 export function getStaticPaths() {
   const cities = getCities();
   const sheets = getSheets();
-  const popular = sheets.filter((_, i) => i % Math.max(1, Math.floor(sheets.length / 20)) === 0).slice(0, 20);
   return cities.flatMap((city) =>
-    popular.map((sheet) => ({
+    sheets.map((sheet) => ({
       params: { city: city.slug, slug: sheet.slug },
       props: { city, sheet },
     }))

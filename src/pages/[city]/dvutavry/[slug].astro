@@ -8,9 +8,8 @@ import type { City, Beam } from '@lib/types';
 export function getStaticPaths() {
   const cities = getCities();
   const beams = getBeams();
-  const popular = beams.filter((_, i) => i % Math.max(1, Math.floor(beams.length / 20)) === 0).slice(0, 20);
   return cities.flatMap((city) =>
-    popular.map((beam) => ({
+    beams.map((beam) => ({
       params: { city: city.slug, slug: beam.slug },
       props: { city, beam },
     }))

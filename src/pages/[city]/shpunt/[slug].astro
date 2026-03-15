@@ -8,9 +8,8 @@ import type { City, SheetPile } from '@lib/types';
 export function getStaticPaths() {
   const cities = getCities();
   const piles = getSheetPiles();
-  const popular = piles.filter((_, i) => i % Math.max(1, Math.floor(piles.length / 15)) === 0).slice(0, 15);
   return cities.flatMap((city) =>
-    popular.map((pile) => ({
+    piles.map((pile) => ({
       params: { city: city.slug, slug: pile.slug },
       props: { city, pile },
     }))

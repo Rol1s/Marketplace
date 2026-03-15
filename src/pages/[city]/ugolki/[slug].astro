@@ -1,13 +1,13 @@
 ---
 import Gost from '@layouts/Gost.astro';
 import ProductFAQ from '@components/ProductFAQ.astro';
-import { getCities, getAnglesEqual } from '@lib/data';
+import { getCities, getAnglesEqual, getAnglesUnequal } from '@lib/data';
 import { SITE } from '@/config/site';
 import type { City, AngleEqual } from '@lib/types';
 
 export function getStaticPaths() {
   const cities = getCities();
-  const angles = getAnglesEqual();
+  const angles = [...getAnglesEqual(), ...getAnglesUnequal()];
   return cities.flatMap((city) =>
     angles.map((angle) => ({
       params: { city: city.slug, slug: angle.slug },

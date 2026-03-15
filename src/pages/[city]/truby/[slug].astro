@@ -7,14 +7,9 @@ import type { City, Pipe } from '@lib/types';
 
 export function getStaticPaths() {
   const cities = getCities();
-  const pipes = getPipes();
-  const diameters = getUniquePipeDiameters();
-  const popularDiameters = diameters.filter((_, i) => i % Math.max(1, Math.floor(diameters.length / 20)) === 0).slice(0, 20);
-  const popularPipes = pipes.filter((p) => popularDiameters.includes(p.diameter))
-    .filter((p, i, arr) => arr.findIndex((x) => x.diameter === p.diameter) === i);
-
+  const pipes = getPipes().filter((p) => p.diameter >= 219 && p.diameter <= 1420);
   return cities.flatMap((city) =>
-    popularPipes.map((pipe) => ({
+    pipes.map((pipe) => ({
       params: { city: city.slug, slug: pipe.slug },
       props: { city, pipe },
     }))
