@@ -37,6 +37,8 @@ const otherGrades = allGrades.map((g) => ({
     { label: angle.size, href: `/ugolki/ravnopolochnye/${angle.slug}/` },
     { label: grade.name, href: `/ugolki/ravnopolochnye/${angle.slug}/${grade.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `CH-${angle.slug}-${grade.slug}`, weight: String(angle.massPerMeterKg), gost: 'ГОСТ 8509-93', category: `Уголки из ${grade.name}` }}
 >
   <SteelGradeInfo
     grade={grade}

@@ -37,6 +37,8 @@ const otherGrades = allGrades.map((g) => ({
     { label: pile.displayName, href: `/shpunt/${pile.slug}/` },
     { label: grade.name, href: `/shpunt/${pile.slug}/${grade.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `CH-${pile.slug}-${grade.slug}`, weight: String(weightKgPerM), gost: 'ГОСТ 4781-85', category: `Шпунт из ${grade.name}` }}
 >
   <SteelGradeInfo
     grade={grade}

@@ -38,6 +38,8 @@ const otherGrades = allGrades.map((g) => ({
     { label: `${sheet.thickness}×${sheet.width}×${sheet.length}`, href: `/listy/${sheet.slug}/` },
     { label: grade.name, href: `/listy/${sheet.slug}/${grade.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `CH-${sheet.slug}-${grade.slug}`, weight: String(weightKg), gost: 'ГОСТ 19903-2015', category: `Листы из ${grade.name}` }}
 >
   <SteelGradeInfo
     grade={grade}

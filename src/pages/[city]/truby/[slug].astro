@@ -1,7 +1,9 @@
 ---
 import Gost from '@layouts/Gost.astro';
+import PipeCalculator from '@components/PipeCalculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
-import { getCities, getPipes, getUniquePipeDiameters } from '@lib/data';
+import LeadForm from '@components/LeadForm.tsx';
+import { getCities, getPipes, getPipesByDiameter } from '@lib/data';
 import { SITE } from '@/config/site';
 import type { City, Pipe } from '@lib/types';
 
@@ -17,11 +19,12 @@ export function getStaticPaths() {
 }
 
 const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
+const sameDiameter = getPipesByDiameter(pipe.diameter);
 ---
 
 <Gost
   title={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep} — цена, доставка | ${SITE.name}`}
-  description={`Купить трубу стальную ${pipe.diameter}×${pipe.wallThickness} мм ${city.namePrep}. Масса ${pipe.weightPerMeter} кг/м. Наличие, цены, доставка по ${city.region}.`}
+  description={`Купить трубу стальную ${pipe.diameter}×${pipe.wallThickness} мм ${city.namePrep}. Масса ${pipe.weightPerMeter} кг/м. Доставка по ${city.region}.`}
   h1={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}`}
   breadcrumbs={[
     { label: 'Сортамент', href: '/sortament/' },
@@ -29,6 +32,8 @@ const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
     { label: 'Трубы', href: `/truby/` },
     { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/${city.slug}/truby/${pipe.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `PIPE-${pipe.diameter}x${pipe.wallThickness}`, weight: String(pipe.weightPerMeter), gost: 'ГОСТ 10704-91', category: 'Трубы стальные' }}
 >
   <section class="mb-8">
     <div class="grid grid-cols-3 gap-3">
@@ -48,52 +53,50 @@ const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
   </section>
 
   <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса</h2>
+    <PipeCalculator
+      client:visible
+      diameter={pipe.diameter}
+      wallThickness={pipe.wallThickness}
+      weightPerMeter={pipe.weightPerMeter}
+      availableWalls={sameDiameter.map((p) => ({ wallThickness: p.wallThickness, weightPerMeter: p.weightPerMeter, slug: p.slug }))}
+    />
+  </section>
+
+  <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Доставка {city.namePrep}</h2>
     <p class="text-text-muted leading-relaxed">
-      Труба стальная {pipe.diameter}×{pipe.wallThickness} мм доступна с доставкой {city.namePrep}
-      и по {city.region}. Для уточнения наличия на складе, сроков и стоимости доставки
-      оставьте заявку — мы подберём лучшее предложение от поставщиков вашего региона.
-    </p>
-    <p class="text-text-muted leading-relaxed mt-2">
-      <a href={`/truby/${pipe.slug}/`} class="text-primary underline">Подробные характеристики трубы {pipe.diameter}×{pipe.wallThickness}</a>
-      — калькулятор веса, схема погрузки, таблица масс.
+      Труба {pipe.diameter}×{pipe.wallThickness} мм доступна с доставкой {city.namePrep} и по {city.region}.
+      <a href={`/truby/${pipe.slug}/`} class="text-primary underline ml-1">Подробные характеристики →</a>
     </p>
   </section>
 
-  <ProductFAQ items={[
-    { question: `Где купить трубу ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}?`, answer: `Оставьте заявку на нашем сайте — мы подберём трубу ${pipe.diameter}×${pipe.wallThickness} от поставщиков ${city.namePrep} и ${city.region}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
-    { question: `Какой вес трубы ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Масса 1 погонного метра трубы ${pipe.diameter}×${pipe.wallThickness} мм — <strong>${pipe.weightPerMeter} кг</strong> по ГОСТ 10704-91.` },
-    { question: `Есть ли доставка трубы ${city.namePrep}?`, answer: `Да, мы организуем доставку металлопроката ${city.namePrep} и по всей ${city.region}. Стоимость доставки зависит от объёма заказа.` },
-  ]} />
-
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-    <a
-      href={`/${city.slug}/bu-metall/truby/${pipe.slug}/`}
-      class="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface"
-    >
+    <a href={`/${city.slug}/bu-metall/truby/${pipe.slug}/`}
+       class="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface">
       <div class="flex-1">
         <div class="font-bold text-primary text-sm">Труба {pipe.diameter}×{pipe.wallThickness} б/у {city.namePrep}</div>
-        <div class="text-xs text-text-muted mt-0.5">Вторичный прокат, те же характеристики</div>
+        <div class="text-xs text-text-muted mt-0.5">Вторичный прокат — экономия до 40%</div>
       </div>
       <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
     </a>
-    {pipe.diameter >= 219 && pipe.diameter <= 1420 && (
-      <a
-        href={`/${city.slug}/truby/${pipe.slug}/vus/`}
-        class="flex items-center gap-3 p-4 rounded-xl border border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface"
-      >
-        <div class="flex-1">
-          <div class="font-bold text-primary text-sm">Труба {pipe.diameter}×{pipe.wallThickness} ВУС {city.namePrep}</div>
-          <div class="text-xs text-text-muted mt-0.5">В изоляции ВУС, ГОСТ 9.602-2016</div>
-        </div>
-        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-      </a>
-    )}
+    <a href={`/${city.slug}/truby/${pipe.slug}/vus/`}
+       class="flex items-center gap-3 p-4 rounded-xl border border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface">
+      <div class="flex-1">
+        <div class="font-bold text-primary text-sm">Труба {pipe.diameter}×{pipe.wallThickness} ВУС {city.namePrep}</div>
+        <div class="text-xs text-text-muted mt-0.5">Изоляция ВУС, ГОСТ 9.602-2016</div>
+      </div>
+      <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
   </div>
 
-  <section class="mb-8">
-    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
-      Купить трубу {pipe.diameter}×{pipe.wallThickness} {city.namePrep}
-    </a>
+  <ProductFAQ items={[
+    { question: `Где купить трубу ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}?`, answer: `Оставьте заявку — подберём трубу ${pipe.diameter}×${pipe.wallThickness} от поставщиков ${city.namePrep} и ${city.region}.` },
+    { question: `Какой вес трубы ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Масса 1 м — <strong>${pipe.weightPerMeter} кг</strong> по ГОСТ 10704-91.` },
+    { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}. Стоимость зависит от объёма.` },
+  ]} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}`} />
   </section>
 </Gost>

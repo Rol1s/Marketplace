@@ -36,6 +36,8 @@ const otherGrades = allGrades.map((g) => ({
     { label: channel.profile, href: `/shvellery/${channel.slug}/` },
     { label: grade.name, href: `/shvellery/${channel.slug}/${grade.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `CH-${channel.slug}-${grade.slug}`, weight: String(channel.weight), gost: 'ГОСТ 8240-97', category: `Швеллеры из ${grade.name}` }}
 >
   <SteelGradeInfo
     grade={grade}

@@ -33,6 +33,8 @@ const vusThickness = pipe.diameter >= 820 ? 3.5 : pipe.diameter >= 530 ? 3.0 : 2
     { label: 'Трубы ВУС', href: '/truby/izolyaciya-vus/' },
     { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/${city.slug}/truby/${pipe.slug}/vus/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `VUS-${pipe.diameter}x${pipe.wallThickness}`, weight: String(pipe.weightPerMeter), gost: 'ГОСТ 9.602-2016', category: 'Трубы в изоляции ВУС' }}
 >
   <section class="mb-8">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">

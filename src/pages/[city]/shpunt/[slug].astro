@@ -1,6 +1,8 @@
 ---
 import Gost from '@layouts/Gost.astro';
+import WeightCalculator from '@components/WeightCalculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getSheetPiles } from '@lib/data';
 import { SITE } from '@/config/site';
 import type { City, SheetPile } from '@lib/types';
@@ -30,6 +32,8 @@ const weightKgPerM = pile.weightPerMeterTons * 1000;
     { label: 'Шпунт', href: `/shpunt/` },
     { label: pile.displayName, href: `/${city.slug}/shpunt/${pile.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `SHPUNT-${pile.slug}`, weight: String(weightKgPerM.toFixed(1)), gost: 'ГОСТ 4781-85', category: 'Шпунт Ларсена' }}
 >
   <section class="mb-8">
     <div class="grid grid-cols-3 gap-3">
@@ -49,22 +53,34 @@ const weightKgPerM = pile.weightPerMeterTons * 1000;
   </section>
 
   <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса</h2>
+    <WeightCalculator client:visible productName={pile.displayName} weightPerUnit={weightKgPerM} mode="length" unitLabel="кг/м" />
+  </section>
+
+  <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Доставка {city.namePrep}</h2>
     <p class="text-text-muted leading-relaxed">
-      Шпунт Ларсена {pile.displayName} доступен с доставкой {city.namePrep} и по {city.region}.
-      <a href={`/shpunt/${pile.slug}/`} class="text-primary underline">Подробные характеристики шпунта {pile.displayName}</a>.
+      Шпунт Ларсена {pile.displayName} с доставкой {city.namePrep} и по {city.region}.
+      <a href={`/shpunt/${pile.slug}/`} class="text-primary underline ml-1">Подробные характеристики →</a>
     </p>
   </section>
 
+  <a href={`/bu-metall/shpunt/${pile.slug}/`}
+     class="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface mb-8">
+    <div class="flex-1">
+      <div class="font-bold text-primary text-sm">{pile.displayName} б/у</div>
+      <div class="text-xs text-text-muted mt-0.5">Вторичный прокат — экономия до 40%</div>
+    </div>
+    <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+  </a>
+
   <ProductFAQ items={[
-    { question: `Где купить шпунт ${pile.displayName} ${city.namePrep}?`, answer: `Оставьте заявку — мы подберём шпунт ${pile.displayName} ${city.namePrep}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.` },
-    { question: `Какой вес шпунта ${pile.displayName}?`, answer: `Масса 1 м шпунта ${pile.displayName} — <strong>${weightKgPerM.toFixed(1)} кг</strong>.` },
+    { question: `Где купить шпунт ${pile.displayName} ${city.namePrep}?`, answer: `Оставьте заявку — подберём шпунт ${pile.displayName} ${city.namePrep}.` },
+    { question: `Какой вес шпунта ${pile.displayName}?`, answer: `Масса 1 м — <strong>${weightKgPerM.toFixed(1)} кг</strong>.` },
     { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}.` },
   ]} />
 
-  <section class="mb-8">
-    <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
-      Купить шпунт {pile.displayName} {city.namePrep}
-    </a>
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Шпунт ${pile.displayName} ${city.namePrep}`} />
   </section>
 </Gost>

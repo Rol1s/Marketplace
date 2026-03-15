@@ -36,6 +36,8 @@ const otherGrades = allGrades.map((g) => ({
     { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/truby/${pipe.slug}/` },
     { label: grade.name, href: `/truby/${pipe.slug}/${grade.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `PIPE-${pipe.diameter}x${pipe.wallThickness}-${grade.slug}`, weight: String(pipe.weightPerMeter), gost: 'ГОСТ 10704-91', category: `Трубы из ${grade.name}` }}
 >
   <SteelGradeInfo
     grade={grade}

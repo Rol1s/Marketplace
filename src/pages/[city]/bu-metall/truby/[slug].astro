@@ -34,6 +34,8 @@ const sameDiameter = getPipesByDiameter(pipe.diameter);
     { label: `Трубы б/у`, href: `/bu-metall/truby/` },
     { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/${city.slug}/bu-metall/truby/${pipe.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BU-PIPE-${pipe.diameter}x${pipe.wallThickness}`, weight: String(pipe.weightPerMeter), gost: pipe.gost, category: 'Трубы б/у' }}
 >
   <section class="mb-8">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
