@@ -1,15 +1,23 @@
 ---
 import { SITE } from '@/config/site';
 
+interface ProductMeta {
+  sku?: string;
+  weight?: string;
+  gost?: string;
+  category?: string;
+}
+
 interface Props {
   type: 'TechArticle' | 'Product' | 'WebPage';
   name: string;
   description: string;
   url: string;
+  productMeta?: ProductMeta;
   additionalProperties?: Record<string, unknown>;
 }
 
-const { type, name, description, url, additionalProperties = {} } = Astro.props;
+const { type, name, description, url, productMeta, additionalProperties = {} } = Astro.props;
 
 const schema: Record<string, unknown> = {
   '@context': 'https://schema.org',
@@ -17,11 +25,24 @@ const schema: Record<string, unknown> = {
   name,
   description,
   url: `${SITE.url}${url}`,
-  publisher: {
-    '@type': 'Organization',
-    name: SITE.name,
-    url: SITE.url,
-  },
+  ...(type === 'Product' && {
+    brand: { '@type': 'Brand', name: 'ГОСТ' },
+    ...(productMeta?.sku && { sku: productMeta.sku }),
+    ...(productMeta?.weight && { weight: { '@type': 'QuantitativeValue', value: productMeta.weight, unitCode: 'KGM' } }),
+    ...(productMeta?.gost && { additionalProperty: { '@type': 'PropertyValue', name: 'ГОСТ', value: productMeta.gost } }),
+    ...(productMeta?.category && { category: productMeta.category }),
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'RUB',
+      price: '0',
+      priceValidUntil: new Date(Date.now() + 90 * 86400000).toISOString().slice(0, 10),
+      seller: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    },
+  }),
+  ...(type !== 'Product' && {
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  }),
   ...additionalProperties,
 };
 ---

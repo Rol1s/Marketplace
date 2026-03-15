@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="6" height="630" fill="#0ea5e9"/>
+  <text x="80" y="260" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff">8:05B</text>
+  <text x="80" y="330" font-family="Arial, sans-serif" font-size="32" fill="#94a3b8">!"-A?@02>G=8: <5B0;;>?@>:0B0</text>
+  <text x="80" y="380" font-family="Arial, sans-serif" font-size="24" fill="#64748b">0;L:C;OB>@ 25A0 · !>@B0<5=B · 52 000+ ?>78F89</text>
+  <circle cx="1000" cy="300" r="120" fill="none" stroke="#0ea5e9" stroke-width="8" opacity="0.3"/>
+  <circle cx="1000" cy="300" r="90" fill="none" stroke="#0ea5e9" stroke-width="16" opacity="0.5"/>
+  <circle cx="1000" cy="300" r="60" fill="none" stroke="#0ea5e9" stroke-width="4" opacity="0.2"/>
+  <rect x="80" y="520" width="1040" height="1" fill="#334155"/>
+  <text x="80" y="570" font-family="Arial, sans-serif" font-size="20" fill="#475569">nikamet.pro</text>
+</svg>

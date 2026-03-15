@@ -29,6 +29,8 @@ const gostLabel = isEqual ? 'ГОСТ 8509-93' : 'ГОСТ 8510-86';
     { label: 'Уголки б/у', href: '/bu-metall/ugolki/' },
     { label: angle.size, href: `/bu-metall/ugolki/${angle.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BU-ANGLE-${angle.slug}`, weight: String(angle.massPerMeterKg), gost: gostLabel, category: 'Уголки б/у' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

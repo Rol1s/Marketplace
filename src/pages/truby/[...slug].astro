@@ -45,6 +45,8 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
     { label: 'Трубы', href: '/truby/' },
     { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/truby/${pipe.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `PIPE-${pipe.diameter}x${pipe.wallThickness}`, weight: String(pipe.weightPerMeter), gost: 'ГОСТ 10704-91', category: 'Трубы стальные' }}
 >
   <!-- 1. Характеристики: SVG + 4 карточки -->
   <section class="mb-8">

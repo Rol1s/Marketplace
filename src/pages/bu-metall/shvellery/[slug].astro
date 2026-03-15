@@ -28,6 +28,8 @@ const { channel } = Astro.props;
     { label: 'Швеллеры б/у', href: '/bu-metall/shvellery/' },
     { label: channel.profile, href: `/bu-metall/shvellery/${channel.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BU-CH-${channel.slug}`, weight: String(channel.weight), gost: channel.gost, category: 'Швеллеры б/у' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

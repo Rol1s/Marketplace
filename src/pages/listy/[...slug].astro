@@ -38,6 +38,8 @@ const areaM2 = ((sheet.width * sheet.length) / 1_000_000).toFixed(2);
     { label: 'Листы', href: '/listy/' },
     { label: `${sheet.thickness}×${sheet.width}×${sheet.length}`, href: `/listy/${sheet.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `SHEET-${sheet.slug}`, weight: String(weightKg.toFixed(2)), gost: 'ГОСТ 19903-2015', category: 'Листы стальные' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

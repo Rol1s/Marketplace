@@ -29,6 +29,8 @@ const weightPerMeterKg = (pile.weightPerMeterTons * 1000).toFixed(0);
     { label: 'Шпунт б/у', href: '/bu-metall/shpunt/' },
     { label: pile.displayName, href: `/bu-metall/shpunt/${pile.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BU-SHPUNT-${pile.slug}`, weight: String(weightPerMeterKg), gost: 'ГОСТ 4781-85', category: 'Шпунт б/у' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

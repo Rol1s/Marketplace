@@ -34,6 +34,8 @@ const allGosts = getBeamGostsForProfile(beam.profile);
     { label: 'Двутавры', href: '/dvutavry/' },
     { label: beam.profile, href: `/dvutavry/${beam.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BEAM-${beam.slug}`, weight: String(beam.weightPerMeter), gost: 'ГОСТ 35087-2024', category: 'Двутавры' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Размеры и масса</h2>

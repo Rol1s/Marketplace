@@ -22,6 +22,26 @@ const popularSheets = getSheets().filter((_, i) => i % 20 === 0).slice(0, 6);
 const popularAngles = getAnglesEqual().slice(0, 6);
 const popularPiles = getSheetPiles().slice(0, 6);
 
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: `${SITE.name} — ${city.name}`,
+  url: `${SITE.url}/${city.slug}/`,
+  description: `Металлопрокат ${city.namePrep}: трубы, швеллеры, двутавры, листы, уголки, шпунт.`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: city.name,
+    addressRegion: city.region,
+    addressCountry: 'RU',
+  },
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: { '@type': 'GeoCoordinates', addressCountry: 'RU' },
+    name: city.region,
+  },
+  priceRange: '$$',
+};
+
 const sectionData = [
   { slug: 'truby', name: 'Трубы', items: popularPipes.map((p) => ({ name: `${p.diameter}×${p.wallThickness}`, href: `/${city.slug}/truby/${p.slug}/` })) },
   { slug: 'shvellery', name: 'Швеллеры', items: popularChannels.map((c) => ({ name: c.profile, href: `/${city.slug}/shvellery/${c.slug}/` })) },
@@ -72,4 +92,6 @@ const sectionData = [
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Металлопрокат ${city.namePrep}`} />
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 </Gost>

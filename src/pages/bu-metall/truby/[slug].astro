@@ -35,6 +35,8 @@ const weightRows = [1, 6, 11.7, 12].map((len) => ({
     { label: 'Трубы б/у', href: '/bu-metall/truby/' },
     { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/bu-metall/truby/${pipe.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BU-PIPE-${pipe.diameter}x${pipe.wallThickness}`, weight: String(pipe.weightPerMeter), gost: pipe.gost, category: 'Трубы б/у' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

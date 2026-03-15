@@ -31,6 +31,8 @@ const weightPerM2 = (sheet.thickness * 7.85).toFixed(2);
     { label: 'Листы б/у', href: '/bu-metall/listy/' },
     { label: `${sheet.thickness}×${sheet.width}×${sheet.length}`, href: `/bu-metall/listy/${sheet.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BU-SHEET-${sheet.slug}`, weight: String(weightKg.toFixed(2)), gost: sheet.gost, category: 'Листы б/у' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

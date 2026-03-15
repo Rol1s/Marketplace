@@ -28,6 +28,8 @@ const { beam } = Astro.props;
     { label: 'Двутавры б/у', href: '/bu-metall/dvutavry/' },
     { label: beam.profile, href: `/bu-metall/dvutavry/${beam.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `BU-BEAM-${beam.slug}`, weight: String(beam.weightPerMeter), gost: beam.gost, category: 'Двутавры б/у' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

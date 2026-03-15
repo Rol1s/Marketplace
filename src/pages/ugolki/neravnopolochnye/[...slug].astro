@@ -33,6 +33,8 @@ const related = relatedAngles(all, angle.slug, '/ugolki/neravnopolochnye/');
     { label: 'Неравнополочные', href: '/ugolki/neravnopolochnye/' },
     { label: angle.size, href: `/ugolki/neravnopolochnye/${angle.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `ANGLE-UEQ-${angle.slug}`, weight: String(angle.massPerMeterKg), gost: 'ГОСТ 8510-86', category: 'Уголки неравнополочные' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>

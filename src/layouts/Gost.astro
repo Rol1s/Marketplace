@@ -8,18 +8,27 @@ interface Crumb {
   href: string;
 }
 
+interface ProductMeta {
+  sku?: string;
+  weight?: string;
+  gost?: string;
+  category?: string;
+}
+
 interface Props {
   title: string;
   description: string;
   h1: string;
   breadcrumbs: Crumb[];
   schemaType?: 'TechArticle' | 'Product';
+  productMeta?: ProductMeta;
+  noindex?: boolean;
 }
 
-const { title, description, h1, breadcrumbs, schemaType = 'TechArticle' } = Astro.props;
+const { title, description, h1, breadcrumbs, schemaType = 'TechArticle', productMeta, noindex } = Astro.props;
 ---
 
-<Base title={title} description={description} ogType="article">
+<Base title={title} description={description} ogType="article" noindex={noindex}>
   <div class="max-w-5xl mx-auto px-4 py-8">
     <Breadcrumbs items={breadcrumbs} />
 
@@ -33,5 +42,6 @@ const { title, description, h1, breadcrumbs, schemaType = 'TechArticle' } = Astr
     name={h1}
     description={description}
     url={Astro.url.pathname}
+    productMeta={productMeta}
   />
 </Base>

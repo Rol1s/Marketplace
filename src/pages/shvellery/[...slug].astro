@@ -33,6 +33,8 @@ const related = relatedChannels(allChannels, channel.slug);
     { label: 'Швеллеры', href: '/shvellery/' },
     { label: channel.profile, href: `/shvellery/${channel.slug}/` },
   ]}
+  schemaType="Product"
+  productMeta={{ sku: `CH-${channel.slug}`, weight: String(channel.weight), gost: 'ГОСТ 8240-97', category: 'Швеллеры' }}
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Размеры и масса</h2>

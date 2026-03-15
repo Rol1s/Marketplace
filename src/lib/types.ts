@@ -119,6 +119,7 @@ export interface City {
   name: string;
   namePrep: string;
   region: string;
+  address: string;
 }
 
 export interface GostPageMeta {
