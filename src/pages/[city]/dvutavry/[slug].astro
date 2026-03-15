@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import WeightCalculator from '@components/WeightCalculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getBeams } from '@lib/data';
 import { SITE } from '@/config/site';
@@ -78,6 +79,10 @@ const { city, beam } = Astro.props as { city: City; beam: Beam };
     { question: `Какой вес двутавра ${beam.profile}?`, answer: `Масса 1 м — <strong>${beam.weightPerMeter} кг</strong> по ГОСТ 35087-2024.` },
     { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}.` },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={beam.slug} category="dvutavry" name={`Двутавр ${beam.profile} ${city.namePrep}`} gost="ГОСТ 35087-2024" weightPerMeter={beam.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Двутавр ${beam.profile} ${city.namePrep}`} />

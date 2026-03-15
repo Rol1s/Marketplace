@@ -1,0 +1,59 @@
+---
+interface Props {
+  diameter: number;
+  label?: string;
+}
+
+const { diameter, label } = Astro.props;
+
+const svgW = 280;
+const svgH = 260;
+const maxR = 90;
+const r = Math.min(diameter / 2, maxR);
+const scale = maxR / (diameter / 2);
+const drawR = (diameter / 2) * scale;
+const cx = svgW / 2;
+const cy = svgH / 2 - 10;
+const dimY = cy + drawR + 24;
+---
+
+<div class="flex flex-col items-center">
+  <svg
+    viewBox={`0 0 ${svgW} ${svgH}`}
+    class="w-full max-w-[280px]"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <radialGradient id="rb-grad" cx="35%" cy="35%">
+        <stop offset="0%" stop-color="#d4d8de"/>
+        <stop offset="100%" stop-color="#8a929e"/>
+      </radialGradient>
+      <marker id="rb-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+      </marker>
+    </defs>
+
+    <!-- Solid circle -->
+    <circle cx={cx} cy={cy} r={drawR} fill="url(#rb-grad)" stroke="#1e3a5f" stroke-width="1.5"/>
+
+    <!-- Center crosshairs -->
+    <line x1={cx - 5} y1={cy} x2={cx + 5} y2={cy} stroke="#3a4555" stroke-width="0.8"/>
+    <line x1={cx} y1={cy - 5} x2={cx} y2={cy + 5} stroke="#3a4555" stroke-width="0.8"/>
+
+    <!-- Diameter dimension (below) -->
+    <line x1={cx - drawR} y1={dimY} x2={cx - 14} y2={dimY}
+      stroke="#1e3a5f" stroke-width="0.8" marker-start="url(#rb-arr)"/>
+    <line x1={cx + 14} y1={dimY} x2={cx + drawR} y2={dimY}
+      stroke="#1e3a5f" stroke-width="0.8" marker-end="url(#rb-arr)"/>
+    <line x1={cx - drawR} y1={cy + drawR + 4} x2={cx - drawR} y2={dimY + 4} stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1={cx + drawR} y1={cy + drawR + 4} x2={cx + drawR} y2={dimY + 4} stroke="#1e3a5f" stroke-width="0.5"/>
+    <text x={cx} y={dimY + 4} text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">
+      ⌀{diameter}
+    </text>
+
+    <!-- Label -->
+    <text x={svgW / 2} y={svgH - 4} text-anchor="middle" fill="#64748b" font-size="10">
+      {label || `Круг ${diameter} мм`}
+    </text>
+  </svg>
+</div>

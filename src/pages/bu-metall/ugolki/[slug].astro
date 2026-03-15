@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import WeightCalculator from '@components/WeightCalculator';
@@ -99,6 +100,10 @@ const gostLabel = isEqual ? 'ГОСТ 8509-93' : 'ГОСТ 8510-86';
       answer: `Б/у уголок ${angle.size} применяется в сварных металлоконструкциях, рамах, стеллажах, ограждениях, фермах и опорных конструкциях.`,
     },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={angle.slug} category="ugolki_ravno" name={`Уголок ${angle.size} б/у`} gost={gostLabel} weightPerMeter={angle.massPerMeterKg} />
+  </section>
 
   <section class="mb-8">
     <a

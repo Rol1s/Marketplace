@@ -1,6 +1,7 @@
 ---
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
+import CartFloat from '@components/CartFloat.tsx';
 import '@/styles/global.css';
 import { SITE } from '@/config/site';
 
@@ -50,5 +51,6 @@ const ogImageUrl = ogImage || `${SITE.url}/og-default.svg`;
       <slot />
     </main>
     <Footer />
+    <CartFloat client:load />
   </body>
 </html>

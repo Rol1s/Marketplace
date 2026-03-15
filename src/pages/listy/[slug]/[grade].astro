@@ -1,6 +1,7 @@
 ---
 import Gost from '@layouts/Gost.astro';
 import SteelGradeInfo from '@components/SteelGradeInfo.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getSheets, getSteelGradesForProduct } from '@lib/data';
 import { sheetWeight } from '@lib/calculator';
@@ -48,6 +49,10 @@ const otherGrades = allGrades.map((g) => ({
     unitLabel="кг/лист"
     otherGrades={otherGrades}
   />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={`${sheet.slug}-${grade.slug}`} category="listy" name={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${grade.name}`} gost="ГОСТ 19903-2015" weightPerMeter={weightKg} />
+  </section>
 
   <section class="mb-8">
     <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth">

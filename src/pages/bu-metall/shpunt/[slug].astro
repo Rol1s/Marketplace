@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import WeightCalculator from '@components/WeightCalculator';
@@ -92,6 +93,10 @@ const weightPerMeterKg = (pile.weightPerMeterTons * 1000).toFixed(0);
       answer: `Б/у шпунт Ларсена ${pile.displayName} применяется для временного ограждения котлованов, берегоукреплений, подпорных стен. Б/у шпунт позволяет существенно снизить стоимость временных ограждений.`,
     },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={pile.slug} category="shpunt" name={`${pile.displayName} б/у`} gost="ГОСТ 4781-85" weightPerMeter={pile.weightPerMeterTons * 1000} />
+  </section>
 
   <section class="mb-8">
     <a

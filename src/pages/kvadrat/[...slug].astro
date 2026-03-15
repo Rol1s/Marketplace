@@ -9,6 +9,7 @@ import { relatedSquareBars } from '@lib/links';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 
 export function getStaticPaths() {
   return getSquareBars().map((s) => ({
@@ -83,6 +84,10 @@ const related = relatedSquareBars(allItems, item.slug);
 
   <ProductCrossLinks productSlug="kvadrat" itemSlug={item.slug} productType={`квадрата ${item.side}×${item.side}`} basePath="/kvadrat/" />
   <RelatedItems title="Другие размеры квадрата" items={related} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={item.slug} category="kvadrat" name={`Квадрат стальной ${item.side}×${item.side} мм`} gost={item.gost} weightPerMeter={item.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Квадрат стальной ${item.side}×${item.side}`} />

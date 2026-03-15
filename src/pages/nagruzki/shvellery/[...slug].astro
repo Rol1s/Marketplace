@@ -1,0 +1,107 @@
+---
+import Gost from '@layouts/Gost.astro';
+import { getChannels } from '@lib/data';
+import { generateLoadTable, SPACINGS } from '@lib/loads';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getChannels().filter(c => c.Wx > 0).map((c) => ({
+    params: { slug: c.slug },
+    props: { channel: c },
+  }));
+}
+
+const { channel } = Astro.props;
+const table = generateLoadTable(channel.Wx);
+---
+
+<Gost
+  title={`Нагрузка на швеллер ${channel.profile} — допустимая нагрузка по пролёту | NikaMet`}
+  description={`Таблица допустимых нагрузок на швеллер ${channel.profile} (ГОСТ 8240-97) при пролётах 1–12 м. Wx=${channel.Wx} см³, масса ${channel.weight} кг/м.`}
+  h1={`Допустимая нагрузка на швеллер ${channel.profile}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Нагрузочные таблицы', href: '/nagruzki/' },
+    { label: `Швеллер ${channel.profile}`, href: `/nagruzki/shvellery/${channel.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{channel.Wx}</div>
+        <div class="text-xs text-text-muted mt-1">Wx, см³</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{channel.Ix}</div>
+        <div class="text-xs text-text-muted mt-1">Ix, см⁴</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{channel.h}</div>
+        <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{channel.weight}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Таблица допустимых нагрузок</h2>
+    <p class="text-sm text-text-muted mb-4">
+      Максимальная равномерно распределённая нагрузка (кг/м²) для однопролётной балки при Ry = 210 МПа (Ст3).
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="px-2 py-2 text-left">Пролёт, м</th>
+            <th class="px-2 py-2 text-right">q, кг/м</th>
+            {SPACINGS.map((s) => (
+              <th class="px-2 py-2 text-right">Шаг {s}м, кг/м²</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {table.map((row, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <td class="px-2 py-1.5 font-bold">{row.span}</td>
+              <td class="px-2 py-1.5 text-right font-mono">{row.qKgM.toFixed(0)}</td>
+              {row.loads.map((l) => (
+                <td class={`px-2 py-1.5 text-right font-mono ${l.qKgM2 < 200 ? 'text-red-500' : l.qKgM2 > 1000 ? 'text-green-600' : ''}`}>
+                  {l.qKgM2.toFixed(0)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <a href={`/shvellery/${channel.slug}/`}
+      class="flex items-center gap-4 p-4 rounded-xl border-2 border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface">
+      <div class="flex-1">
+        <div class="font-bold text-primary">Швеллер {channel.profile} — полная характеристика</div>
+        <div class="text-sm text-text-muted mt-0.5">Размеры, масса, чертёж сечения, ГОСТ 8240-97</div>
+      </div>
+      <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какую нагрузку выдерживает швеллер ${channel.profile}?`, answer: `При пролёте 6 м швеллер ${channel.profile} выдерживает до <strong>${(8 * channel.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong> распределённой нагрузки.` },
+    { question: `Какой момент сопротивления у швеллера ${channel.profile}?`, answer: `Wx = <strong>${channel.Wx} см³</strong>, Ix = <strong>${channel.Ix} см⁴</strong> по ГОСТ 8240-97.` },
+  ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={channel.slug} category="shvellery" name={`Швеллер ${channel.profile}`} gost="ГОСТ 8240-97" weightPerMeter={channel.weight} />
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Швеллер ${channel.profile}`} />
+  </section>
+</Gost>

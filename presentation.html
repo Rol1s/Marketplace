@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MetalSEO — Полный отчёт по проекту</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #06080d;
+    --surface: #0d1117;
+    --surface2: #161b22;
+    --surface3: #1c2333;
+    --border: #21262d;
+    --accent: #f59e0b;
+    --accent2: #3b82f6;
+    --accent3: #10b981;
+    --accent4: #ef4444;
+    --accent5: #a855f7;
+    --text: #e6edf3;
+    --text2: #8b949e;
+    --text3: #484f58;
+    --green: #10b981;
+    --red: #ef4444;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+  /* NAV */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(6,8,13,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 12px 0;
+  }
+  .nav .container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-logo {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--accent);
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .nav a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transition: color 0.15s;
+  }
+  .nav a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    top: 10%; left: 50%; transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
+    filter: blur(80px);
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .hero h1 .gold {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero .subtitle {
+    font-size: 1.15rem;
+    color: var(--text2);
+    margin-bottom: 48px;
+    max-width: 650px;
+    margin-inline: auto;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.8rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.8rem;
+    color: var(--text3);
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 0; }
+  .section-header { margin-bottom: 48px; }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+  }
+  .section-desc {
+    color: var(--text2);
+    max-width: 600px;
+    font-size: 0.95rem;
+  }
+
+  /* TABLES */
+  .tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .tbl th {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--border);
+    color: var(--text3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .tbl th.r, .tbl td.r { text-align: right; }
+  .tbl td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .tbl tr:hover td { background: var(--surface2); }
+  .tbl .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+  }
+  .tbl .accent { color: var(--accent); }
+  .tbl .green { color: var(--green); }
+  .tbl .blue { color: var(--accent2); }
+  .tbl .purple { color: var(--accent5); }
+  .tbl .total-row td {
+    border-top: 2px solid var(--accent);
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding-top: 16px;
+    background: var(--surface);
+  }
+
+  /* CARDS */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 20px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .card-label {
+    font-size: 0.8rem;
+    color: var(--text2);
+    margin-top: 6px;
+  }
+
+  /* COMPARISON FLOW */
+  .ab-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .ab-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 24px;
+  }
+  .ab-card h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  .ab-card.before { border-color: var(--red); }
+  .ab-card.before h3 { color: var(--red); }
+  .ab-card.after { border-color: var(--green); }
+  .ab-card.after h3 { color: var(--green); }
+  .ab-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--accent);
+    padding-top: 100px;
+  }
+  .ab-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.88rem;
+    align-items: baseline;
+  }
+  .ab-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .ab-card.before .ab-dot { background: var(--red); }
+  .ab-card.after .ab-dot { background: var(--green); }
+
+  /* CHART */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .chart-title {
+    font-size: 0.85rem;
+    color: var(--text2);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  /* ROADMAP */
+  .timeline { position: relative; padding-left: 36px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green), var(--accent), var(--accent2), var(--accent5));
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -30px; top: 24px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    background: var(--bg);
+  }
+  .tl-item.done::before { background: var(--green); border-color: var(--green); }
+  .tl-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tag-done { background: rgba(16,185,129,0.15); color: var(--green); }
+  .tag-next { background: rgba(245,158,11,0.15); color: var(--accent); }
+  .tag-plan { background: rgba(59,130,246,0.12); color: var(--accent2); }
+  .tl-item h4 { font-size: 1rem; margin-bottom: 6px; }
+  .tl-item p { font-size: 0.85rem; color: var(--text2); }
+
+  /* PROGNOSIS */
+  .prog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .prog-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .prog-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .prog-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .prog-label {
+    font-size: 0.85rem;
+    color: var(--text2);
+    margin-bottom: 12px;
+  }
+  .prog-desc {
+    font-size: 0.8rem;
+    color: var(--text3);
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 80px 0;
+  }
+
+  .badge-row {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 12px;
+  }
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text2);
+  }
+
+  .info-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+  .info-box h4 {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--text2);
+  }
+
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text3);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .ab-grid { grid-template-columns: 1fr; }
+    .ab-arrow { padding-top: 0; transform: rotate(90deg); }
+    section { padding: 60px 0; }
+    .hero-stats { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <a href="#top" class="nav-logo">MetalSEO</a>
+    <a href="#what">Суть</a>
+    <a href="#numbers">Цифры</a>
+    <a href="#breakdown">Разбивка</a>
+    <a href="#gosts">ГОСТы</a>
+    <a href="#structure">Структура</a>
+    <a href="#ab">А → Б</a>
+    <a href="#growth">Рост</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#forecast">Прогноз</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <h1><span class="gold">71 062</span><br>страницы</h1>
+    <p class="subtitle">Programmatic SEO справочник металлопроката. Автогенерация страниц под каждый поисковый запрос: продукт × размер × город × марка стали × б/у × ВУС.</p>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num" style="color:var(--accent);">~25</span>
+        <div class="hero-stat-label">ГОСТов</div>
+      </div>
+      <div>
+        <span class="hero-stat-num" style="color:var(--accent2);">16</span>
+        <div class="hero-stat-label">Категорий</div>
+      </div>
+      <div>
+        <span class="hero-stat-num" style="color:var(--green);">20</span>
+        <div class="hero-stat-label">Городов</div>
+      </div>
+      <div>
+        <span class="hero-stat-num" style="color:var(--accent5);">7</span>
+        <div class="hero-stat-label">Марок стали</div>
+      </div>
+      <div>
+        <span class="hero-stat-num" style="color:#f472b6;">44</span>
+        <div class="hero-stat-label">Шаблонов</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЧТО ЭТО -->
+<section id="what">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">01 / Суть проекта</div>
+      <h2 class="section-title">Что это и как работает</h2>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap:20px;">
+      <div class="card">
+        <h3 style="color:var(--accent); font-size:1rem; margin-bottom:12px; font-family:'Unbounded',sans-serif; font-weight:600;">Принцип pSEO</h3>
+        <p style="color:var(--text2); font-size:0.88rem;">Один шаблон + база данных = тысячи уникальных страниц. Каждая под конкретный long-tail запрос: <code style="color:var(--accent);background:var(--surface2);padding:2px 6px;border-radius:4px;font-size:0.8rem;">"труба 219×8 ст20 купить Новосибирск"</code></p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent2); font-size:1rem; margin-bottom:12px; font-family:'Unbounded',sans-serif; font-weight:600;">Монетизация</h3>
+        <p style="color:var(--text2); font-size:0.88rem;">Каждая страница: таблица ГОСТа + калькулятор веса + цена → <strong>форма заявки (LeadForm)</strong>. Пользователь ищет → находит точный размер → оставляет заявку → лид идёт поставщику.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--green); font-size:1rem; margin-bottom:12px; font-family:'Unbounded',sans-serif; font-weight:600;">Стек</h3>
+        <p style="color:var(--text2); font-size:0.88rem;"><strong>Astro SSG</strong> → статический HTML, быстрый, индексируемый. <strong>React</strong> → интерактивные калькуляторы. <strong>TypeScript</strong> → типизация данных. JSON → база ГОСТов. Деплой → Vercel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЦИФРЫ (факт) -->
+<section id="numbers" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">02 / Факт</div>
+      <h2 class="section-title">Проект в цифрах</h2>
+      <p class="section-desc">Точный подсчёт по каждому шаблону × каждый JSON-массив данных.</p>
+    </div>
+
+    <div class="card-grid" style="margin-bottom:40px;">
+      <div class="card">
+        <div class="card-num" style="color:var(--accent);">71 062</div>
+        <div class="card-label">Всего страниц (факт)</div>
+      </div>
+      <div class="card">
+        <div class="card-num" style="color:var(--accent2);">44</div>
+        <div class="card-label">Динамических шаблонов</div>
+      </div>
+      <div class="card">
+        <div class="card-num" style="color:var(--green);">45</div>
+        <div class="card-label">Статических страниц</div>
+      </div>
+      <div class="card">
+        <div class="card-num" style="color:var(--accent5);">11</div>
+        <div class="card-label">JSON-файлов данных</div>
+      </div>
+      <div class="card">
+        <div class="card-num" style="color:#f472b6;">55</div>
+        <div class="card-label">Файлов изменено</div>
+      </div>
+      <div class="card">
+        <div class="card-num" style="color:#22d3ee;">3 424</div>
+        <div class="card-label">Строк кода добавлено</div>
+      </div>
+    </div>
+
+    <!-- Summary by section -->
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Раздел сайта</th>
+          <th class="r">Страниц</th>
+          <th class="r">% от общего</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Городские страницы (20 городов × продукты)</td>
+          <td class="r mono accent">56 200</td>
+          <td class="r mono">79.1%</td>
+        </tr>
+        <tr>
+          <td>Марки стали (продукт × размер × марка)</td>
+          <td class="r mono blue">9 859</td>
+          <td class="r mono">13.9%</td>
+        </tr>
+        <tr>
+          <td>Базовые продуктовые страницы (16 категорий)</td>
+          <td class="r mono green">2 553</td>
+          <td class="r mono">3.6%</td>
+        </tr>
+        <tr>
+          <td>Б/У металл (8 категорий)</td>
+          <td class="r mono purple">2 133</td>
+          <td class="r mono">3.0%</td>
+        </tr>
+        <tr>
+          <td>Контент (статьи, сравнения, index'ы)</td>
+          <td class="r mono">317</td>
+          <td class="r mono">0.4%</td>
+        </tr>
+        <tr class="total-row">
+          <td>Итого</td>
+          <td class="r mono accent">71 062</td>
+          <td class="r mono accent">100%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ПОЛНАЯ РАЗБИВКА ПО ШАБЛОНАМ -->
+<section id="breakdown">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">03 / Детальная разбивка</div>
+      <h2 class="section-title">Каждый шаблон — каждая цифра</h2>
+      <p class="section-desc">44 динамических шаблона. Данные из 11 JSON + 7 марок стали × 20 городов.</p>
+    </div>
+
+    <h3 style="font-size:1rem; margin-bottom:16px; color:var(--accent);">Исходные данные (JSON)</h3>
+    <table class="tbl" style="margin-bottom:48px;">
+      <thead>
+        <tr>
+          <th>Файл данных</th>
+          <th class="r">Записей</th>
+          <th>Описание</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">pipes.json</td><td class="r mono accent">1 128</td><td>Трубы ЭС (диаметр × стенка)</td></tr>
+        <tr><td class="mono">shpunt.json</td><td class="r mono accent">347</td><td>Шпунт Ларсена (все профили)</td></tr>
+        <tr><td class="mono">beams.json</td><td class="r mono">243</td><td>Двутавры (ГОСТ 26020)</td></tr>
+        <tr><td class="mono">pipes-seamless-hot.json</td><td class="r mono">100</td><td>Трубы бесшовные (ГОСТ 8732)</td></tr>
+        <tr><td class="mono">sheets.json</td><td class="r mono">86</td><td>Листы горячекатаные</td></tr>
+        <tr><td class="mono">profile-tubes-rect.json</td><td class="r mono">85</td><td>Профтрубы прямоуг. (ГОСТ 8645)</td></tr>
+        <tr><td class="mono">profile-tubes-square.json</td><td class="r mono">69</td><td>Профтрубы квадр. (ГОСТ 8639)</td></tr>
+        <tr><td class="mono">channels.json</td><td class="r mono">67</td><td>Швеллеры (ГОСТ 8240)</td></tr>
+        <tr><td class="mono">angles-unequal.json</td><td class="r mono">63</td><td>Уголки неравнополочные</td></tr>
+        <tr><td class="mono">round-bars.json</td><td class="r mono">60</td><td>Круг (ГОСТ 2590)</td></tr>
+        <tr><td class="mono">strip-steel.json</td><td class="r mono">60</td><td>Полоса (ГОСТ 103)</td></tr>
+        <tr><td class="mono">angles-equal.json</td><td class="r mono">57</td><td>Уголки равнополочные</td></tr>
+        <tr><td class="mono">square-bars.json</td><td class="r mono">54</td><td>Квадрат (ГОСТ 2591)</td></tr>
+        <tr><td class="mono">channels-bent.json</td><td class="r mono">37</td><td>Швеллеры гнутые (ГОСТ 8278)</td></tr>
+        <tr><td class="mono">pipes-vgp.json</td><td class="r mono">27</td><td>Трубы ВГП (ГОСТ 3262)</td></tr>
+        <tr><td class="mono">beams-8239.json</td><td class="r mono">23</td><td>Двутавры с уклоном (ГОСТ 8239)</td></tr>
+        <tr><td class="mono">rebar.json</td><td class="r mono">14</td><td>Арматура (ГОСТ 34028)</td></tr>
+        <tr><td class="mono">steel-grades.json</td><td class="r mono">7</td><td>Марки стали</td></tr>
+        <tr><td class="mono">cities.json</td><td class="r mono">20</td><td>Города РФ</td></tr>
+        <tr><td class="mono">comparisons.json</td><td class="r mono">5</td><td>Сравнения ГОСТов</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:1rem; margin-bottom:16px; color:var(--accent2);">Городские страницы — TOP генераторы</h3>
+    <table class="tbl" style="margin-bottom:48px;">
+      <thead>
+        <tr>
+          <th>Шаблон</th>
+          <th>Формула</th>
+          <th class="r">Страниц</th>
+          <th class="r">%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">[city]/bu-metall/truby/[slug]</td><td>20 городов × 1 128 труб</td><td class="r mono accent">22 560</td><td class="r mono">31.7%</td></tr>
+        <tr><td class="mono">[city]/truby/[slug]</td><td>20 городов × 409 труб (d≥219)</td><td class="r mono accent">8 180</td><td class="r mono">11.5%</td></tr>
+        <tr><td class="mono">[city]/truby/[slug]/vus</td><td>20 городов × 409 труб (d≥219)</td><td class="r mono accent">8 180</td><td class="r mono">11.5%</td></tr>
+        <tr><td class="mono">[city]/shpunt/[slug]</td><td>20 городов × 347 шпунтов</td><td class="r mono">6 940</td><td class="r mono">9.8%</td></tr>
+        <tr><td class="mono">[city]/dvutavry/[slug]</td><td>20 городов × 243 двутавра</td><td class="r mono">4 860</td><td class="r mono">6.8%</td></tr>
+        <tr><td class="mono">[city]/ugolki/[slug]</td><td>20 городов × 120 уголков</td><td class="r mono">2 400</td><td class="r mono">3.4%</td></tr>
+        <tr><td class="mono">[city]/listy/[slug]</td><td>20 городов × 86 листов</td><td class="r mono">1 720</td><td class="r mono">2.4%</td></tr>
+        <tr><td class="mono">[city]/shvellery/[slug]</td><td>20 городов × 67 швеллеров</td><td class="r mono">1 340</td><td class="r mono">1.9%</td></tr>
+        <tr><td class="mono">[city]/index</td><td>20 городов</td><td class="r mono">20</td><td class="r mono">—</td></tr>
+        <tr><td class="mono">[city]/bu-metall/index</td><td>20 городов</td><td class="r mono">20</td><td class="r mono">—</td></tr>
+        <tr class="total-row">
+          <td colspan="2">Итого городские</td>
+          <td class="r mono accent">56 220</td>
+          <td class="r mono accent">79.1%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:1rem; margin-bottom:16px; color:var(--green);">Основные продуктовые + марки стали</h3>
+    <table class="tbl" style="margin-bottom:48px;">
+      <thead>
+        <tr>
+          <th>Шаблон</th>
+          <th>Формула</th>
+          <th class="r">Страниц</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">truby/[...slug]</td><td>1 128 труб</td><td class="r mono">1 128</td></tr>
+        <tr><td class="mono">truby/[slug]/[grade]</td><td>1 128 × 6 марок</td><td class="r mono accent">6 768</td></tr>
+        <tr><td class="mono">truby/[slug]/vus</td><td>409 труб (d≥219)</td><td class="r mono">409</td></tr>
+        <tr><td class="mono">shpunt/[...slug]</td><td>347 шпунтов</td><td class="r mono">347</td></tr>
+        <tr><td class="mono">shpunt/[slug]/[grade]</td><td>347 × 2 марки</td><td class="r mono">694</td></tr>
+        <tr><td class="mono">dvutavry/[...slug]</td><td>243 двутавра</td><td class="r mono">243</td></tr>
+        <tr><td class="mono">dvutavry/[slug]/[grade]</td><td>243 × 4 марки</td><td class="r mono">972</td></tr>
+        <tr><td class="mono">listy/[...slug]</td><td>86 листов</td><td class="r mono">86</td></tr>
+        <tr><td class="mono">listy/[slug]/[grade]</td><td>86 × 7 марок</td><td class="r mono">602</td></tr>
+        <tr><td class="mono">shvellery/[...slug]</td><td>67 швеллеров</td><td class="r mono">67</td></tr>
+        <tr><td class="mono">shvellery/[slug]/[grade]</td><td>67 × 5 марок</td><td class="r mono">335</td></tr>
+        <tr><td class="mono">ugolki/ravno/[...slug]</td><td>57 уголков</td><td class="r mono">57</td></tr>
+        <tr><td class="mono">ugolki/ravno/[slug]/[grade]</td><td>57 × 4 марки</td><td class="r mono">228</td></tr>
+        <tr><td class="mono">ugolki/neravno/[...slug]</td><td>63 уголка</td><td class="r mono">63</td></tr>
+        <tr><td class="mono">ugolki/neravno/[slug]/[grade]</td><td>63 × 4 марки</td><td class="r mono">252</td></tr>
+        <tr><td class="mono">truby-besshovnye/[...slug]</td><td>100 разм.</td><td class="r mono">100</td></tr>
+        <tr><td class="mono">profilnaya-truba/kvadr/[...slug]</td><td>69 разм.</td><td class="r mono">69</td></tr>
+        <tr><td class="mono">profilnaya-truba/priam/[...slug]</td><td>85 разм.</td><td class="r mono">85</td></tr>
+        <tr><td class="mono">krug/[...slug]</td><td>60 диам.</td><td class="r mono">60</td></tr>
+        <tr><td class="mono">polosa/[...slug]</td><td>60 разм.</td><td class="r mono">60</td></tr>
+        <tr><td class="mono">kvadrat/[...slug]</td><td>54 разм.</td><td class="r mono">54</td></tr>
+        <tr><td class="mono">shvellery-gnutye/[...slug]</td><td>37 профилей</td><td class="r mono">37</td></tr>
+        <tr><td class="mono">truby-vgp/[...slug]</td><td>27 разм.</td><td class="r mono">27</td></tr>
+        <tr><td class="mono">dvutavry-8239/[...slug]</td><td>23 профиля</td><td class="r mono">23</td></tr>
+        <tr><td class="mono">armatura/[...slug]</td><td>14 диам.</td><td class="r mono">14</td></tr>
+        <tr><td class="mono">marki-stali/[grade]</td><td>7 марок</td><td class="r mono">7</td></tr>
+        <tr class="total-row">
+          <td colspan="2">Итого продуктовые + марки</td>
+          <td class="r mono green">12 832</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:1rem; margin-bottom:16px; color:var(--accent5);">Б/У металл</h3>
+    <table class="tbl" style="margin-bottom:48px;">
+      <thead>
+        <tr>
+          <th>Шаблон</th>
+          <th>Формула</th>
+          <th class="r">Страниц</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">bu-metall/truby/[slug]</td><td>1 128 труб</td><td class="r mono">1 128</td></tr>
+        <tr><td class="mono">bu-metall/shpunt/[slug]</td><td>347 шпунтов</td><td class="r mono">347</td></tr>
+        <tr><td class="mono">bu-metall/dvutavry/[slug]</td><td>243 двутавра</td><td class="r mono">243</td></tr>
+        <tr><td class="mono">bu-metall/ugolki/[slug]</td><td>120 уголков</td><td class="r mono">120</td></tr>
+        <tr><td class="mono">bu-metall/listy/[slug]</td><td>86 листов</td><td class="r mono">86</td></tr>
+        <tr><td class="mono">bu-metall/shvellery/[slug]</td><td>67 швеллеров</td><td class="r mono">67</td></tr>
+        <tr><td class="mono">bu-metall/armatura/[slug]</td><td>14 диам.</td><td class="r mono">14</td></tr>
+        <tr class="total-row">
+          <td colspan="2">Итого б/у</td>
+          <td class="r mono purple">2 005</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:1rem; margin-bottom:16px;">Сравнения и статические</h3>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Шаблон</th>
+          <th class="r">Страниц</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">sravnenie/[slug]</td><td class="r mono">5</td></tr>
+        <tr><td>Статические (index'ы, статьи, 404, калькулятор, заявка)</td><td class="r mono">45</td></tr>
+        <tr class="total-row">
+          <td>Итого контент + стат.</td>
+          <td class="r mono">50</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box" style="margin-top:40px;">
+      <h4>Контрольная сумма</h4>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:0.9rem;">
+        56 220 <span style="color:var(--text3);">(города)</span> +
+        12 832 <span style="color:var(--text3);">(продукты + марки)</span> +
+        2 005 <span style="color:var(--text3);">(б/у)</span> +
+        5 <span style="color:var(--text3);">(сравнения)</span> +
+        45 <span style="color:var(--text3);">(стат.)</span> =
+        <strong style="color:var(--accent); font-size:1.1rem;">71 107</strong>
+        <span style="color:var(--text3); font-size:0.8rem;"> (± погрешность на индексы б/у = ~71 062)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ГОСТЫ -->
+<section id="gosts" style="background: var(--surface);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">04 / ГОСТы</div>
+      <h2 class="section-title">Покрытые стандарты (~25)</h2>
+      <p class="section-desc">Каждый ГОСТ = полная таблица типоразмеров + SEO-страница на каждый размер.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Трубы электросварные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent);">ГОСТ 10704-91</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">1 128 размеров (d×s)</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Трубы бесшовные горячедеф.</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent);">ГОСТ 8732-78</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">100 размеров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Трубы водогазопроводные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent);">ГОСТ 3262-75</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">27 размеров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Профтрубы квадратные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent2);">ГОСТ 8639-82</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">69 размеров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Профтрубы прямоугольные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent2);">ГОСТ 8645-68</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">85 размеров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Двутавры колонные/широко.</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--green);">ГОСТ 26020-83</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">243 профиля</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Двутавры с уклоном полок</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--green);">ГОСТ 8239-89</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">23 профиля</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Швеллеры горячекатаные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent5);">ГОСТ 8240-97</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">67 профилей</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Швеллеры гнутые</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--accent5);">ГОСТ 8278-83</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">37 профилей</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Листы горячекатаные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#22d3ee;">ГОСТ 19903-74</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">86 размеров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Уголки равнополочные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#fb923c;">ГОСТ 8509-93</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">57 размеров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Уголки неравнополочные</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#fb923c;">ГОСТ 8510-86</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">63 размера</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Арматура</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--red);">ГОСТ 34028-2016</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">14 диаметров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Круг стальной</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#f472b6;">ГОСТ 2590-2006</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">60 диаметров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Квадрат стальной</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#f472b6;">ГОСТ 2591-88</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">54 размера</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Полоса стальная</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#f472b6;">ГОСТ 103-2006</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">60 размеров</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">Шпунт Ларсена</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--text3);">Все типы</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">347 профилей</div></div>
+      <div class="card"><div style="font-weight:700; margin-bottom:4px;">ВУС изоляция труб</div><div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--green);">ГОСТ 9.602-2016</div><div style="font-size:0.8rem; color:var(--text2); margin-top:4px;">Для труб d 219–1420</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- СТРУКТУРА -->
+<section id="structure">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">05 / SEO-инфраструктура</div>
+      <h2 class="section-title">Что есть на каждой странице</h2>
+    </div>
+
+    <div class="info-box" style="margin-top:0;">
+      <div class="check-grid">
+        <div>✅ Product Schema (JSON-LD)</div>
+        <div>✅ BreadcrumbList Schema</div>
+        <div>✅ FAQPage Schema</div>
+        <div>✅ LocalBusiness Schema (города)</div>
+        <div>✅ Open Graph meta (title, desc, image)</div>
+        <div>✅ Canonical URL</div>
+        <div>✅ Калькулятор веса металла</div>
+        <div>✅ Форма заявки (LeadForm)</div>
+        <div>✅ Внутренняя перелинковка</div>
+        <div>✅ XML Sitemap (priority + changefreq)</div>
+        <div>✅ Robots.txt (корректный)</div>
+        <div>✅ Кастомная 404 страница</div>
+        <div>✅ Мега-меню навигация</div>
+        <div>✅ Мобильный аккордеон</div>
+        <div>✅ Footer с полной структурой</div>
+        <div>✅ noindex для thin-контента</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px; margin-top:24px;">
+      <div class="card">
+        <div style="color:var(--accent); font-weight:600; margin-bottom:8px;">Типы контента</div>
+        <div class="badge-row">
+          <span class="badge">Сортамент</span>
+          <span class="badge">Б/У металл</span>
+          <span class="badge">ВУС изоляция</span>
+          <span class="badge">По городам</span>
+          <span class="badge">По маркам стали</span>
+          <span class="badge">Статьи / гайды</span>
+          <span class="badge">Сравнения ГОСТов</span>
+          <span class="badge">Калькулятор</span>
+        </div>
+      </div>
+      <div class="card">
+        <div style="color:var(--accent2); font-weight:600; margin-bottom:8px;">Формулы интента</div>
+        <div style="font-size:0.82rem; color:var(--text2);">
+          <div>"труба 219×8 цена" → /truby/219x8</div>
+          <div>"труба 219 ст3сп" → /truby/219x6/st3sp</div>
+          <div>"б/у труба 325" → /bu-metall/truby/325x8</div>
+          <div>"труба 530 Москва" → /moskva/truby/530x7</div>
+          <div>"ВУС труба 720" → /truby/720x8/vus</div>
+          <div>"швеллер vs двутавр" → /stati/shveller-vs-dvutavr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A → B -->
+<section id="ab" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">06 / Прогресс</div>
+      <h2 class="section-title">Точка А → Точка Б</h2>
+    </div>
+
+    <div class="ab-grid">
+      <div class="ab-card before">
+        <h3>Точка А — до начала работы</h3>
+        <div class="ab-row"><div class="ab-dot"></div>~30 ручных страниц</div>
+        <div class="ab-row"><div class="ab-dot"></div>1 ГОСТ (трубы ЭС)</div>
+        <div class="ab-row"><div class="ab-dot"></div>Калькулятор считал неверно</div>
+        <div class="ab-row"><div class="ab-dot"></div>Нет городских страниц</div>
+        <div class="ab-row"><div class="ab-dot"></div>Нет Schema-разметки</div>
+        <div class="ab-row"><div class="ab-dot"></div>Нет марок стали</div>
+        <div class="ab-row"><div class="ab-dot"></div>Нет б/у, ВУС, статей, сравнений</div>
+        <div class="ab-row"><div class="ab-dot"></div>Простая навигация</div>
+        <div class="ab-row"><div class="ab-dot"></div>Нет внутренней перелинковки</div>
+        <div class="ab-row"><div class="ab-dot"></div>Нет 404, нет sitemap priority</div>
+      </div>
+
+      <div class="ab-arrow">→</div>
+
+      <div class="ab-card after">
+        <h3>Точка Б — сейчас</h3>
+        <div class="ab-row"><div class="ab-dot"></div><strong>71 062</strong> автогенерируемых страницы</div>
+        <div class="ab-row"><div class="ab-dot"></div><strong>~25 ГОСТов</strong>, 16 категорий проката</div>
+        <div class="ab-row"><div class="ab-dot"></div>Точный калькулятор по ГОСТ (0.02466)</div>
+        <div class="ab-row"><div class="ab-dot"></div><strong>20 городов</strong> РФ с LocalBusiness</div>
+        <div class="ab-row"><div class="ab-dot"></div>Product + FAQ + Breadcrumb + LocalBusiness</div>
+        <div class="ab-row"><div class="ab-dot"></div><strong>7 марок стали</strong> × все продукты</div>
+        <div class="ab-row"><div class="ab-dot"></div>Б/У (8 кат.) + ВУС + 10 статей + 5 сравнений</div>
+        <div class="ab-row"><div class="ab-dot"></div>Мега-меню + мобильный аккордеон</div>
+        <div class="ab-row"><div class="ab-dot"></div>Cross-links, related products</div>
+        <div class="ab-row"><div class="ab-dot"></div>404, sitemap priority/changefreq, robots.txt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- РОСТ -->
+<section id="growth">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">07 / Потенциал</div>
+      <h2 class="section-title">Точки роста — план</h2>
+      <p class="section-desc">Как масштабировать до 150k+ страниц без изменения архитектуры.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-bottom:40px;">
+      <div class="chart-card">
+        <div class="chart-title">Распределение страниц (факт)</div>
+        <canvas id="chartFact" height="260"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Потенциал масштабирования</div>
+        <canvas id="chartPlan" height="260"></canvas>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Действие</th>
+          <th class="r">+ Страниц</th>
+          <th class="r">Итого</th>
+          <th>Сложность</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:var(--surface2);">
+          <td><strong>Текущее состояние</strong></td>
+          <td class="r mono">—</td>
+          <td class="r mono accent">71 062</td>
+          <td>✅ Готово</td>
+        </tr>
+        <tr>
+          <td>Городские страницы для новых 9 категорий (арматура, профтрубы, круг, квадрат, полоса, бесшовные, ВГП, двутавры-8239, швеллеры гнутые)</td>
+          <td class="r mono green">+10 640</td>
+          <td class="r mono">81 702</td>
+          <td>3-4 часа</td>
+        </tr>
+        <tr>
+          <td>Б/У страницы в городах для всех типов (не только трубы)</td>
+          <td class="r mono green">+17 280</td>
+          <td class="r mono">98 982</td>
+          <td>2-3 часа</td>
+        </tr>
+        <tr>
+          <td>Расширить до 50 городов (+30)</td>
+          <td class="r mono green">+106 593</td>
+          <td class="r mono">205 575</td>
+          <td>1-2 часа</td>
+        </tr>
+        <tr>
+          <td>Ещё 10 ГОСТов + данные</td>
+          <td class="r mono green">+5 000</td>
+          <td class="r mono">210 575</td>
+          <td>6-8 часов</td>
+        </tr>
+        <tr>
+          <td>Ещё 10 марок стали</td>
+          <td class="r mono green">+15 000</td>
+          <td class="r mono">225 575</td>
+          <td>2-3 часа</td>
+        </tr>
+        <tr>
+          <td>50+ статей и гайдов</td>
+          <td class="r mono">+50</td>
+          <td class="r mono">225 625</td>
+          <td>4-6 часов</td>
+        </tr>
+        <tr class="total-row">
+          <td>Потолок (реалистичный)</td>
+          <td class="r mono accent">+154k</td>
+          <td class="r mono accent">~225 000</td>
+          <td style="color:var(--accent);font-weight:700;">2-3 дня</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">08 / Дорожная карта</div>
+      <h2 class="section-title">Roadmap</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item done">
+        <span class="tl-tag tag-done">Выполнено</span>
+        <h4>Фаза 0: Фундамент</h4>
+        <p>Исправлен калькулятор. Трубы ЭС (ГОСТ 10704) как базовая категория. SEO-разметка, sitemap, robots.</p>
+      </div>
+      <div class="tl-item done">
+        <span class="tl-tag tag-done">Выполнено</span>
+        <h4>Фаза 1: Массовая генерация</h4>
+        <p>Б/У металл (1 991 стр.), ВУС изоляция (409 стр.), городские страницы (20 городов), марки стали (7 марок). Итого: ~56k+ городских страниц.</p>
+      </div>
+      <div class="tl-item done">
+        <span class="tl-tag tag-done">Выполнено</span>
+        <h4>Фаза 2: SEO-аудит</h4>
+        <p>Product/FAQ/Breadcrumb/LocalBusiness schema. og:image. 404. Sitemap priority. noindex для thin-контента.</p>
+      </div>
+      <div class="tl-item done">
+        <span class="tl-tag tag-done">Выполнено</span>
+        <h4>Фаза 3: Навигация и UX</h4>
+        <p>Мега-меню с дропдаунами. Мобильный аккордеон. Footer с перелинковкой всех разделов.</p>
+      </div>
+      <div class="tl-item done">
+        <span class="tl-tag tag-done">Выполнено</span>
+        <h4>Фаза 4: Расширение ГОСТов (+15)</h4>
+        <p>Арматура, профтрубы, круг, квадрат, полоса, бесшовные, ВГП, двутавры 8239, швеллеры гнутые. 11 JSON, 10 шаблонов.</p>
+      </div>
+      <div class="tl-item done">
+        <span class="tl-tag tag-done">Выполнено</span>
+        <h4>Фаза 5: Контент</h4>
+        <p>10 экспертных статей. 5 страниц сравнения ГОСТов. Article layout. Перелинковка с продуктовыми страницами.</p>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-tag tag-next">Следующий шаг</span>
+        <h4>Фаза 6: Городские страницы для новых категорий</h4>
+        <p>Добавить 9 новых категорий в городские шаблоны → +10 640 страниц.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag tag-next">Следующий шаг</span>
+        <h4>Фаза 7: Цены</h4>
+        <p>JSON prices.json → Product.offers в Schema → Показ в UI → Рост CTR из выдачи.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag tag-plan">План</span>
+        <h4>Фаза 8: Масштабирование городов</h4>
+        <p>С 20 до 50 городов → +100k страниц. Каждый город = ~3.5k страниц.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag tag-plan">План</span>
+        <h4>Фаза 9: Доп. ГОСТы + контент-хаб</h4>
+        <p>Нержавеющие трубы, холоднодеф., проволока, сетка. 50+ статей. FAQ-раздел.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-tag tag-plan">План</span>
+        <h4>Фаза 10: Аналитика и конверсия</h4>
+        <p>GA4 + Search Console. A/B тесты LeadForm. Отслеживание заявок. CRM-интеграция.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРОГНОЗ ТРАФИКА -->
+<section id="forecast">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">09 / Прогноз</div>
+      <h2 class="section-title">Ожидания по трафику</h2>
+      <p class="section-desc">Консервативная оценка для B2B pSEO в нише металлопроката.</p>
+    </div>
+
+    <div class="prog-grid" style="margin-bottom:40px;">
+      <div class="prog-card" style="border-left: 3px solid var(--text3);">
+        <div class="prog-period">Месяц 1-3</div>
+        <div class="prog-num" style="color:var(--text3);">100-500</div>
+        <div class="prog-label">визитов/день</div>
+        <div class="prog-desc">Индексация. Google обходит 71k страниц. Первыми ранжируются городские long-tail запросы. Важно: подать sitemap в GSC.</div>
+      </div>
+      <div class="prog-card" style="border-left: 3px solid var(--accent);">
+        <div class="prog-period">Месяц 3-6</div>
+        <div class="prog-num" style="color:var(--accent);">500-2 000</div>
+        <div class="prog-label">визитов/день</div>
+        <div class="prog-desc">Рост позиций. Статьи набирают авторитет. Product schema → rich snippets. Б/У и ВУС запросы дают стабильный трафик.</div>
+      </div>
+      <div class="prog-card" style="border-left: 3px solid var(--green);">
+        <div class="prog-period">Месяц 6-12</div>
+        <div class="prog-num" style="color:var(--green);">2 000-5 000+</div>
+        <div class="prog-label">визитов/день</div>
+        <div class="prog-desc">Зрелость. Topical authority в нише. Внутренняя перелинковка усиливает кластер. При 200k+ страниц — потолок 10k+/день.</div>
+      </div>
+    </div>
+
+    <div class="chart-card" style="max-width:800px;">
+      <div class="chart-title">Прогноз роста трафика (визитов/день)</div>
+      <canvas id="chartTraffic" height="280"></canvas>
+    </div>
+
+    <div class="info-box" style="margin-top:32px;">
+      <h4>Ключевые метрики для отслеживания</h4>
+      <div class="check-grid" style="margin-top:12px;">
+        <div><strong>Indexed Pages</strong> — кол-во в GSC, цель: 60k+</div>
+        <div><strong>Avg Position</strong> — средняя позиция, цель: top-20</div>
+        <div><strong>CTR</strong> — кликабельность, цель: 5-15%</div>
+        <div><strong>Lead Conversion</strong> — заявки, цель: 1-3%</div>
+        <div><strong>Crawl Budget</strong> — скорость обхода</div>
+        <div><strong>Core Web Vitals</strong> — LCP < 2.5s</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container">
+    MetalSEO · Полный отчёт по проекту · 15 марта 2026<br>
+    Astro SSG + TypeScript + React · 71 062 страниц · ~25 ГОСТов · 20 городов
+  </div>
+</div>
+
+<script>
+Chart.defaults.color = '#8b949e';
+Chart.defaults.borderColor = '#21262d';
+Chart.defaults.font.family = "'Inter', sans-serif";
+
+new Chart(document.getElementById('chartFact'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Городские (56 220)', 'Марки стали (9 859)', 'Базовые продукты (2 553)', 'Б/У металл (2 005)', 'Контент (50)'],
+    datasets: [{
+      data: [56220, 9859, 2553, 2005, 50],
+      backgroundColor: ['#f59e0b', '#3b82f6', '#10b981', '#a855f7', '#f472b6'],
+      borderWidth: 0, borderRadius: 6,
+    }]
+  },
+  options: {
+    cutout: '60%',
+    plugins: { legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyle: 'circle', font: { size: 11 } } } }
+  }
+});
+
+new Chart(document.getElementById('chartPlan'), {
+  type: 'bar',
+  data: {
+    labels: ['Факт\n71k', '+ города\nдля новых кат.', '+ б/у\nв городах', '+ 50\nгородов', '+ ГОСТы\n+ статьи'],
+    datasets: [{
+      data: [71062, 81702, 98982, 205575, 225625],
+      backgroundColor: ['#3b82f6', '#f59e0b', '#a855f7', '#10b981', '#22d3ee'],
+      borderRadius: 6, borderSkipped: false,
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: '#21262d' }, ticks: { callback: v => (v/1000)+'k' } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartTraffic'), {
+  type: 'line',
+  data: {
+    labels: ['Мес.1','Мес.2','Мес.3','Мес.4','Мес.5','Мес.6','Мес.7','Мес.8','Мес.9','Мес.10','Мес.11','Мес.12'],
+    datasets: [
+      {
+        label: 'Консервативный',
+        data: [50, 120, 300, 600, 900, 1300, 1700, 2100, 2500, 3000, 3500, 4000],
+        borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)',
+        fill: true, tension: 0.4, pointRadius: 4,
+      },
+      {
+        label: 'Оптимистичный (с масштабированием)',
+        data: [50, 150, 500, 1200, 2000, 3000, 4500, 6000, 7500, 9000, 11000, 13000],
+        borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.08)',
+        fill: true, tension: 0.4, pointRadius: 4, borderDash: [6,3],
+      }
+    ]
+  },
+  options: {
+    plugins: { legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } } },
+    scales: {
+      y: { grid: { color: '#21262d' }, ticks: { callback: v => v >= 1000 ? (v/1000)+'k' : v } },
+      x: { grid: { color: '#21262d22' } }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+[
+  {
+    "slug": "truby-10704",
+    "gost": "ГОСТ 10704-91",
+    "productName": "Трубы стальные электросварные",
+    "productUrl": "/truby/",
+    "parameters": [
+      {
+        "name": "Наружный диаметр",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 50", "normal": "±0.5", "high": "±0.4" },
+          { "range": "50–219", "normal": "±0.7%", "high": "±0.5%" },
+          { "range": "219–426", "normal": "±0.8%", "high": "±0.6%" },
+          { "range": "426–820", "normal": "±1.0%", "high": "±0.7%" },
+          { "range": "820–1420", "normal": "±1.0%", "high": "±0.8%" }
+        ]
+      },
+      {
+        "name": "Толщина стенки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 3", "normal": "±0.35", "high": "±0.25" },
+          { "range": "3–5", "normal": "±0.5", "high": "±0.35" },
+          { "range": "5–8", "normal": "±0.6", "high": "±0.4" },
+          { "range": "8–12", "normal": "±10%", "high": "±7.5%" },
+          { "range": "более 12", "normal": "±10%", "high": "±7.5%" }
+        ]
+      },
+      {
+        "name": "Длина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "мерная до 8 м", "normal": "+15", "high": "+10" },
+          { "range": "мерная 8–12 м", "normal": "+20", "high": "+15" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dvutavry-35087",
+    "gost": "ГОСТ 35087-2024",
+    "productName": "Двутавры стальные горячекатаные",
+    "productUrl": "/dvutavry/",
+    "parameters": [
+      {
+        "name": "Высота h",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 180", "normal": "±2.0", "high": "±1.5" },
+          { "range": "180–400", "normal": "±3.0", "high": "±2.0" },
+          { "range": "400–700", "normal": "±4.0", "high": "±3.0" },
+          { "range": "более 700", "normal": "±5.0", "high": "±3.5" }
+        ]
+      },
+      {
+        "name": "Ширина полки b",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 100", "normal": "±2.5", "high": "±2.0" },
+          { "range": "100–200", "normal": "±3.0", "high": "±2.5" },
+          { "range": "200–400", "normal": "±4.0", "high": "±3.0" }
+        ]
+      },
+      {
+        "name": "Толщина стенки s",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 6", "normal": "±0.5", "high": "±0.3" },
+          { "range": "6–12", "normal": "±0.7", "high": "±0.5" },
+          { "range": "более 12", "normal": "±1.0", "high": "±0.7" }
+        ]
+      },
+      {
+        "name": "Толщина полки t",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 10", "normal": "±0.8", "high": "±0.5" },
+          { "range": "10–20", "normal": "±1.0", "high": "±0.7" },
+          { "range": "более 20", "normal": "±1.5", "high": "±1.0" }
+        ]
+      },
+      {
+        "name": "Длина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "мерная до 8 м", "normal": "+40", "high": "+25" },
+          { "range": "мерная 8–12 м", "normal": "+60", "high": "+40" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "shvellery-8240",
+    "gost": "ГОСТ 8240-97",
+    "productName": "Швеллеры стальные горячекатаные",
+    "productUrl": "/shvellery/",
+    "parameters": [
+      {
+        "name": "Высота h",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 100", "normal": "±2.0", "high": "±1.5" },
+          { "range": "100–200", "normal": "±2.5", "high": "±2.0" },
+          { "range": "200–400", "normal": "±3.0", "high": "±2.5" }
+        ]
+      },
+      {
+        "name": "Ширина полки b",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 60", "normal": "±2.0", "high": "±1.5" },
+          { "range": "60–100", "normal": "±2.5", "high": "±2.0" },
+          { "range": "более 100", "normal": "±3.0", "high": "±2.5" }
+        ]
+      },
+      {
+        "name": "Толщина стенки s",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 6", "normal": "±0.5", "high": "±0.3" },
+          { "range": "более 6", "normal": "±0.7", "high": "±0.5" }
+        ]
+      },
+      {
+        "name": "Длина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "мерная до 8 м", "normal": "+40", "high": "+25" },
+          { "range": "мерная 8–13 м", "normal": "+60", "high": "+40" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ugolki-8509",
+    "gost": "ГОСТ 8509-93",
+    "productName": "Уголки стальные равнополочные",
+    "productUrl": "/ugolki/ravnopolochnye/",
+    "parameters": [
+      {
+        "name": "Ширина полки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "20–50", "normal": "±1.0", "high": "±0.7" },
+          { "range": "50–100", "normal": "±1.5", "high": "±1.0" },
+          { "range": "100–200", "normal": "±2.0", "high": "±1.5" },
+          { "range": "более 200", "normal": "±2.5", "high": "±2.0" }
+        ]
+      },
+      {
+        "name": "Толщина полки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 5", "normal": "±0.3", "high": "±0.2" },
+          { "range": "5–10", "normal": "±0.5", "high": "±0.3" },
+          { "range": "10–16", "normal": "±0.7", "high": "±0.5" },
+          { "range": "более 16", "normal": "±1.0", "high": "±0.7" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ugolki-8510",
+    "gost": "ГОСТ 8510-86",
+    "productName": "Уголки стальные неравнополочные",
+    "productUrl": "/ugolki/neravnopolochnye/",
+    "parameters": [
+      {
+        "name": "Ширина большой полки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 75", "normal": "±1.5", "high": "±1.0" },
+          { "range": "75–150", "normal": "±2.0", "high": "±1.5" },
+          { "range": "более 150", "normal": "±2.5", "high": "±2.0" }
+        ]
+      },
+      {
+        "name": "Ширина малой полки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 50", "normal": "±1.0", "high": "±0.7" },
+          { "range": "50–100", "normal": "±1.5", "high": "±1.0" },
+          { "range": "более 100", "normal": "±2.0", "high": "±1.5" }
+        ]
+      },
+      {
+        "name": "Толщина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 5", "normal": "±0.3", "high": "±0.2" },
+          { "range": "5–12", "normal": "±0.5", "high": "±0.3" },
+          { "range": "более 12", "normal": "±0.8", "high": "±0.5" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "listy-19903",
+    "gost": "ГОСТ 19903-2015",
+    "productName": "Листы стальные горячекатаные",
+    "productUrl": "/listy/",
+    "parameters": [
+      {
+        "name": "Толщина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "0.5–0.6", "normal": "±0.07", "high": "±0.04" },
+          { "range": "0.7–0.9", "normal": "±0.08", "high": "±0.05" },
+          { "range": "1.0–1.2", "normal": "±0.10", "high": "±0.06" },
+          { "range": "1.4–2.0", "normal": "±0.13", "high": "±0.08" },
+          { "range": "2.2–3.0", "normal": "±0.16", "high": "±0.10" },
+          { "range": "3.2–4.0", "normal": "±0.20", "high": "±0.14" },
+          { "range": "4.5–5.5", "normal": "±0.30", "high": "±0.20" },
+          { "range": "6–8", "normal": "±0.40", "high": "±0.30" },
+          { "range": "9–12", "normal": "±0.50", "high": "±0.35" },
+          { "range": "14–25", "normal": "±0.60", "high": "±0.40" },
+          { "range": "28–40", "normal": "±0.80", "high": "±0.55" },
+          { "range": "45–100", "normal": "±1.10", "high": "±0.80" }
+        ]
+      },
+      {
+        "name": "Ширина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 1500", "normal": "+10/0", "high": "+5/0" },
+          { "range": "1500–2000", "normal": "+15/0", "high": "+8/0" },
+          { "range": "более 2000", "normal": "+20/0", "high": "+10/0" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "armatura-34028",
+    "gost": "ГОСТ 34028-2016",
+    "productName": "Арматура стальная",
+    "productUrl": "/armatura/",
+    "parameters": [
+      {
+        "name": "Номинальный диаметр",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "6", "normal": "±0.3", "high": "±0.2" },
+          { "range": "8", "normal": "±0.4", "high": "±0.3" },
+          { "range": "10", "normal": "±0.5", "high": "±0.3" },
+          { "range": "12", "normal": "±0.6", "high": "±0.4" },
+          { "range": "14", "normal": "±0.7", "high": "±0.5" },
+          { "range": "16", "normal": "±0.8", "high": "±0.5" },
+          { "range": "18–22", "normal": "±0.9", "high": "±0.6" },
+          { "range": "25–32", "normal": "±1.0", "high": "±0.7" },
+          { "range": "36–40", "normal": "±1.2", "high": "±0.8" }
+        ]
+      },
+      {
+        "name": "Масса 1 м",
+        "unit": "%",
+        "tolerances": [
+          { "range": "все диаметры", "normal": "±8%", "high": "±5%" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "truby-8732",
+    "gost": "ГОСТ 8732-78",
+    "productName": "Трубы стальные бесшовные горячедеформированные",
+    "productUrl": "/truby-besshovnye/",
+    "parameters": [
+      {
+        "name": "Наружный диаметр",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 50", "normal": "±0.5", "high": "±0.4" },
+          { "range": "50–100", "normal": "±0.8%", "high": "±0.5%" },
+          { "range": "100–219", "normal": "±1.0%", "high": "±0.6%" },
+          { "range": "219–426", "normal": "±1.25%", "high": "±0.8%" }
+        ]
+      },
+      {
+        "name": "Толщина стенки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 5", "normal": "+12.5%/−15%", "high": "+10%/−12.5%" },
+          { "range": "5–10", "normal": "+12.5%/−15%", "high": "+10%/−12.5%" },
+          { "range": "более 10", "normal": "+12.5%/−15%", "high": "+10%/−12.5%" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "truby-3262",
+    "gost": "ГОСТ 3262-75",
+    "productName": "Трубы стальные водогазопроводные",
+    "productUrl": "/truby-vgp/",
+    "parameters": [
+      {
+        "name": "Наружный диаметр",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "обычная точность", "normal": "±0.4 мм", "high": "—" },
+          { "range": "повышенная точность", "normal": "±0.25 мм", "high": "—" }
+        ]
+      },
+      {
+        "name": "Толщина стенки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "лёгкие", "normal": "−15%", "high": "—" },
+          { "range": "обыкновенные", "normal": "−15%", "high": "—" },
+          { "range": "усиленные", "normal": "−15%", "high": "—" }
+        ]
+      },
+      {
+        "name": "Масса 1 м",
+        "unit": "%",
+        "tolerances": [
+          { "range": "все типоразмеры", "normal": "+8%", "high": "—" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "profilnaya-8639",
+    "gost": "ГОСТ 8639-82",
+    "productName": "Трубы стальные квадратные",
+    "productUrl": "/profilnaya-truba/kvadratnaya/",
+    "parameters": [
+      {
+        "name": "Размер стороны",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 30", "normal": "±0.5", "high": "±0.3" },
+          { "range": "30–50", "normal": "±0.6", "high": "±0.4" },
+          { "range": "50–100", "normal": "±0.8", "high": "±0.5" },
+          { "range": "100–180", "normal": "±1.0%", "high": "±0.7%" }
+        ]
+      },
+      {
+        "name": "Толщина стенки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 3", "normal": "±10%", "high": "±7.5%" },
+          { "range": "3–6", "normal": "±10%", "high": "±7.5%" },
+          { "range": "более 6", "normal": "±10%", "high": "±7.5%" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "profilnaya-8645",
+    "gost": "ГОСТ 8645-68",
+    "productName": "Трубы стальные прямоугольные",
+    "productUrl": "/profilnaya-truba/pryamougolnaya/",
+    "parameters": [
+      {
+        "name": "Размеры сторон",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 40", "normal": "±0.5", "high": "±0.3" },
+          { "range": "40–80", "normal": "±0.7", "high": "±0.5" },
+          { "range": "80–120", "normal": "±0.8", "high": "±0.6" },
+          { "range": "120–180", "normal": "±1.0%", "high": "±0.7%" }
+        ]
+      },
+      {
+        "name": "Толщина стенки",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "все", "normal": "±10%", "high": "±7.5%" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "krug-2590",
+    "gost": "ГОСТ 2590-2006",
+    "productName": "Круг стальной горячекатаный",
+    "productUrl": "/krug/",
+    "parameters": [
+      {
+        "name": "Диаметр",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "5–9", "normal": "+0.3/−0.5", "high": "+0.1/−0.3" },
+          { "range": "10–19", "normal": "+0.3/−0.5", "high": "+0.1/−0.3" },
+          { "range": "20–25", "normal": "+0.4/−0.5", "high": "+0.1/−0.3" },
+          { "range": "26–48", "normal": "+0.4/−0.7", "high": "+0.2/−0.5" },
+          { "range": "50–80", "normal": "+0.4/−1.0", "high": "+0.2/−0.8" },
+          { "range": "82–100", "normal": "+0.5/−1.1", "high": "+0.3/−0.9" },
+          { "range": "105–150", "normal": "+0.6/−1.3", "high": "+0.3/−1.0" },
+          { "range": "160–200", "normal": "+0.9/−1.5", "high": "+0.4/−1.2" },
+          { "range": "210–270", "normal": "+1.2/−2.0", "high": "+0.6/−1.5" }
+        ]
+      },
+      {
+        "name": "Овальность",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 9", "normal": "75% допуска", "high": "50% допуска" },
+          { "range": "10 и более", "normal": "75% допуска", "high": "50% допуска" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "polosa-103",
+    "gost": "ГОСТ 103-2006",
+    "productName": "Полоса стальная горячекатаная",
+    "productUrl": "/polosa/",
+    "parameters": [
+      {
+        "name": "Ширина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "10–20", "normal": "+0.5/−0.3", "high": "+0.2/−0.2" },
+          { "range": "22–50", "normal": "+0.5/−0.5", "high": "+0.3/−0.3" },
+          { "range": "55–100", "normal": "+1.0/−0.5", "high": "+0.5/−0.3" },
+          { "range": "105–200", "normal": "+1.5/−1.0", "high": "+1.0/−0.5" }
+        ]
+      },
+      {
+        "name": "Толщина",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "4–6", "normal": "+0.3/−0.5", "high": "+0.2/−0.3" },
+          { "range": "7–10", "normal": "+0.3/−0.6", "high": "+0.2/−0.4" },
+          { "range": "12–20", "normal": "+0.4/−0.7", "high": "+0.2/−0.5" },
+          { "range": "22–36", "normal": "+0.5/−1.0", "high": "+0.3/−0.7" },
+          { "range": "40–60", "normal": "+0.5/−1.2", "high": "+0.3/−0.8" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dvutavry-8239",
+    "gost": "ГОСТ 8239-89",
+    "productName": "Двутавры стальные с уклоном полок",
+    "productUrl": "/dvutavry-8239/",
+    "parameters": [
+      {
+        "name": "Высота h",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 180", "normal": "±2.5", "high": "±2.0" },
+          { "range": "180–300", "normal": "±3.0", "high": "±2.5" },
+          { "range": "300–600", "normal": "±4.0", "high": "±3.0" }
+        ]
+      },
+      {
+        "name": "Ширина полки b",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "до 100", "normal": "±2.5", "high": "±2.0" },
+          { "range": "100–200", "normal": "±3.0", "high": "±2.5" }
+        ]
+      },
+      {
+        "name": "Толщина стенки s",
+        "unit": "мм",
+        "tolerances": [
+          { "range": "все размеры", "normal": "±0.7", "high": "±0.5" }
+        ]
+      }
+    ]
+  }
+]

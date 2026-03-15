@@ -9,6 +9,7 @@ import { channelMeta } from '@lib/seo';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 import { relatedChannels } from '@lib/links';
 
 export function getStaticPaths() {
@@ -155,6 +156,10 @@ const related = relatedChannels(allChannels, channel.slug);
   <ProductCrossLinks productSlug="shvellery" itemSlug={channel.slug} productType={`швеллера ${channel.profile}`} basePath="/shvellery/" />
 
   <RelatedItems title="Другие швеллеры" items={related} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={channel.slug} category="shvellery" name={`Швеллер ${channel.profile}`} gost="ГОСТ 8240-97" weightPerMeter={channel.weight} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Швеллер ${channel.profile}`} />

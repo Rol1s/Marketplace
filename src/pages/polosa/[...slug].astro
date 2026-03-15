@@ -9,6 +9,8 @@ import { relatedStripSteel } from '@lib/links';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
+import SheetCrossSection from '@components/SheetCrossSection.astro';
 
 export function getStaticPaths() {
   return getStripSteel().map((s) => ({
@@ -36,18 +38,21 @@ const related = relatedStripSteel(allItems, item.slug);
   productMeta={{ sku: `ST-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 103-2006', category: 'Полоса стальная' }}
 >
   <section class="mb-8">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-      <div class="bg-surface rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary">{item.width}</div>
-        <div class="text-xs text-text-muted mt-1">Ширина, мм</div>
-      </div>
-      <div class="bg-surface rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary">{item.thickness}</div>
-        <div class="text-xs text-text-muted mt-1">Толщина, мм</div>
-      </div>
-      <div class="bg-surface rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
-        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <SheetCrossSection thickness={item.thickness} width={item.width} length={2000} />
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{item.width}</div>
+          <div class="text-xs text-text-muted mt-1">Ширина, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{item.thickness}</div>
+          <div class="text-xs text-text-muted mt-1">Толщина, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
+          <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+        </div>
       </div>
     </div>
   </section>
@@ -83,6 +88,10 @@ const related = relatedStripSteel(allItems, item.slug);
 
   <ProductCrossLinks productSlug="polosa" itemSlug={item.slug} productType={`полосы ${item.width}×${item.thickness}`} basePath="/polosa/" />
   <RelatedItems title="Другие размеры полосы" items={related} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={item.slug} category="polosa" name={`Полоса стальная ${item.width}×${item.thickness} мм`} gost={item.gost} weightPerMeter={item.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Полоса стальная ${item.width}×${item.thickness}`} />

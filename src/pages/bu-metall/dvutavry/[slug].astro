@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import WeightCalculator from '@components/WeightCalculator';
@@ -98,6 +99,10 @@ const { beam } = Astro.props;
       answer: `Б/у двутавр ${beam.profile} применяется в несущих конструкциях промышленных и гражданских зданий, перекрытиях, мостовых конструкциях и металлических каркасах.`,
     },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={beam.slug} category="dvutavry" name={`Двутавр ${beam.profile} б/у`} gost="ГОСТ 35087-2024" weightPerMeter={beam.weightPerMeter} />
+  </section>
 
   <section class="mb-8">
     <a

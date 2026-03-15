@@ -1,0 +1,122 @@
+---
+import Gost from '@layouts/Gost.astro';
+import { getPipes, getPipesByDiameter } from '@lib/data';
+import { pipeMaxPressure } from '@lib/loads';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getPipes().map((p) => ({
+    params: { slug: p.slug },
+    props: { pipe: p },
+  }));
+}
+
+const { pipe } = Astro.props;
+const sameDiameter = getPipesByDiameter(pipe.diameter);
+const pressure = pipeMaxPressure(pipe.diameter, pipe.wallThickness);
+const testPressure = pressure * 1.25;
+
+const pressureTable = sameDiameter.map((p) => ({
+  wall: p.wallThickness,
+  weight: p.weightPerMeter,
+  pressure: pipeMaxPressure(pipe.diameter, p.wallThickness),
+  testPressure: pipeMaxPressure(pipe.diameter, p.wallThickness) * 1.25,
+  slug: p.slug,
+  isCurrent: p.slug === pipe.slug,
+}));
+---
+
+<Gost
+  title={`Допустимое давление трубы ${pipe.diameter}×${pipe.wallThickness} — нагрузочная таблица | NikaMet`}
+  description={`Допустимое рабочее давление трубы ${pipe.diameter}×${pipe.wallThickness} мм (ГОСТ 10704-91): ${pressure.toFixed(2)} МПа. Таблица давлений для всех толщин стенки.`}
+  h1={`Допустимое давление трубы ${pipe.diameter}×${pipe.wallThickness}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Нагрузочные таблицы', href: '/nagruzki/' },
+    { label: `Труба ${pipe.diameter}×${pipe.wallThickness}`, href: `/nagruzki/truby/${pipe.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.diameter}</div>
+        <div class="text-xs text-text-muted mt-1">Диаметр, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{pressure.toFixed(2)}</div>
+        <div class="text-xs text-text-muted mt-1">Pраб, МПа</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{testPressure.toFixed(2)}</div>
+        <div class="text-xs text-text-muted mt-1">Pисп, МПа</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Давление для всех стенок ⌀{pipe.diameter} мм</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="px-3 py-2 text-left">Стенка, мм</th>
+            <th class="px-3 py-2 text-right">Масса, кг/м</th>
+            <th class="px-3 py-2 text-right">P рабочее, МПа</th>
+            <th class="px-3 py-2 text-right">P испытательное, МПа</th>
+            <th class="px-3 py-2 text-right">P рабочее, атм</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pressureTable.map((row, i) => (
+            <tr class={`${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} ${row.isCurrent ? 'ring-2 ring-primary/30 bg-primary/5' : ''}`}>
+              <td class="px-3 py-1.5 font-bold">{row.wall}</td>
+              <td class="px-3 py-1.5 text-right font-mono">{row.weight.toFixed(2)}</td>
+              <td class="px-3 py-1.5 text-right font-mono font-bold">{row.pressure.toFixed(2)}</td>
+              <td class="px-3 py-1.5 text-right font-mono">{row.testPressure.toFixed(2)}</td>
+              <td class="px-3 py-1.5 text-right font-mono text-text-muted">{(row.pressure * 10.197).toFixed(1)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Формула Барлоу</h2>
+    <div class="bg-surface border border-border rounded-xl p-4 text-sm text-text-muted">
+      <p><strong>P = 2 × s × [σ] / D</strong></p>
+      <p class="mt-2">s = {pipe.wallThickness} мм, D = {pipe.diameter} мм, [σ] = 210 МПа</p>
+      <p>P = 2 × {pipe.wallThickness} × 210 / {pipe.diameter} = <strong>{pressure.toFixed(2)} МПа</strong> = {(pressure * 10.197).toFixed(1)} атм</p>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <a href={`/truby/${pipe.slug}/`}
+      class="flex items-center gap-4 p-4 rounded-xl border-2 border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface">
+      <div class="flex-1">
+        <div class="font-bold text-primary">Труба {pipe.diameter}×{pipe.wallThickness} — полная характеристика</div>
+        <div class="text-sm text-text-muted mt-0.5">Масса, чертёж сечения, ГОСТ 10704-91</div>
+      </div>
+      <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какое давление выдерживает труба ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Допустимое рабочее давление трубы ${pipe.diameter}×${pipe.wallThickness} мм (Ст3, Ry=210 МПа): <strong>${pressure.toFixed(2)} МПа</strong> (${(pressure * 10.197).toFixed(1)} атм).` },
+    { question: `Какое испытательное давление у трубы ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Испытательное давление (×1.25): <strong>${testPressure.toFixed(2)} МПа</strong> (${(testPressure * 10.197).toFixed(1)} атм).` },
+  ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={pipe.slug} category="truby" name={`Труба ${pipe.diameter}×${pipe.wallThickness}`} gost="ГОСТ 10704-91" weightPerMeter={pipe.weightPerMeter} />
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Труба ${pipe.diameter}×${pipe.wallThickness}`} />
+  </section>
+</Gost>

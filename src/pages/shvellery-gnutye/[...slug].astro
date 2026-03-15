@@ -7,6 +7,8 @@ import { getChannelsBent } from '@lib/data';
 import { SITE } from '@/config/site';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
+import ChannelCrossSection from '@components/ChannelCrossSection.astro';
 
 export function getStaticPaths() {
   return getChannelsBent().map((ch) => ({
@@ -35,22 +37,25 @@ const description = `Швеллер гнутый ${item.profile} по ГОСТ 8
   productMeta={{ sku: `CHB-${item.slug}`, weight: String(item.weight), gost: 'ГОСТ 8278-83', category: 'Швеллеры гнутые' }}
 >
   <section class="mb-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <div class="bg-surface rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary">{item.h}</div>
-        <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
-      </div>
-      <div class="bg-surface rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary">{item.b}</div>
-        <div class="text-xs text-text-muted mt-1">Полка b, мм</div>
-      </div>
-      <div class="bg-surface rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary">{item.s}</div>
-        <div class="text-xs text-text-muted mt-1">Толщина s, мм</div>
-      </div>
-      <div class="bg-surface rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-accent">{item.weight}</div>
-        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <ChannelCrossSection h={item.h} b={item.b} s={item.s} t={item.t} />
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{item.h}</div>
+          <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{item.b}</div>
+          <div class="text-xs text-text-muted mt-1">Полка b, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-primary">{item.s}</div>
+          <div class="text-xs text-text-muted mt-1">Толщина s, мм</div>
+        </div>
+        <div class="bg-surface rounded-lg p-4 text-center">
+          <div class="text-2xl font-bold text-accent">{item.weight}</div>
+          <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+        </div>
       </div>
     </div>
   </section>
@@ -88,6 +93,17 @@ const description = `Швеллер гнутый ${item.profile} по ГОСТ 8
   </section>
 
   <RelatedItems title="Другие профили" items={related} />
+
+  <section class="mb-8">
+    <AddToCart
+      client:visible
+      id={item.slug}
+      category="shvellery-gnutye"
+      name={`Швеллер гнутый ${item.profile}`}
+      gost="ГОСТ 8278-83"
+      weightPerMeter={item.weight}
+    />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Швеллер гнутый ${item.profile}`} />

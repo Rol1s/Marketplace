@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import WeightCalculator from '@components/WeightCalculator';
@@ -101,6 +102,10 @@ const weightPerM2 = (sheet.thickness * 7.85).toFixed(2);
       answer: `Б/у лист ${sheet.thickness} мм применяется в изготовлении металлоконструкций, настилов, ограждений, сельхозоборудования и временных сооружений.`,
     },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={sheet.slug} category="listy" name={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} б/у`} gost="ГОСТ 19903-2015" weightPerMeter={weightKg} />
+  </section>
 
   <section class="mb-8">
     <a

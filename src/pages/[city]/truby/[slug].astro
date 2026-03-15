@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import PipeCalculator from '@components/PipeCalculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getPipes, getPipesByDiameter } from '@lib/data';
 import { SITE } from '@/config/site';
@@ -95,6 +96,10 @@ const sameDiameter = getPipesByDiameter(pipe.diameter);
     { question: `Какой вес трубы ${pipe.diameter}×${pipe.wallThickness}?`, answer: `Масса 1 м — <strong>${pipe.weightPerMeter} кг</strong> по ГОСТ 10704-91.` },
     { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}. Стоимость зависит от объёма.` },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={pipe.slug} category="truby" name={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}`} gost="ГОСТ 10704-91" weightPerMeter={pipe.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}`} />

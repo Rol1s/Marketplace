@@ -10,6 +10,7 @@ import { pipeWeight, formatWeight } from '@lib/calculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 import { nearbyPipes } from '@lib/links';
 
 export function getStaticPaths() {
@@ -207,6 +208,10 @@ const weightRows = [1, 2, 3, 6, 11.7, 12].map((len) => {
   <ProductCrossLinks productSlug="truby" itemSlug={pipe.slug} productType={`трубы ${pipe.diameter}×${pipe.wallThickness}`} basePath="/truby/" />
 
   <RelatedItems title="Трубы других диаметров" items={nearby} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={pipe.slug} category="truby" name={`Труба ${pipe.diameter}×${pipe.wallThickness}`} gost="ГОСТ 10704-91" weightPerMeter={pipe.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Труба ${pipe.diameter}×${pipe.wallThickness}`} />

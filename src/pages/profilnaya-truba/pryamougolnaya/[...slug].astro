@@ -8,7 +8,9 @@ import { profileTubeRectMeta } from '@lib/seo';
 import { relatedProfileTubesRect } from '@lib/links';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
+import RectTubeCrossSection from '@components/svg/RectTubeCrossSection.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 
 export function getStaticPaths() {
   return getProfileTubesRect().map((t) => ({
@@ -37,7 +39,9 @@ const related = relatedProfileTubesRect(allItems, item.slug);
 >
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <RectTubeCrossSection width={item.sizeA} height={item.sizeB} wallThickness={item.wallThickness} />
+      <div class="grid grid-cols-2 gap-3">
       <div class="bg-surface rounded-lg p-4 text-center">
         <div class="text-2xl font-bold text-primary">{item.sizeA}×{item.sizeB}</div>
         <div class="text-xs text-text-muted mt-1">Сечение, мм</div>
@@ -53,6 +57,7 @@ const related = relatedProfileTubesRect(allItems, item.slug);
       <div class="bg-surface rounded-lg p-4 text-center">
         <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
         <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
       </div>
     </div>
   </section>
@@ -94,6 +99,10 @@ const related = relatedProfileTubesRect(allItems, item.slug);
 
   <ProductCrossLinks productSlug="profilnaya-truba-pr" itemSlug={item.slug} productType={`профтрубы ${item.sizeA}×${item.sizeB}`} basePath="/profilnaya-truba/pryamougolnaya/" />
   <RelatedItems title="Другие размеры прямоугольных профтруб" items={related} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={item.slug} category="profilnaya_pr" name={`Профильная труба ${item.sizeA}×${item.sizeB}×${item.wallThickness}`} gost="ГОСТ 8645-68" weightPerMeter={item.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Профильная труба ${item.sizeA}×${item.sizeB}×${item.wallThickness}`} />

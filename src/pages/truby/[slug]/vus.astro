@@ -1,6 +1,7 @@
 ---
 import Gost from '@layouts/Gost.astro';
 import GostTable from '@components/GostTable.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import { getPipes } from '@lib/data';
@@ -168,6 +169,10 @@ const vusThickness = pipe.diameter >= 820 ? 3.5 : pipe.diameter >= 530 ? 3.0 : 2
       answer: `Труба ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС применяется для подземной прокладки тепловых сетей, газо- и водопроводов в грунтах с высокой коррозионной активностью, под дорогами и в заболоченных местностях.`,
     },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={`${pipe.slug}-vus`} category="truby" name={`Труба ${pipe.diameter}×${pipe.wallThickness} ВУС`} gost="ГОСТ 9.602-2016" weightPerMeter={pipe.weightPerMeter} />
+  </section>
 
   <section class="mb-8">
     <a

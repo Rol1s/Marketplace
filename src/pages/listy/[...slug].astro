@@ -10,6 +10,7 @@ import { sheetWeight, formatWeight } from '@lib/calculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 import { relatedSheets } from '@lib/links';
 
 export function getStaticPaths() {
@@ -148,6 +149,17 @@ const areaM2 = ((sheet.width * sheet.length) / 1_000_000).toFixed(2);
   <ProductCrossLinks productSlug="listy" itemSlug={sheet.slug} productType={`листа ${sheet.thickness}×${sheet.width}×${sheet.length}`} basePath="/listy/" />
 
   <RelatedItems title="Другие размеры листов" items={related} />
+
+  <section class="mb-8">
+    <AddToCart
+      client:visible
+      id={sheet.slug}
+      category="listy"
+      name={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length}`}
+      gost="ГОСТ 19903-2015"
+      weightPerMeter={weightKg}
+    />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length}`} />

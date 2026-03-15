@@ -1,0 +1,11 @@
+---
+import Base from '@layouts/Base.astro';
+import CartPage from '@components/CartPage.tsx';
+---
+
+<Base title="Смета металлопроката — NikaMet" description="Соберите смету из нескольких позиций металлопроката. Рассчитайте общий вес, скачайте PDF или отправьте заявку поставщику.">
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-6">Смета металлопроката</h1>
+    <CartPage client:load />
+  </div>
+</Base>

@@ -8,7 +8,9 @@ import { roundBarMeta } from '@lib/seo';
 import { relatedRoundBars } from '@lib/links';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
+import RoundBarCrossSection from '@components/svg/RoundBarCrossSection.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 
 export function getStaticPaths() {
   return getRoundBars().map((r) => ({
@@ -36,7 +38,10 @@ const related = relatedRoundBars(allItems, item.slug);
   productMeta={{ sku: `RB-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 2590-2006', category: 'Круг стальной' }}
 >
   <section class="mb-8">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <RoundBarCrossSection diameter={item.diameter} />
+      <div class="grid grid-cols-2 gap-3">
       <div class="bg-surface rounded-lg p-4 text-center">
         <div class="text-2xl font-bold text-primary">{item.diameter}</div>
         <div class="text-xs text-text-muted mt-1">Диаметр, мм</div>
@@ -49,11 +54,12 @@ const related = relatedRoundBars(allItems, item.slug);
         <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
         <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
       </div>
+      </div>
     </div>
   </section>
 
   <section class="mb-8">
-    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <h2 class="text-lg font-bold text-primary mb-3">Полные характеристики</h2>
     <GostTable
       columns={[{ key: 'param', label: 'Параметр' }, { key: 'value', label: 'Значение', align: 'right' }]}
       rows={[
@@ -84,6 +90,10 @@ const related = relatedRoundBars(allItems, item.slug);
 
   <ProductCrossLinks productSlug="krug" itemSlug={item.slug} productType={`круга ⌀${item.diameter}`} basePath="/krug/" />
   <RelatedItems title="Другие диаметры круга" items={related} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={item.slug} category="krug" name={`Круг стальной ⌀${item.diameter} мм`} gost={item.gost} weightPerMeter={item.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Круг стальной ⌀${item.diameter}`} />

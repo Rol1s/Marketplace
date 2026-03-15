@@ -1,0 +1,63 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import MetalWizard from '@components/MetalWizard.tsx';
+import { getBeams, getChannels, getPipes } from '@lib/data';
+
+const beams = getBeams();
+const channels = getChannels();
+const pipes = getPipes();
+---
+
+<Base
+  title="Подбор металлопроката — визард подбора балок, швеллеров, труб | NikaMet"
+  description="Интерактивный подбор металлопроката по нагрузке, пролёту и давлению. Выберите задачу — получите рекомендацию профиля с запасом прочности."
+>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Подбор металла', href: '/podbor/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-2">Подбор металлопроката</h1>
+    <p class="text-text-muted mb-8 max-w-2xl">
+      Выберите тип задачи, укажите нагрузку и пролёт — система подберёт подходящие двутавры, швеллеры или трубы
+      с расчётом запаса прочности по СП 16.13330.
+    </p>
+
+    <MetalWizard client:visible beams={beams} channels={channels} pipes={pipes} />
+
+    <section class="mt-12 space-y-6">
+      <h2 class="text-lg font-bold text-primary">Методика расчёта</h2>
+      <div class="prose text-text-muted text-sm max-w-3xl">
+        <p>
+          Подбор выполняется по условию прочности нормальных сечений при изгибе:
+          <strong>M ≤ Wx × Ry</strong>, где M — максимальный изгибающий момент,
+          Wx — момент сопротивления сечения, Ry — расчётное сопротивление стали (210 МПа для Ст3).
+        </p>
+        <p>
+          Для однопролётных балок с равномерно распределённой нагрузкой: <strong>M = q × L² / 8</strong>.
+          Необходимый момент сопротивления: <strong>Wx_треб = M / Ry</strong>.
+        </p>
+        <p>
+          Для труб под давлением используется формула Барлоу: <strong>P = 2 × s × [σ] / D</strong>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <a href="/nagruzki/" class="block p-4 bg-surface border border-border rounded-xl hover:border-primary hover:shadow-md transition-all">
+          <div class="font-bold text-sm">Нагрузочные таблицы</div>
+          <div class="text-xs text-text-muted mt-1">Допустимые нагрузки для каждого профиля</div>
+        </a>
+        <a href="/dopuski/" class="block p-4 bg-surface border border-border rounded-xl hover:border-primary hover:shadow-md transition-all">
+          <div class="font-bold text-sm">Таблицы допусков</div>
+          <div class="text-xs text-text-muted mt-1">Допуски размеров по ГОСТам</div>
+        </a>
+        <a href="/calculator/" class="block p-4 bg-surface border border-border rounded-xl hover:border-primary hover:shadow-md transition-all">
+          <div class="font-bold text-sm">Калькулятор массы</div>
+          <div class="text-xs text-text-muted mt-1">Расчёт веса труб, листов, профилей</div>
+        </a>
+      </div>
+    </section>
+  </div>
+</Base>

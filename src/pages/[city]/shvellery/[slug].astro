@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import WeightCalculator from '@components/WeightCalculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getChannels } from '@lib/data';
 import { SITE } from '@/config/site';
@@ -78,6 +79,10 @@ const { city, channel } = Astro.props as { city: City; channel: Channel };
     { question: `Какой вес швеллера ${channel.profile}?`, answer: `Масса 1 м — <strong>${channel.weight} кг</strong> по ГОСТ 8240-97.` },
     { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}.` },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={channel.slug} category="shvellery" name={`Швеллер ${channel.profile} ${city.namePrep}`} gost="ГОСТ 8240-97" weightPerMeter={channel.weight} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Швеллер ${channel.profile} ${city.namePrep}`} />

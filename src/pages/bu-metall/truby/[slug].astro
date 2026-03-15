@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import PipeCalculator from '@components/PipeCalculator';
@@ -126,6 +127,10 @@ const weightRows = [1, 6, 11.7, 12].map((len) => ({
       answer: `Б/у труба ${pipe.diameter}×${pipe.wallThickness} мм применяется в строительстве временных конструкций, заборов, сельхозобъектов, промышленных площадок, фундаментов и металлоконструкций, где не требуется новый сертифицированный прокат.`,
     },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={pipe.slug} category="truby" name={`Труба ${pipe.diameter}×${pipe.wallThickness} б/у`} gost="ГОСТ 10704-91" weightPerMeter={pipe.weightPerMeter} />
+  </section>
 
   <section class="mb-8">
     <a

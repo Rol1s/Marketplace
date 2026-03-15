@@ -9,6 +9,7 @@ import { beamMeta } from '@lib/seo';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 import { relatedBeams } from '@lib/links';
 
 export function getStaticPaths() {
@@ -149,6 +150,10 @@ const allGosts = getBeamGostsForProfile(beam.profile);
   <ProductCrossLinks productSlug="dvutavry" itemSlug={beam.slug} productType={`двутавра ${beam.profile}`} basePath="/dvutavry/" />
 
   <RelatedItems title="Другие двутавры" items={related} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={beam.slug} category="dvutavry" name={`Двутавр ${beam.profile}`} gost="ГОСТ 35087-2024" weightPerMeter={beam.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Двутавр ${beam.profile}`} />

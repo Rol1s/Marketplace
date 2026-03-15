@@ -1,6 +1,7 @@
 ---
 import Gost from '@layouts/Gost.astro';
 import SteelGradeInfo from '@components/SteelGradeInfo.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getChannels, getSteelGradesForProduct } from '@lib/data';
 import { SITE } from '@/config/site';
@@ -46,6 +47,10 @@ const otherGrades = allGrades.map((g) => ({
     unitLabel="кг/м"
     otherGrades={otherGrades}
   />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={`${channel.slug}-${grade.slug}`} category="shvellery" name={`Швеллер ${channel.profile} ${grade.name}`} gost="ГОСТ 8240-97" weightPerMeter={channel.weight} />
+  </section>
 
   <section class="mb-8">
     <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth">

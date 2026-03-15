@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import WeightCalculator from '@components/WeightCalculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getAnglesEqual, getAnglesUnequal } from '@lib/data';
 import { SITE } from '@/config/site';
@@ -78,6 +79,10 @@ const { city, angle } = Astro.props as { city: City; angle: AngleEqual };
     { question: `Какой вес уголка ${angle.size}?`, answer: `Масса 1 м — <strong>${angle.massPerMeterKg} кг</strong>.` },
     { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}.` },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={angle.slug} category="ugolki_ravno" name={`Уголок ${angle.size} ${city.namePrep}`} gost={angle.gost} weightPerMeter={angle.massPerMeterKg} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Уголок ${angle.size} ${city.namePrep}`} />

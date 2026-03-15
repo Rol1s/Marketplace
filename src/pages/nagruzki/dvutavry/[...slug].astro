@@ -1,0 +1,121 @@
+---
+import Gost from '@layouts/Gost.astro';
+import { getBeams } from '@lib/data';
+import { generateLoadTable, SPACINGS } from '@lib/loads';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getBeams().filter(b => b.Wx > 0).map((b) => ({
+    params: { slug: b.slug },
+    props: { beam: b },
+  }));
+}
+
+const { beam } = Astro.props;
+const table = generateLoadTable(beam.Wx);
+---
+
+<Gost
+  title={`Нагрузка на двутавр ${beam.profile} — допустимая нагрузка по пролёту | NikaMet`}
+  description={`Таблица допустимых нагрузок на двутавр ${beam.profile} (ГОСТ 35087-2024) при пролётах 1–12 м. Wx=${beam.Wx} см³, масса ${beam.weightPerMeter} кг/м.`}
+  h1={`Допустимая нагрузка на двутавр ${beam.profile}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Нагрузочные таблицы', href: '/nagruzki/' },
+    { label: `Двутавр ${beam.profile}`, href: `/nagruzki/dvutavry/${beam.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.Wx}</div>
+        <div class="text-xs text-text-muted mt-1">Wx, см³</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.Ix}</div>
+        <div class="text-xs text-text-muted mt-1">Ix, см⁴</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{beam.h}</div>
+        <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{beam.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Таблица допустимых нагрузок</h2>
+    <p class="text-sm text-text-muted mb-4">
+      Максимальная равномерно распределённая нагрузка (кг/м²) для однопролётной балки при Ry = 210 МПа (Ст3).
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs border-collapse">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th class="px-2 py-2 text-left">Пролёт, м</th>
+            <th class="px-2 py-2 text-right">q, кг/м</th>
+            {SPACINGS.map((s) => (
+              <th class="px-2 py-2 text-right">Шаг {s}м, кг/м²</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {table.map((row, i) => (
+            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+              <td class="px-2 py-1.5 font-bold">{row.span}</td>
+              <td class="px-2 py-1.5 text-right font-mono">{row.qKgM.toFixed(0)}</td>
+              {row.loads.map((l) => (
+                <td class={`px-2 py-1.5 text-right font-mono ${l.qKgM2 < 200 ? 'text-red-500' : l.qKgM2 > 1000 ? 'text-green-600' : ''}`}>
+                  {l.qKgM2.toFixed(0)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-amber-600 mt-3">
+      * Без учёта собственного веса балки ({beam.weightPerMeter} кг/м) и коэффициентов надёжности по нагрузке.
+    </p>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Формула</h2>
+    <div class="bg-surface border border-border rounded-xl p-4 text-sm text-text-muted">
+      <p>q<sub>max</sub> = 8 × Wx × Ry / L²</p>
+      <p class="mt-2">Wx = {beam.Wx} см³ = {(beam.Wx * 1e-6).toExponential(3)} м³</p>
+      <p>Ry = 210 МПа = 210 × 10⁶ Па</p>
+      <p class="mt-2">Пример при L = 6 м: q = 8 × {beam.Wx} × 10⁻⁶ × 210 × 10⁶ / 36 = <strong>{(8 * beam.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong></p>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <a href={`/dvutavry/${beam.slug}/`}
+      class="flex items-center gap-4 p-4 rounded-xl border-2 border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface">
+      <div class="flex-1">
+        <div class="font-bold text-primary">Двутавр {beam.profile} — полная характеристика</div>
+        <div class="text-sm text-text-muted mt-0.5">Размеры, масса, чертёж сечения, ГОСТ 35087-2024</div>
+      </div>
+      <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какую нагрузку выдерживает двутавр ${beam.profile}?`, answer: `При пролёте 6 м двутавр ${beam.profile} выдерживает до <strong>${(8 * beam.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong> распределённой нагрузки (Ry=210 МПа, Ст3).` },
+    { question: `Какой момент сопротивления у двутавра ${beam.profile}?`, answer: `Момент сопротивления Wx = <strong>${beam.Wx} см³</strong>, момент инерции Ix = <strong>${beam.Ix} см⁴</strong> по ГОСТ 35087-2024.` },
+    { question: `На какой пролёт подходит двутавр ${beam.profile}?`, answer: `При нагрузке 400 кг/м² и шаге 1 м — пролёт до <strong>${table.findLast(r => r.loads[1].qKgM2 >= 400)?.span || '—'} м</strong>.` },
+  ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={beam.slug} category="dvutavry" name={`Двутавр ${beam.profile}`} gost="ГОСТ 35087-2024" weightPerMeter={beam.weightPerMeter} />
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Двутавр ${beam.profile}`} />
+  </section>
+</Gost>

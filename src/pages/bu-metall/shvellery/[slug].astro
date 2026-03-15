@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import WeightCalculator from '@components/WeightCalculator';
@@ -98,6 +99,10 @@ const { channel } = Astro.props;
       answer: `Б/у швеллер ${channel.profile} применяется в строительстве перекрытий, стропильных конструкций, опорных балок и металлоконструкций, где не требуется новый сертифицированный прокат.`,
     },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={channel.slug} category="shvellery" name={`Швеллер ${channel.profile} б/у`} gost="ГОСТ 8240-97" weightPerMeter={channel.weight} />
+  </section>
 
   <section class="mb-8">
     <a

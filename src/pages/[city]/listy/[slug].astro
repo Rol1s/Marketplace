@@ -2,6 +2,7 @@
 import Gost from '@layouts/Gost.astro';
 import WeightCalculator from '@components/WeightCalculator';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getSheets } from '@lib/data';
 import { sheetWeight } from '@lib/calculator';
@@ -80,6 +81,10 @@ const weightKg = sheetWeight(sheet.thickness, sheet.width, sheet.length);
     { question: `Какой вес листа ${sheet.thickness}×${sheet.width}×${sheet.length}?`, answer: `Масса листа — <strong>${weightKg.toFixed(1)} кг</strong>.` },
     { question: `Есть ли доставка ${city.namePrep}?`, answer: `Да, доставка по ${city.region}.` },
   ]} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={sheet.slug} category="listy" name={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep}`} gost="ГОСТ 19903-2015" weightPerMeter={weightKg} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep}`} />

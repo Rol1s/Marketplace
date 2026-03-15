@@ -4,6 +4,7 @@ import GostTable from '@components/GostTable.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
 import RelatedItems from '@components/RelatedItems.astro';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getRebar } from '@lib/data';
 import { SITE } from '@/config/site';
@@ -74,6 +75,10 @@ const description = `Арматура б/у ⌀${item.diameter} мм класс 
   ]} />
 
   <RelatedItems title="Другие размеры б/у арматуры" items={related} />
+
+  <section class="mb-8">
+    <AddToCart client:visible id={item.slug} category="armatura" name={`Арматура ⌀${item.diameter} б/у`} gost="ГОСТ 34028-2016" weightPerMeter={item.weightPerMeter} />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Арматура ⌀${item.diameter} б/у`} />

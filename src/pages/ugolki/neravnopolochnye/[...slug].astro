@@ -8,6 +8,7 @@ import { angleUnequalMeta } from '@lib/seo';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 import { relatedAngles } from '@lib/links';
 
 export function getStaticPaths() {
@@ -102,6 +103,17 @@ const related = relatedAngles(all, angle.slug, '/ugolki/neravnopolochnye/');
   <ProductCrossLinks productSlug="ugolki" itemSlug={angle.slug} productType={`уголка ${angle.size}`} basePath="/ugolki/neravnopolochnye/" />
 
   <RelatedItems title="Другие размеры" items={related} />
+
+  <section class="mb-8">
+    <AddToCart
+      client:visible
+      id={angle.slug}
+      category="ugolki_neravno"
+      name={`Уголок ${angle.size}`}
+      gost="ГОСТ 8510-86"
+      weightPerMeter={angle.massPerMeterKg}
+    />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Уголок неравнополочный ${angle.size}`} />

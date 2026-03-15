@@ -8,6 +8,7 @@ import { shpuntMeta } from '@lib/seo';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import ProductCrossLinks from '@components/ProductCrossLinks.astro';
 import LeadForm from '@components/LeadForm.tsx';
+import AddToCart from '@components/AddToCart.tsx';
 import { relatedSheetPiles } from '@lib/links';
 
 export function getStaticPaths() {
@@ -123,6 +124,17 @@ const weightKgPerM = pile.weightPerMeterTons * 1000;
   <ProductCrossLinks productSlug="shpunt" itemSlug={pile.slug} productType={`шпунта ${pile.displayName}`} basePath="/shpunt/" />
 
   <RelatedItems title="Другие типы шпунта" items={related} />
+
+  <section class="mb-8">
+    <AddToCart
+      client:visible
+      id={pile.slug}
+      category="shpunt"
+      name={`Шпунт ${pile.displayName}`}
+      gost="ГОСТ 4781-85"
+      weightPerMeter={weightKgPerM}
+    />
+  </section>
 
   <section id="lead-form" class="scroll-mt-20">
     <LeadForm client:visible product={`Шпунт ${pile.displayName}`} />

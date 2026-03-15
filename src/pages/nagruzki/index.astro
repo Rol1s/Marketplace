@@ -1,0 +1,91 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getBeams, getChannels, getPipes } from '@lib/data';
+
+const beams = getBeams();
+const channels = getChannels();
+const pipes = getPipes();
+---
+
+<Base
+  title="Нагрузочные таблицы — допустимые нагрузки на двутавры, швеллеры, трубы | NikaMet"
+  description="Таблицы допустимых нагрузок для двутавров, швеллеров и труб. Расчёт по СП 16.13330 при Ry=210 МПа (Ст3). Пролёты от 1 до 12 м."
+>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Нагрузочные таблицы', href: '/nagruzki/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Нагрузочные таблицы</h1>
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Допустимые распределённые нагрузки для балок и швеллеров при пролётах от 1 до 12 м,
+      а также допустимое рабочее давление для стальных труб. Расчёт по СП 16.13330 при Ry = 210 МПа (Ст3).
+    </p>
+
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-primary mb-2">Формулы расчёта</h2>
+      <div class="bg-surface border border-border rounded-xl p-5 text-sm text-text-muted space-y-3">
+        <p><strong>Балки и швеллеры (изгиб):</strong> q<sub>max</sub> = 8 × W<sub>x</sub> × R<sub>y</sub> / L², где L — пролёт, W<sub>x</sub> — момент сопротивления, R<sub>y</sub> = 210 МПа.</p>
+        <p><strong>Трубы (давление):</strong> P = 2 × s × [σ] / D, где s — толщина стенки, D — наружный диаметр.</p>
+        <p class="text-xs text-amber-600">Расчёт выполнен для однопролётных балок с равномерной нагрузкой без учёта собственного веса и коэффициентов надёжности.</p>
+      </div>
+    </section>
+
+    <!-- Двутавры -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-primary mb-4">Двутавры ({beams.length} профилей)</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+        {beams.filter(b => b.Wx > 0).map((b) => (
+          <a href={`/nagruzki/dvutavry/${b.slug}/`}
+            class="block px-3 py-2 bg-surface border border-border rounded-lg text-sm hover:border-primary hover:shadow-sm transition-all">
+            <div class="font-bold">{b.profile}</div>
+            <div class="text-xs text-text-muted">{b.weightPerMeter} кг/м · Wx={b.Wx}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Швеллеры -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-primary mb-4">Швеллеры ({channels.length} профилей)</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+        {channels.filter(c => c.Wx > 0).map((c) => (
+          <a href={`/nagruzki/shvellery/${c.slug}/`}
+            class="block px-3 py-2 bg-surface border border-border rounded-lg text-sm hover:border-primary hover:shadow-sm transition-all">
+            <div class="font-bold">{c.profile}</div>
+            <div class="text-xs text-text-muted">{c.weight} кг/м · Wx={c.Wx}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Трубы -->
+    <section class="mb-10">
+      <h2 class="text-lg font-bold text-primary mb-4">Трубы — допустимое давление ({pipes.length} типоразмеров)</h2>
+      <p class="text-sm text-text-muted mb-4">Выберите диаметр для просмотра таблицы допустимого давления при различных толщинах стенки.</p>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2">
+        {pipes.map((p) => (
+          <a href={`/nagruzki/truby/${p.slug}/`}
+            class="block px-2 py-1.5 bg-surface border border-border rounded text-xs text-center hover:border-primary transition-all">
+            {p.diameter}×{p.wallThickness}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="/podbor/" class="block p-4 bg-surface border border-border rounded-xl hover:border-primary hover:shadow-md transition-all">
+          <div class="font-bold text-sm">Визард подбора</div>
+          <div class="text-xs text-text-muted mt-1">Автоматический подбор профиля по нагрузке</div>
+        </a>
+        <a href="/dopuski/" class="block p-4 bg-surface border border-border rounded-xl hover:border-primary hover:shadow-md transition-all">
+          <div class="font-bold text-sm">Таблицы допусков</div>
+          <div class="text-xs text-text-muted mt-1">Допуски размеров по ГОСТам</div>
+        </a>
+      </div>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,98 @@
+---
+import Gost from '@layouts/Gost.astro';
+import tolerances from '@/data/tolerances.json';
+
+export function getStaticPaths() {
+  return tolerances.map((t) => ({
+    params: { slug: t.slug },
+    props: { tolerance: t },
+  }));
+}
+
+const { tolerance } = Astro.props;
+---
+
+<Gost
+  title={`Допуски ${tolerance.productName} — ${tolerance.gost} | NikaMet`}
+  description={`Таблица допусков размеров: ${tolerance.productName} по ${tolerance.gost}. Допуски нормальной и повышенной точности.`}
+  h1={`Допуски ${tolerance.productName}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Допуски', href: '/dopuski/' },
+    { label: tolerance.gost, href: `/dopuski/${tolerance.slug}/` },
+  ]}
+>
+  <section class="mb-6">
+    <div class="bg-surface border border-border rounded-xl p-4">
+      <div class="text-sm text-text-muted">Стандарт</div>
+      <div class="text-lg font-bold text-primary">{tolerance.gost}</div>
+      <div class="text-sm text-text-muted mt-1">{tolerance.productName}</div>
+    </div>
+  </section>
+
+  {tolerance.parameters.map((param) => (
+    <section class="mb-8">
+      <h2 class="text-lg font-bold text-primary mb-3">Допуски: {param.name} ({param.unit})</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-4 py-2 text-left">Диапазон размеров</th>
+              <th class="px-4 py-2 text-center">Нормальная точность</th>
+              <th class="px-4 py-2 text-center">Повышенная точность</th>
+            </tr>
+          </thead>
+          <tbody>
+            {param.tolerances.map((tol, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <td class="px-4 py-2 font-medium">{tol.range}</td>
+                <td class="px-4 py-2 text-center font-mono">{tol.normal}</td>
+                <td class="px-4 py-2 text-center font-mono">{tol.high}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Как применять допуски</h2>
+    <div class="prose text-text-muted text-sm max-w-3xl space-y-2">
+      <p>
+        Допуски по {tolerance.gost} определяют максимальные отклонения фактических размеров
+        от номинальных. При приёмке металлопроката проверяется соответствие заявленному классу точности.
+      </p>
+      <p>
+        <strong>Нормальная точность</strong> — стандартный допуск для массового строительства и общепромышленного применения.
+      </p>
+      <p>
+        <strong>Повышенная точность</strong> — для ответственных конструкций, точных соединений, минимальных зазоров.
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <a href={tolerance.productUrl}
+      class="flex items-center gap-4 p-4 rounded-xl border-2 border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface">
+      <div class="flex-1">
+        <div class="font-bold text-primary">{tolerance.productName} — каталог</div>
+        <div class="text-sm text-text-muted mt-0.5">Все типоразмеры, масса, характеристики</div>
+      </div>
+      <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <section>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="/nagruzki/" class="block p-4 bg-surface border border-border rounded-xl hover:border-primary hover:shadow-md transition-all">
+        <div class="font-bold text-sm">Нагрузочные таблицы</div>
+        <div class="text-xs text-text-muted mt-1">Допустимые нагрузки на балки и трубы</div>
+      </a>
+      <a href="/podbor/" class="block p-4 bg-surface border border-border rounded-xl hover:border-primary hover:shadow-md transition-all">
+        <div class="font-bold text-sm">Подбор металла</div>
+        <div class="text-xs text-text-muted mt-1">Подобрать профиль по нагрузке</div>
+      </a>
+    </div>
+  </section>
+</Gost>
