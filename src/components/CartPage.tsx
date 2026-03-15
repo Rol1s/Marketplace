@@ -48,7 +48,7 @@ async function loadCyrillicFont(doc: any): Promise<void> {
 
 async function exportPDF(items: CartItem[]) {
   const { default: jsPDF } = await import('jspdf');
-  await import('jspdf-autotable');
+  const { default: autoTable } = await import('jspdf-autotable');
 
   const doc = new jsPDF();
   await loadCyrillicFont(doc);
@@ -58,9 +58,10 @@ async function exportPDF(items: CartItem[]) {
 
   doc.setFont(fontName, 'bold');
   doc.setFontSize(16);
-  doc.text('Smeta metalloprokata — nikamet.pro', 105, 16, { align: 'center' });
   if (hasFont) {
     doc.text('Смета металлопроката — nikamet.pro', 105, 16, { align: 'center' });
+  } else {
+    doc.text('Smeta metalloprokata — nikamet.pro', 105, 16, { align: 'center' });
   }
 
   doc.setFont(fontName, 'normal');
@@ -80,7 +81,7 @@ async function exportPDF(items: CartItem[]) {
 
   const totalKg = calcTotalWeight(items);
 
-  (doc as any).autoTable({
+  autoTable(doc, {
     startY: 30,
     head,
     body,

@@ -1,5 +1,6 @@
 import type { Beam, Channel, Pipe } from './types';
 import { beamDeflection } from './loads';
+import type { SupportScheme } from './beam-calc';
 
 const G = 9.81;
 const SIGMA_ST3 = 210; // МПа
@@ -10,12 +11,20 @@ export type CalcMode = 'bending' | 'buckling' | 'pressure';
 
 export interface WizardInput {
   task: TaskType;
+  scheme?: SupportScheme;
+  gammaF?: number;
   spanM?: number;
   loadKgM2?: number;
   spacingM?: number;
   pressureMPa?: number;
   heightM?: number;
   axialForceKN?: number;
+}
+
+export interface ProfileDims {
+  h?: number; b?: number; s?: number; t?: number;
+  Ix?: number; Iy?: number; Wx?: number;
+  diameter?: number; wall?: number;
 }
 
 export interface ProfileResult {
@@ -30,16 +39,13 @@ export interface ProfileResult {
   deflectionMm: number;
   deflectionLimitMm: number;
   deflectionOk: boolean;
+  slenderness?: number;
   status: 'ok' | 'excess' | 'undersize';
   url: string;
+  dims: ProfileDims;
 }
 
-function requiredWx(spanM: number, loadKgM: number): number {
-  const qN = loadKgM * G;
-  const M = (qN * spanM * spanM) / 8;
-  const sigmaPa = SIGMA_ST3 * 1e6;
-  return (M / sigmaPa) * 1e6;
-}
+// ─── Helpers ────────────────────────────────────────────────
 
 function overallStatus(sf: number, deflOk: boolean): 'ok' | 'excess' | 'undersize' {
   if (sf < 1.0 || !deflOk) return 'undersize';
@@ -47,7 +53,8 @@ function overallStatus(sf: number, deflOk: boolean): 'ok' | 'excess' | 'undersiz
   return 'ok';
 }
 
-function bucklingStatus(sf: number): 'ok' | 'excess' | 'undersize' {
+function bucklingStatus(sf: number, lambda?: number): 'ok' | 'excess' | 'undersize' {
+  if (lambda && lambda > 200) return 'undersize';
   if (sf < 1.0) return 'undersize';
   if (sf >= 2.0) return 'excess';
   return 'ok';
@@ -58,16 +65,39 @@ function pipeInertiaMm4(D: number, wall: number): number {
   return (Math.PI / 64) * (D ** 4 - d ** 4);
 }
 
+function pipeRadiusOfGyrationMm(D: number, wall: number): number {
+  const d = D - 2 * wall;
+  return Math.sqrt((D ** 2 + d ** 2) / 16);
+}
+
 function eulerCriticalForceKN(Imm4: number, lengthM: number, mu: number = 1): number {
   const Lmm = lengthM * 1000 * mu;
   return (Math.PI ** 2 * E_STEEL * Imm4) / (Lmm ** 2) / 1000;
+}
+
+// Scheme-dependent Mmax coefficient: M = coeff * q * L²
+const SCHEME_M_COEFF: Record<SupportScheme, number> = {
+  simple: 1 / 8,
+  cantilever: 1 / 2,
+  'fixed-fixed': 1 / 12,
+  'fixed-pinned': 1 / 8,
+};
+
+function requiredWx(spanM: number, loadKgM: number, scheme: SupportScheme = 'simple'): number {
+  const qN = loadKgM * G;
+  const coeff = SCHEME_M_COEFF[scheme];
+  const M = coeff * qN * spanM * spanM;
+  const sigmaPa = SIGMA_ST3 * 1e6;
+  return (M / sigmaPa) * 1e6;
 }
 
 // ─── Bending: floor, fence ─────────────────────────────────
 
 export function selectBeamsBending(beams: Beam[], input: WizardInput): ProfileResult[] {
   const span = input.spanM || 6;
-  const loadKgM2 = input.loadKgM2 || 400;
+  const gf = input.gammaF || 1.0;
+  const scheme = input.scheme || 'simple';
+  const loadKgM2 = (input.loadKgM2 || 400) * gf;
   const spacing = input.spacingM || 1;
   const loadKgM = loadKgM2 * spacing;
   const deflRatio = input.task === 'floor' ? 250 : 200;
@@ -76,7 +106,7 @@ export function selectBeamsBending(beams: Beam[], input: WizardInput): ProfileRe
     .filter((b) => b.Wx > 0 && b.Ix > 0)
     .map((b) => {
       const totalLoadKgM = loadKgM + b.weightPerMeter;
-      const sf = b.Wx / requiredWx(span, totalLoadKgM);
+      const sf = b.Wx / requiredWx(span, totalLoadKgM, scheme);
       const deflMm = beamDeflection(b.Ix, span, totalLoadKgM);
       const deflLimitMm = (span * 1000) / deflRatio;
       return {
@@ -93,6 +123,7 @@ export function selectBeamsBending(beams: Beam[], input: WizardInput): ProfileRe
         deflectionOk: deflMm <= deflLimitMm,
         status: overallStatus(sf, deflMm <= deflLimitMm),
         url: `/dvutavry/${b.slug}/`,
+        dims: { h: b.h, b: b.b, s: b.s, t: b.t, Ix: b.Ix, Iy: b.Iy, Wx: b.Wx },
       };
     })
     .filter((r) => r.safetyFactor >= 0.8)
@@ -101,7 +132,9 @@ export function selectBeamsBending(beams: Beam[], input: WizardInput): ProfileRe
 
 export function selectChannelsBending(channels: Channel[], input: WizardInput): ProfileResult[] {
   const span = input.spanM || 4;
-  const loadKgM2 = input.loadKgM2 || 300;
+  const gf = input.gammaF || 1.0;
+  const scheme = input.scheme || 'simple';
+  const loadKgM2 = (input.loadKgM2 || 300) * gf;
   const spacing = input.spacingM || 1;
   const loadKgM = loadKgM2 * spacing;
   const deflRatio = input.task === 'floor' ? 250 : 200;
@@ -110,7 +143,7 @@ export function selectChannelsBending(channels: Channel[], input: WizardInput): 
     .filter((c) => c.Wx > 0 && c.Ix > 0)
     .map((c) => {
       const totalLoadKgM = loadKgM + c.weight;
-      const sf = c.Wx / requiredWx(span, totalLoadKgM);
+      const sf = c.Wx / requiredWx(span, totalLoadKgM, scheme);
       const deflMm = beamDeflection(c.Ix, span, totalLoadKgM);
       const deflLimitMm = (span * 1000) / deflRatio;
       return {
@@ -127,6 +160,7 @@ export function selectChannelsBending(channels: Channel[], input: WizardInput): 
         deflectionOk: deflMm <= deflLimitMm,
         status: overallStatus(sf, deflMm <= deflLimitMm),
         url: `/shvellery/${c.slug}/`,
+        dims: { h: c.h, b: c.b, s: c.s, t: c.t, Ix: c.Ix, Iy: c.Iy, Wx: c.Wx },
       };
     })
     .filter((r) => r.safetyFactor >= 0.8)
@@ -146,6 +180,8 @@ export function selectPipesBuckling(pipes: Pipe[], input: WizardInput): ProfileR
       const Imm4 = pipeInertiaMm4(p.diameter, p.wallThickness);
       const NcrKN = eulerCriticalForceKN(Imm4, height, mu);
       const sf = NcrKN / axialKN;
+      const iMm = pipeRadiusOfGyrationMm(p.diameter, p.wallThickness);
+      const lambda = (mu * height * 1000) / iMm;
       return {
         profile: `Труба ${p.diameter}×${p.wallThickness}`,
         slug: p.slug,
@@ -158,8 +194,10 @@ export function selectPipesBuckling(pipes: Pipe[], input: WizardInput): ProfileR
         deflectionMm: 0,
         deflectionLimitMm: 0,
         deflectionOk: true,
-        status: bucklingStatus(sf),
+        slenderness: lambda,
+        status: bucklingStatus(sf, lambda),
         url: `/truby/${p.slug}/`,
+        dims: { diameter: p.diameter, wall: p.wallThickness },
       };
     })
     .filter((r) => r.safetyFactor >= 0.8)
@@ -177,6 +215,8 @@ export function selectBeamsBuckling(beams: Beam[], input: WizardInput): ProfileR
       const IminMm4 = IminCm4 * 1e4;
       const NcrKN = eulerCriticalForceKN(IminMm4, height);
       const sf = NcrKN / axialKN;
+      const iMinMm = Math.sqrt(IminMm4 / (b.area * 100));
+      const lambda = (height * 1000) / iMinMm;
       return {
         profile: `Двутавр ${b.profile}`,
         slug: b.slug,
@@ -189,8 +229,10 @@ export function selectBeamsBuckling(beams: Beam[], input: WizardInput): ProfileR
         deflectionMm: 0,
         deflectionLimitMm: 0,
         deflectionOk: true,
-        status: bucklingStatus(sf),
+        slenderness: lambda,
+        status: bucklingStatus(sf, lambda),
         url: `/dvutavry/${b.slug}/`,
+        dims: { h: b.h, b: b.b, s: b.s, t: b.t, Ix: b.Ix, Iy: b.Iy, Wx: b.Wx },
       };
     })
     .filter((r) => r.safetyFactor >= 0.8)
@@ -221,6 +263,7 @@ export function selectPipesPressure(pipes: Pipe[], input: WizardInput): ProfileR
         deflectionOk: true,
         status: sf >= 1.5 ? 'excess' as const : sf >= 1.0 ? 'ok' as const : 'undersize' as const,
         url: `/truby/${p.slug}/`,
+        dims: { diameter: p.diameter, wall: p.wallThickness },
       };
     })
     .filter((r) => r.safetyFactor >= 1.0)
