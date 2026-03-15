@@ -14,12 +14,12 @@ export function getStaticPaths() {
 }
 
 const { channel } = Astro.props;
-const table = generateLoadTable(channel.Wx);
+const table = generateLoadTable(channel.Wx, channel.Ix, 200);
 ---
 
 <Gost
   title={`Нагрузка на швеллер ${channel.profile} — допустимая нагрузка по пролёту | NikaMet`}
-  description={`Таблица допустимых нагрузок на швеллер ${channel.profile} (ГОСТ 8240-97) при пролётах 1–12 м. Wx=${channel.Wx} см³, масса ${channel.weight} кг/м.`}
+  description={`Таблица допустимых нагрузок на швеллер ${channel.profile} с проверкой по прочности и прогибу (L/200). Wx=${channel.Wx} см³, Ix=${channel.Ix} см⁴. Пролёты 1–12 м.`}
   h1={`Допустимая нагрузка на швеллер ${channel.profile}`}
   breadcrumbs={[
     { label: 'Сортамент', href: '/sortament/' },
@@ -52,33 +52,57 @@ const table = generateLoadTable(channel.Wx);
     <h2 class="text-lg font-bold text-primary mb-3">Таблица допустимых нагрузок</h2>
     <p class="text-sm text-text-muted mb-4">
       Максимальная равномерно распределённая нагрузка (кг/м²) для однопролётной балки при Ry = 210 МПа (Ст3).
+      Учтена проверка по <strong>прочности</strong> и <strong>прогибу</strong> (f ≤ L/200).
     </p>
     <div class="overflow-x-auto">
       <table class="w-full text-xs border-collapse">
         <thead>
           <tr class="bg-primary text-white">
-            <th class="px-2 py-2 text-left">Пролёт, м</th>
-            <th class="px-2 py-2 text-right">q, кг/м</th>
+            <th class="px-2 py-2 text-left" rowspan="2">Пролёт, м</th>
+            <th class="px-2 py-2 text-right" rowspan="2">q, кг/м</th>
+            <th class="px-2 py-2 text-center" rowspan="2">Прогиб, мм</th>
+            <th class="px-2 py-2 text-center" rowspan="2">Предел</th>
             {SPACINGS.map((s) => (
-              <th class="px-2 py-2 text-right">Шаг {s}м, кг/м²</th>
+              <th class="px-2 py-2 text-right">Шаг {s}м</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {table.map((row, i) => (
-            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-              <td class="px-2 py-1.5 font-bold">{row.span}</td>
-              <td class="px-2 py-1.5 text-right font-mono">{row.qKgM.toFixed(0)}</td>
-              {row.loads.map((l) => (
-                <td class={`px-2 py-1.5 text-right font-mono ${l.qKgM2 < 200 ? 'text-red-500' : l.qKgM2 > 1000 ? 'text-green-600' : ''}`}>
-                  {l.qKgM2.toFixed(0)}
+          {table.map((row, i) => {
+            const deflExceeded = row.deflectionMm > row.deflectionLimitMm;
+            return (
+              <tr class={`${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} ${deflExceeded ? 'bg-red-50' : ''}`}>
+                <td class="px-2 py-1.5 font-bold">{row.span}</td>
+                <td class="px-2 py-1.5 text-right font-mono">
+                  {row.qKgM.toFixed(0)}
+                  {row.limitedBy === 'deflection' && <span class="text-orange-500 ml-0.5" title="Ограничено прогибом">↕</span>}
                 </td>
-              ))}
-            </tr>
-          ))}
+                <td class={`px-2 py-1.5 text-center font-mono ${deflExceeded ? 'text-red-600 font-bold' : 'text-green-700'}`}>
+                  {row.deflectionMm.toFixed(1)}
+                </td>
+                <td class="px-2 py-1.5 text-center font-mono text-gray-400">
+                  {row.deflectionLimitMm.toFixed(0)}
+                </td>
+                {row.loads.map((l) => (
+                  <td class={`px-2 py-1.5 text-right font-mono ${l.qKgM2 < 200 ? 'text-red-500' : l.qKgM2 > 1000 ? 'text-green-600' : ''}`}>
+                    {l.qKgM2.toFixed(0)}
+                    {l.limitedBy === 'deflection' && <span class="text-orange-400 text-[9px] ml-0.5">↕</span>}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
+    <div class="flex flex-wrap gap-4 mt-3 text-xs text-text-muted">
+      <span><span class="text-orange-500">↕</span> — нагрузка ограничена прогибом</span>
+      <span class="text-red-500">красный</span> — менее 200 кг/м²
+      <span class="text-green-600">зелёный</span> — более 1000 кг/м²
+    </div>
+    <p class="text-xs text-amber-600 mt-2">
+      * Без учёта собственного веса балки ({channel.weight} кг/м) и коэффициентов надёжности по нагрузке.
+    </p>
   </section>
 
   <section class="mb-8">
@@ -92,9 +116,28 @@ const table = generateLoadTable(channel.Wx);
     </a>
   </section>
 
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Формулы расчёта</h2>
+    <div class="bg-surface border border-border rounded-xl p-4 text-sm text-text-muted space-y-4">
+      <div>
+        <p class="font-bold text-primary text-xs uppercase mb-1">По прочности</p>
+        <p>q<sub>max</sub> = 8 × Wx × Ry / L²</p>
+        <p class="mt-1">Wx = {channel.Wx} см³, Ry = 210 МПа</p>
+        <p>При L = 6 м: q = <strong>{(8 * channel.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong></p>
+      </div>
+      <div class="border-t border-border pt-3">
+        <p class="font-bold text-primary text-xs uppercase mb-1">По прогибу (f ≤ L/200)</p>
+        <p>f = 5 × q × L⁴ / (384 × E × Ix)</p>
+        <p class="mt-1">Ix = {channel.Ix} см⁴, E = 2,06 × 10⁵ МПа</p>
+        <p>При L = 6 м: q = <strong>{(((6/200) * 384 * 2.06e11 * channel.Ix * 1e-8) / (5 * 6**4) / 9.81).toFixed(0)} кг/м</strong></p>
+      </div>
+    </div>
+  </section>
+
   <ProductFAQ items={[
-    { question: `Какую нагрузку выдерживает швеллер ${channel.profile}?`, answer: `При пролёте 6 м швеллер ${channel.profile} выдерживает до <strong>${(8 * channel.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong> распределённой нагрузки.` },
-    { question: `Какой момент сопротивления у швеллера ${channel.profile}?`, answer: `Wx = <strong>${channel.Wx} см³</strong>, Ix = <strong>${channel.Ix} см⁴</strong> по ГОСТ 8240-97.` },
+    { question: `Какую нагрузку выдерживает швеллер ${channel.profile}?`, answer: `При пролёте 6 м швеллер ${channel.profile} выдерживает до <strong>${(8 * channel.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong> по прочности и до <strong>${(((6/200) * 384 * 2.06e11 * channel.Ix * 1e-8) / (5 * 6**4) / 9.81).toFixed(0)} кг/м</strong> по прогибу.` },
+    { question: `Какой момент инерции у швеллера ${channel.profile}?`, answer: `Wx = <strong>${channel.Wx} см³</strong>, Ix = <strong>${channel.Ix} см⁴</strong> по ГОСТ 8240-97.` },
+    { question: `Какой допустимый прогиб у швеллера ${channel.profile}?`, answer: `По СП 20.13330 допустимый прогиб — L/200. При пролёте 6 м — не более <strong>${(6000/200).toFixed(0)} мм</strong>.` },
   ]} />
 
   <section class="mb-8">

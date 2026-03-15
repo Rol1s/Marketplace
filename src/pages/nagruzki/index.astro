@@ -27,9 +27,11 @@ const pipes = getPipes();
     <section class="mb-10">
       <h2 class="text-lg font-bold text-primary mb-2">Формулы расчёта</h2>
       <div class="bg-surface border border-border rounded-xl p-5 text-sm text-text-muted space-y-3">
-        <p><strong>Балки и швеллеры (изгиб):</strong> q<sub>max</sub> = 8 × W<sub>x</sub> × R<sub>y</sub> / L², где L — пролёт, W<sub>x</sub> — момент сопротивления, R<sub>y</sub> = 210 МПа.</p>
-        <p><strong>Трубы (давление):</strong> P = 2 × s × [σ] / D, где s — толщина стенки, D — наружный диаметр.</p>
-        <p class="text-xs text-amber-600">Расчёт выполнен для однопролётных балок с равномерной нагрузкой без учёта собственного веса и коэффициентов надёжности.</p>
+        <p><strong>Балки и швеллеры — прочность:</strong> q<sub>max</sub> = 8 × W<sub>x</sub> × R<sub>y</sub> / L²</p>
+        <p><strong>Балки и швеллеры — прогиб:</strong> f = 5 × q × L⁴ / (384 × E × I<sub>x</sub>), предел f ≤ L/200</p>
+        <p><strong>Итоговая нагрузка</strong> = min(по прочности, по прогибу)</p>
+        <p><strong>Трубы (давление):</strong> P = 2 × s × [σ] / D</p>
+        <p class="text-xs text-amber-600">R<sub>y</sub> = 210 МПа (Ст3), E = 2,06 × 10⁵ МПа. Без учёта собственного веса и коэффициентов надёжности.</p>
       </div>
     </section>
 

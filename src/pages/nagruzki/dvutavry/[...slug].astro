@@ -14,12 +14,12 @@ export function getStaticPaths() {
 }
 
 const { beam } = Astro.props;
-const table = generateLoadTable(beam.Wx);
+const table = generateLoadTable(beam.Wx, beam.Ix, 200);
 ---
 
 <Gost
   title={`Нагрузка на двутавр ${beam.profile} — допустимая нагрузка по пролёту | NikaMet`}
-  description={`Таблица допустимых нагрузок на двутавр ${beam.profile} (ГОСТ 35087-2024) при пролётах 1–12 м. Wx=${beam.Wx} см³, масса ${beam.weightPerMeter} кг/м.`}
+  description={`Таблица допустимых нагрузок на двутавр ${beam.profile} с проверкой по прочности и прогибу (L/200). Wx=${beam.Wx} см³, Ix=${beam.Ix} см⁴. Пролёты 1–12 м.`}
   h1={`Допустимая нагрузка на двутавр ${beam.profile}`}
   breadcrumbs={[
     { label: 'Сортамент', href: '/sortament/' },
@@ -52,45 +52,75 @@ const table = generateLoadTable(beam.Wx);
     <h2 class="text-lg font-bold text-primary mb-3">Таблица допустимых нагрузок</h2>
     <p class="text-sm text-text-muted mb-4">
       Максимальная равномерно распределённая нагрузка (кг/м²) для однопролётной балки при Ry = 210 МПа (Ст3).
+      Учтена проверка по <strong>прочности</strong> и <strong>прогибу</strong> (f ≤ L/200).
     </p>
     <div class="overflow-x-auto">
       <table class="w-full text-xs border-collapse">
         <thead>
           <tr class="bg-primary text-white">
-            <th class="px-2 py-2 text-left">Пролёт, м</th>
-            <th class="px-2 py-2 text-right">q, кг/м</th>
+            <th class="px-2 py-2 text-left" rowspan="2">Пролёт, м</th>
+            <th class="px-2 py-2 text-right" rowspan="2">q, кг/м</th>
+            <th class="px-2 py-2 text-center" rowspan="2">Прогиб, мм</th>
+            <th class="px-2 py-2 text-center" rowspan="2">Предел</th>
             {SPACINGS.map((s) => (
-              <th class="px-2 py-2 text-right">Шаг {s}м, кг/м²</th>
+              <th class="px-2 py-2 text-right">Шаг {s}м</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {table.map((row, i) => (
-            <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-              <td class="px-2 py-1.5 font-bold">{row.span}</td>
-              <td class="px-2 py-1.5 text-right font-mono">{row.qKgM.toFixed(0)}</td>
-              {row.loads.map((l) => (
-                <td class={`px-2 py-1.5 text-right font-mono ${l.qKgM2 < 200 ? 'text-red-500' : l.qKgM2 > 1000 ? 'text-green-600' : ''}`}>
-                  {l.qKgM2.toFixed(0)}
+          {table.map((row, i) => {
+            const deflExceeded = row.deflectionMm > row.deflectionLimitMm;
+            return (
+              <tr class={`${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} ${deflExceeded ? 'bg-red-50' : ''}`}>
+                <td class="px-2 py-1.5 font-bold">{row.span}</td>
+                <td class="px-2 py-1.5 text-right font-mono">
+                  {row.qKgM.toFixed(0)}
+                  {row.limitedBy === 'deflection' && <span class="text-orange-500 ml-0.5" title="Ограничено прогибом">↕</span>}
                 </td>
-              ))}
-            </tr>
-          ))}
+                <td class={`px-2 py-1.5 text-center font-mono ${deflExceeded ? 'text-red-600 font-bold' : 'text-green-700'}`}>
+                  {row.deflectionMm.toFixed(1)}
+                </td>
+                <td class="px-2 py-1.5 text-center font-mono text-gray-400">
+                  {row.deflectionLimitMm.toFixed(0)}
+                </td>
+                {row.loads.map((l) => (
+                  <td class={`px-2 py-1.5 text-right font-mono ${l.qKgM2 < 200 ? 'text-red-500' : l.qKgM2 > 1000 ? 'text-green-600' : ''}`}>
+                    {l.qKgM2.toFixed(0)}
+                    {l.limitedBy === 'deflection' && <span class="text-orange-400 text-[9px] ml-0.5">↕</span>}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
-    <p class="text-xs text-amber-600 mt-3">
+    <div class="flex flex-wrap gap-4 mt-3 text-xs text-text-muted">
+      <span><span class="text-orange-500">↕</span> — нагрузка ограничена прогибом</span>
+      <span class="text-red-500">красный</span> — менее 200 кг/м²
+      <span class="text-green-600">зелёный</span> — более 1000 кг/м²
+    </div>
+    <p class="text-xs text-amber-600 mt-2">
       * Без учёта собственного веса балки ({beam.weightPerMeter} кг/м) и коэффициентов надёжности по нагрузке.
     </p>
   </section>
 
   <section class="mb-8">
-    <h2 class="text-lg font-bold text-primary mb-3">Формула</h2>
-    <div class="bg-surface border border-border rounded-xl p-4 text-sm text-text-muted">
-      <p>q<sub>max</sub> = 8 × Wx × Ry / L²</p>
-      <p class="mt-2">Wx = {beam.Wx} см³ = {(beam.Wx * 1e-6).toExponential(3)} м³</p>
-      <p>Ry = 210 МПа = 210 × 10⁶ Па</p>
-      <p class="mt-2">Пример при L = 6 м: q = 8 × {beam.Wx} × 10⁻⁶ × 210 × 10⁶ / 36 = <strong>{(8 * beam.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong></p>
+    <h2 class="text-lg font-bold text-primary mb-3">Формулы расчёта</h2>
+    <div class="bg-surface border border-border rounded-xl p-4 text-sm text-text-muted space-y-4">
+      <div>
+        <p class="font-bold text-primary text-xs uppercase mb-1">По прочности</p>
+        <p>q<sub>max</sub> = 8 × Wx × Ry / L²</p>
+        <p class="mt-1">Wx = {beam.Wx} см³, Ry = 210 МПа</p>
+        <p>При L = 6 м: q = <strong>{(8 * beam.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong></p>
+      </div>
+      <div class="border-t border-border pt-3">
+        <p class="font-bold text-primary text-xs uppercase mb-1">По прогибу (f ≤ L/200)</p>
+        <p>f = 5 × q × L⁴ / (384 × E × Ix)</p>
+        <p class="mt-1">Ix = {beam.Ix} см⁴, E = 2,06 × 10⁵ МПа</p>
+        <p>q<sub>max</sub> = f<sub>пред</sub> × 384 × E × Ix / (5 × L⁴)</p>
+        <p>При L = 6 м: q = <strong>{(((6/200) * 384 * 2.06e11 * beam.Ix * 1e-8) / (5 * 6**4) / 9.81).toFixed(0)} кг/м</strong></p>
+      </div>
     </div>
   </section>
 
@@ -106,9 +136,10 @@ const table = generateLoadTable(beam.Wx);
   </section>
 
   <ProductFAQ items={[
-    { question: `Какую нагрузку выдерживает двутавр ${beam.profile}?`, answer: `При пролёте 6 м двутавр ${beam.profile} выдерживает до <strong>${(8 * beam.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong> распределённой нагрузки (Ry=210 МПа, Ст3).` },
-    { question: `Какой момент сопротивления у двутавра ${beam.profile}?`, answer: `Момент сопротивления Wx = <strong>${beam.Wx} см³</strong>, момент инерции Ix = <strong>${beam.Ix} см⁴</strong> по ГОСТ 35087-2024.` },
-    { question: `На какой пролёт подходит двутавр ${beam.profile}?`, answer: `При нагрузке 400 кг/м² и шаге 1 м — пролёт до <strong>${table.findLast(r => r.loads[1].qKgM2 >= 400)?.span || '—'} м</strong>.` },
+    { question: `Какую нагрузку выдерживает двутавр ${beam.profile}?`, answer: `При пролёте 6 м двутавр ${beam.profile} выдерживает до <strong>${(8 * beam.Wx * 1e-6 * 210e6 / 36 / 9.81).toFixed(0)} кг/м</strong> по прочности. С учётом прогиба (L/200) — до <strong>${(((6/200) * 384 * 2.06e11 * beam.Ix * 1e-8) / (5 * 6**4) / 9.81).toFixed(0)} кг/м</strong>.` },
+    { question: `Какой момент сопротивления и инерции у двутавра ${beam.profile}?`, answer: `Wx = <strong>${beam.Wx} см³</strong>, Ix = <strong>${beam.Ix} см⁴</strong> по ГОСТ 35087-2024.` },
+    { question: `Какой допустимый прогиб у двутавра ${beam.profile}?`, answer: `По СП 20.13330 допустимый прогиб — L/200. Для перекрытий — L/250. При пролёте 6 м предельный прогиб <strong>${(6000/200).toFixed(0)} мм</strong>.` },
+    { question: `На какой пролёт подходит двутавр ${beam.profile}?`, answer: `При нагрузке 400 кг/м² и шаге 1 м — пролёт до <strong>${table.findLast(r => r.loads[1]?.qKgM2 >= 400)?.span || '—'} м</strong> (с учётом прогиба).` },
   ]} />
 
   <section class="mb-8">
