@@ -1,0 +1,38 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { SITE } from '@/config/site';
+
+const articles = [
+  { slug: 'truba-elektrosvarnaya-vs-besshovnaya', title: 'Труба электросварная vs бесшовная: ГОСТ 10704 и ГОСТ 8732', description: 'Сравнение электросварных и бесшовных труб: отличия, применение, цена.' },
+  { slug: 'armatura-a400-vs-a500s', title: 'Арматура А400 vs А500С: какую выбрать', description: 'Подробное сравнение классов арматуры А400 и А500С по прочности, свариваемости и цене.' },
+  { slug: 'shveller-vs-dvutavr', title: 'Швеллер vs двутавр: когда что использовать', description: 'Разбираемся, когда выгоднее швеллер, а когда — двутавр.' },
+  { slug: 'profilnaya-truba-vs-ugolok', title: 'Профильная труба vs уголок для каркаса', description: 'Сравнение профтрубы и уголка для каркасов, ограждений, навесов.' },
+  { slug: 'kak-vybrat-tolshchinu-stenki-truby', title: 'Как выбрать толщину стенки трубы', description: 'Таблица и расчёт оптимальной толщины стенки для разных задач.' },
+  { slug: 'marki-stali-dlya-trub-sravnenie', title: 'Ст3сп vs 09Г2С vs 20: сравнение марок стали для труб', description: 'Какую марку стали выбрать для трубы: свойства, применение, цена.' },
+  { slug: 'gost-8639-vs-gost-30245', title: 'ГОСТ 8639 vs ГОСТ 30245: профильные трубы', description: 'Отличия стандартов на профильные трубы квадратного сечения.' },
+  { slug: 'tablica-vesov-metalloprokata', title: 'Сводная таблица весов всех видов металлопроката', description: 'Единая таблица масс: трубы, швеллеры, двутавры, уголки, арматура, круг, полоса.' },
+  { slug: 'vidy-trub-polnoe-rukovodstvo', title: 'Виды стальных труб: полный справочник', description: 'Электросварные, бесшовные, ВГП, профильные — все виды труб с характеристиками.' },
+  { slug: 'kak-rasschitat-ves-metalloprokata', title: 'Как рассчитать вес металлопроката: формулы', description: 'Формулы расчёта массы труб, листов, кругов, полос, уголков с примерами.' },
+];
+
+const title = `Статьи и справочники по металлопрокату | ${SITE.name}`;
+const description = `${articles.length} экспертных статей: сравнение ГОСТов, выбор металлопроката, формулы расчёта веса, таблицы характеристик.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[{ label: 'Статьи', href: '/stati/' }]} />
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Статьи и справочники</h1>
+    <p class="text-text-muted mb-8">Экспертные материалы по выбору и расчёту металлопроката.</p>
+
+    <div class="grid gap-4">
+      {articles.map((a) => (
+        <a href={`/stati/${a.slug}/`} class="group block p-5 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all">
+          <h2 class="text-lg font-bold text-primary group-hover:text-accent transition-colors mb-1">{a.title}</h2>
+          <p class="text-sm text-text-muted">{a.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

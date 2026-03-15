@@ -1,4 +1,4 @@
-import type { Pipe, Channel, Beam, Sheet, AngleEqual, AngleUnequal, SheetPile } from './types';
+import type { Pipe, Channel, Beam, Sheet, AngleEqual, AngleUnequal, SheetPile, Rebar, ProfileTubeSquare, ProfileTubeRect, RoundBar, SquareBar, StripSteel } from './types';
 
 interface LinkItem {
   label: string;
@@ -72,5 +72,65 @@ export function relatedSheetPiles(piles: SheetPile[], currentSlug: string): Link
     .map((p) => ({
       label: p.displayName,
       href: `/shpunt/${p.slug}/`,
+    }));
+}
+
+export function relatedRebar(items: Rebar[], currentSlug: string): LinkItem[] {
+  return items
+    .filter((r) => r.slug !== currentSlug)
+    .slice(0, 15)
+    .map((r) => ({
+      label: `⌀${r.diameter} ${r.rebarClass}`,
+      href: `/armatura/${r.slug}/`,
+    }));
+}
+
+export function relatedProfileTubesSquare(items: ProfileTubeSquare[], currentSlug: string): LinkItem[] {
+  return items
+    .filter((t) => t.slug !== currentSlug)
+    .slice(0, 15)
+    .map((t) => ({
+      label: `${t.size}×${t.size}×${t.wallThickness}`,
+      href: `/profilnaya-truba/kvadratnaya/${t.slug}/`,
+    }));
+}
+
+export function relatedProfileTubesRect(items: ProfileTubeRect[], currentSlug: string): LinkItem[] {
+  return items
+    .filter((t) => t.slug !== currentSlug)
+    .slice(0, 15)
+    .map((t) => ({
+      label: `${t.sizeA}×${t.sizeB}×${t.wallThickness}`,
+      href: `/profilnaya-truba/pryamougolnaya/${t.slug}/`,
+    }));
+}
+
+export function relatedRoundBars(items: RoundBar[], currentSlug: string): LinkItem[] {
+  return items
+    .filter((r) => r.slug !== currentSlug)
+    .slice(0, 15)
+    .map((r) => ({
+      label: `⌀${r.diameter} мм`,
+      href: `/krug/${r.slug}/`,
+    }));
+}
+
+export function relatedSquareBars(items: SquareBar[], currentSlug: string): LinkItem[] {
+  return items
+    .filter((s) => s.slug !== currentSlug)
+    .slice(0, 15)
+    .map((s) => ({
+      label: `${s.side}×${s.side} мм`,
+      href: `/kvadrat/${s.slug}/`,
+    }));
+}
+
+export function relatedStripSteel(items: StripSteel[], currentSlug: string): LinkItem[] {
+  return items
+    .filter((s) => s.slug !== currentSlug)
+    .slice(0, 15)
+    .map((s) => ({
+      label: `${s.width}×${s.thickness} мм`,
+      href: `/polosa/${s.slug}/`,
     }));
 }

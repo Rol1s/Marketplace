@@ -1,0 +1,29 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getRebar } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const items = getRebar();
+const title = `Арматура б/у — все диаметры от ${items[0].diameter} до ${items[items.length - 1].diameter} мм | ${SITE.name}`;
+const description = `Арматура б/у: ${items.length} диаметров, классы А240–А500С. Характеристики, вес, применение вторичного арматурного проката.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Б/у металл', href: '/bu-metall/' },
+      { label: 'Арматура б/у', href: '/bu-metall/armatura/' },
+    ]} />
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Арматура б/у — вторичный прокат</h1>
+    <p class="text-text-muted mb-8 max-w-3xl">Каталог б/у арматуры всех диаметров. Экономия до 30–40% при сохранении основных характеристик.</p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      {items.map((r) => (
+        <a href={`/bu-metall/armatura/${r.slug}/`} class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all">
+          <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">⌀{r.diameter} мм</div>
+          <div class="text-xs text-text-muted mt-1">{r.rebarClass}, {r.weightPerMeter} кг/м</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

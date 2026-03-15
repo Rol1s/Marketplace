@@ -1,0 +1,101 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getProfileTubesRect } from '@lib/data';
+import { profileTubeRectMeta } from '@lib/seo';
+import { relatedProfileTubesRect } from '@lib/links';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import ProductCrossLinks from '@components/ProductCrossLinks.astro';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getProfileTubesRect().map((t) => ({
+    params: { slug: t.slug },
+    props: { item: t },
+  }));
+}
+
+const { item } = Astro.props;
+const allItems = getProfileTubesRect();
+const meta = profileTubeRectMeta(item.sizeA, item.sizeB, item.wallThickness, item.weightPerMeter);
+const related = relatedProfileTubesRect(allItems, item.slug);
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Профильная труба ${item.sizeA}×${item.sizeB}×${item.wallThickness} — ГОСТ 8645-68`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Профильная труба', href: '/profilnaya-truba/' },
+    { label: `${item.sizeA}×${item.sizeB}×${item.wallThickness}`, href: `/profilnaya-truba/pryamougolnaya/${item.slug}/` },
+  ]}
+  schemaType="Product"
+  productMeta={{ sku: `PTR-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 8645-68', category: 'Профильная труба прямоугольная' }}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.sizeA}×{item.sizeB}</div>
+        <div class="text-xs text-text-muted mt-1">Сечение, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.area}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь, см²</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Полные характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Сторона A', value: `${item.sizeA} мм` },
+        { param: 'Сторона B', value: `${item.sizeB} мм` },
+        { param: 'Толщина стенки', value: `${item.wallThickness} мм` },
+        { param: 'Площадь сечения', value: `${item.area} см²` },
+        { param: 'Масса 1 м', value: `${item.weightPerMeter} кг` },
+        { param: 'Метров в тонне', value: `${(1000 / item.weightPerMeter).toFixed(1)} м` },
+        { param: 'ГОСТ', value: item.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы</h2>
+    <WeightCalculator client:visible productName={`Профтруба ${item.sizeA}×${item.sizeB}×${item.wallThickness}`} weightPerUnit={item.weightPerMeter} mode="length" unitLabel="кг/м" defaultLength={6} />
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес профтрубы ${item.sizeA}×${item.sizeB}×${item.wallThickness}?`, answer: `Масса 1 м — <strong>${item.weightPerMeter} кг</strong> по ГОСТ 8645-68.` },
+    { question: `Формула расчёта веса прямоугольной профтрубы?`, answer: `Вес (кг/м) = (2×(A+B) – 4×S) × S × 0,00785.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Заявка на профтрубу {item.sizeA}×{item.sizeB}×{item.wallThickness}
+    </a>
+  </section>
+
+  <ProductCrossLinks productSlug="profilnaya-truba-pr" itemSlug={item.slug} productType={`профтрубы ${item.sizeA}×${item.sizeB}`} basePath="/profilnaya-truba/pryamougolnaya/" />
+  <RelatedItems title="Другие размеры прямоугольных профтруб" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Профильная труба ${item.sizeA}×${item.sizeB}×${item.wallThickness}`} />
+  </section>
+</Gost>

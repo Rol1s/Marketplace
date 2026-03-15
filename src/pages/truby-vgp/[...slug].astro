@@ -1,0 +1,104 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getPipesVgp } from '@lib/data';
+import { pipeVgpMeta } from '@lib/seo';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getPipesVgp().map((p) => ({
+    params: { slug: p.slug },
+    props: { item: p },
+  }));
+}
+
+const { item } = Astro.props;
+const allItems = getPipesVgp();
+const meta = pipeVgpMeta(item.nominalBore, item.type, item.weightPerMeter);
+const related = allItems
+  .filter((p) => p.slug !== item.slug)
+  .slice(0, 15)
+  .map((p) => ({ label: `ДУ${p.nominalBore} ${p.type}`, href: `/truby-vgp/${p.slug}/` }));
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Труба ВГП ДУ${item.nominalBore} ${item.type} — ГОСТ 3262-75`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Трубы ВГП', href: '/truby-vgp/' },
+    { label: `ДУ${item.nominalBore} ${item.type}`, href: `/truby-vgp/${item.slug}/` },
+  ]}
+  schemaType="Product"
+  productMeta={{ sku: `VGP-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 3262-75', category: 'Трубы ВГП' }}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">ДУ{item.nominalBore}</div>
+        <div class="text-xs text-text-muted mt-1">Условный проход</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.outerDiameter}</div>
+        <div class="text-xs text-text-muted mt-1">Наружн. ⌀, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <GostTable
+      columns={[{ key: 'param', label: 'Параметр' }, { key: 'value', label: 'Значение', align: 'right' }]}
+      rows={[
+        { param: 'Условный проход (ДУ)', value: `${item.nominalBore} мм` },
+        { param: 'Наружный диаметр', value: `${item.outerDiameter} мм` },
+        { param: 'Толщина стенки', value: `${item.wallThickness} мм` },
+        { param: 'Тип', value: item.type },
+        { param: 'Масса 1 м', value: `${item.weightPerMeter} кг` },
+        { param: 'Метров в тонне', value: `${(1000 / item.weightPerMeter).toFixed(1)} м` },
+        { param: 'ГОСТ', value: item.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы</h2>
+    <WeightCalculator client:visible productName={`Труба ВГП ДУ${item.nominalBore} ${item.type}`} weightPerUnit={item.weightPerMeter} mode="length" unitLabel="кг/м" defaultLength={6} />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Область применения</h2>
+    <p class="text-text-muted leading-relaxed">
+      Водогазопроводная труба ДУ{item.nominalBore} ({item.type}) по ГОСТ 3262-75 применяется для водопроводов, газопроводов, систем отопления и пароснабжения. Рабочее давление до {item.type === 'усиленная' ? '3,2' : '2,5'} МПа.
+    </p>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес трубы ВГП ДУ${item.nominalBore}?`, answer: `Масса 1 м трубы ВГП ДУ${item.nominalBore} (${item.type}) по ГОСТ 3262-75 — <strong>${item.weightPerMeter} кг</strong>.` },
+    { question: `Чем отличается усиленная труба от обыкновенной?`, answer: `Усиленная имеет большую толщину стенки и выдерживает более высокое давление (до 3,2 МПа vs 2,5 МПа).` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Заявка на трубу ВГП ДУ{item.nominalBore}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие размеры труб ВГП" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Труба ВГП ДУ${item.nominalBore} ${item.type}`} />
+  </section>
+</Gost>

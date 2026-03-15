@@ -1,0 +1,16 @@
+[
+  {"slug":"6","diameter":6,"crossSectionArea":0.283,"weightPerMeter":0.222,"gost":"ГОСТ 34028-2016","rebarClass":"А240"},
+  {"slug":"8","diameter":8,"crossSectionArea":0.503,"weightPerMeter":0.395,"gost":"ГОСТ 34028-2016","rebarClass":"А240"},
+  {"slug":"10","diameter":10,"crossSectionArea":0.785,"weightPerMeter":0.617,"gost":"ГОСТ 34028-2016","rebarClass":"А240"},
+  {"slug":"12","diameter":12,"crossSectionArea":1.131,"weightPerMeter":0.888,"gost":"ГОСТ 34028-2016","rebarClass":"А240"},
+  {"slug":"14","diameter":14,"crossSectionArea":1.539,"weightPerMeter":1.208,"gost":"ГОСТ 34028-2016","rebarClass":"А400"},
+  {"slug":"16","diameter":16,"crossSectionArea":2.011,"weightPerMeter":1.578,"gost":"ГОСТ 34028-2016","rebarClass":"А400"},
+  {"slug":"18","diameter":18,"crossSectionArea":2.545,"weightPerMeter":1.998,"gost":"ГОСТ 34028-2016","rebarClass":"А400"},
+  {"slug":"20","diameter":20,"crossSectionArea":3.142,"weightPerMeter":2.466,"gost":"ГОСТ 34028-2016","rebarClass":"А400"},
+  {"slug":"22","diameter":22,"crossSectionArea":3.801,"weightPerMeter":2.984,"gost":"ГОСТ 34028-2016","rebarClass":"А500С"},
+  {"slug":"25","diameter":25,"crossSectionArea":4.909,"weightPerMeter":3.853,"gost":"ГОСТ 34028-2016","rebarClass":"А500С"},
+  {"slug":"28","diameter":28,"crossSectionArea":6.158,"weightPerMeter":4.834,"gost":"ГОСТ 34028-2016","rebarClass":"А500С"},
+  {"slug":"32","diameter":32,"crossSectionArea":8.042,"weightPerMeter":6.313,"gost":"ГОСТ 34028-2016","rebarClass":"А500С"},
+  {"slug":"36","diameter":36,"crossSectionArea":10.179,"weightPerMeter":7.990,"gost":"ГОСТ 34028-2016","rebarClass":"А500С"},
+  {"slug":"40","diameter":40,"crossSectionArea":12.566,"weightPerMeter":9.865,"gost":"ГОСТ 34028-2016","rebarClass":"А500С"}
+]

@@ -1,7 +1,7 @@
 ---
 import Base from '@layouts/Base.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
-import { getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getAnglesUnequal, getSheetPiles } from '@lib/data';
+import { getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getAnglesUnequal, getSheetPiles, getRebar, getProfileTubesSquare, getProfileTubesRect, getRoundBars, getSquareBars, getStripSteel, getPipesSeamlessHot, getPipesVgp, getBeamsClassic, getChannelsBent } from '@lib/data';
 import SectionIcon from '@components/SectionIcon.astro';
 import { SITE, SECTIONS } from '@/config/site';
 
@@ -14,7 +14,20 @@ const counts = {
   shpunt: getSheetPiles().length,
 };
 
-const total = Object.values(counts).reduce((a, b) => a + b, 0);
+const newCategories = [
+  { name: 'Арматура', gost: 'ГОСТ 34028-2016', href: '/armatura/', count: getRebar().length },
+  { name: 'Профтруба квадратная', gost: 'ГОСТ 8639-82', href: '/profilnaya-truba/kvadratnaya/', count: getProfileTubesSquare().length },
+  { name: 'Профтруба прямоугольная', gost: 'ГОСТ 8645-68', href: '/profilnaya-truba/pryamougolnaya/', count: getProfileTubesRect().length },
+  { name: 'Круг стальной', gost: 'ГОСТ 2590-2006', href: '/krug/', count: getRoundBars().length },
+  { name: 'Квадрат стальной', gost: 'ГОСТ 2591-88', href: '/kvadrat/', count: getSquareBars().length },
+  { name: 'Полоса стальная', gost: 'ГОСТ 103-2006', href: '/polosa/', count: getStripSteel().length },
+  { name: 'Трубы бесшовные', gost: 'ГОСТ 8732-78', href: '/truby-besshovnye/', count: getPipesSeamlessHot().length },
+  { name: 'Трубы ВГП', gost: 'ГОСТ 3262-75', href: '/truby-vgp/', count: getPipesVgp().length },
+  { name: 'Двутавры с уклоном полок', gost: 'ГОСТ 8239-89', href: '/dvutavry-8239/', count: getBeamsClassic().length },
+  { name: 'Швеллеры гнутые', gost: 'ГОСТ 8278-83', href: '/shvellery-gnutye/', count: getChannelsBent().length },
+];
+
+const total = Object.values(counts).reduce((a, b) => a + b, 0) + newCategories.reduce((a, c) => a + c.count, 0);
 
 const gostLabels: Record<string, string> = {
   truby: 'ГОСТ 10704-91',
@@ -65,18 +78,43 @@ const description = `ГОСТ-справочник металлопроката:
       })}
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+    <h2 class="text-xl font-bold text-primary mt-10 mb-4">Новые категории</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {newCategories.map((cat) => (
+        <a href={cat.href} class="group block p-5 rounded-xl border-2 border-border hover:border-primary hover:shadow-lg transition-all">
+          <h3 class="text-lg font-bold text-primary group-hover:text-accent transition-colors">{cat.name}</h3>
+          <p class="text-sm text-text-muted mt-1">{cat.gost}</p>
+          <p class="text-sm font-medium text-primary mt-2">{cat.count} типоразмеров</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
       <a href="/bu-metall/" class="p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface flex items-center gap-3">
         <div class="flex-1">
           <div class="font-bold text-primary">Б/у металлопрокат</div>
-          <div class="text-xs text-text-muted mt-0.5">Вторичный прокат по ГОСТ — экономия до 40%</div>
+          <div class="text-xs text-text-muted mt-0.5">Вторичный прокат — экономия до 40%</div>
         </div>
         <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
       </a>
       <a href="/truby/izolyaciya-vus/" class="p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface flex items-center gap-3">
         <div class="flex-1">
-          <div class="font-bold text-primary">Трубы в изоляции ВУС</div>
+          <div class="font-bold text-primary">ВУС изоляция</div>
           <div class="text-xs text-text-muted mt-0.5">⌀219–1420 мм, ГОСТ 9.602-2016</div>
+        </div>
+        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/stati/" class="p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface flex items-center gap-3">
+        <div class="flex-1">
+          <div class="font-bold text-primary">Статьи и гайды</div>
+          <div class="text-xs text-text-muted mt-0.5">Экспертные материалы по выбору проката</div>
+        </div>
+        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/sravnenie/" class="p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface flex items-center gap-3">
+        <div class="flex-1">
+          <div class="font-bold text-primary">Сравнение ГОСТов</div>
+          <div class="text-xs text-text-muted mt-0.5">Таблицы сравнения стандартов</div>
         </div>
         <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
       </a>

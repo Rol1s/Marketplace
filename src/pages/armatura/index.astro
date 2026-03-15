@@ -1,0 +1,57 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getRebar } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const items = getRebar();
+const title = `Арматура стальная ГОСТ 34028-2016 — сортамент, вес, классы | ${SITE.name}`;
+const description = `Полный сортамент арматурного проката по ГОСТ 34028-2016. ${items.length} диаметров от ${items[0].diameter} до ${items[items.length - 1].diameter} мм. Классы А240, А400, А500С. Таблица весов, площадь сечения.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Арматура', href: '/armatura/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">
+      Арматура стальная — ГОСТ 34028-2016
+    </h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Полный сортамент арматурного проката по ГОСТ 34028-2016.
+      {items.length} диаметров, классы А240, А400, А500С.
+      Выберите диаметр для подробных характеристик и расчёта веса.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
+      {items.map((r) => (
+        <a
+          href={`/armatura/${r.slug}/`}
+          class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all"
+        >
+          <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">
+            ⌀{r.diameter} мм
+          </div>
+          <div class="text-xs text-text-muted mt-1">
+            {r.rebarClass}, {r.weightPerMeter} кг/м
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-bold text-primary mb-4">Полная таблица арматуры ГОСТ 34028-2016</h2>
+    <GostTable
+      columns={[
+        { key: 'diameter', label: 'Диаметр', unit: 'мм', align: 'right' },
+        { key: 'rebarClass', label: 'Класс' },
+        { key: 'crossSectionArea', label: 'Площадь сечения', unit: 'см²', align: 'right' },
+        { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+      ]}
+      rows={items.map((r) => ({ ...r, _href: `/armatura/${r.slug}/` }))}
+    />
+  </div>
+</Base>

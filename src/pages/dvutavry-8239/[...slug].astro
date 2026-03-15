@@ -1,0 +1,96 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getBeamsClassic } from '@lib/data';
+import { SITE } from '@/config/site';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getBeamsClassic().map((b) => ({
+    params: { slug: b.slug },
+    props: { item: b },
+  }));
+}
+
+const { item } = Astro.props;
+const allItems = getBeamsClassic();
+const related = allItems.filter((b) => b.slug !== item.slug).slice(0, 15).map((b) => ({ label: `Двутавр ${b.profile}`, href: `/dvutavry-8239/${b.slug}/` }));
+const title = `Двутавр ${item.profile} ГОСТ 8239-89 — вес, размеры, характеристики | ${SITE.name}`;
+const description = `Двутавр ${item.profile} по ГОСТ 8239-89. Высота ${item.h} мм, масса ${item.weightPerMeter} кг/м. Полные размеры и характеристики.`;
+---
+
+<Gost
+  title={title}
+  description={description}
+  h1={`Двутавр ${item.profile} — ГОСТ 8239-89`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Двутавры ГОСТ 8239', href: '/dvutavry-8239/' },
+    { label: item.profile, href: `/dvutavry-8239/${item.slug}/` },
+  ]}
+  schemaType="Product"
+  productMeta={{ sku: `B89-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 8239-89', category: 'Двутавры' }}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.h}</div>
+        <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.b}</div>
+        <div class="text-xs text-text-muted mt-1">Полка b, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.s}/{item.t}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка/полка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <GostTable
+      columns={[{ key: 'param', label: 'Параметр' }, { key: 'value', label: 'Значение', align: 'right' }]}
+      rows={[
+        { param: 'Профиль', value: item.profile },
+        { param: 'Высота h', value: `${item.h} мм` },
+        { param: 'Ширина полки b', value: `${item.b} мм` },
+        { param: 'Толщина стенки s', value: `${item.s} мм` },
+        { param: 'Толщина полки t', value: `${item.t} мм` },
+        { param: 'Площадь сечения', value: `${item.area} см²` },
+        { param: 'Масса 1 м', value: `${item.weightPerMeter} кг` },
+        { param: 'ГОСТ', value: item.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы</h2>
+    <WeightCalculator client:visible productName={`Двутавр ${item.profile}`} weightPerUnit={item.weightPerMeter} mode="length" unitLabel="кг/м" defaultLength={12} />
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес двутавра ${item.profile}?`, answer: `Масса 1 м двутавра ${item.profile} по ГОСТ 8239-89 — <strong>${item.weightPerMeter} кг</strong>.` },
+    { question: `Чем ГОСТ 8239-89 отличается от ГОСТ 35087-2024?`, answer: `ГОСТ 8239-89 определяет двутавры с уклоном внутренних граней полок (6–12%), а ГОСТ 35087-2024 — с параллельными гранями (серии Б, Ш, К).` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Заявка на двутавр {item.profile}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие профили" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Двутавр ${item.profile} ГОСТ 8239-89`} />
+  </section>
+</Gost>

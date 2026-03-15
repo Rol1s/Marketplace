@@ -1,0 +1,134 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getRebar } from '@lib/data';
+import { rebarMeta } from '@lib/seo';
+import { relatedRebar } from '@lib/links';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import ProductCrossLinks from '@components/ProductCrossLinks.astro';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getRebar().map((r) => ({
+    params: { slug: r.slug },
+    props: { item: r },
+  }));
+}
+
+const { item } = Astro.props;
+const allItems = getRebar();
+const meta = rebarMeta(item.diameter, item.rebarClass, item.weightPerMeter);
+const related = relatedRebar(allItems, item.slug);
+const metersPerTon = item.weightPerMeter > 0 ? (1000 / item.weightPerMeter).toFixed(1) : '—';
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Арматура ⌀${item.diameter} мм ${item.rebarClass} — ГОСТ 34028-2016`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Арматура', href: '/armatura/' },
+    { label: `⌀${item.diameter} ${item.rebarClass}`, href: `/armatura/${item.slug}/` },
+  ]}
+  schemaType="Product"
+  productMeta={{ sku: `RB-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 34028-2016', category: 'Арматура' }}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.diameter}</div>
+        <div class="text-xs text-text-muted mt-1">Диаметр, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.rebarClass}</div>
+        <div class="text-xs text-text-muted mt-1">Класс</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.crossSectionArea}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь, см²</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Полные характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Номинальный диаметр', value: `${item.diameter} мм` },
+        { param: 'Класс арматуры', value: item.rebarClass },
+        { param: 'Площадь поперечного сечения', value: `${item.crossSectionArea} см²` },
+        { param: 'Масса 1 погонного метра', value: `${item.weightPerMeter} кг` },
+        { param: 'Метров в 1 тонне', value: `${metersPerTon} м` },
+        { param: 'Профиль', value: item.rebarClass === 'А240' ? 'Гладкий' : 'Периодический' },
+        { param: 'ГОСТ', value: item.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Арматура ⌀${item.diameter} ${item.rebarClass}`}
+      weightPerUnit={item.weightPerMeter}
+      mode="length"
+      unitLabel="кг/м"
+      defaultLength={11.7}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Область применения</h2>
+    <p class="text-text-muted leading-relaxed">
+      Арматура ⌀{item.diameter} мм класса {item.rebarClass} по ГОСТ 34028-2016 применяется
+      {item.rebarClass === 'А240' && ' для изготовления монтажных петель, хомутов, конструктивной арматуры. Гладкий профиль, хорошая свариваемость.'}
+      {item.rebarClass === 'А400' && ' для армирования железобетонных конструкций общего назначения: фундаменты, плиты перекрытий, колонны, балки.'}
+      {item.rebarClass === 'А500С' && ' для армирования ответственных железобетонных конструкций. Литера «С» означает свариваемость. Повышенная прочность.'}
+    </p>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес 1 метра арматуры ${item.diameter} мм?`, answer: `Масса 1 погонного метра арматуры ⌀${item.diameter} по ГОСТ 34028-2016 составляет <strong>${item.weightPerMeter} кг</strong>.` },
+    { question: `Сколько метров арматуры ${item.diameter} в тонне?`, answer: `В 1 тонне ${metersPerTon} погонных метров арматуры ⌀${item.diameter} мм.` },
+    { question: `Чем отличается арматура А400 от А500С?`, answer: `А500С имеет более высокий предел текучести (500 МПа vs 400 МПа) и обозначение «С» — свариваемая. А400 дешевле, но менее прочная.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на арматуру ⌀{item.diameter}
+    </a>
+  </section>
+
+  <section class="mb-8">
+    <a
+      href={`/bu-metall/armatura/${item.slug}/`}
+      class="flex items-center gap-4 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface"
+    >
+      <div class="flex-1">
+        <div class="font-bold text-primary">Арматура ⌀{item.diameter} б/у</div>
+        <div class="text-sm text-text-muted mt-0.5">Вторичный прокат — экономия до 30–40%</div>
+      </div>
+      <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <ProductCrossLinks productSlug="armatura" itemSlug={item.slug} productType={`арматуры ⌀${item.diameter}`} basePath="/armatura/" />
+
+  <RelatedItems title="Другие диаметры арматуры" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Арматура ⌀${item.diameter} ${item.rebarClass}`} />
+  </section>
+</Gost>

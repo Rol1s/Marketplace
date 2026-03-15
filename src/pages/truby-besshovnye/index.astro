@@ -1,0 +1,42 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getPipesSeamlessHot } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const items = getPipesSeamlessHot();
+const diameters = [...new Set(items.map((p) => p.diameter))].sort((a, b) => a - b);
+const title = `Трубы бесшовные горячедеформированные ГОСТ 8732-78 — сортамент | ${SITE.name}`;
+const description = `Полный сортамент бесшовных горячедеформированных труб по ГОСТ 8732-78. ${items.length} типоразмеров, диаметры от ${diameters[0]} до ${diameters[diameters.length - 1]} мм.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Трубы бесшовные', href: '/truby-besshovnye/' },
+    ]} />
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Трубы бесшовные горячедеформированные — ГОСТ 8732-78</h1>
+    <p class="text-text-muted mb-8 max-w-3xl">{items.length} типоразмеров, диаметры от {diameters[0]} до {diameters[diameters.length - 1]} мм. Изготавливаются методом горячей деформации из углеродистой и легированной стали.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
+      {items.map((p) => (
+        <a href={`/truby-besshovnye/${p.slug}/`} class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all">
+          <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">{p.diameter}×{p.wallThickness}</div>
+          <div class="text-xs text-text-muted mt-1">{p.weightPerMeter} кг/м</div>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-bold text-primary mb-4">Полная таблица</h2>
+    <GostTable
+      columns={[
+        { key: 'diameter', label: 'Диаметр', unit: 'мм', align: 'right' },
+        { key: 'wallThickness', label: 'Стенка', unit: 'мм', align: 'right' },
+        { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+      ]}
+      rows={items.map((p) => ({ ...p, _href: `/truby-besshovnye/${p.slug}/` }))}
+    />
+  </div>
+</Base>

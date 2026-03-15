@@ -1,0 +1,53 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getChannelsBent } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const items = getChannelsBent();
+const title = `Швеллеры гнутые равнополочные ГОСТ 8278-83 — сортамент, вес | ${SITE.name}`;
+const description = `Полный сортамент гнутых равнополочных швеллеров по ГОСТ 8278-83. ${items.length} профилей с таблицами размеров и масс.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Швеллеры гнутые', href: '/shvellery-gnutye/' },
+    ]} />
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Швеллеры гнутые равнополочные — ГОСТ 8278-83</h1>
+    <p class="text-text-muted mb-8 max-w-3xl">{items.length} профилей. Изготавливаются методом гибки из стального листа.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-10">
+      {items.map((ch) => (
+        <a href={`/shvellery-gnutye/${ch.slug}/`} class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all">
+          <div class="text-lg font-bold text-primary group-hover:text-accent">{ch.profile}</div>
+          <div class="text-xs text-text-muted mt-1">{ch.weight} кг/м</div>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-bold text-primary mb-4">Полная таблица</h2>
+    <GostTable
+      columns={[
+        { key: 'profile', label: 'Профиль' },
+        { key: 'h', label: 'h', unit: 'мм', align: 'right' },
+        { key: 'b', label: 'b', unit: 'мм', align: 'right' },
+        { key: 's', label: 's', unit: 'мм', align: 'right' },
+        { key: 'weight', label: 'Масса', unit: 'кг/м', align: 'right' },
+      ]}
+      rows={items.map((ch) => ({ ...ch, _href: `/shvellery-gnutye/${ch.slug}/` }))}
+    />
+
+    <section class="mt-8">
+      <a href="/shvellery/" class="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface">
+        <div class="flex-1">
+          <div class="font-bold text-primary">Швеллеры горячекатаные ГОСТ 8240-97</div>
+          <div class="text-xs text-text-muted mt-0.5">Горячекатаные швеллеры с полными механическими характеристиками</div>
+        </div>
+        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </section>
+  </div>
+</Base>

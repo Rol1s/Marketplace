@@ -1,0 +1,95 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getChannelsBent } from '@lib/data';
+import { SITE } from '@/config/site';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getChannelsBent().map((ch) => ({
+    params: { slug: ch.slug },
+    props: { item: ch },
+  }));
+}
+
+const { item } = Astro.props;
+const allItems = getChannelsBent();
+const related = allItems.filter((ch) => ch.slug !== item.slug).slice(0, 15).map((ch) => ({ label: ch.profile, href: `/shvellery-gnutye/${ch.slug}/` }));
+const title = `Швеллер гнутый ${item.profile} ГОСТ 8278-83 — вес, размеры | ${SITE.name}`;
+const description = `Швеллер гнутый ${item.profile} по ГОСТ 8278-83. Масса ${item.weight} кг/м. Высота ${item.h} мм, полка ${item.b} мм.`;
+---
+
+<Gost
+  title={title}
+  description={description}
+  h1={`Швеллер гнутый ${item.profile} — ГОСТ 8278-83`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Швеллеры гнутые', href: '/shvellery-gnutye/' },
+    { label: item.profile, href: `/shvellery-gnutye/${item.slug}/` },
+  ]}
+  schemaType="Product"
+  productMeta={{ sku: `CHB-${item.slug}`, weight: String(item.weight), gost: 'ГОСТ 8278-83', category: 'Швеллеры гнутые' }}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.h}</div>
+        <div class="text-xs text-text-muted mt-1">Высота h, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.b}</div>
+        <div class="text-xs text-text-muted mt-1">Полка b, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.s}</div>
+        <div class="text-xs text-text-muted mt-1">Толщина s, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{item.weight}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <GostTable
+      columns={[{ key: 'param', label: 'Параметр' }, { key: 'value', label: 'Значение', align: 'right' }]}
+      rows={[
+        { param: 'Профиль', value: item.profile },
+        { param: 'Высота h', value: `${item.h} мм` },
+        { param: 'Ширина полки b', value: `${item.b} мм` },
+        { param: 'Толщина s', value: `${item.s} мм` },
+        { param: 'Площадь сечения', value: `${item.area} см²` },
+        { param: 'Масса 1 м', value: `${item.weight} кг` },
+        { param: 'ГОСТ', value: item.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы</h2>
+    <WeightCalculator client:visible productName={`Швеллер гнутый ${item.profile}`} weightPerUnit={item.weight} mode="length" unitLabel="кг/м" defaultLength={6} />
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес гнутого швеллера ${item.profile}?`, answer: `Масса 1 м — <strong>${item.weight} кг</strong> по ГОСТ 8278-83.` },
+    { question: `Чем гнутый швеллер отличается от горячекатаного?`, answer: `Гнутый изготавливается холодной гибкой из листа. Более точные размеры, но без радиусов скругления характерных для горячей прокатки.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Заявка на швеллер {item.profile}
+    </a>
+  </section>
+
+  <RelatedItems title="Другие профили" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Швеллер гнутый ${item.profile}`} />
+  </section>
+</Gost>

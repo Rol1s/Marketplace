@@ -122,6 +122,100 @@ export interface City {
   address: string;
 }
 
+export interface Rebar {
+  slug: string;
+  diameter: number;
+  crossSectionArea: number;
+  weightPerMeter: number;
+  gost: string;
+  rebarClass: string;
+}
+
+export interface ProfileTubeSquare {
+  slug: string;
+  size: number;
+  wallThickness: number;
+  weightPerMeter: number;
+  area: number;
+  gost: string;
+}
+
+export interface ProfileTubeRect {
+  slug: string;
+  sizeA: number;
+  sizeB: number;
+  wallThickness: number;
+  weightPerMeter: number;
+  area: number;
+  gost: string;
+}
+
+export interface RoundBar {
+  slug: string;
+  diameter: number;
+  crossSectionArea: number;
+  weightPerMeter: number;
+  gost: string;
+}
+
+export interface SquareBar {
+  slug: string;
+  side: number;
+  crossSectionArea: number;
+  weightPerMeter: number;
+  gost: string;
+}
+
+export interface StripSteel {
+  slug: string;
+  width: number;
+  thickness: number;
+  weightPerMeter: number;
+  gost: string;
+}
+
+export interface BeamClassic {
+  slug: string;
+  profile: string;
+  h: number;
+  b: number;
+  s: number;
+  t: number;
+  area: number;
+  weightPerMeter: number;
+  gost: string;
+}
+
+export interface ChannelBent {
+  slug: string;
+  profile: string;
+  h: number;
+  b: number;
+  s: number;
+  t: number;
+  area: number;
+  weight: number;
+  gost: string;
+}
+
+export interface PipeSeamless {
+  slug: string;
+  diameter: number;
+  wallThickness: number;
+  weightPerMeter: number;
+  gost: string;
+}
+
+export interface PipeVgp {
+  slug: string;
+  nominalBore: number;
+  outerDiameter: number;
+  wallThickness: number;
+  weightPerMeter: number;
+  gost: string;
+  type: string;
+}
+
 export interface GostPageMeta {
   title: string;
   description: string;

@@ -30,6 +30,38 @@ const titleVariants = {
     (t: string) => `Шпунт Ларсена ${t} — вес, характеристики, размеры`,
     (t: string) => `Шпунт ${t} — масса погонного метра, площадь`,
   ],
+  rebar: [
+    (d: number, cls: string) => `Арматура ${d} мм ${cls} — вес, характеристики | ГОСТ 34028-2016`,
+    (d: number, cls: string) => `Арматура ⌀${d} класс ${cls} — сортамент, масса погонного метра`,
+  ],
+  profileTubeSquare: [
+    (s: number, w: number) => `Профильная труба ${s}×${s}×${w} — вес, характеристики | ГОСТ 8639-82`,
+    (s: number, w: number) => `Труба квадратная ${s}×${s}×${w} мм — сортамент, масса`,
+  ],
+  profileTubeRect: [
+    (a: number, b: number, w: number) => `Профильная труба ${a}×${b}×${w} — вес, размеры | ГОСТ 8645-68`,
+    (a: number, b: number, w: number) => `Труба прямоугольная ${a}×${b}×${w} мм — масса, характеристики`,
+  ],
+  roundBar: [
+    (d: number) => `Круг стальной ⌀${d} мм — вес, характеристики | ГОСТ 2590-2006`,
+    (d: number) => `Круг горячекатаный ${d} мм — сортамент, масса погонного метра`,
+  ],
+  squareBar: [
+    (s: number) => `Квадрат стальной ${s}×${s} мм — вес, размеры | ГОСТ 2591-88`,
+    (s: number) => `Квадрат горячекатаный ${s} мм — сортамент, масса`,
+  ],
+  pipeSeamless: [
+    (d: number, w: number) => `Труба бесшовная ${d}×${w} мм — вес, ГОСТ 8732-78`,
+    (d: number, w: number) => `Труба бесшовная горячедеформированная ${d}×${w} — сортамент, масса`,
+  ],
+  pipeVgp: [
+    (dn: number, t: string) => `Труба ВГП ДУ${dn} ${t} — вес, характеристики | ГОСТ 3262-75`,
+    (dn: number, t: string) => `Труба водогазопроводная ДУ${dn} ${t} — масса, сортамент`,
+  ],
+  stripSteel: [
+    (w: number, t: number) => `Полоса стальная ${w}×${t} мм — вес, характеристики | ГОСТ 103-2006`,
+    (w: number, t: number) => `Полоса горячекатаная ${w}×${t} мм — масса, сортамент`,
+  ],
 } as const;
 
 function pickVariant<T>(variants: readonly T[], seed: string): T {
@@ -81,5 +113,53 @@ export function shpuntMeta(type: string, weightTons: number) {
   const title = pickVariant(titleVariants.shpunt, type)(type);
   const weightKg = (weightTons * 1000).toFixed(1);
   const description = `Шпунт Ларсена ${type}. Масса ${weightKg} кг/м. Характеристики, область применения, аналоги.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function pipeSeamlessMeta(diameter: number, wallThickness: number, weight: number) {
+  const title = pickVariant(titleVariants.pipeSeamless, `${diameter}x${wallThickness}`)(diameter, wallThickness);
+  const description = `Труба бесшовная горячедеформированная ${diameter}×${wallThickness} мм по ГОСТ 8732-78. Масса 1 м — ${weight} кг. Сортамент, характеристики.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function pipeVgpMeta(nominalBore: number, type: string, weight: number) {
+  const title = pickVariant(titleVariants.pipeVgp, `${nominalBore}-${type}`)(nominalBore, type);
+  const description = `Труба водогазопроводная ДУ${nominalBore} ${type} по ГОСТ 3262-75. Масса 1 м — ${weight} кг. Сортамент, размеры.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function rebarMeta(diameter: number, rebarClass: string, weight: number) {
+  const title = pickVariant(titleVariants.rebar, `${diameter}-${rebarClass}`)(diameter, rebarClass);
+  const description = `Арматура ⌀${diameter} мм класс ${rebarClass} по ГОСТ 34028-2016. Масса 1 метра — ${weight} кг. Сортамент, площадь сечения, применение.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function profileTubeSquareMeta(size: number, wallThickness: number, weight: number) {
+  const title = pickVariant(titleVariants.profileTubeSquare, `${size}x${wallThickness}`)(size, wallThickness);
+  const description = `Профильная труба квадратная ${size}×${size}×${wallThickness} мм по ГОСТ 8639-82. Масса 1 м — ${weight} кг. Сортамент, характеристики.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function profileTubeRectMeta(a: number, b: number, wallThickness: number, weight: number) {
+  const title = pickVariant(titleVariants.profileTubeRect, `${a}x${b}x${wallThickness}`)(a, b, wallThickness);
+  const description = `Профильная труба прямоугольная ${a}×${b}×${wallThickness} мм по ГОСТ 8645-68. Масса 1 м — ${weight} кг. Сортамент, характеристики.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function roundBarMeta(diameter: number, weight: number) {
+  const title = pickVariant(titleVariants.roundBar, `${diameter}`)(diameter);
+  const description = `Круг стальной горячекатаный ⌀${diameter} мм по ГОСТ 2590-2006. Масса 1 м — ${weight} кг. Сортамент, площадь сечения, применение.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function squareBarMeta(side: number, weight: number) {
+  const title = pickVariant(titleVariants.squareBar, `${side}`)(side);
+  const description = `Квадрат стальной горячекатаный ${side}×${side} мм по ГОСТ 2591-88. Масса 1 м — ${weight} кг. Сортамент, характеристики.`;
+  return { title: `${title} | ${SITE.name}`, description };
+}
+
+export function stripSteelMeta(width: number, thickness: number, weight: number) {
+  const title = pickVariant(titleVariants.stripSteel, `${width}x${thickness}`)(width, thickness);
+  const description = `Полоса стальная горячекатаная ${width}×${thickness} мм по ГОСТ 103-2006. Масса 1 м — ${weight} кг. Сортамент, характеристики.`;
   return { title: `${title} | ${SITE.name}`, description };
 }

@@ -1,0 +1,43 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getPipesVgp } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const items = getPipesVgp();
+const title = `Трубы водогазопроводные (ВГП) ГОСТ 3262-75 — сортамент, вес | ${SITE.name}`;
+const description = `Полный сортамент водогазопроводных труб по ГОСТ 3262-75. ${items.length} типоразмеров, обыкновенные и усиленные.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Трубы ВГП', href: '/truby-vgp/' },
+    ]} />
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Трубы водогазопроводные (ВГП) — ГОСТ 3262-75</h1>
+    <p class="text-text-muted mb-8 max-w-3xl">{items.length} типоразмеров, обыкновенные и усиленные. Применяются для водо- и газопроводов, систем отопления.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-10">
+      {items.map((p) => (
+        <a href={`/truby-vgp/${p.slug}/`} class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all">
+          <div class="text-lg font-bold text-primary group-hover:text-accent">ДУ{p.nominalBore}</div>
+          <div class="text-xs text-text-muted mt-1">{p.type}, {p.weightPerMeter} кг/м</div>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-bold text-primary mb-4">Полная таблица</h2>
+    <GostTable
+      columns={[
+        { key: 'nominalBore', label: 'ДУ', unit: 'мм', align: 'right' },
+        { key: 'outerDiameter', label: 'Наружн. ⌀', unit: 'мм', align: 'right' },
+        { key: 'wallThickness', label: 'Стенка', unit: 'мм', align: 'right' },
+        { key: 'type', label: 'Тип' },
+        { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+      ]}
+      rows={items.map((p) => ({ ...p, _href: `/truby-vgp/${p.slug}/` }))}
+    />
+  </div>
+</Base>

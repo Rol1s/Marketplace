@@ -1,0 +1,54 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getBeamsClassic } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const items = getBeamsClassic();
+const title = `Двутавры стальные с уклоном полок ГОСТ 8239-89 — сортамент, вес | ${SITE.name}`;
+const description = `Полный сортамент горячекатаных двутавров с уклоном внутренних граней полок по ГОСТ 8239-89. ${items.length} профилей.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Двутавры ГОСТ 8239', href: '/dvutavry-8239/' },
+    ]} />
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Двутавры с уклоном полок — ГОСТ 8239-89</h1>
+    <p class="text-text-muted mb-8 max-w-3xl">Классические горячекатаные двутавры с уклоном внутренних граней полок 6–12%. {items.length} профилей от №10 до №60.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
+      {items.map((b) => (
+        <a href={`/dvutavry-8239/${b.slug}/`} class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all">
+          <div class="text-lg font-bold text-primary group-hover:text-accent">{b.profile}</div>
+          <div class="text-xs text-text-muted mt-1">h={b.h} мм, {b.weightPerMeter} кг/м</div>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-xl font-bold text-primary mb-4">Полная таблица</h2>
+    <GostTable
+      columns={[
+        { key: 'profile', label: 'Профиль' },
+        { key: 'h', label: 'h', unit: 'мм', align: 'right' },
+        { key: 'b', label: 'b', unit: 'мм', align: 'right' },
+        { key: 's', label: 's', unit: 'мм', align: 'right' },
+        { key: 't', label: 't', unit: 'мм', align: 'right' },
+        { key: 'weightPerMeter', label: 'Масса', unit: 'кг/м', align: 'right' },
+      ]}
+      rows={items.map((b) => ({ ...b, _href: `/dvutavry-8239/${b.slug}/` }))}
+    />
+
+    <section class="mt-8">
+      <a href="/dvutavry/" class="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface">
+        <div class="flex-1">
+          <div class="font-bold text-primary">Двутавры ГОСТ 35087-2024</div>
+          <div class="text-xs text-text-muted mt-0.5">Новый стандарт с параллельными гранями полок</div>
+        </div>
+        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </section>
+  </div>
+</Base>

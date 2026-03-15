@@ -1,0 +1,39 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GostTable from '@components/GostTable.astro';
+import { getSquareBars } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const items = getSquareBars();
+const title = `Квадрат стальной горячекатаный ГОСТ 2591-88 — сортамент, вес | ${SITE.name}`;
+const description = `Полный сортамент стального квадрата по ГОСТ 2591-88. ${items.length} размеров от ${items[0].side} до ${items[items.length - 1].side} мм.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Квадрат', href: '/kvadrat/' },
+    ]} />
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Квадрат стальной — ГОСТ 2591-88</h1>
+    <p class="text-text-muted mb-8 max-w-3xl">{items.length} размеров от {items[0].side} до {items[items.length - 1].side} мм.</p>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 mb-10">
+      {items.map((s) => (
+        <a href={`/kvadrat/${s.slug}/`} class="group block p-2 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all text-center">
+          <div class="text-lg font-bold text-primary group-hover:text-accent">{s.side}×{s.side}</div>
+          <div class="text-xs text-text-muted">{s.weightPerMeter} кг/м</div>
+        </a>
+      ))}
+    </div>
+    <h2 class="text-xl font-bold text-primary mb-4">Таблица сортамента</h2>
+    <GostTable
+      columns={[
+        { key: 'side', label: 'Сторона', unit: 'мм', align: 'right' },
+        { key: 'crossSectionArea', label: 'Площадь', unit: 'см²', align: 'right' },
+        { key: 'weightPerMeter', label: 'Масса 1 м', unit: 'кг', align: 'right' },
+      ]}
+      rows={items.map((s) => ({ ...s, _href: `/kvadrat/${s.slug}/` }))}
+    />
+  </div>
+</Base>

@@ -1,0 +1,50 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { getProfileTubesSquare, getProfileTubesRect } from '@lib/data';
+import { SITE } from '@/config/site';
+
+const sq = getProfileTubesSquare();
+const rect = getProfileTubesRect();
+const title = `Профильная труба — квадратная и прямоугольная | ГОСТ 8639-82, 8645-68 | ${SITE.name}`;
+const description = `Сортамент профильных труб: ${sq.length} квадратных по ГОСТ 8639-82 и ${rect.length} прямоугольных по ГОСТ 8645-68. Таблицы размеров и веса.`;
+---
+
+<Base title={title} description={description}>
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <Breadcrumbs items={[
+      { label: 'Сортамент', href: '/sortament/' },
+      { label: 'Профильная труба', href: '/profilnaya-truba/' },
+    ]} />
+
+    <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Профильная труба — сортамент</h1>
+
+    <p class="text-text-muted mb-8 max-w-3xl">
+      Полный сортамент стальных профильных труб: {sq.length} квадратных по ГОСТ 8639-82 и {rect.length} прямоугольных по ГОСТ 8645-68.
+    </p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-primary mb-4">Квадратная — ГОСТ 8639-82</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {sq.map((t) => (
+          <a href={`/profilnaya-truba/kvadratnaya/${t.slug}/`} class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all">
+            <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">{t.size}×{t.size}×{t.wallThickness}</div>
+            <div class="text-xs text-text-muted mt-1">{t.weightPerMeter} кг/м</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-bold text-primary mb-4">Прямоугольная — ГОСТ 8645-68</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {rect.map((t) => (
+          <a href={`/profilnaya-truba/pryamougolnaya/${t.slug}/`} class="group block p-3 rounded-lg border border-border hover:border-primary hover:shadow-md transition-all">
+            <div class="text-lg font-bold text-primary group-hover:text-accent transition-colors">{t.sizeA}×{t.sizeB}×{t.wallThickness}</div>
+            <div class="text-xs text-text-muted mt-1">{t.weightPerMeter} кг/м</div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>

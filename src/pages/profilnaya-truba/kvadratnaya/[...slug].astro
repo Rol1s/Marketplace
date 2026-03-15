@@ -1,0 +1,110 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getProfileTubesSquare } from '@lib/data';
+import { profileTubeSquareMeta } from '@lib/seo';
+import { relatedProfileTubesSquare } from '@lib/links';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import ProductCrossLinks from '@components/ProductCrossLinks.astro';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getProfileTubesSquare().map((t) => ({
+    params: { slug: t.slug },
+    props: { item: t },
+  }));
+}
+
+const { item } = Astro.props;
+const allItems = getProfileTubesSquare();
+const meta = profileTubeSquareMeta(item.size, item.wallThickness, item.weightPerMeter);
+const related = relatedProfileTubesSquare(allItems, item.slug);
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Профильная труба ${item.size}×${item.size}×${item.wallThickness} — ГОСТ 8639-82`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Профильная труба', href: '/profilnaya-truba/' },
+    { label: `${item.size}×${item.size}×${item.wallThickness}`, href: `/profilnaya-truba/kvadratnaya/${item.slug}/` },
+  ]}
+  schemaType="Product"
+  productMeta={{ sku: `PTS-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 8639-82', category: 'Профильная труба квадратная' }}
+>
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.size}×{item.size}</div>
+        <div class="text-xs text-text-muted mt-1">Сечение, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.area}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь, см²</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Полные характеристики</h2>
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Размер стороны', value: `${item.size} мм` },
+        { param: 'Толщина стенки', value: `${item.wallThickness} мм` },
+        { param: 'Площадь сечения', value: `${item.area} см²` },
+        { param: 'Масса 1 м', value: `${item.weightPerMeter} кг` },
+        { param: 'Метров в тонне', value: `${(1000 / item.weightPerMeter).toFixed(1)} м` },
+        { param: 'ГОСТ', value: item.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы</h2>
+    <WeightCalculator client:visible productName={`Профтруба ${item.size}×${item.size}×${item.wallThickness}`} weightPerUnit={item.weightPerMeter} mode="length" unitLabel="кг/м" defaultLength={6} />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Область применения</h2>
+    <p class="text-text-muted leading-relaxed">
+      Профильная труба квадратная {item.size}×{item.size}×{item.wallThickness} мм по ГОСТ 8639-82 применяется
+      {item.size <= 40 && ' для изготовления мебели, лёгких каркасов, ограждений, перил, декоративных конструкций.'}
+      {item.size > 40 && item.size <= 80 && ' в строительных каркасах, опорных конструкциях, фермах, навесах, заборах.'}
+      {item.size > 80 && ' в тяжёлых металлоконструкциях, колоннах, стойках, промышленных каркасах, мостовых конструкциях.'}
+    </p>
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес профильной трубы ${item.size}×${item.size}×${item.wallThickness}?`, answer: `Масса 1 м профильной трубы ${item.size}×${item.size}×${item.wallThickness} по ГОСТ 8639-82 — <strong>${item.weightPerMeter} кг</strong>.` },
+    { question: `Формула расчёта веса профтрубы?`, answer: `Вес (кг/м) = (2×(A+B) – 4×S) × S × 0,00785, где A и B — стороны, S — толщина стенки в мм.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Оставить заявку на профтрубу {item.size}×{item.size}×{item.wallThickness}
+    </a>
+  </section>
+
+  <ProductCrossLinks productSlug="profilnaya-truba-kv" itemSlug={item.slug} productType={`профтрубы ${item.size}×${item.size}`} basePath="/profilnaya-truba/kvadratnaya/" />
+  <RelatedItems title="Другие размеры квадратных профтруб" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Профильная труба ${item.size}×${item.size}×${item.wallThickness}`} />
+  </section>
+</Gost>

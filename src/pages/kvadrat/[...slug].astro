@@ -1,0 +1,90 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import RelatedItems from '@components/RelatedItems.astro';
+import WeightCalculator from '@components/WeightCalculator';
+import { getSquareBars } from '@lib/data';
+import { squareBarMeta } from '@lib/seo';
+import { relatedSquareBars } from '@lib/links';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import ProductCrossLinks from '@components/ProductCrossLinks.astro';
+import LeadForm from '@components/LeadForm.tsx';
+
+export function getStaticPaths() {
+  return getSquareBars().map((s) => ({
+    params: { slug: s.slug },
+    props: { item: s },
+  }));
+}
+
+const { item } = Astro.props;
+const allItems = getSquareBars();
+const meta = squareBarMeta(item.side, item.weightPerMeter);
+const related = relatedSquareBars(allItems, item.slug);
+---
+
+<Gost
+  title={meta.title}
+  description={meta.description}
+  h1={`Квадрат стальной ${item.side}×${item.side} мм — ГОСТ 2591-88`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: 'Квадрат', href: '/kvadrat/' },
+    { label: `${item.side}×${item.side}`, href: `/kvadrat/${item.slug}/` },
+  ]}
+  schemaType="Product"
+  productMeta={{ sku: `SQ-${item.slug}`, weight: String(item.weightPerMeter), gost: 'ГОСТ 2591-88', category: 'Квадрат стальной' }}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.side}×{item.side}</div>
+        <div class="text-xs text-text-muted mt-1">Размер, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{item.crossSectionArea}</div>
+        <div class="text-xs text-text-muted mt-1">Площадь, см²</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{item.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса, кг/м</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Характеристики</h2>
+    <GostTable
+      columns={[{ key: 'param', label: 'Параметр' }, { key: 'value', label: 'Значение', align: 'right' }]}
+      rows={[
+        { param: 'Сторона', value: `${item.side} мм` },
+        { param: 'Площадь сечения', value: `${item.crossSectionArea} см²` },
+        { param: 'Масса 1 м', value: `${item.weightPerMeter} кг` },
+        { param: 'Метров в тонне', value: `${(1000 / item.weightPerMeter).toFixed(1)} м` },
+        { param: 'ГОСТ', value: item.gost },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Расчёт массы</h2>
+    <WeightCalculator client:visible productName={`Квадрат ${item.side}×${item.side}`} weightPerUnit={item.weightPerMeter} mode="length" unitLabel="кг/м" defaultLength={6} />
+  </section>
+
+  <ProductFAQ items={[
+    { question: `Какой вес квадрата ${item.side} мм?`, answer: `Масса 1 м квадрата ${item.side}×${item.side} по ГОСТ 2591-88 — <strong>${item.weightPerMeter} кг</strong>.` },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
+      Заявка на квадрат {item.side}×{item.side}
+    </a>
+  </section>
+
+  <ProductCrossLinks productSlug="kvadrat" itemSlug={item.slug} productType={`квадрата ${item.side}×${item.side}`} basePath="/kvadrat/" />
+  <RelatedItems title="Другие размеры квадрата" items={related} />
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Квадрат стальной ${item.side}×${item.side}`} />
+  </section>
+</Gost>
