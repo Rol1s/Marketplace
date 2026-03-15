@@ -1,0 +1,113 @@
+---
+import Gost from '@layouts/Gost.astro';
+import GostTable from '@components/GostTable.astro';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getCities, getPipes } from '@lib/data';
+import { SITE } from '@/config/site';
+import type { City, Pipe } from '@lib/types';
+
+export function getStaticPaths() {
+  const cities = getCities();
+  const vusPipes = getPipes().filter((p) => p.diameter >= 219 && p.diameter <= 1420);
+  return cities.flatMap((city) =>
+    vusPipes.map((pipe) => ({
+      params: { city: city.slug, slug: pipe.slug },
+      props: { city, pipe },
+    }))
+  );
+}
+
+const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
+
+const vusThickness = pipe.diameter >= 820 ? 3.5 : pipe.diameter >= 530 ? 3.0 : 2.5;
+---
+
+<Gost
+  title={`Труба ${pipe.diameter}×${pipe.wallThickness} ВУС ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  description={`Труба ${pipe.diameter}×${pipe.wallThickness} мм в изоляции ВУС ${city.namePrep}. Масса ${pipe.weightPerMeter} кг/м. ГОСТ 9.602-2016. Доставка по ${city.region}.`}
+  h1={`Труба ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС ${city.namePrep}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: city.name, href: `/${city.slug}/` },
+    { label: 'Трубы ВУС', href: '/truby/izolyaciya-vus/' },
+    { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/${city.slug}/truby/${pipe.slug}/vus/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.diameter}</div>
+        <div class="text-xs text-text-muted mt-1">Диаметр, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{pipe.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса 1 м, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{vusThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Изоляция, мм</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <GostTable
+      columns={[
+        { key: 'param', label: 'Параметр' },
+        { key: 'value', label: 'Значение', align: 'right' },
+      ]}
+      rows={[
+        { param: 'Наружный диаметр', value: `${pipe.diameter} мм` },
+        { param: 'Толщина стенки', value: `${pipe.wallThickness} мм` },
+        { param: 'Масса 1 пог. м', value: `${pipe.weightPerMeter} кг` },
+        { param: 'Тип изоляции', value: 'ВУС (весьма усиленная)' },
+        { param: 'ГОСТ изоляции', value: 'ГОСТ 9.602-2016' },
+        { param: 'Толщина изоляции', value: `${vusThickness} мм` },
+      ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Доставка {city.namePrep}</h2>
+    <p class="text-text-muted leading-relaxed">
+      Труба {pipe.diameter}×{pipe.wallThickness} мм в изоляции ВУС доступна с доставкой {city.namePrep}
+      и по {city.region}. Применяется для подземной прокладки тепловых сетей, газо- и водопроводов.
+      Для уточнения наличия и стоимости — оставьте заявку.
+    </p>
+    <p class="text-text-muted leading-relaxed mt-2">
+      <a href={`/truby/${pipe.slug}/vus/`} class="text-primary underline">
+        Характеристики трубы {pipe.diameter}×{pipe.wallThickness} в изоляции ВУС
+      </a>
+    </p>
+  </section>
+
+  <ProductFAQ items={[
+    {
+      question: `Где купить трубу ${pipe.diameter}×${pipe.wallThickness} ВУС ${city.namePrep}?`,
+      answer: `Оставьте заявку — подберём трубу ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС у поставщиков ${city.namePrep} и ${city.region}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.`,
+    },
+    {
+      question: `Какая толщина ВУС-изоляции для трубы ${pipe.diameter} мм?`,
+      answer: `Для трубы диаметром ${pipe.diameter} мм толщина изоляции ВУС составляет <strong>${vusThickness} мм</strong> по ГОСТ 9.602-2016.`,
+    },
+    {
+      question: `Для чего применяется труба ${pipe.diameter}×${pipe.wallThickness} ВУС ${city.namePrep}?`,
+      answer: `Труба ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС применяется для подземной прокладки тепловых сетей, газо- и водопроводов ${city.namePrep}. Изоляция ВУС защищает от коррозии на 40+ лет.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth">
+      Купить трубу {pipe.diameter}×{pipe.wallThickness} ВУС {city.namePrep}
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Труба ${pipe.diameter}×${pipe.wallThickness} ВУС ${city.namePrep}`} />
+  </section>
+</Gost>

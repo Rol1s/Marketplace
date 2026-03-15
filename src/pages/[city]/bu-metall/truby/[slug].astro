@@ -1,0 +1,115 @@
+---
+import Gost from '@layouts/Gost.astro';
+import BuMetallInfo from '@components/BuMetallInfo.astro';
+import PipeCalculator from '@components/PipeCalculator';
+import ProductFAQ from '@components/ProductFAQ.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getCities, getPipes, getPipesByDiameter } from '@lib/data';
+import { SITE } from '@/config/site';
+import type { City, Pipe } from '@lib/types';
+
+export function getStaticPaths() {
+  const cities = getCities();
+  const pipes = getPipes();
+  return cities.flatMap((city) =>
+    pipes.map((pipe) => ({
+      params: { city: city.slug, slug: pipe.slug },
+      props: { city, pipe },
+    }))
+  );
+}
+
+const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
+const sameDiameter = getPipesByDiameter(pipe.diameter);
+---
+
+<Gost
+  title={`Труба ${pipe.diameter}×${pipe.wallThickness} б/у ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  description={`Купить трубу б/у ${pipe.diameter}×${pipe.wallThickness} мм ${city.namePrep}. Масса ${pipe.weightPerMeter} кг/м. Вторичный прокат с доставкой по ${city.region}.`}
+  h1={`Труба ${pipe.diameter}×${pipe.wallThickness} б/у ${city.namePrep}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: city.name, href: `/${city.slug}/` },
+    { label: 'Б/у металлопрокат', href: `/${city.slug}/bu-metall/` },
+    { label: `Трубы б/у`, href: `/bu-metall/truby/` },
+    { label: `${pipe.diameter}×${pipe.wallThickness}`, href: `/${city.slug}/bu-metall/truby/${pipe.slug}/` },
+  ]}
+>
+  <section class="mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.diameter}</div>
+        <div class="text-xs text-text-muted mt-1">Диаметр, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{pipe.wallThickness}</div>
+        <div class="text-xs text-text-muted mt-1">Стенка, мм</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-accent">{pipe.weightPerMeter}</div>
+        <div class="text-xs text-text-muted mt-1">Масса 1 м, кг</div>
+      </div>
+      <div class="bg-surface rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary">{(1000 / pipe.weightPerMeter).toFixed(1)}</div>
+        <div class="text-xs text-text-muted mt-1">Метров в тонне</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса трубы б/у</h2>
+    <PipeCalculator
+      client:visible
+      diameter={pipe.diameter}
+      wallThickness={pipe.wallThickness}
+      weightPerMeter={pipe.weightPerMeter}
+      availableWalls={sameDiameter.map((p) => ({ wallThickness: p.wallThickness, weightPerMeter: p.weightPerMeter, slug: p.slug }))}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Доставка {city.namePrep}</h2>
+    <p class="text-text-muted leading-relaxed">
+      Труба б/у {pipe.diameter}×{pipe.wallThickness} мм доступна с доставкой {city.namePrep}
+      и по {city.region}. Для уточнения наличия и стоимости оставьте заявку.
+    </p>
+    <p class="text-text-muted leading-relaxed mt-2">
+      <a href={`/bu-metall/truby/${pipe.slug}/`} class="text-primary underline">
+        Подробные характеристики трубы {pipe.diameter}×{pipe.wallThickness} б/у
+      </a>
+      — калькулятор, таблица масс, погрузка в шаланду.
+    </p>
+  </section>
+
+  <BuMetallInfo
+    productName={`труба ${pipe.diameter}×${pipe.wallThickness} мм`}
+    gost={pipe.gost}
+    baseHref={`/truby/${pipe.slug}/`}
+    baseLinkLabel={`Труба ${pipe.diameter}×${pipe.wallThickness} — характеристики (новая)`}
+  />
+
+  <ProductFAQ items={[
+    {
+      question: `Где купить трубу ${pipe.diameter}×${pipe.wallThickness} б/у ${city.namePrep}?`,
+      answer: `Оставьте заявку — подберём трубу б/у ${pipe.diameter}×${pipe.wallThickness} от поставщиков ${city.namePrep} и ${city.region}. <a href="/zayavka/" class="text-primary underline">Оставить заявку</a>.`,
+    },
+    {
+      question: `Какой вес трубы б/у ${pipe.diameter}×${pipe.wallThickness}?`,
+      answer: `Масса 1 пог. м трубы б/у ${pipe.diameter}×${pipe.wallThickness} мм — <strong>${pipe.weightPerMeter} кг</strong> по ${pipe.gost}. Вес б/у трубы не отличается от нового проката.`,
+    },
+    {
+      question: `Есть ли доставка трубы б/у ${city.namePrep}?`,
+      answer: `Да, организуем доставку б/у металлопроката ${city.namePrep} и по ${city.region}. Стоимость зависит от объёма заказа.`,
+    },
+  ]} />
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth">
+      Купить трубу {pipe.diameter}×{pipe.wallThickness} б/у {city.namePrep}
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Труба ${pipe.diameter}×${pipe.wallThickness} б/у ${city.namePrep}`} />
+  </section>
+</Gost>

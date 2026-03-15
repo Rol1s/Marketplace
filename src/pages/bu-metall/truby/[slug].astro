@@ -4,6 +4,7 @@ import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import PipeCalculator from '@components/PipeCalculator';
 import { getPipes, getPipesByDiameter } from '@lib/data';
 import { SITE } from '@/config/site';
 
@@ -69,6 +70,17 @@ const weightRows = [1, 6, 11.7, 12].map((len) => ({
         </div>
       ))}
     </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса трубы б/у</h2>
+    <PipeCalculator
+      client:visible
+      diameter={pipe.diameter}
+      wallThickness={pipe.wallThickness}
+      weightPerMeter={pipe.weightPerMeter}
+      availableWalls={sameDiameter.map((p) => ({ wallThickness: p.wallThickness, weightPerMeter: p.weightPerMeter, slug: p.slug }))}
+    />
   </section>
 
   <BuMetallInfo

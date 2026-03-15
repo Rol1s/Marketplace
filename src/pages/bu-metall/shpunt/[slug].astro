@@ -4,6 +4,7 @@ import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import WeightCalculator from '@components/WeightCalculator';
 import { getSheetPiles } from '@lib/data';
 import { SITE } from '@/config/site';
 
@@ -58,6 +59,17 @@ const weightPerMeterKg = (pile.weightPerMeterTons * 1000).toFixed(0);
         { param: 'Масса 1 м', value: `${weightPerMeterKg} кг` },
         { param: 'Площадь сечения 1 м', value: `${pile.areaPerMeterM2} м²` },
       ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса шпунта б/у</h2>
+    <WeightCalculator
+      client:visible
+      productName={`${pile.displayName} б/у`}
+      weightPerUnit={pile.weightPerMeterTons * 1000}
+      mode="length"
+      unitLabel="кг/м"
     />
   </section>
 

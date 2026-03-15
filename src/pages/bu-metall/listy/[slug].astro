@@ -4,6 +4,7 @@ import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import WeightCalculator from '@components/WeightCalculator';
 import { getSheets } from '@lib/data';
 import { sheetWeight, formatWeight } from '@lib/calculator';
 import { SITE } from '@/config/site';
@@ -67,6 +68,17 @@ const weightPerM2 = (sheet.thickness * 7.85).toFixed(2);
         { param: 'Масса 1 м²', value: `${weightPerM2} кг` },
         { param: 'ГОСТ', value: sheet.gost },
       ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса листов б/у</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} б/у`}
+      weightPerUnit={weightKg}
+      mode="piece"
+      unitLabel="кг/лист"
     />
   </section>
 

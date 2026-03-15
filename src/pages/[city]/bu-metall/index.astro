@@ -1,0 +1,115 @@
+---
+import Gost from '@layouts/Gost.astro';
+import LeadForm from '@components/LeadForm.tsx';
+import { getCities, getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getSheetPiles } from '@lib/data';
+import { SITE } from '@/config/site';
+import type { City } from '@lib/types';
+
+export function getStaticPaths() {
+  return getCities().map((city) => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props as { city: City };
+
+const pipes = getPipes().filter((p) => p.diameter >= 219 && p.diameter <= 630)
+  .filter((p, i, arr) => arr.findIndex((x) => x.diameter === p.diameter) === i)
+  .slice(0, 12);
+
+const channels = getChannels().slice(0, 8);
+const beams = getBeams().filter((_, i) => i % 8 === 0).slice(0, 8);
+
+const title = `Б/у металлопрокат ${city.namePrep} — трубы, швеллеры, двутавры | ${SITE.name}`;
+const description = `Б/у металлопрокат ${city.namePrep}: трубы, швеллеры, двутавры, листы, уголки. Вторичный прокат с доставкой по ${city.region}. Экономия до 40%.`;
+---
+
+<Gost
+  title={title}
+  description={description}
+  h1={`Б/у металлопрокат ${city.namePrep}`}
+  breadcrumbs={[
+    { label: 'Сортамент', href: '/sortament/' },
+    { label: city.name, href: `/${city.slug}/` },
+    { label: 'Б/у металлопрокат', href: `/${city.slug}/bu-metall/` },
+  ]}
+>
+  <p class="text-text-muted mb-8 leading-relaxed max-w-3xl">
+    Вторичный (б/у) металлопрокат {city.namePrep} и по {city.region}.
+    Те же характеристики по ГОСТ, экономия до 30–40% по сравнению с новым.
+    Трубы, швеллеры, двутавры, листы, уголки, шпунт после демонтажа.
+  </p>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Трубы б/у {city.namePrep}</h2>
+    <div class="flex flex-wrap gap-2">
+      {pipes.map((p) => (
+        <a href={`/${city.slug}/bu-metall/truby/${p.slug}/`}
+           class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors">
+          ⌀{p.diameter}
+        </a>
+      ))}
+      <a href="/bu-metall/truby/" class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors text-primary">
+        Все трубы →
+      </a>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Швеллеры б/у {city.namePrep}</h2>
+    <div class="flex flex-wrap gap-2">
+      {channels.map((c) => (
+        <a href={`/bu-metall/shvellery/${c.slug}/`}
+           class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors">
+          Швеллер {c.profile}
+        </a>
+      ))}
+      <a href="/bu-metall/shvellery/" class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors text-primary">
+        Все швеллеры →
+      </a>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Двутавры б/у {city.namePrep}</h2>
+    <div class="flex flex-wrap gap-2">
+      {beams.map((b) => (
+        <a href={`/bu-metall/dvutavry/${b.slug}/`}
+           class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors">
+          Двутавр {b.profile}
+        </a>
+      ))}
+      <a href="/bu-metall/dvutavry/" class="inline-block px-3 py-2 rounded-lg text-sm border border-border bg-surface hover:border-primary transition-colors text-primary">
+        Все двутавры →
+      </a>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-surface rounded-xl p-4 border border-border">
+        <div class="font-bold text-primary mb-1">Экономия до 40%</div>
+        <p class="text-sm text-text-muted">Б/у металл дешевле нового при тех же технических характеристиках.</p>
+      </div>
+      <div class="bg-surface rounded-xl p-4 border border-border">
+        <div class="font-bold text-primary mb-1">Контроль качества</div>
+        <p class="text-sm text-text-muted">Проверка геометрии и толщины стенки перед отгрузкой.</p>
+      </div>
+      <div class="bg-surface rounded-xl p-4 border border-border">
+        <div class="font-bold text-primary mb-1">Доставка по {city.region}</div>
+        <p class="text-sm text-text-muted">Подбираем поставщиков б/у проката {city.namePrep}.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <a href="#lead-form" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg scroll-smooth">
+      Получить предложение по б/у металлу {city.namePrep}
+    </a>
+  </section>
+
+  <section id="lead-form" class="scroll-mt-20">
+    <LeadForm client:visible product={`Б/у металлопрокат ${city.namePrep}`} />
+  </section>
+</Gost>

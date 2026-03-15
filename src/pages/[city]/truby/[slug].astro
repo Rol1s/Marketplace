@@ -71,6 +71,31 @@ const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
     { question: `Есть ли доставка трубы ${city.namePrep}?`, answer: `Да, мы организуем доставку металлопроката ${city.namePrep} и по всей ${city.region}. Стоимость доставки зависит от объёма заказа.` },
   ]} />
 
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+    <a
+      href={`/${city.slug}/bu-metall/truby/${pipe.slug}/`}
+      class="flex items-center gap-3 p-4 rounded-xl border border-border hover:border-primary hover:shadow-md transition-all bg-surface"
+    >
+      <div class="flex-1">
+        <div class="font-bold text-primary text-sm">Труба {pipe.diameter}×{pipe.wallThickness} б/у {city.namePrep}</div>
+        <div class="text-xs text-text-muted mt-0.5">Вторичный прокат, те же характеристики</div>
+      </div>
+      <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+    {pipe.diameter >= 219 && pipe.diameter <= 1420 && (
+      <a
+        href={`/${city.slug}/truby/${pipe.slug}/vus/`}
+        class="flex items-center gap-3 p-4 rounded-xl border border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface"
+      >
+        <div class="flex-1">
+          <div class="font-bold text-primary text-sm">Труба {pipe.diameter}×{pipe.wallThickness} ВУС {city.namePrep}</div>
+          <div class="text-xs text-text-muted mt-0.5">В изоляции ВУС, ГОСТ 9.602-2016</div>
+        </div>
+        <svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+    )}
+  </div>
+
   <section class="mb-8">
     <a href="/zayavka/" class="block bg-accent hover:bg-accent/90 text-white text-center font-bold py-4 px-6 rounded-xl transition-colors text-lg">
       Купить трубу {pipe.diameter}×{pipe.wallThickness} {city.namePrep}

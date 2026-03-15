@@ -4,6 +4,7 @@ import BuMetallInfo from '@components/BuMetallInfo.astro';
 import GostTable from '@components/GostTable.astro';
 import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
+import WeightCalculator from '@components/WeightCalculator';
 import { getChannels } from '@lib/data';
 import { SITE } from '@/config/site';
 
@@ -64,6 +65,17 @@ const { channel } = Astro.props;
         { param: 'Масса 1 м', value: `${channel.weight} кг` },
         { param: 'ГОСТ', value: channel.gost },
       ]}
+    />
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса швеллера б/у</h2>
+    <WeightCalculator
+      client:visible
+      productName={`Швеллер ${channel.profile} б/у`}
+      weightPerUnit={channel.weight}
+      mode="length"
+      unitLabel="кг/м"
     />
   </section>
 
