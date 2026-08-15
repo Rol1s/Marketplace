@@ -27,7 +27,7 @@ function sitemapPriority(url) {
 }
 
 export default defineConfig({
-  site: process.env.PUBLIC_SITE_URL || 'https://rus-metall.pro',
+  site: process.env.PUBLIC_SITE_URL || 'https://marketplace-kappa-neon.vercel.app',
   output: 'server',
   adapter: vercel({
     isr: true,
@@ -36,7 +36,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      customPages: buildDynamicUrls(process.env.PUBLIC_SITE_URL || 'https://rus-metall.pro'),
+      customPages: buildDynamicUrls(process.env.PUBLIC_SITE_URL || 'https://marketplace-kappa-neon.vercel.app'),
       serialize(item) {
         const { priority, changefreq } = sitemapPriority(item.url);
         item.priority = priority;

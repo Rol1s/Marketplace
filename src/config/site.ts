@@ -1,4 +1,4 @@
-const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://rus-metall.pro';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://marketplace-kappa-neon.vercel.app';
 
 export const SITE = {
   name: 'НикаМет',
