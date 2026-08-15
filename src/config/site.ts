@@ -1,7 +1,9 @@
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://rus-metall.pro';
+
 export const SITE = {
   name: 'НикаМет',
-  domain: 'nikamet.pro',
-  url: 'https://nikamet.pro',
+  domain: new URL(siteUrl).hostname,
+  url: siteUrl,
   description: 'ГОСТ-справочник металлопроката с калькулятором веса. Трубы, швеллеры, двутавры, листы, уголки, шпунт Ларсена.',
   locale: 'ru-RU',
 } as const;

@@ -1,4 +1,5 @@
 import type { SupportScheme } from '@/lib/beam-calc';
+import type { ReactElement } from 'react';
 
 interface Props {
   scheme: SupportScheme;
@@ -36,7 +37,7 @@ function FixedSupport({ x, y, side }: { x: number; y: number; side: 'left' | 'ri
 function LoadArrows({ x1, x2, y }: { x1: number; x2: number; y: number }) {
   const n = 8;
   const step = (x2 - x1) / n;
-  const arrows: JSX.Element[] = [];
+  const arrows: ReactElement[] = [];
   for (let i = 0; i <= n; i++) {
     const cx = x1 + i * step;
     arrows.push(

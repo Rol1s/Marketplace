@@ -5,6 +5,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getAnglesEqual, getSteelGradesForProduct } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 
 export function getStaticPaths() {
   const angles = getAnglesEqual();
@@ -17,8 +18,11 @@ export function getStaticPaths() {
   );
 }
 
-const { angle, grade } = Astro.props;
+const angle = Astro.props.angle ?? findBySlug(getAnglesEqual(), Astro.params.slug);
 const allGrades = getSteelGradesForProduct('ugolki');
+const grade = Astro.props.grade ?? findBySlug(allGrades, Astro.params.grade);
+if (!angle || !grade) return Astro.redirect('/404/');
+
 const productName = `уголка ${angle.size}`;
 const otherGrades = allGrades.map((g) => ({
   slug: g.slug,

@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
+import { buildDynamicUrls } from './scripts/route-catalog.mjs';
 
 function sitemapPriority(url) {
   const path = new URL(url).pathname;
@@ -25,10 +27,16 @@ function sitemapPriority(url) {
 }
 
 export default defineConfig({
-  site: 'https://nikamet.pro',
+  site: process.env.PUBLIC_SITE_URL || 'https://rus-metall.pro',
+  output: 'server',
+  adapter: vercel({
+    isr: true,
+    staticHeaders: true,
+  }),
   integrations: [
     react(),
     sitemap({
+      customPages: buildDynamicUrls(process.env.PUBLIC_SITE_URL || 'https://rus-metall.pro'),
       serialize(item) {
         const { priority, changefreq } = sitemapPriority(item.url);
         item.priority = priority;

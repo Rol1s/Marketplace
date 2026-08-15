@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { $cart, removeFromCart, updateQuantity, clearCart, calcItemWeight, calcTotalWeight, type CartItem } from '@/stores/cartStore';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
 function formatWeight(kg: number): string {
   return kg >= 1000 ? `${(kg / 1000).toFixed(3)} т` : `${kg.toFixed(2)} кг`;
@@ -59,9 +59,9 @@ async function exportPDF(items: CartItem[]) {
   doc.setFont(fontName, 'bold');
   doc.setFontSize(16);
   if (hasFont) {
-    doc.text('Смета металлопроката — nikamet.pro', 105, 16, { align: 'center' });
+    doc.text('Смета металлопроката — rus-metall.pro', 105, 16, { align: 'center' });
   } else {
-    doc.text('Smeta metalloprokata — nikamet.pro', 105, 16, { align: 'center' });
+    doc.text('Smeta metalloprokata — rus-metall.pro', 105, 16, { align: 'center' });
   }
 
   doc.setFont(fontName, 'normal');
@@ -103,15 +103,67 @@ async function exportPDF(items: CartItem[]) {
   doc.setFont(fontName, 'normal');
   doc.setFontSize(8);
   doc.setTextColor(150);
-  const footerText = hasFont ? 'Сформировано на nikamet.pro — справочник металлопроката' : 'Generated at nikamet.pro';
+  const footerText = hasFont ? 'Сформировано на rus-metall.pro — справочник металлопроката' : 'Generated at rus-metall.pro';
   doc.text(footerText, 105, finalY, { align: 'center' });
 
   doc.save(`smeta-nikamet-${now.replace(/\./g, '-')}.pdf`);
 }
 
+function buildCartMessage(items: CartItem[], email: string, comment: string): string {
+  const lines = items.map((item, index) => {
+    const weight = formatWeight(calcItemWeight(item));
+    return `${index + 1}. ${item.name}, ${item.gost}, ${item.quantity} ${item.unit}, ${weight}`;
+  });
+
+  const details = [
+    `Смета: ${items.length} позиций`,
+    `Итоговый вес: ${formatWeight(calcTotalWeight(items))}`,
+    email.trim() ? `Email: ${email.trim()}` : '',
+    comment.trim() ? `Комментарий: ${comment.trim()}` : '',
+    '',
+    ...lines,
+  ];
+
+  return details.filter(Boolean).join('\n');
+}
+
 export default function CartPage() {
   const items = useStore($cart);
   const [showForm, setShowForm] = useState(false);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [comment, setComment] = useState('');
+  const [website, setWebsite] = useState('');
+  const [startedAt] = useState(() => Date.now());
+  const [leadStatus, setLeadStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  async function handleCartLeadSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!phone.trim()) return;
+
+    setLeadStatus('loading');
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          phone,
+          product: 'Смета металлопроката',
+          source: window.location.pathname,
+          message: buildCartMessage(items, email, comment),
+          website,
+          startedAt,
+        }),
+      });
+
+      if (!res.ok) throw new Error('Lead request failed');
+      setLeadStatus('success');
+    } catch {
+      setLeadStatus('error');
+    }
+  }
 
   if (items.length === 0) {
     return (
@@ -224,22 +276,73 @@ export default function CartPage() {
       {showForm && (
         <div className="mt-6 bg-surface border border-border rounded-xl p-5 max-w-md">
           <h3 className="font-bold mb-3">Отправить смету поставщику</h3>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert('Заявка отправлена! (бэкенд будет подключён позже)');
-              setShowForm(false);
-            }}
-          >
-            <div className="space-y-3 mb-4">
-              <input type="text" placeholder="Ваше имя" className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm" />
-              <input type="tel" placeholder="+7 (___) ___-__-__" required className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm" />
-              <input type="email" placeholder="Email (необязательно)" className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm" />
+          {leadStatus === 'success' ? (
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-sm text-green-800">
+              Заявка отправлена. Мы свяжемся с вами в ближайшее время.
             </div>
-            <button type="submit" className="w-full bg-accent text-white font-semibold py-3 rounded-lg hover:bg-accent-light transition-colors">
-              Отправить заявку
+          ) : (
+          <form onSubmit={handleCartLeadSubmit}>
+            <label className="hidden" aria-hidden="true">
+              Website
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
+            </label>
+            <div className="space-y-3 mb-4">
+              <input
+                type="text"
+                value={name}
+                maxLength={80}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Ваше имя"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+              />
+              <input
+                type="tel"
+                value={phone}
+                maxLength={40}
+                autoComplete="tel"
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="+7 (___) ___-__-__"
+                required
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+              />
+              <input
+                type="email"
+                value={email}
+                maxLength={120}
+                autoComplete="email"
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email (необязательно)"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm"
+              />
+              <textarea
+                value={comment}
+                maxLength={400}
+                onChange={(e) => setComment(e.target.value)}
+                rows={2}
+                placeholder="Комментарий к смете"
+                className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={leadStatus === 'loading'}
+              className="w-full bg-accent text-white font-semibold py-3 rounded-lg hover:bg-accent-light transition-colors disabled:opacity-50"
+            >
+              {leadStatus === 'loading' ? 'Отправка...' : 'Отправить заявку'}
             </button>
+            {leadStatus === 'error' && (
+              <p className="text-sm text-red-600 mt-2 text-center">
+                Ошибка отправки. Проверьте телефон и попробуйте ещё раз.
+              </p>
+            )}
           </form>
+          )}
         </div>
       )}
     </div>

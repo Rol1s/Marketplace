@@ -5,6 +5,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getPipes, getSteelGradesForProduct } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 
 export function getStaticPaths() {
   const pipes = getPipes();
@@ -17,8 +18,11 @@ export function getStaticPaths() {
   );
 }
 
-const { pipe, grade } = Astro.props;
+const pipe = Astro.props.pipe ?? findBySlug(getPipes(), Astro.params.slug);
 const allGrades = getSteelGradesForProduct('truby');
+const grade = Astro.props.grade ?? findBySlug(allGrades, Astro.params.grade);
+if (!pipe || !grade) return Astro.redirect('/404/');
+
 const productName = `трубы ${pipe.diameter}×${pipe.wallThickness}`;
 const otherGrades = allGrades.map((g) => ({
   slug: g.slug,

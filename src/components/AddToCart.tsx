@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { addToCart, type CartUnit } from '@/stores/cartStore';
 
 interface Props {
@@ -19,11 +19,15 @@ export default function AddToCart({ id, category, name, gost, weightPerMeter }: 
   const [qty, setQty] = useState('');
   const [unit, setUnit] = useState<CartUnit>('м');
   const [added, setAdded] = useState(false);
+  const qtyRef = useRef<HTMLInputElement>(null);
+  const unitRef = useRef<HTMLSelectElement>(null);
 
   function handleAdd() {
-    const q = parseFloat(qty);
+    const rawQty = qtyRef.current?.value || qty;
+    const currentUnit = (unitRef.current?.value || unit) as CartUnit;
+    const q = parseFloat(rawQty);
     if (!q || q <= 0) return;
-    addToCart({ id, category, name, gost, weightPerMeter, unit, quantity: q });
+    addToCart({ id, category, name, gost, weightPerMeter, unit: currentUnit, quantity: q });
     setAdded(true);
     setQty('');
     setTimeout(() => setAdded(false), 2000);
@@ -44,6 +48,7 @@ export default function AddToCart({ id, category, name, gost, weightPerMeter }: 
         <label className="flex-1">
           <span className="text-xs text-blue-700">Количество</span>
           <input
+            ref={qtyRef}
             type="number"
             min="0.1"
             step="any"
@@ -57,6 +62,7 @@ export default function AddToCart({ id, category, name, gost, weightPerMeter }: 
         <label>
           <span className="text-xs text-blue-700">Единица</span>
           <select
+            ref={unitRef}
             value={unit}
             onChange={(e) => setUnit(e.target.value as CartUnit)}
             className="mt-1 block rounded-md border border-blue-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none bg-white"
@@ -68,6 +74,7 @@ export default function AddToCart({ id, category, name, gost, weightPerMeter }: 
         </label>
 
         <button
+          type="button"
           onClick={handleAdd}
           className="bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm whitespace-nowrap"
         >

@@ -1,0 +1,61 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import LeadForm from '@components/LeadForm';
+import { SITE } from '@/config/site';
+
+const title = `Контакты | ${SITE.name}`;
+const description = 'Контакты НикаМет: оставьте заявку на металлопрокат, смету, подбор трубы, листа, швеллера, двутавра, уголка или шпунта. Мы свяжемся по телефону.';
+---
+
+<Base title={title} description={description}>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <Breadcrumbs items={[
+      { label: 'Контакты', href: '/kontakty/' },
+    ]} />
+
+    <div class="grid lg:grid-cols-[1fr_380px] gap-8 items-start">
+      <section>
+        <h1 class="text-2xl md:text-3xl font-bold text-primary mb-4">Контакты</h1>
+
+        <p class="text-text-muted leading-relaxed mb-6">
+          Для расчёта стоимости, проверки наличия и доставки металлопроката оставьте заявку на сайте.
+          Мы получим запрос в едином канале и свяжемся с вами по указанному телефону.
+        </p>
+
+        <div class="bg-surface border border-border rounded-xl p-5 mb-6">
+          <h2 class="text-lg font-bold text-primary mb-3">Как связаться</h2>
+          <dl class="space-y-3 text-sm">
+            <div>
+              <dt class="font-semibold text-text">Основной канал</dt>
+              <dd class="text-text-muted">Форма заявки на сайте</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text">Ответ</dt>
+              <dd class="text-text-muted">По телефону, который вы укажете в заявке</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text">Что можно запросить</dt>
+              <dd class="text-text-muted">Трубы, листы, двутавры, швеллеры, уголки, шпунт, б/у металл, сметы и подбор аналогов</dd>
+            </div>
+          </dl>
+        </div>
+
+        <section class="bg-primary text-white rounded-xl p-5">
+          <h2 class="text-lg font-bold mb-2">Что указать в заявке</h2>
+          <ul class="list-disc pl-5 space-y-1 text-sm text-white/85">
+            <li>тип металлопроката и размер;</li>
+            <li>количество или примерный вес;</li>
+            <li>город поставки;</li>
+            <li>нужен новый или б/у металл;</li>
+            <li>срочность и требования к документам, если они есть.</li>
+          </ul>
+        </section>
+      </section>
+
+      <aside>
+        <LeadForm client:visible source="kontakty-page" />
+      </aside>
+    </div>
+  </main>
+</Base>

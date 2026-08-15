@@ -5,6 +5,7 @@ import ProductFAQ from '@components/ProductFAQ.astro';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getPipes } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 import type { City, Pipe } from '@lib/types';
 
 export function getStaticPaths() {
@@ -18,13 +19,15 @@ export function getStaticPaths() {
   );
 }
 
-const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
+const city = (Astro.props.city ?? findBySlug(getCities(), Astro.params.city)) as City | undefined;
+const pipe = (Astro.props.pipe ?? findBySlug(getPipes(), Astro.params.slug)) as Pipe | undefined;
+if (!city || !pipe || pipe.diameter < 219 || pipe.diameter > 1420) return Astro.redirect('/404/');
 
 const vusThickness = pipe.diameter >= 820 ? 3.5 : pipe.diameter >= 530 ? 3.0 : 2.5;
 ---
 
 <Gost
-  title={`Труба ${pipe.diameter}×${pipe.wallThickness} ВУС ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  title={`Труба ${pipe.diameter}×${pipe.wallThickness} ВУС ${city.namePrep} — заявка, доставка | ${SITE.name}`}
   description={`Труба ${pipe.diameter}×${pipe.wallThickness} мм в изоляции ВУС ${city.namePrep}. Масса ${pipe.weightPerMeter} кг/м. ГОСТ 9.602-2016. Доставка по ${city.region}.`}
   h1={`Труба ${pipe.diameter}×${pipe.wallThickness} в изоляции ВУС ${city.namePrep}`}
   breadcrumbs={[

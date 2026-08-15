@@ -6,6 +6,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getBeams } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 import type { City, Beam } from '@lib/types';
 
 export function getStaticPaths() {
@@ -19,11 +20,13 @@ export function getStaticPaths() {
   );
 }
 
-const { city, beam } = Astro.props as { city: City; beam: Beam };
+const city = (Astro.props.city ?? findBySlug(getCities(), Astro.params.city)) as City | undefined;
+const beam = (Astro.props.beam ?? findBySlug(getBeams(), Astro.params.slug)) as Beam | undefined;
+if (!city || !beam) return Astro.redirect('/404/');
 ---
 
 <Gost
-  title={`Двутавр ${beam.profile} ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  title={`Двутавр ${beam.profile} ${city.namePrep} — заявка, доставка | ${SITE.name}`}
   description={`Купить двутавр ${beam.profile} ${city.namePrep}. Масса ${beam.weightPerMeter} кг/м. Доставка по ${city.region}.`}
   h1={`Двутавр ${beam.profile} ${city.namePrep}`}
   breadcrumbs={[

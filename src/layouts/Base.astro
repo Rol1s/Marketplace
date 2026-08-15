@@ -17,6 +17,18 @@ interface Props {
 const { title, description, canonical, ogType = 'website', ogImage, noindex } = Astro.props;
 const canonicalUrl = canonical || new URL(Astro.url.pathname, SITE.url).toString();
 const ogImageUrl = ogImage || `${SITE.url}/og-default.svg`;
+
+const securityHeaders = {
+  'Content-Security-Policy': "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://cdn.jsdelivr.net; object-src 'none'; upgrade-insecure-requests",
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+};
+
+for (const [header, value] of Object.entries(securityHeaders)) {
+  Astro.response.headers.set(header, value);
+}
 ---
 
 <!doctype html>
@@ -51,6 +63,6 @@ const ogImageUrl = ogImage || `${SITE.url}/og-default.svg`;
       <slot />
     </main>
     <Footer />
-    <CartFloat client:load />
+    <CartFloat client:only="react" />
   </body>
 </html>

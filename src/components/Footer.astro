@@ -14,7 +14,7 @@ const topCities = cities.slice(0, 10);
       <div class="col-span-2 md:col-span-1">
         <h3 class="text-lg font-bold text-white mb-3">{SITE.name}</h3>
         <p class="text-sm leading-relaxed mb-4">
-          ГОСТ-справочник металлопроката: калькулятор веса, таблицы характеристик, 52 000+ страниц сортамента.
+          ГОСТ-справочник металлопроката: калькулятор веса, таблицы характеристик, 55 000+ страниц сортамента.
         </p>
         <a href="/zayavka/" class="inline-block px-4 py-2 bg-accent text-white text-sm font-semibold rounded-md hover:bg-accent-light transition-colors">
           Оставить заявку
@@ -54,6 +54,7 @@ const topCities = cities.slice(0, 10);
           <li><a href="/nagruzki/" class="text-sm hover:text-white transition-colors">Нагрузочные таблицы</a></li>
           <li><a href="/dopuski/" class="text-sm hover:text-white transition-colors">Таблицы допусков</a></li>
           <li><a href="/smeta" class="text-sm hover:text-white transition-colors">Смета</a></li>
+          <li><a href="/kontakty/" class="text-sm hover:text-white transition-colors">Контакты</a></li>
           <li><a href="/stati/" class="text-sm hover:text-white transition-colors">Статьи и гайды</a></li>
           <li><a href="/sravnenie/" class="text-sm hover:text-white transition-colors">Сравнение ГОСТов</a></li>
           <li><a href="/calculator/" class="text-sm hover:text-white transition-colors">Калькулятор веса</a></li>
@@ -79,7 +80,11 @@ const topCities = cities.slice(0, 10);
 
     <div class="border-t border-white/20 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
       <span>&copy; {year} {SITE.name}. Данные предоставлены в справочных целях.</span>
-      <span>{SITE.domain}</span>
+      <span class="flex items-center gap-3">
+        <a href="/kontakty/" class="hover:text-white transition-colors">Контакты</a>
+        <a href="/privacy/" class="hover:text-white transition-colors">Персональные данные</a>
+        <span>{SITE.domain}</span>
+      </span>
     </div>
   </div>
 </footer>

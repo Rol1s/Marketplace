@@ -8,7 +8,7 @@ interface Column {
 
 interface Props {
   columns: Column[];
-  rows: Record<string, unknown>[];
+  rows: object[];
   highlightKey?: string;
   highlightValue?: unknown;
   caption?: string;
@@ -22,6 +22,10 @@ function formatValue(val: unknown): string {
     return val % 1 === 0 ? val.toString() : val.toFixed(val < 10 ? 2 : 1);
   }
   return String(val);
+}
+
+function getValue(row: object, key: string): unknown {
+  return (row as Record<string, unknown>)[key];
 }
 ---
 
@@ -47,7 +51,7 @@ function formatValue(val: unknown): string {
     </thead>
     <tbody>
       {rows.map((row, i) => {
-        const isHighlighted = highlightKey && row[highlightKey] === highlightValue;
+        const isHighlighted = highlightKey && getValue(row, highlightKey) === highlightValue;
         return (
           <tr
             class:list={[
@@ -63,7 +67,7 @@ function formatValue(val: unknown): string {
                   col.align === 'right' ? 'text-right tabular-nums' : col.align === 'center' ? 'text-center' : 'text-left',
                 ]}
               >
-                {formatValue(row[col.key])}
+                {formatValue(getValue(row, col.key))}
               </td>
             ))}
           </tr>

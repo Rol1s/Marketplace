@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import Gost from '@layouts/Gost.astro';
 import GostTable from '@components/GostTable.astro';
 import BuMetallInfo from '@components/BuMetallInfo.astro';
@@ -57,7 +58,12 @@ const description = `Арматура б/у ⌀${item.diameter} мм класс 
     </div>
   </section>
 
-  <BuMetallInfo />
+  <BuMetallInfo
+    productName={`арматура ⌀${item.diameter}`}
+    gost="ГОСТ 34028-2016"
+    baseHref={`/armatura/${item.slug}/`}
+    baseLinkLabel={`Характеристики арматуры ⌀${item.diameter} (новая)`}
+  />
 
   <section class="mb-8">
     <a href={`/armatura/${item.slug}/`} class="flex items-center gap-4 p-4 rounded-xl border-2 border-primary/30 hover:border-primary hover:shadow-md transition-all bg-surface">

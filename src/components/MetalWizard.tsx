@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, type ReactElement } from 'react';
 import { runWizard, type TaskType, type WizardInput, type ProfileResult } from '@/lib/wizard';
 import { runBeamCalc, SCHEME_LABELS, type SupportScheme, type BeamCalcResult } from '@/lib/beam-calc';
 import type { Beam, Channel, Pipe } from '@/lib/types';
@@ -72,7 +72,7 @@ function IconPiles() {
   );
 }
 
-const TASK_ICONS: Record<TaskType, () => JSX.Element> = {
+const TASK_ICONS: Record<TaskType, () => ReactElement> = {
   floor: IconBeam, column: IconColumn, fence: IconFence, pipeline: IconPipeline, piles: IconPiles,
 };
 
@@ -272,7 +272,7 @@ export default function MetalWizard({ beams, channels, pipes }: Props) {
 
     doc.setFont(fn, 'normal');
     doc.setFontSize(9);
-    doc.text(`nikamet.pro | ${now}`, 105, 22, { align: 'center' });
+    doc.text(`rus-metall.pro | ${now}`, 105, 22, { align: 'center' });
 
     // Task header
     doc.setFont(fn, 'bold');

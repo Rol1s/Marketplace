@@ -6,6 +6,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getChannels } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 import type { City, Channel } from '@lib/types';
 
 export function getStaticPaths() {
@@ -19,11 +20,13 @@ export function getStaticPaths() {
   );
 }
 
-const { city, channel } = Astro.props as { city: City; channel: Channel };
+const city = (Astro.props.city ?? findBySlug(getCities(), Astro.params.city)) as City | undefined;
+const channel = (Astro.props.channel ?? findBySlug(getChannels(), Astro.params.slug)) as Channel | undefined;
+if (!city || !channel) return Astro.redirect('/404/');
 ---
 
 <Gost
-  title={`Швеллер ${channel.profile} ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  title={`Швеллер ${channel.profile} ${city.namePrep} — заявка, доставка | ${SITE.name}`}
   description={`Купить швеллер ${channel.profile} ${city.namePrep}. Масса ${channel.weight} кг/м. Доставка по ${city.region}.`}
   h1={`Швеллер ${channel.profile} ${city.namePrep}`}
   breadcrumbs={[

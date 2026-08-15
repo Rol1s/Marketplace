@@ -5,6 +5,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getSheetPiles, getSteelGradesForProduct } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 
 export function getStaticPaths() {
   const piles = getSheetPiles();
@@ -17,8 +18,11 @@ export function getStaticPaths() {
   );
 }
 
-const { pile, grade } = Astro.props;
+const pile = Astro.props.pile ?? findBySlug(getSheetPiles(), Astro.params.slug);
 const allGrades = getSteelGradesForProduct('shpunt');
+const grade = Astro.props.grade ?? findBySlug(allGrades, Astro.params.grade);
+if (!pile || !grade) return Astro.redirect('/404/');
+
 const weightKgPerM = pile.weightPerMeterTons * 1000;
 const productName = `шпунта ${pile.displayName}`;
 const otherGrades = allGrades.map((g) => ({

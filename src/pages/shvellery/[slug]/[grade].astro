@@ -5,6 +5,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getChannels, getSteelGradesForProduct } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 
 export function getStaticPaths() {
   const channels = getChannels();
@@ -17,8 +18,11 @@ export function getStaticPaths() {
   );
 }
 
-const { channel, grade } = Astro.props;
+const channel = Astro.props.channel ?? findBySlug(getChannels(), Astro.params.slug);
 const allGrades = getSteelGradesForProduct('shvellery');
+const grade = Astro.props.grade ?? findBySlug(allGrades, Astro.params.grade);
+if (!channel || !grade) return Astro.redirect('/404/');
+
 const productName = `швеллера ${channel.profile}`;
 const otherGrades = allGrades.map((g) => ({
   slug: g.slug,

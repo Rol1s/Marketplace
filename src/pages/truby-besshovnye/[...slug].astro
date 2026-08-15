@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import Gost from '@layouts/Gost.astro';
 import GostTable from '@components/GostTable.astro';
 import RelatedItems from '@components/RelatedItems.astro';
@@ -77,7 +78,7 @@ const related = allItems
 
   <section class="mb-8">
     <h2 class="text-lg font-bold text-primary mb-3">Калькулятор веса</h2>
-    <PipeCalculator client:visible diameter={item.diameter} wallThickness={item.wallThickness} />
+    <PipeCalculator client:visible diameter={item.diameter} wallThickness={item.wallThickness} weightPerMeter={item.weightPerMeter} />
   </section>
 
   <section class="mb-8">

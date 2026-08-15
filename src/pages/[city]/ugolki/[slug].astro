@@ -6,6 +6,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getAnglesEqual, getAnglesUnequal } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 import type { City, AngleEqual } from '@lib/types';
 
 export function getStaticPaths() {
@@ -19,11 +20,14 @@ export function getStaticPaths() {
   );
 }
 
-const { city, angle } = Astro.props as { city: City; angle: AngleEqual };
+const city = (Astro.props.city ?? findBySlug(getCities(), Astro.params.city)) as City | undefined;
+const angle = (Astro.props.angle ??
+  findBySlug([...getAnglesEqual(), ...getAnglesUnequal()], Astro.params.slug)) as AngleEqual | undefined;
+if (!city || !angle) return Astro.redirect('/404/');
 ---
 
 <Gost
-  title={`Уголок ${angle.size} ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  title={`Уголок ${angle.size} ${city.namePrep} — заявка, доставка | ${SITE.name}`}
   description={`Купить уголок ${angle.size} ${city.namePrep}. Масса ${angle.massPerMeterKg} кг/м. Доставка по ${city.region}.`}
   h1={`Уголок ${angle.size} ${city.namePrep}`}
   breadcrumbs={[

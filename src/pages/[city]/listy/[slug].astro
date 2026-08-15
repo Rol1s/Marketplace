@@ -7,6 +7,7 @@ import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getSheets } from '@lib/data';
 import { sheetWeight } from '@lib/calculator';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 import type { City, Sheet } from '@lib/types';
 
 export function getStaticPaths() {
@@ -20,12 +21,15 @@ export function getStaticPaths() {
   );
 }
 
-const { city, sheet } = Astro.props as { city: City; sheet: Sheet };
+const city = (Astro.props.city ?? findBySlug(getCities(), Astro.params.city)) as City | undefined;
+const sheet = (Astro.props.sheet ?? findBySlug(getSheets(), Astro.params.slug)) as Sheet | undefined;
+if (!city || !sheet) return Astro.redirect('/404/');
+
 const weightKg = sheetWeight(sheet.thickness, sheet.width, sheet.length);
 ---
 
 <Gost
-  title={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep} — цена | ${SITE.name}`}
+  title={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep} — заявка | ${SITE.name}`}
   description={`Купить лист стальной ${sheet.thickness}×${sheet.width}×${sheet.length} мм ${city.namePrep}. Масса ${weightKg.toFixed(1)} кг. Доставка по ${city.region}.`}
   h1={`Лист ${sheet.thickness}×${sheet.width}×${sheet.length} ${city.namePrep}`}
   breadcrumbs={[

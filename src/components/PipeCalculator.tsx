@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, type ReactElement } from 'react';
 import { pipeWeight, formatWeight } from '@lib/calculator';
 
 interface WallOption {
@@ -119,7 +119,7 @@ function TrailerSvg({ rowCounts, pipesToDraw, maxPipes, diameterMm, trailerWidth
   const slotsToShow = Math.min(totalSlots, maxPipes);
 
   let slotIdx = 0;
-  const circles: JSX.Element[] = [];
+  const circles: ReactElement[] = [];
 
   for (let row = 0; row < rowCounts.length && slotIdx < slotsToShow; row++) {
     const isOffset = mode === 'hex' && row % 2 === 1;
@@ -144,7 +144,7 @@ function TrailerSvg({ rowCounts, pipesToDraw, maxPipes, diameterMm, trailerWidth
     }
   }
 
-  const blocks: JSX.Element[] = [];
+  const blocks: ReactElement[] = [];
   if (mode === 'grid' && pipeR > 8) {
     for (let row = 1; row < rowCounts.length; row++) {
       for (let col = 0; col < rowCounts[0]; col++) {

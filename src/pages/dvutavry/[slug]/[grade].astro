@@ -5,6 +5,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getBeams, getSteelGradesForProduct } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 
 export function getStaticPaths() {
   const beams = getBeams();
@@ -17,8 +18,11 @@ export function getStaticPaths() {
   );
 }
 
-const { beam, grade } = Astro.props;
+const beam = Astro.props.beam ?? findBySlug(getBeams(), Astro.params.slug);
 const allGrades = getSteelGradesForProduct('dvutavry');
+const grade = Astro.props.grade ?? findBySlug(allGrades, Astro.params.grade);
+if (!beam || !grade) return Astro.redirect('/404/');
+
 const productName = `двутавра ${beam.profile}`;
 const otherGrades = allGrades.map((g) => ({
   slug: g.slug,

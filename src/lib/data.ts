@@ -21,6 +21,10 @@ import pipesVgpData from '@data/pipes-vgp.json';
 import beams8239Data from '@data/beams-8239.json';
 import channelsBentData from '@data/channels-bent.json';
 
+function uniqueBySlug<T extends { slug: string }>(items: T[]): T[] {
+  return [...new Map(items.map((item) => [item.slug, item])).values()];
+}
+
 export function getPipes(): Pipe[] {
   return pipesData as Pipe[];
 }
@@ -30,7 +34,9 @@ export function getChannels(): Channel[] {
 }
 
 export function getBeams(): Beam[] {
-  return beamsData as Beam[];
+  // The source table contains repeated profiles from overlapping revisions.
+  // A public URL identifies a profile by slug, so expose exactly one record per URL.
+  return uniqueBySlug(beamsData as Beam[]);
 }
 
 export function getBeamsAllGosts(): BeamGostEntry[] {

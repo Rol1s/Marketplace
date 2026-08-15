@@ -5,6 +5,7 @@ import LeadForm from '@components/LeadForm.tsx';
 import ProductFAQ from '@components/ProductFAQ.astro';
 import { getSteelGrades, getPipes, getChannels, getBeams, getSheets, getAnglesEqual, getAnglesUnequal, getSheetPiles } from '@lib/data';
 import { SITE, SECTIONS } from '@/config/site';
+import { findBySlug } from '@lib/route';
 
 export function getStaticPaths() {
   return getSteelGrades().map((g) => ({
@@ -13,7 +14,9 @@ export function getStaticPaths() {
   }));
 }
 
-const { grade } = Astro.props;
+const grade = Astro.props.grade ?? findBySlug(getSteelGrades(), Astro.params.grade);
+if (!grade) return Astro.redirect('/404/');
+
 const allGrades = getSteelGrades();
 
 interface ProductLink {

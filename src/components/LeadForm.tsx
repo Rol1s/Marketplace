@@ -11,6 +11,8 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [website, setWebsite] = useState('');
+  const [startedAt] = useState(() => Date.now());
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   async function handleSubmit(e: FormEvent) {
@@ -28,6 +30,8 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
           message: message || undefined,
           product: product || undefined,
           source: source || window.location.pathname,
+          website,
+          startedAt,
         }),
       });
       setStatus(res.ok ? 'success' : 'error');
@@ -52,6 +56,17 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-surface border border-border rounded-xl p-5">
+      <label className="hidden" aria-hidden="true">
+        Website
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+        />
+      </label>
+
       {product && (
         <div className="mb-4 bg-primary/5 border border-primary/20 rounded-lg p-3">
           <span className="text-xs text-text-muted block">Вы запрашиваете:</span>
@@ -65,6 +80,7 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
           <input
             type="text"
             value={name}
+            maxLength={80}
             onChange={(e) => setName(e.target.value)}
             placeholder="Ваше имя"
             className="mt-1 block w-full rounded-md border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none"
@@ -78,6 +94,8 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
           <input
             type="tel"
             value={phone}
+            maxLength={40}
+            autoComplete="tel"
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+7 (___) ___-__-__"
             required
@@ -89,6 +107,7 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
           <span className="text-sm text-text-muted">Комментарий</span>
           <textarea
             value={message}
+            maxLength={600}
             onChange={(e) => setMessage(e.target.value)}
             rows={2}
             placeholder="Длина, количество, город доставки..."
@@ -112,7 +131,10 @@ export default function LeadForm({ product = '', source = '' }: LeadFormProps) {
       )}
 
       <p className="text-xs text-text-muted mt-3 text-center">
-        Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+        Нажимая кнопку, вы соглашаетесь на{' '}
+        <a href="/privacy/" className="text-primary underline">
+          обработку персональных данных
+        </a>
       </p>
     </form>
   );

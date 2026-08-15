@@ -6,6 +6,7 @@ import LeadForm from '@components/LeadForm.tsx';
 import { getSheets, getSteelGradesForProduct } from '@lib/data';
 import { sheetWeight } from '@lib/calculator';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 
 export function getStaticPaths() {
   const sheets = getSheets();
@@ -18,8 +19,11 @@ export function getStaticPaths() {
   );
 }
 
-const { sheet, grade } = Astro.props;
+const sheet = Astro.props.sheet ?? findBySlug(getSheets(), Astro.params.slug);
 const allGrades = getSteelGradesForProduct('listy');
+const grade = Astro.props.grade ?? findBySlug(allGrades, Astro.params.grade);
+if (!sheet || !grade) return Astro.redirect('/404/');
+
 const weightKg = sheetWeight(sheet.thickness, sheet.width, sheet.length);
 const productName = `листа ${sheet.thickness}×${sheet.width}×${sheet.length}`;
 const otherGrades = allGrades.map((g) => ({

@@ -6,6 +6,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getPipes, getPipesByDiameter } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 import type { City, Pipe } from '@lib/types';
 
 export function getStaticPaths() {
@@ -19,12 +20,15 @@ export function getStaticPaths() {
   );
 }
 
-const { city, pipe } = Astro.props as { city: City; pipe: Pipe };
+const city = (Astro.props.city ?? findBySlug(getCities(), Astro.params.city)) as City | undefined;
+const pipe = (Astro.props.pipe ?? findBySlug(getPipes(), Astro.params.slug)) as Pipe | undefined;
+if (!city || !pipe || pipe.diameter < 219 || pipe.diameter > 1420) return Astro.redirect('/404/');
+
 const sameDiameter = getPipesByDiameter(pipe.diameter);
 ---
 
 <Gost
-  title={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  title={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep} — заявка, доставка | ${SITE.name}`}
   description={`Купить трубу стальную ${pipe.diameter}×${pipe.wallThickness} мм ${city.namePrep}. Масса ${pipe.weightPerMeter} кг/м. Доставка по ${city.region}.`}
   h1={`Труба ${pipe.diameter}×${pipe.wallThickness} ${city.namePrep}`}
   breadcrumbs={[

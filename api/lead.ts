@@ -1,9 +1,52 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+interface VercelRequest {
+  method?: string;
+  body?: unknown;
+}
+
+interface VercelResponse {
+  setHeader(name: string, value: string): void;
+  status(code: number): VercelResponse;
+  json(body: unknown): unknown;
+}
+
+const MAX_FIELD_LENGTH = 600;
+const MIN_SUBMIT_DELAY_MS = 1200;
+const RECENT_LEADS = new Map<string, number>();
+
+function asText(value: unknown, maxLength = MAX_FIELD_LENGTH): string {
+  return typeof value === 'string' ? value.trim().slice(0, maxLength) : '';
+}
+
+function normalizePhone(value: string): string {
+  return value.replace(/[^\d+]/g, '');
+}
+
+function isLikelyPhone(value: string): boolean {
+  const digits = value.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 16;
+}
+
+function isDuplicate(key: string): boolean {
+  const now = Date.now();
+  const last = RECENT_LEADS.get(key);
+
+  for (const [itemKey, timestamp] of RECENT_LEADS) {
+    if (now - timestamp > 10 * 60 * 1000) {
+      RECENT_LEADS.delete(itemKey);
+    }
+  }
+
+  if (last && now - last < 60 * 1000) return true;
+  RECENT_LEADS.set(key, now);
+  return false;
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  res.setHeader('Cache-Control', 'no-store');
 
   const BOT_TOKEN = process.env.TG_BOT_TOKEN;
   const CHAT_ID = process.env.TG_CHAT_ID;
@@ -13,14 +56,39 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { name, phone, message, product, source } = req.body ?? {};
+    const body = typeof req.body === 'object' && req.body !== null ? req.body as Record<string, unknown> : {};
+    const name = asText(body.name, 80);
+    const phone = asText(body.phone, 40);
+    const message = asText(body.message);
+    const product = asText(body.product, 160);
+    const source = asText(body.source, 300);
+    const website = asText(body.website, 120);
+    const startedAt = Number(body.startedAt);
 
-    if (!phone?.trim()) {
+    if (website) {
+      return res.status(200).json({ ok: true });
+    }
+
+    if (Number.isFinite(startedAt) && Date.now() - startedAt < MIN_SUBMIT_DELAY_MS) {
+      return res.status(400).json({ error: 'Form submitted too quickly' });
+    }
+
+    if (!phone) {
       return res.status(400).json({ error: 'Phone required' });
     }
 
+    if (!isLikelyPhone(phone)) {
+      return res.status(400).json({ error: 'Invalid phone' });
+    }
+
+    const normalizedPhone = normalizePhone(phone);
+    const duplicateKey = `${normalizedPhone}:${source || 'unknown'}`;
+    if (isDuplicate(duplicateKey)) {
+      return res.status(429).json({ error: 'Too many requests' });
+    }
+
     const text = [
-      '📩 Новая заявка с nikamet.pro',
+      '📩 Новая заявка с rus-metall.pro',
       '',
       `👤 Имя: ${name || '—'}`,
       `📞 Телефон: ${phone}`,
@@ -38,8 +106,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     if (!tgRes.ok) {
-      const err = await tgRes.text();
-      return res.status(502).json({ error: 'Telegram error', details: err });
+      return res.status(502).json({ error: 'Notification delivery failed' });
     }
 
     return res.status(200).json({ ok: true });

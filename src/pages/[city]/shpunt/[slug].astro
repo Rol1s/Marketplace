@@ -6,6 +6,7 @@ import AddToCart from '@components/AddToCart.tsx';
 import LeadForm from '@components/LeadForm.tsx';
 import { getCities, getSheetPiles } from '@lib/data';
 import { SITE } from '@/config/site';
+import { findBySlug } from '@lib/route';
 import type { City, SheetPile } from '@lib/types';
 
 export function getStaticPaths() {
@@ -19,12 +20,15 @@ export function getStaticPaths() {
   );
 }
 
-const { city, pile } = Astro.props as { city: City; pile: SheetPile };
+const city = (Astro.props.city ?? findBySlug(getCities(), Astro.params.city)) as City | undefined;
+const pile = (Astro.props.pile ?? findBySlug(getSheetPiles(), Astro.params.slug)) as SheetPile | undefined;
+if (!city || !pile) return Astro.redirect('/404/');
+
 const weightKgPerM = pile.weightPerMeterTons * 1000;
 ---
 
 <Gost
-  title={`Шпунт ${pile.displayName} ${city.namePrep} — цена, доставка | ${SITE.name}`}
+  title={`Шпунт ${pile.displayName} ${city.namePrep} — заявка, доставка | ${SITE.name}`}
   description={`Купить шпунт Ларсена ${pile.displayName} ${city.namePrep}. Масса ${weightKgPerM.toFixed(1)} кг/м. Доставка по ${city.region}.`}
   h1={`Шпунт Ларсена ${pile.displayName} ${city.namePrep}`}
   breadcrumbs={[
