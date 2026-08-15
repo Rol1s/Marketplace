@@ -272,7 +272,7 @@ export default function MetalWizard({ beams, channels, pipes }: Props) {
 
     doc.setFont(fn, 'normal');
     doc.setFontSize(9);
-    doc.text(`rus-metall.pro | ${now}`, 105, 22, { align: 'center' });
+    doc.text(`marketplace-kappa-neon.vercel.app | ${now}`, 105, 22, { align: 'center' });
 
     // Task header
     doc.setFont(fn, 'bold');

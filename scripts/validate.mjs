@@ -97,7 +97,7 @@ for (const [name, areaKey, weightKey, factor] of densityChecks) {
   }
 }
 
-const site = process.env.PUBLIC_SITE_URL || 'https://rus-metall.pro';
+const site = process.env.PUBLIC_SITE_URL || 'https://marketplace-kappa-neon.vercel.app';
 const dynamicUrls = buildDynamicUrls(site);
 if (new Set(dynamicUrls).size !== dynamicUrls.length) errors.push('dynamic route catalog contains duplicates');
 if (dynamicUrls.length < 45000) errors.push(`dynamic route catalog unexpectedly small: ${dynamicUrls.length}`);

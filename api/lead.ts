@@ -88,7 +88,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const text = [
-      '📩 Новая заявка с rus-metall.pro',
+      '📩 Новая заявка с marketplace-kappa-neon.vercel.app',
       '',
       `👤 Имя: ${name || '—'}`,
       `📞 Телефон: ${phone}`,

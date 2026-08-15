@@ -59,9 +59,9 @@ async function exportPDF(items: CartItem[]) {
   doc.setFont(fontName, 'bold');
   doc.setFontSize(16);
   if (hasFont) {
-    doc.text('Смета металлопроката — rus-metall.pro', 105, 16, { align: 'center' });
+    doc.text('Смета металлопроката — marketplace-kappa-neon.vercel.app', 105, 16, { align: 'center' });
   } else {
-    doc.text('Smeta metalloprokata — rus-metall.pro', 105, 16, { align: 'center' });
+    doc.text('Smeta metalloprokata — marketplace-kappa-neon.vercel.app', 105, 16, { align: 'center' });
   }
 
   doc.setFont(fontName, 'normal');
@@ -103,7 +103,9 @@ async function exportPDF(items: CartItem[]) {
   doc.setFont(fontName, 'normal');
   doc.setFontSize(8);
   doc.setTextColor(150);
-  const footerText = hasFont ? 'Сформировано на rus-metall.pro — справочник металлопроката' : 'Generated at rus-metall.pro';
+  const footerText = hasFont
+    ? 'Сформировано на marketplace-kappa-neon.vercel.app — справочник металлопроката'
+    : 'Generated at marketplace-kappa-neon.vercel.app';
   doc.text(footerText, 105, finalY, { align: 'center' });
 
   doc.save(`smeta-nikamet-${now.replace(/\./g, '-')}.pdf`);
